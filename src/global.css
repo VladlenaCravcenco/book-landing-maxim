@@ -139,7 +139,7 @@ body {
 }
 
 .title-main {
-  font-size: clamp(52px, 5vw, 130px);
+  font-size: clamp(50px, 5vw, 130px);
   line-height: 1.12;
   font-family: "Amatic SC", sans-serif; /* твой шрифт */
   font-weight: 700;
@@ -188,7 +188,7 @@ body {
   border-radius: 16px;
   border: none;
   cursor: pointer;
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 600;
   letter-spacing: 0.04em;
   text-transform: uppercase;
@@ -209,7 +209,7 @@ body {
   padding: 20px 48px;
   background: #c40a0a; /* ярко-красный */
   color: #fff;
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 700;
   border-radius: 16px;
   text-transform: uppercase;
