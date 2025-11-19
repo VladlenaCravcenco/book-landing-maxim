@@ -254,6 +254,20 @@ body {
   margin-top: 14px;
 }
 
+@media (max-width: 768px) {
+  .badge{
+    margin-bottom: 10px;
+  }
+  .title-main{
+    margin-bottom: 15px;
+  }
+  .author-name{
+    margin-bottom: 15px;
+  }
+  
+}
+
+
 /* ---------------------------------------------------------- */
 /* Плавающая прозрачная плашка соцсетей */
 /* ---------------------------------------------------------- */
@@ -377,7 +391,7 @@ body {
     right: 16px;
     top: 24px;
     transform: none;
-    padding: 12px 12px;
+    padding: 8px;
   }
 
   .social-pill__icon {
