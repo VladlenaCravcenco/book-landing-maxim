@@ -257,6 +257,7 @@ body {
 @media (max-width: 768px) {
   .badge{
     margin-bottom: 10px;
+    font-size: 14px;
   }
   .title-main{
     margin-bottom: 15px;
