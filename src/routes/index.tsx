@@ -49,7 +49,7 @@ export default component$(() => {
             </a>
           </div>
           <p class="btn-caption">
-            Безопасная оплата через Revolut. Доступ к чтению — сразу после покупкu.
+            Безопасная оплата через Revolut.<br />Доступ к чтению — сразу после покупкu.
           </p>
         </div>
       </section>
