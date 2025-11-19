@@ -399,12 +399,16 @@ body {
     width: 28px;
     height: 28px;
   }
+
+  .hero-full{
+    align-items: end;
+  }
   .hero-full__content {
     position: relative;
     z-index: 2;
     text-align: center;
     max-width: 100%;
-    padding: 10px;
+    padding: 60px 10px;
   }
 }
 
