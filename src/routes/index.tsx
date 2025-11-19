@@ -44,9 +44,18 @@ export default component$(() => {
             <a href="https://pay.revolut.com/YOUR-LINK" class="btn-3d">
               купить электронную книгу
             </a>
-            <a href="#print-book" class="btn btn--ghost">
+            <button
+              type="button"
+              class="btn btn--ghost"
+              onClick$={() => {
+                const el = document.getElementById('print-book');
+                if (el) {
+                  el.scrollIntoView({ behavior: 'smooth' });
+                }
+              }}
+            >
               Печатная версия
-            </a>
+            </button>
           </div>
           <p class="btn-caption">
             Безопасная оплата через Revolut.<br />Доступ к чтению — сразу после покупкu.
@@ -65,29 +74,29 @@ export default component$(() => {
 
             <div class="btn-row-single">
               <h3>
-              Заказать печатную книгу
-              <span style="font-size: 20px; margin-left: 8px;">↓</span>
-            </h3>
-            <div class="btn-flex">
-              <a href="https://carturesti.md/carte/236634017" class="btn btn--ghost">
-                Сarturesti
-              </a>
-              <a href="https://www.bestseller.md/kniga-pozvoni-mne-maxim-leanca.html" class="btn btn--ghost">
-                Bestseller
-              </a>
-              <a href="https://bookstore.md/ru/catalog/1057/801505/" class="btn btn--ghost">
-                Bookstore
-              </a>
-            </div>
+                Заказать печатную книгу
+                <span style="font-size: 20px; margin-left: 8px;">↓</span>
+              </h3>
+              <div class="btn-flex">
+                <a href="https://carturesti.md/carte/236634017" class="btn btn--ghost">
+                  Сarturesti
+                </a>
+                <a href="https://www.bestseller.md/kniga-pozvoni-mne-maxim-leanca.html" class="btn btn--ghost">
+                  Bestseller
+                </a>
+                <a href="https://bookstore.md/ru/catalog/1057/801505/" class="btn btn--ghost">
+                  Bookstore
+                </a>
+              </div>
 
+            </div>
+          </div>
+
+          <div class="hero-book">
+            <img src="/images/Book-cover.png" alt="Печатная версия книги" />
           </div>
         </div>
-
-        <div class="hero-book">
-          <img src="/images/Book-cover.png" alt="Печатная версия книги" />
-        </div>
-      </div>
-    </section >
+      </section >
 
     </>
   );
