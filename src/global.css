@@ -392,12 +392,12 @@ body {
     right: 16px;
     top: 24px;
     transform: none;
-    padding: 8px;
+    padding: 12px;
   }
 
   .social-pill__icon {
-    width: 28px;
-    height: 28px;
+    width: 38px;
+    height: 38px;
   }
 
   .hero-full{
@@ -410,6 +410,14 @@ body {
     max-width: 100%;
     padding: 60px 10px;
   }
+
+  .hero-full__bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.55) contrast(1.1);
+  object-position: center 60%;
+}
 }
 
 /* ---------------------------------------------------------- */
