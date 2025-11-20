@@ -528,7 +528,7 @@ body {
   align-items: center;
   justify-content: space-between;
   gap: 12px;
-  padding: 8px 14px;
+  padding: 16px 26px;
   border-radius: 999px;
   backdrop-filter: blur(14px);
   background: rgba(0, 0, 0, 0.45);
@@ -556,11 +556,12 @@ body {
 
 .reader-book-title {
   font-weight: 600;
+  font-size: 20px;
 }
 
 .reader-book-author {
   opacity: 0.7;
-  font-size: 12px;
+  font-size: 16px;
 }
 
 .reader-chapter-select {
@@ -602,7 +603,7 @@ body {
   display: flex;
   align-items: stretch;
   justify-content: center;
-  padding: 40px 0;
+  padding: 60px 0 0 0;
   box-sizing: border-box;
 }
 
@@ -687,7 +688,7 @@ body {
   }
 
   .reader-frame__inner {
-    padding: 52px 16px 32px;
+    padding: 40px 16px 32px;
     border-radius: 24px;
   }
 
@@ -700,6 +701,15 @@ body {
   .reader-menu-trigger {
     display: flex;
   }
+  .reader-book-title {
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.reader-book-author {
+  opacity: 0.7;
+  font-size: 14px;
+}
 }
 
 .reader-menu-trigger {

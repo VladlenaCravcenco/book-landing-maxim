@@ -5167,24 +5167,6 @@ cюда в каждый день. У меня ребёнок, от Ивана к
 леют оба!
         `
     },
-    {
-        id: 'ch12',
-        title: 'Содержание',
-        content: `
-Голос из тишины. .................................................................3
-Он/Она. ...............................................................................27
-Там, где стираются грани. .................................................35
-Будешь?. .............................................................................51
-Торнадо..............................................................................61
-Начало конца.....................................................................81
-Барса. ..................................................................................95
-До свидания, но не до конца. .........................................119
-Игра в прятки...................................................................129
-Заряжать бесполезно .....................................................143
-Синдром Адель Гюго. ......................................................157
-        `
-    },
-
 ];
 
 export default component$(() => {
@@ -5429,126 +5411,126 @@ export default component$(() => {
             <main class="reader-frame">
                 <div class="reader-frame__inner">
                     <article
-                        class="reader-page"
-                        style={{ fontSize: `${fontScale.value}rem` }}
-                    >
-                        <h2 class="reader-chapter-title">
-                            {currentChapterIndex.value + 1}. {chapter.title}
-                        </h2>
+                            class="reader-page"
+                            style={{ fontSize: `${fontScale.value}rem` }}
+                        >
+                            <h2 class="reader-chapter-title">
+                                {currentChapterIndex.value + 1}. {chapter.title}
+                            </h2>
 
-                        {(() => {
-                            // 1. Разбиваем главу на страницы по маркеру ---page---
-                            const rawPages = chapter.content
-                                .split('---page---')
-                                .map((p) => p.trim())
-                                .filter((p) => p.length > 0);
+                            {(() => {
+                                // 1. Разбиваем главу на страницы по маркеру ---page---
+                                const rawPages = chapter.content
+                                    .split('---page---')
+                                    .map((p) => p.trim())
+                                    .filter((p) => p.length > 0);
 
-                            const totalPages = Math.max(1, rawPages.length);
+                                const totalPages = Math.max(1, rawPages.length);
 
-                            // защита от выхода за пределы
-                            if (currentPage.value >= totalPages) {
-                                currentPage.value = totalPages - 1;
-                            }
+                                // защита от выхода за пределы
+                                if (currentPage.value >= totalPages) {
+                                    currentPage.value = totalPages - 1;
+                                }
 
-                            // 2. Берем текст текущей страницы
-                            const currentPageText = rawPages[currentPage.value] ?? rawPages[0];
+                                // 2. Берем текст текущей страницы
+                                const currentPageText = rawPages[currentPage.value] ?? rawPages[0];
 
-                            // 3. Делим текущую страницу на абзацы (пустая строка = новый абзац)
-                            const paragraphs = currentPageText
-                                .split(/\n\s*\n/)
-                                .map((p) => p.trim())
-                                .filter((p) => p.length > 0);
+                                // 3. Делим текущую страницу на абзацы (пустая строка = новый абзац)
+                                const paragraphs = currentPageText
+                                    .split(/\n\s*\n/)
+                                    .map((p) => p.trim())
+                                    .filter((p) => p.length > 0);
 
-                            return (
-                                <>
-                                    {paragraphs.map((para, idx) => (
-                                        <p class="reader-paragraph" key={idx}>
-                                            {para}
-                                        </p>
-                                    ))}
+                                return (
+                                    <>
+                                        {paragraphs.map((para, idx) => (
+                                            <p class="reader-paragraph" key={idx}>
+                                                {para}
+                                            </p>
+                                        ))}
 
-                                    <div class="reader-page__nav">
-                                        <button
-                                            type="button"
-                                            class="reader-nav-btn"
-                                            disabled={
-                                                currentChapterIndex.value === 0 &&
-                                                currentPage.value === 0
-                                            }
-                                            onClick$={() => {
-                                                const STORAGE_KEY = 'maxim-book-progress';
-
-                                                if (currentPage.value > 0) {
-                                                    // просто страница назад в этой главе
-                                                    currentPage.value = currentPage.value - 1;
-                                                } else if (currentChapterIndex.value > 0) {
-                                                    // переход на предыдущую главу, с первой страницы
-                                                    currentChapterIndex.value =
-                                                        currentChapterIndex.value - 1;
-                                                    currentPage.value = 0;
+                                        <div class="reader-page__nav">
+                                            <button
+                                                type="button"
+                                                class="reader-nav-btn"
+                                                disabled={
+                                                    currentChapterIndex.value === 0 &&
+                                                    currentPage.value === 0
                                                 }
+                                                onClick$={() => {
+                                                    const STORAGE_KEY = 'maxim-book-progress';
 
-                                                window.scrollTo({ top: 0 });
-                                                localStorage.setItem(
-                                                    STORAGE_KEY,
-                                                    JSON.stringify({
-                                                        chapterIndex: currentChapterIndex.value,
-                                                        pageIndex: currentPage.value,
-                                                        theme: theme.value,
-                                                        fontScale: fontScale.value,
-                                                    }),
-                                                );
-                                            }}
-                                        >
-                                            ←
-                                        </button>
+                                                    if (currentPage.value > 0) {
+                                                        // просто страница назад в этой главе
+                                                        currentPage.value = currentPage.value - 1;
+                                                    } else if (currentChapterIndex.value > 0) {
+                                                        // переход на предыдущую главу, с первой страницы
+                                                        currentChapterIndex.value =
+                                                            currentChapterIndex.value - 1;
+                                                        currentPage.value = 0;
+                                                    }
 
-                                        <span class="reader-page__counter">
-                                            {currentPage.value + 1} из {totalPages}
-                                        </span>
+                                                    window.scrollTo({ top: 0 });
+                                                    localStorage.setItem(
+                                                        STORAGE_KEY,
+                                                        JSON.stringify({
+                                                            chapterIndex: currentChapterIndex.value,
+                                                            pageIndex: currentPage.value,
+                                                            theme: theme.value,
+                                                            fontScale: fontScale.value,
+                                                        }),
+                                                    );
+                                                }}
+                                            >
+                                                ←
+                                            </button>
 
-                                        <button
-                                            type="button"
-                                            class="reader-nav-btn"
-                                            disabled={
-                                                currentPage.value === totalPages - 1 &&
-                                                currentChapterIndex.value === chapters.length - 1
-                                            }
-                                            onClick$={() => {
-                                                const STORAGE_KEY = 'maxim-book-progress';
+                                            <span class="reader-page__counter">
+                                                {currentPage.value + 1} из {totalPages}
+                                            </span>
 
-                                                if (currentPage.value < totalPages - 1) {
-                                                    // вперед по страницам текущей главы
-                                                    currentPage.value = currentPage.value + 1;
-                                                } else if (
-                                                    currentChapterIndex.value <
-                                                    chapters.length - 1
-                                                ) {
-                                                    // следующая глава, первая страница
-                                                    currentChapterIndex.value =
-                                                        currentChapterIndex.value + 1;
-                                                    currentPage.value = 0;
+                                            <button
+                                                type="button"
+                                                class="reader-nav-btn"
+                                                disabled={
+                                                    currentPage.value === totalPages - 1 &&
+                                                    currentChapterIndex.value === chapters.length - 1
                                                 }
+                                                onClick$={() => {
+                                                    const STORAGE_KEY = 'maxim-book-progress';
 
-                                                window.scrollTo({ top: 0 });
-                                                localStorage.setItem(
-                                                    STORAGE_KEY,
-                                                    JSON.stringify({
-                                                        chapterIndex: currentChapterIndex.value,
-                                                        pageIndex: currentPage.value,
-                                                        theme: theme.value,
-                                                        fontScale: fontScale.value,
-                                                    }),
-                                                );
-                                            }}
-                                        >
-                                            →
-                                        </button>
-                                    </div>
-                                </>
-                            );
-                        })()}
-                    </article>
+                                                    if (currentPage.value < totalPages - 1) {
+                                                        // вперед по страницам текущей главы
+                                                        currentPage.value = currentPage.value + 1;
+                                                    } else if (
+                                                        currentChapterIndex.value <
+                                                        chapters.length - 1
+                                                    ) {
+                                                        // следующая глава, первая страница
+                                                        currentChapterIndex.value =
+                                                            currentChapterIndex.value + 1;
+                                                        currentPage.value = 0;
+                                                    }
+
+                                                    window.scrollTo({ top: 0 });
+                                                    localStorage.setItem(
+                                                        STORAGE_KEY,
+                                                        JSON.stringify({
+                                                            chapterIndex: currentChapterIndex.value,
+                                                            pageIndex: currentPage.value,
+                                                            theme: theme.value,
+                                                            fontScale: fontScale.value,
+                                                        }),
+                                                    );
+                                                }}
+                                            >
+                                                →
+                                            </button>
+                                        </div>
+                                    </>
+                                );
+                            })()}
+                        </article>
                 </div>
             </main>
         </div>
