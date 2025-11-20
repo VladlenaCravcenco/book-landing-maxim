@@ -5438,11 +5438,11 @@ export default component$(() => {
                                                 );
                                             }}
                                         >
-                                            ← Предыдущая страница
+                                            ←
                                         </button>
 
                                         <span class="reader-page__counter">
-                                            Страница {currentPage.value + 1} из {totalPages}
+                                             {currentPage.value + 1} из {totalPages}
                                         </span>
 
                                         <button
@@ -5480,7 +5480,7 @@ export default component$(() => {
                                                 );
                                             }}
                                         >
-                                            Следующая страница →
+                                            →
                                         </button>
                                     </div>
                                 </>
