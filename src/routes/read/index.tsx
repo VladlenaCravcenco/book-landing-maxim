@@ -5193,6 +5193,7 @@ export default component$(() => {
     const currentChapterIndex = useSignal(0);
     const progress = useSignal(0);
     const currentPage = useSignal(0);
+    const isMenuOpen = useSignal(false);
 
     // Восстанавливаем позицию + сохраняем прогресс при скролле
     useVisibleTask$(() => {
@@ -5329,6 +5330,11 @@ export default component$(() => {
                     </select>
                 </div>
 
+                <div class="reader-header__left">
+                    {/* сюда то, что у тебя слева (название книги / глава и т.п.) */}
+                </div>
+
+                {/* --- КНОПКИ ДЛЯ DESKTOP --- */}
                 <div class="reader-header__right">
                     {/* Размер шрифта */}
                     <button
@@ -5338,7 +5344,7 @@ export default component$(() => {
                             fontScale.value = Math.max(0.9, fontScale.value - 0.1);
                         }}
                     >
-                        A−
+                        A–
                     </button>
                     <button
                         type="button"
@@ -5361,6 +5367,62 @@ export default component$(() => {
                         {theme.value === 'dark' ? '☀︎' : '☾'}
                     </button>
                 </div>
+
+                {/* --- КНОПКА "3 ТОЧКИ" ДЛЯ MOBILE --- */}
+                <button
+                    type="button"
+                    class="reader-menu-trigger"
+                    onClick$={() => (isMenuOpen.value = !isMenuOpen.value)}
+                    aria-label="Настройки чтения"
+                >
+                    <span />
+                    <span />
+                    <span />
+                </button>
+
+                {/* ВЫПАДАЮЩЕЕ МЕНЮ НА MOBILE */}
+                {isMenuOpen.value && (
+                    <div class="reader-menu">
+                        <p class="reader-menu__title">Настройки</p>
+
+                        <div class="reader-menu__group">
+                            <span class="reader-menu__label">Размер текста</span>
+                            <div class="reader-menu__row">
+                                <button
+                                    type="button"
+                                    class="reader-menu__btn"
+                                    onClick$={() => {
+                                        fontScale.value = Math.max(0.9, fontScale.value - 0.1);
+                                    }}
+                                >
+                                    A–
+                                </button>
+                                <button
+                                    type="button"
+                                    class="reader-menu__btn"
+                                    onClick$={() => {
+                                        fontScale.value = Math.min(1.4, fontScale.value + 0.1);
+                                    }}
+                                >
+                                    A+
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="reader-menu__group">
+                            <span class="reader-menu__label">Тема</span>
+                            <button
+                                type="button"
+                                class="reader-menu__btn reader-menu__btn--full"
+                                onClick$={() => {
+                                    theme.value = theme.value === 'dark' ? 'light' : 'dark';
+                                }}
+                            >
+                                {theme.value === 'dark' ? 'Светлый фон' : 'Тёмный фон'}
+                            </button>
+                        </div>
+                    </div>
+                )}
             </header>
 
             {/* Рамка и контент */}
@@ -5442,7 +5504,7 @@ export default component$(() => {
                                         </button>
 
                                         <span class="reader-page__counter">
-                                             {currentPage.value + 1} из {totalPages}
+                                            {currentPage.value + 1} из {totalPages}
                                         </span>
 
                                         <button
