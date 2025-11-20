@@ -598,7 +598,7 @@ body {
   display: flex;
   align-items: stretch;
   justify-content: center;
-  padding: 40px 12px 32px;
+  padding: 40px 0;
   box-sizing: border-box;
 }
 
