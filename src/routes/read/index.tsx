@@ -12,24 +12,24 @@ const chapters: Chapter[] = [
         id: 'info',
         title: 'О книге',
         content: `
-Автор: Максим Лянка
-Редактор: Андрей Дорган
-Название: «Позвони мне, я свой номер не менял»
-Издательство: Bestseller Group, Chișinău, 2025
-ISBN: 978-9975-3696-0-2
-Возрастное ограничение: 18+
-
-Книжные магазины Bestseller в Кишинёве:
-www.bestseller.md
-Botanica: Jumbo, etajul 1
-Buiucani: str. Nicolae Costin 56
-Telecentru: str. Drumul Viilor 36/1
-
-Для заказов:
-www.bestseller.ro
-www.bestseller.md
-
-Отпечатано в типографии «Universul»
+Автор: Максим Лянка\n
+Редактор: Андрей Дорган\n
+Название: «Позвони мне, я свой номер не менял»\n
+Издательство: Bestseller Group, Chișinău, 2025\n
+ISBN: 978-9975-3696-0-2\n
+Возрастное ограничение: 18+\n
+\n
+Книжные магазины Bestseller в Кишинёве:\n
+www.bestseller.md\n
+Botanica: Jumbo, etajul 1\n
+Buiucani: str. Nicolae Costin 56\n
+Telecentru: str. Drumul Viilor 36/1\n
+\n
+Для заказов:\n
+www.bestseller.ro\n
+www.bestseller.md\n
+\n
+Отпечатано в типографии «Universul»\n
 `
     },
     {
@@ -5415,7 +5415,7 @@ export default component$(() => {
                             style={{ fontSize: `${fontScale.value}rem` }}
                         >
                             <h2 class="reader-chapter-title">
-                                {currentChapterIndex.value + 1}. {chapter.title}
+                                {chapter.title}
                             </h2>
 
                             {(() => {

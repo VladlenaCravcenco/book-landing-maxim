@@ -703,12 +703,12 @@ body {
   }
   .reader-book-title {
   font-weight: 600;
-  font-size: 14px;
+  font-size: 12px;
 }
 
 .reader-book-author {
   opacity: 0.7;
-  font-size: 14px;
+  font-size: 12px;
 }
 }
 
