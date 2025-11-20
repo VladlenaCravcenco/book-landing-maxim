@@ -267,7 +267,7 @@ body {
   }
 
   .btn--ghost {
-    padding: 20px;
+    padding: 24px 38px;
   }
 }
 
@@ -474,4 +474,220 @@ body {
   margin-top: 16px;
   font-size: 13px;
   color: var(--text-muted);
+}
+
+
+/* Корневой контейнер читалки */
+.reader-root {
+  min-height: 100vh;
+  padding: 16px;
+  box-sizing: border-box;
+  background: #000; /* фон вокруг рамки */
+  display: flex;
+  flex-direction: column;
+}
+
+/* Тема */
+.reader-root--dark {
+  color: #f5f5f5;
+}
+
+.reader-root--light {
+  color: #111;
+  background: #e5e5e5; /* светлый фон вокруг рамки */
+}
+
+/* Прогресс-бар */
+.reader-progress {
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 3px;
+  width: 100%;
+  background: transparent;
+  z-index: 50;
+}
+
+.reader-progress__bar {
+  height: 100%;
+  background: #e53935;
+  width: 0;
+  transition: width 0.1s linear;
+}
+
+/* Верхняя панель */
+.reader-header {
+  position: fixed;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 40;
+  max-width: 1200px;
+  width: calc(100% - 40px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 8px 14px;
+  border-radius: 999px;
+  backdrop-filter: blur(14px);
+  background: rgba(0, 0, 0, 0.45);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: #f5f5f5;
+  font-size: 13px;
+}
+
+.reader-root--light .reader-header {
+  background: rgba(255, 255, 255, 0.85);
+  color: #111;
+}
+
+.reader-header__left,
+.reader-header__center,
+.reader-header__right {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.reader-book-title {
+  font-weight: 600;
+}
+
+.reader-book-author {
+  opacity: 0.7;
+  font-size: 12px;
+}
+
+.reader-chapter-select {
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  padding: 4px 10px;
+  background: transparent;
+  color: inherit;
+  font-size: 13px;
+}
+
+.reader-root--light .reader-chapter-select {
+  border-color: rgba(0, 0, 0, 0.25);
+}
+
+.reader-icon-btn {
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  background: rgba(0, 0, 0, 0.4);
+  color: #f5f5f5;
+  padding: 4px 10px;
+  cursor: pointer;
+  font-size: 13px;
+}
+
+.reader-root--light .reader-icon-btn {
+  background: rgba(255, 255, 255, 0.9);
+  color: #111;
+  border-color: rgba(0, 0, 0, 0.25);
+}
+
+.reader-icon-btn:hover {
+  transform: translateY(-1px);
+}
+
+/* Рамка по краю экрана (фиксированная) */
+.reader-frame {
+  flex: 1;
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  padding: 40px 12px 32px;
+  box-sizing: border-box;
+}
+
+.reader-frame__inner {
+  position: relative;
+  width: 100%;
+  max-width: 1400px;
+  border-radius: 32px;
+  border: 2px solid #e53935;
+  padding: 60px 40px;
+  box-sizing: border-box;
+  background: radial-gradient(circle at top, #202024 0, #050506 55%, #000 100%);
+  margin-top: 40px; /* чтобы не заехать под хедер */
+}
+
+.reader-root--light .reader-frame__inner {
+  background: radial-gradient(circle at top, #f9f9f9 0, #f0f0f0 50%, #e7e7e7 100%);
+}
+
+/* Страница */
+.reader-page {
+  max-width: 680px;
+  margin: 0 auto;
+  line-height: 1.7;
+  font-size: 1rem;
+  user-select: none; /* лёгкая защита */
+}
+
+.reader-chapter-title {
+  text-align: center;
+  margin: 0 0 24px;
+  font-size: 1.3em;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.reader-paragraph {
+  margin: 0 0 16px;
+  text-align: left;
+}
+
+/* Навигация по главам */
+.reader-page__nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 40px;
+  font-size: 0.9rem;
+  opacity: 0.85;
+}
+
+.reader-nav-btn {
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  background: rgba(0, 0, 0, 0.5);
+  color: inherit;
+  padding: 8px 14px;
+  cursor: pointer;
+}
+
+.reader-nav-btn:disabled {
+  opacity: 0.3;
+  cursor: default;
+}
+
+.reader-root--light .reader-nav-btn {
+  background: rgba(255, 255, 255, 0.9);
+  border-color: rgba(0, 0, 0, 0.25);
+}
+
+.reader-page__counter {
+  white-space: nowrap;
+}
+
+/* Мобильная адаптация */
+@media (max-width: 768px) {
+  .reader-header {
+    flex-wrap: wrap;
+    row-gap: 6px;
+    padding-inline: 12px;
+  }
+
+  .reader-frame__inner {
+    padding: 52px 16px 32px;
+    border-radius: 24px;
+  }
+
+  .reader-page {
+    max-width: 100%;
+  }
 }
