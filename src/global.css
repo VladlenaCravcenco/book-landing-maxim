@@ -625,7 +625,7 @@ body {
 
 /* Страница */
 .reader-page {
-  max-width: 680px;
+  max-width: 90%;
   margin: 0 auto;
   line-height: 1.7;
   font-size: 1rem;
@@ -657,7 +657,8 @@ body {
 }
 
 .reader-nav-btn {
-  border-radius: 999px;
+  border-radius: 10px;
+  font-size: 20px;
   border: 1px solid rgba(255, 255, 255, 0.35);
   background: rgba(0, 0, 0, 0.5);
   color: inherit;
@@ -747,7 +748,7 @@ body {
   right: 16px;
   z-index: 61;
 
-  width: min(260px, 80vw);
+  width: min(120px, 120px);
   padding: 14px 16px;
   border-radius: 18px;
 

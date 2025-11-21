@@ -5257,7 +5257,6 @@ export default component$(() => {
     const chapter = chapters[currentChapterIndex.value];
 
 
-
     return (
         <div class={['reader-root', `reader-root--${theme.value}`].join(' ')}>
             {/* Прогресс-бар */}
@@ -5306,7 +5305,7 @@ export default component$(() => {
                     >
                         {chapters.map((ch, index) => (
                             <option value={ch.id} key={ch.id}>
-                                {`${index + 1}. ${ch.title}`}
+                                {`${ch.title}`}
                             </option>
                         ))}
                     </select>
@@ -5338,16 +5337,7 @@ export default component$(() => {
                         A+
                     </button>
 
-                    {/* Тема */}
-                    <button
-                        type="button"
-                        class="reader-icon-btn"
-                        onClick$={() => {
-                            theme.value = theme.value === 'dark' ? 'light' : 'dark';
-                        }}
-                    >
-                        {theme.value === 'dark' ? '☀︎' : '☾'}
-                    </button>
+                    
                 </div>
 
                 {/* --- КНОПКА "3 ТОЧКИ" ДЛЯ MOBILE --- */}
@@ -5365,44 +5355,28 @@ export default component$(() => {
                 {/* ВЫПАДАЮЩЕЕ МЕНЮ НА MOBILE */}
                 {isMenuOpen.value && (
                     <div class="reader-menu">
-                        <p class="reader-menu__title">Настройки</p>
 
-                        <div class="reader-menu__group">
-                            <span class="reader-menu__label">Размер текста</span>
-                            <div class="reader-menu__row">
-                                <button
-                                    type="button"
-                                    class="reader-menu__btn"
-                                    onClick$={() => {
-                                        fontScale.value = Math.max(0.9, fontScale.value - 0.1);
-                                    }}
-                                >
-                                    A–
-                                </button>
-                                <button
-                                    type="button"
-                                    class="reader-menu__btn"
-                                    onClick$={() => {
-                                        fontScale.value = Math.min(1.4, fontScale.value + 0.1);
-                                    }}
-                                >
-                                    A+
-                                </button>
-                            </div>
-                        </div>
-
-                        <div class="reader-menu__group">
-                            <span class="reader-menu__label">Тема</span>
+                        <div class="reader-menu__row">
                             <button
                                 type="button"
-                                class="reader-menu__btn reader-menu__btn--full"
+                                class="reader-menu__btn"
                                 onClick$={() => {
-                                    theme.value = theme.value === 'dark' ? 'light' : 'dark';
+                                    fontScale.value = Math.max(0.9, fontScale.value - 0.1);
                                 }}
                             >
-                                {theme.value === 'dark' ? 'Светлый фон' : 'Тёмный фон'}
+                                A–
+                            </button>
+                            <button
+                                type="button"
+                                class="reader-menu__btn"
+                                onClick$={() => {
+                                    fontScale.value = Math.min(1.4, fontScale.value + 0.1);
+                                }}
+                            >
+                                A+
                             </button>
                         </div>
+
                     </div>
                 )}
             </header>
@@ -5411,126 +5385,126 @@ export default component$(() => {
             <main class="reader-frame">
                 <div class="reader-frame__inner">
                     <article
-                            class="reader-page"
-                            style={{ fontSize: `${fontScale.value}rem` }}
-                        >
-                            <h2 class="reader-chapter-title">
-                                {chapter.title}
-                            </h2>
+                        class="reader-page"
+                        style={{ fontSize: `${fontScale.value}rem` }}
+                    >
+                        <h2 class="reader-chapter-title">
+                            {chapter.title}
+                        </h2>
 
-                            {(() => {
-                                // 1. Разбиваем главу на страницы по маркеру ---page---
-                                const rawPages = chapter.content
-                                    .split('---page---')
-                                    .map((p) => p.trim())
-                                    .filter((p) => p.length > 0);
+                        {(() => {
+                            // 1. Разбиваем главу на страницы по маркеру ---page---
+                            const rawPages = chapter.content
+                                .split('---page---')
+                                .map((p) => p.trim())
+                                .filter((p) => p.length > 0);
 
-                                const totalPages = Math.max(1, rawPages.length);
+                            const totalPages = Math.max(1, rawPages.length);
 
-                                // защита от выхода за пределы
-                                if (currentPage.value >= totalPages) {
-                                    currentPage.value = totalPages - 1;
-                                }
+                            // защита от выхода за пределы
+                            if (currentPage.value >= totalPages) {
+                                currentPage.value = totalPages - 1;
+                            }
 
-                                // 2. Берем текст текущей страницы
-                                const currentPageText = rawPages[currentPage.value] ?? rawPages[0];
+                            // 2. Берем текст текущей страницы
+                            const currentPageText = rawPages[currentPage.value] ?? rawPages[0];
 
-                                // 3. Делим текущую страницу на абзацы (пустая строка = новый абзац)
-                                const paragraphs = currentPageText
-                                    .split(/\n\s*\n/)
-                                    .map((p) => p.trim())
-                                    .filter((p) => p.length > 0);
+                            // 3. Делим текущую страницу на абзацы (пустая строка = новый абзац)
+                            const paragraphs = currentPageText
+                                .split(/\n\s*\n/)
+                                .map((p) => p.trim())
+                                .filter((p) => p.length > 0);
 
-                                return (
-                                    <>
-                                        {paragraphs.map((para, idx) => (
-                                            <p class="reader-paragraph" key={idx}>
-                                                {para}
-                                            </p>
-                                        ))}
+                            return (
+                                <>
+                                    {paragraphs.map((para, idx) => (
+                                        <p class="reader-paragraph" key={idx}>
+                                            {para}
+                                        </p>
+                                    ))}
 
-                                        <div class="reader-page__nav">
-                                            <button
-                                                type="button"
-                                                class="reader-nav-btn"
-                                                disabled={
-                                                    currentChapterIndex.value === 0 &&
-                                                    currentPage.value === 0
+                                    <div class="reader-page__nav">
+                                        <button
+                                            type="button"
+                                            class="reader-nav-btn"
+                                            disabled={
+                                                currentChapterIndex.value === 0 &&
+                                                currentPage.value === 0
+                                            }
+                                            onClick$={() => {
+                                                const STORAGE_KEY = 'maxim-book-progress';
+
+                                                if (currentPage.value > 0) {
+                                                    // просто страница назад в этой главе
+                                                    currentPage.value = currentPage.value - 1;
+                                                } else if (currentChapterIndex.value > 0) {
+                                                    // переход на предыдущую главу, с первой страницы
+                                                    currentChapterIndex.value =
+                                                        currentChapterIndex.value - 1;
+                                                    currentPage.value = 0;
                                                 }
-                                                onClick$={() => {
-                                                    const STORAGE_KEY = 'maxim-book-progress';
 
-                                                    if (currentPage.value > 0) {
-                                                        // просто страница назад в этой главе
-                                                        currentPage.value = currentPage.value - 1;
-                                                    } else if (currentChapterIndex.value > 0) {
-                                                        // переход на предыдущую главу, с первой страницы
-                                                        currentChapterIndex.value =
-                                                            currentChapterIndex.value - 1;
-                                                        currentPage.value = 0;
-                                                    }
+                                                window.scrollTo({ top: 0 });
+                                                localStorage.setItem(
+                                                    STORAGE_KEY,
+                                                    JSON.stringify({
+                                                        chapterIndex: currentChapterIndex.value,
+                                                        pageIndex: currentPage.value,
+                                                        theme: theme.value,
+                                                        fontScale: fontScale.value,
+                                                    }),
+                                                );
+                                            }}
+                                        >
+                                            ←
+                                        </button>
 
-                                                    window.scrollTo({ top: 0 });
-                                                    localStorage.setItem(
-                                                        STORAGE_KEY,
-                                                        JSON.stringify({
-                                                            chapterIndex: currentChapterIndex.value,
-                                                            pageIndex: currentPage.value,
-                                                            theme: theme.value,
-                                                            fontScale: fontScale.value,
-                                                        }),
-                                                    );
-                                                }}
-                                            >
-                                                ←
-                                            </button>
+                                        <span class="reader-page__counter">
+                                            {currentPage.value + 1} из {totalPages}
+                                        </span>
 
-                                            <span class="reader-page__counter">
-                                                {currentPage.value + 1} из {totalPages}
-                                            </span>
+                                        <button
+                                            type="button"
+                                            class="reader-nav-btn"
+                                            disabled={
+                                                currentPage.value === totalPages - 1 &&
+                                                currentChapterIndex.value === chapters.length - 1
+                                            }
+                                            onClick$={() => {
+                                                const STORAGE_KEY = 'maxim-book-progress';
 
-                                            <button
-                                                type="button"
-                                                class="reader-nav-btn"
-                                                disabled={
-                                                    currentPage.value === totalPages - 1 &&
-                                                    currentChapterIndex.value === chapters.length - 1
+                                                if (currentPage.value < totalPages - 1) {
+                                                    // вперед по страницам текущей главы
+                                                    currentPage.value = currentPage.value + 1;
+                                                } else if (
+                                                    currentChapterIndex.value <
+                                                    chapters.length - 1
+                                                ) {
+                                                    // следующая глава, первая страница
+                                                    currentChapterIndex.value =
+                                                        currentChapterIndex.value + 1;
+                                                    currentPage.value = 0;
                                                 }
-                                                onClick$={() => {
-                                                    const STORAGE_KEY = 'maxim-book-progress';
 
-                                                    if (currentPage.value < totalPages - 1) {
-                                                        // вперед по страницам текущей главы
-                                                        currentPage.value = currentPage.value + 1;
-                                                    } else if (
-                                                        currentChapterIndex.value <
-                                                        chapters.length - 1
-                                                    ) {
-                                                        // следующая глава, первая страница
-                                                        currentChapterIndex.value =
-                                                            currentChapterIndex.value + 1;
-                                                        currentPage.value = 0;
-                                                    }
-
-                                                    window.scrollTo({ top: 0 });
-                                                    localStorage.setItem(
-                                                        STORAGE_KEY,
-                                                        JSON.stringify({
-                                                            chapterIndex: currentChapterIndex.value,
-                                                            pageIndex: currentPage.value,
-                                                            theme: theme.value,
-                                                            fontScale: fontScale.value,
-                                                        }),
-                                                    );
-                                                }}
-                                            >
-                                                →
-                                            </button>
-                                        </div>
-                                    </>
-                                );
-                            })()}
-                        </article>
+                                                window.scrollTo({ top: 0 });
+                                                localStorage.setItem(
+                                                    STORAGE_KEY,
+                                                    JSON.stringify({
+                                                        chapterIndex: currentChapterIndex.value,
+                                                        pageIndex: currentPage.value,
+                                                        theme: theme.value,
+                                                        fontScale: fontScale.value,
+                                                    }),
+                                                );
+                                            }}
+                                        >
+                                            →
+                                        </button>
+                                    </div>
+                                </>
+                            );
+                        })()}
+                    </article>
                 </div>
             </main>
         </div>
