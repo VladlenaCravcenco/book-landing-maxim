@@ -5303,7 +5303,7 @@ export default component$(() => {
                             );
                         }}
                     >
-                        {chapters.map((ch, index) => (
+                        {chapters.map((ch) => (
                             <option value={ch.id} key={ch.id}>
                                 {`${ch.title}`}
                             </option>
