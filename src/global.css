@@ -266,8 +266,16 @@ body {
     margin-bottom: 25px;
   }
 
+  .btn-3d{
+    width: 100%;
+    display: block;
+    margin-bottom: -10px;
+  }
+
   .btn--ghost {
-    padding: 24px 38px;
+    padding: 20px;
+    width: 100%;
+    display: block;
   }
 }
 
@@ -410,7 +418,7 @@ body {
     z-index: 2;
     text-align: center;
     max-width: 100%;
-    padding: 60px 10px;
+    padding: 20px 10px;
   }
 
   .hero-full__bg img {
@@ -420,6 +428,8 @@ body {
     filter: brightness(0.55) contrast(1.1);
     object-position: center 60%;
   }
+  
+ 
 }
 
 /* ---------------------------------------------------------- */
