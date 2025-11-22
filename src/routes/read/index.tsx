@@ -1,4 +1,4 @@
-import { component$, useSignal, useVisibleTask$ } from '@builder.io/qwik';
+import { component$, useSignal, useStore, useVisibleTask$ } from '@builder.io/qwik';
 import type { DocumentHead } from '@builder.io/qwik-city';
 
 type Chapter = {
@@ -5174,8 +5174,8 @@ export default component$(() => {
     const fontScale = useSignal(1); // 1 = базовый размер
     const currentChapterIndex = useSignal(0);
     const progress = useSignal(0);
-    const currentPage = useSignal(0);
     const isMenuOpen = useSignal(false);
+    const scrollPosition = useSignal(0);
 
     // Восстанавливаем позицию + сохраняем прогресс при скролле
     useVisibleTask$(() => {
@@ -5187,7 +5187,6 @@ export default component$(() => {
             try {
                 const parsed = JSON.parse(stored) as {
                     chapterIndex?: number;
-                    pageIndex?: number;
                     scrollY?: number;
                     theme?: 'dark' | 'light';
                     fontScale?: number;
@@ -5195,10 +5194,6 @@ export default component$(() => {
 
                 if (typeof parsed.chapterIndex === 'number') {
                     currentChapterIndex.value = parsed.chapterIndex;
-                }
-
-                if (typeof parsed.pageIndex === 'number') {
-                    currentPage.value = parsed.pageIndex;
                 }
 
                 if (typeof parsed.theme === 'string') {
@@ -5223,6 +5218,7 @@ export default component$(() => {
             const doc = document.documentElement;
             const max = doc.scrollHeight - window.innerHeight;
             progress.value = max > 0 ? (window.scrollY / max) * 100 : 0;
+            scrollPosition.value = window.scrollY;
 
             localStorage.setItem(
                 STORAGE_KEY,
@@ -5247,6 +5243,7 @@ export default component$(() => {
 
         window.addEventListener('scroll', onScroll);
         document.addEventListener('keydown', onKeyDown);
+        scrollPosition.value = window.scrollY;
 
         return () => {
             window.removeEventListener('scroll', onScroll);
@@ -5254,8 +5251,174 @@ export default component$(() => {
         };
     });
 
-    const chapter = chapters[currentChapterIndex.value];
 
+
+    // ------------------------- state & utils -------------------------
+    const BOOKMARK_KEY =
+        typeof location !== 'undefined'
+            ? `bookmarks:${location.pathname}`
+            : 'bookmarks:/read';
+
+    type Bookmark = {
+        id: string;
+        y: number;          // абсолютный Y на странице
+        anchorId?: string;  // ближайший параграф для привязки
+        note?: string;      // опциональная заметка
+        createdAt: number;
+    };
+
+    const bookmarksStore = useStore<{ items: Bookmark[] }>({ items: [] });
+    const dragging = useSignal<{ id: string | null; offsetY: number } | null>(null);
+
+    // helper: gen id
+    const uid = () =>
+        Math.random().toString(36).slice(2, 9);
+
+    // найти все параграфы (рендерятся как .reader-paragraph)
+    const getParagraphs = () => Array.from(document.querySelectorAll<HTMLElement>('.reader-paragraph'));
+
+    // snap: найти ближайший параграф и вернуть его id и top
+    function findNearestParagraph(y: number) {
+        const paras = getParagraphs();
+        if (!paras.length) return null;
+        let best = paras[0];
+        let bestDist = Math.abs(paras[0].getBoundingClientRect().top + window.scrollY - y);
+        for (const p of paras) {
+            const top = p.getBoundingClientRect().top + window.scrollY;
+            const d = Math.abs(top - y);
+            if (d < bestDist) {
+                bestDist = d;
+                best = p;
+            }
+        }
+        return {
+            para: best,
+            top: best.getBoundingClientRect().top + window.scrollY,
+            id: (best.dataset.id ?? best.id) || null,
+        };
+    }
+
+    // save/load
+    function saveBookmarks() {
+        try {
+            localStorage.setItem(BOOKMARK_KEY, JSON.stringify(bookmarksStore.items));
+        } catch (e) { console.warn("Bookmark save error:", e);}
+    }
+    function loadBookmarks() {
+        try {
+            const raw = localStorage.getItem(BOOKMARK_KEY);
+            if (raw) bookmarksStore.items = JSON.parse(raw);
+        } catch (e) { console.warn("Bookmark save error:", e);}
+    }
+
+    // ------------------------- lifecycle (выполняется на клиенте) -------------------------
+    useVisibleTask$(() => {
+        // load on mount
+        loadBookmarks();
+
+        // сохранять перед выгрузкой
+        const saveNow = () => saveBookmarks();
+        window.addEventListener('pagehide', saveNow);
+        window.addEventListener('beforeunload', saveNow);
+
+        return () => {
+            window.removeEventListener('pagehide', saveNow);
+            window.removeEventListener('beforeunload', saveNow);
+        };
+    });
+
+    // ------------------------- actions: add, remove, goTo -------------------------
+    function addBookmarkAtViewportCenter(note?: string) {
+        const y = window.scrollY + window.innerHeight / 2;
+        const id = uid();
+        bookmarksStore.items.push({
+            id,
+            y,
+            anchorId: findNearestParagraph(y)?.id || undefined,
+            note: note?.trim() || '',
+            createdAt: Date.now(),
+        });
+        saveBookmarks();
+    }
+
+    function goToBookmark(bm: Bookmark) {
+        if (bm.anchorId) {
+            const el = document.querySelector<HTMLElement>(`[data-id="${bm.anchorId}"]`);
+            if (el) {
+                el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                return;
+            }
+        }
+        window.scrollTo({ top: bm.y, behavior: 'smooth' });
+    }
+
+    function removeBookmark(id: string) {
+        bookmarksStore.items = bookmarksStore.items.filter((b) => b.id !== id);
+        saveBookmarks();
+    }
+
+    // ------------------------- drag logic -------------------------
+    function onBookmarkPointerDown(e: PointerEvent, id: string) {
+        const target = e.target as HTMLElement;
+        (target as HTMLElement).setPointerCapture(e.pointerId);
+        // track offset between pointer and top of element (we'll compute inline when rendering)
+        const bmEl = document.getElementById(`bm-${id}`) as HTMLElement | null;
+        const rect = bmEl?.getBoundingClientRect();
+        const offsetY = rect ? e.clientY - rect.top : 0;
+        dragging.value = { id, offsetY };
+    }
+
+    function onDocumentPointerMove(e: PointerEvent) {
+        if (!dragging.value) return;
+        const id = dragging.value.id!;
+        const yViewport = e.clientY;
+        // show visual follow by setting inline style on element
+        const bmEl = document.getElementById(`bm-${id}`) as HTMLElement | null;
+        if (bmEl) {
+            bmEl.style.position = 'fixed';
+            bmEl.style.left = `calc(100% - 56px)`; // keep on right side
+            bmEl.style.top = `${yViewport - dragging.value.offsetY}px`;
+        }
+    }
+
+    function onDocumentPointerUp(e: PointerEvent) {
+        if (!dragging.value) return;
+        const id = dragging.value.id!;
+        // compute absolute y = pageY (clientY + scrollY)
+        const pageY = e.clientY + window.scrollY - dragging.value.offsetY;
+        const nearest = findNearestParagraph(pageY);
+        if (nearest) {
+            // snap bookmark data to that paragraph
+            const bm = bookmarksStore.items.find((b) => b.id === id);
+            if (bm) {
+                bm.anchorId = nearest.id || bm.anchorId;
+                bm.y = pageY;
+                saveBookmarks();
+            }
+        }
+        // cleanup dragging visuals: remove inline position, it will be re-rendered by top
+        const bmEl = document.getElementById(`bm-${id}`) as HTMLElement | null;
+        if (bmEl) {
+            bmEl.style.position = '';
+            bmEl.style.left = '';
+            bmEl.style.top = '';
+        }
+        dragging.value = null;
+    }
+
+    // attach global pointer listeners while dragging
+    useVisibleTask$(() => {
+        const onMove = (e: PointerEvent) => onDocumentPointerMove(e);
+        const onUp = (e: PointerEvent) => onDocumentPointerUp(e);
+
+        window.addEventListener('pointermove', onMove);
+        window.addEventListener('pointerup', onUp);
+
+        return () => {
+            window.removeEventListener('pointermove', onMove);
+            window.removeEventListener('pointerup', onUp);
+        };
+    });
 
     return (
         <div class={['reader-root', `reader-root--${theme.value}`].join(' ')}>
@@ -5287,16 +5450,19 @@ export default component$(() => {
                             if (idx === -1) return;
 
                             currentChapterIndex.value = idx;
-                            currentPage.value = 0; // ← важный момент
 
-                            window.scrollTo({ top: 0 });
+                            const anchor = document.getElementById(`chapter-${select.value}`);
+                            if (anchor) {
+                                anchor.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                            } else {
+                                window.scrollTo({ top: 0 });
+                            }
 
                             const STORAGE_KEY = 'maxim-book-progress';
                             localStorage.setItem(
                                 STORAGE_KEY,
                                 JSON.stringify({
                                     chapterIndex: currentChapterIndex.value,
-                                    pageIndex: currentPage.value,
                                     theme: theme.value,
                                     fontScale: fontScale.value,
                                 }),
@@ -5309,6 +5475,15 @@ export default component$(() => {
                             </option>
                         ))}
                     </select>
+
+                    <div class="reader-header__right">
+                        {/* старые кнопки остаются для десктопа */}
+                        <button class="reader-icon-btn" onClick$={() => addBookmarkAtViewportCenter()}>
+                            + Закладка
+                        </button>
+                    </div>
+
+
                 </div>
 
                 <div class="reader-header__left">
@@ -5337,7 +5512,7 @@ export default component$(() => {
                         A+
                     </button>
 
-                    
+
                 </div>
 
                 {/* --- КНОПКА "3 ТОЧКИ" ДЛЯ MOBILE --- */}
@@ -5383,127 +5558,57 @@ export default component$(() => {
 
             {/* Рамка и контент */}
             <main class="reader-frame">
+                <div aria-hidden="true" class="bookmarks-layer">
+                    {bookmarksStore.items.map((bm) => (
+                        <div
+                            id={`bm-${bm.id}`}
+                            key={bm.id}
+                            class="bookmark"
+                            style={{ top: `${bm.y - scrollPosition.value}px` }} // position fixed: top relative viewport
+                            onPointerDown$={(e: any) => onBookmarkPointerDown(e as PointerEvent, bm.id)}
+                            onClick$={() => goToBookmark(bm)}
+                            title={bm.note || 'Перейти к месту / перетащите, чтобы переместить'}
+                        >
+                            <span role="img" aria-label="Закладка">🔖</span>
+                            <button class="bookmark-remove" onClick$={(e) => { e.stopPropagation(); removeBookmark(bm.id); }}>
+                                ×
+                            </button>
+                        </div>
+                    ))}
+                </div>
                 <div class="reader-frame__inner">
                     <article
                         class="reader-page"
                         style={{ fontSize: `${fontScale.value}rem` }}
                     >
-                        <h2 class="reader-chapter-title">
-                            {chapter.title}
-                        </h2>
-
-                        {(() => {
-                            // 1. Разбиваем главу на страницы по маркеру ---page---
-                            const rawPages = chapter.content
-                                .split('---page---')
-                                .map((p) => p.trim())
-                                .filter((p) => p.length > 0);
-
-                            const totalPages = Math.max(1, rawPages.length);
-
-                            // защита от выхода за пределы
-                            if (currentPage.value >= totalPages) {
-                                currentPage.value = totalPages - 1;
-                            }
-
-                            // 2. Берем текст текущей страницы
-                            const currentPageText = rawPages[currentPage.value] ?? rawPages[0];
-
-                            // 3. Делим текущую страницу на абзацы (пустая строка = новый абзац)
-                            const paragraphs = currentPageText
+                        {chapters.map((ch) => {
+                            const paragraphs = ch.content
+                                .replace(/---page---/g, '\n')
                                 .split(/\n\s*\n/)
                                 .map((p) => p.trim())
                                 .filter((p) => p.length > 0);
 
                             return (
-                                <>
-                                    {paragraphs.map((para, idx) => (
-                                        <p class="reader-paragraph" key={idx}>
-                                            {para}
-                                        </p>
-                                    ))}
+                                <section class="reader-chapter" id={`chapter-${ch.id}`} key={ch.id}>
+                                    <h2 class="reader-chapter-title">
+                                        {ch.title}
+                                    </h2>
 
-                                    <div class="reader-page__nav">
-                                        <button
-                                            type="button"
-                                            class="reader-nav-btn"
-                                            disabled={
-                                                currentChapterIndex.value === 0 &&
-                                                currentPage.value === 0
-                                            }
-                                            onClick$={() => {
-                                                const STORAGE_KEY = 'maxim-book-progress';
-
-                                                if (currentPage.value > 0) {
-                                                    // просто страница назад в этой главе
-                                                    currentPage.value = currentPage.value - 1;
-                                                } else if (currentChapterIndex.value > 0) {
-                                                    // переход на предыдущую главу, с первой страницы
-                                                    currentChapterIndex.value =
-                                                        currentChapterIndex.value - 1;
-                                                    currentPage.value = 0;
-                                                }
-
-                                                window.scrollTo({ top: 0 });
-                                                localStorage.setItem(
-                                                    STORAGE_KEY,
-                                                    JSON.stringify({
-                                                        chapterIndex: currentChapterIndex.value,
-                                                        pageIndex: currentPage.value,
-                                                        theme: theme.value,
-                                                        fontScale: fontScale.value,
-                                                    }),
-                                                );
-                                            }}
-                                        >
-                                            ←
-                                        </button>
-
-                                        <span class="reader-page__counter">
-                                            {currentPage.value + 1} из {totalPages}
-                                        </span>
-
-                                        <button
-                                            type="button"
-                                            class="reader-nav-btn"
-                                            disabled={
-                                                currentPage.value === totalPages - 1 &&
-                                                currentChapterIndex.value === chapters.length - 1
-                                            }
-                                            onClick$={() => {
-                                                const STORAGE_KEY = 'maxim-book-progress';
-
-                                                if (currentPage.value < totalPages - 1) {
-                                                    // вперед по страницам текущей главы
-                                                    currentPage.value = currentPage.value + 1;
-                                                } else if (
-                                                    currentChapterIndex.value <
-                                                    chapters.length - 1
-                                                ) {
-                                                    // следующая глава, первая страница
-                                                    currentChapterIndex.value =
-                                                        currentChapterIndex.value + 1;
-                                                    currentPage.value = 0;
-                                                }
-
-                                                window.scrollTo({ top: 0 });
-                                                localStorage.setItem(
-                                                    STORAGE_KEY,
-                                                    JSON.stringify({
-                                                        chapterIndex: currentChapterIndex.value,
-                                                        pageIndex: currentPage.value,
-                                                        theme: theme.value,
-                                                        fontScale: fontScale.value,
-                                                    }),
-                                                );
-                                            }}
-                                        >
-                                            →
-                                        </button>
-                                    </div>
-                                </>
+                                    {paragraphs.map((para, idx) => {
+                                        const paraId = `p-${ch.id}-${idx}`;
+                                        return (
+                                            <p
+                                                class="reader-paragraph"
+                                                data-id={paraId}
+                                                key={paraId}
+                                            >
+                                                {para}
+                                            </p>
+                                        );
+                                    })}
+                                </section>
                             );
-                        })()}
+                        })}
                     </article>
                 </div>
             </main>

@@ -79,13 +79,15 @@ export default component$(() => {
               </h3>
               <div class="btn-flex">
                 <a href="https://carturesti.md/carte/236634017" class="btn btn--ghost">
-                  Сarturesti
+                  <img src="/images/carturesti-logo.png" alt="Carturesti" />
                 </a>
+
                 <a href="https://www.bestseller.md/kniga-pozvoni-mne-maxim-leanca.html" class="btn btn--ghost">
-                  Bestseller
+                  <img src="/images/bestseller-logo.png" alt="Bestseller" />
                 </a>
+
                 <a href="https://bookstore.md/ru/catalog/1057/801505/" class="btn btn--ghost">
-                  Bookstore
+                  <img src="/images/bookstore-logo.png" alt="Bookstore" />
                 </a>
               </div>
 
