@@ -1,4 +1,4 @@
-import { component$, useSignal, useStore, useVisibleTask$ } from '@builder.io/qwik';
+import { $, component$, useSignal, useStore, useVisibleTask$ } from '@builder.io/qwik';
 import type { DocumentHead } from '@builder.io/qwik-city';
 
 type Chapter = {
@@ -5270,54 +5270,22 @@ export default component$(() => {
     const bookmarksStore = useStore<{ items: Bookmark[] }>({ items: [] });
     const dragging = useSignal<{ id: string | null; offsetY: number } | null>(null);
 
-    // helper: gen id
-    const uid = () =>
-        Math.random().toString(36).slice(2, 9);
-
-    // найти все параграфы (рендерятся как .reader-paragraph)
-    const getParagraphs = () => Array.from(document.querySelectorAll<HTMLElement>('.reader-paragraph'));
-
-    // snap: найти ближайший параграф и вернуть его id и top
-    function findNearestParagraph(y: number) {
-        const paras = getParagraphs();
-        if (!paras.length) return null;
-        let best = paras[0];
-        let bestDist = Math.abs(paras[0].getBoundingClientRect().top + window.scrollY - y);
-        for (const p of paras) {
-            const top = p.getBoundingClientRect().top + window.scrollY;
-            const d = Math.abs(top - y);
-            if (d < bestDist) {
-                bestDist = d;
-                best = p;
-            }
-        }
-        return {
-            para: best,
-            top: best.getBoundingClientRect().top + window.scrollY,
-            id: (best.dataset.id ?? best.id) || null,
-        };
-    }
-
-    // save/load
-    function saveBookmarks() {
-        try {
-            localStorage.setItem(BOOKMARK_KEY, JSON.stringify(bookmarksStore.items));
-        } catch (e) { console.warn("Bookmark save error:", e);}
-    }
-    function loadBookmarks() {
-        try {
-            const raw = localStorage.getItem(BOOKMARK_KEY);
-            if (raw) bookmarksStore.items = JSON.parse(raw);
-        } catch (e) { console.warn("Bookmark save error:", e);}
-    }
+    
 
     // ------------------------- lifecycle (выполняется на клиенте) -------------------------
     useVisibleTask$(() => {
         // load on mount
-        loadBookmarks();
+        try {
+            const raw = localStorage.getItem(BOOKMARK_KEY);
+            if (raw) bookmarksStore.items = JSON.parse(raw);
+        } catch (e) { console.warn("Bookmark save error:", e);}
 
         // сохранять перед выгрузкой
-        const saveNow = () => saveBookmarks();
+        const saveNow = () => {
+            try {
+                localStorage.setItem(BOOKMARK_KEY, JSON.stringify(bookmarksStore.items));
+            } catch (e) { console.warn("Bookmark save error:", e);}
+        };
         window.addEventListener('pagehide', saveNow);
         window.addEventListener('beforeunload', saveNow);
 
@@ -5328,20 +5296,37 @@ export default component$(() => {
     });
 
     // ------------------------- actions: add, remove, goTo -------------------------
-    function addBookmarkAtViewportCenter(note?: string) {
+    const addBookmarkAtViewportCenter = $((note?: string) => {
         const y = window.scrollY + window.innerHeight / 2;
-        const id = uid();
+        const paras = Array.from(document.querySelectorAll<HTMLElement>('.reader-paragraph'));
+        let nearestId: string | undefined;
+        if (paras.length) {
+            let best = paras[0];
+            let bestDist = Math.abs(best.getBoundingClientRect().top + window.scrollY - y);
+            for (const p of paras) {
+                const top = p.getBoundingClientRect().top + window.scrollY;
+                const d = Math.abs(top - y);
+                if (d < bestDist) {
+                    bestDist = d;
+                    best = p;
+                }
+            }
+            nearestId = (best.dataset.id ?? best.id) || undefined;
+        }
+        const id = Math.random().toString(36).slice(2, 9);
         bookmarksStore.items.push({
             id,
             y,
-            anchorId: findNearestParagraph(y)?.id || undefined,
+            anchorId: nearestId,
             note: note?.trim() || '',
             createdAt: Date.now(),
         });
-        saveBookmarks();
-    }
+        try {
+            localStorage.setItem(BOOKMARK_KEY, JSON.stringify(bookmarksStore.items));
+        } catch (e) { console.warn("Bookmark save error:", e);}
+    });
 
-    function goToBookmark(bm: Bookmark) {
+    const goToBookmark = $((bm: Bookmark) => {
         if (bm.anchorId) {
             const el = document.querySelector<HTMLElement>(`[data-id="${bm.anchorId}"]`);
             if (el) {
@@ -5350,15 +5335,17 @@ export default component$(() => {
             }
         }
         window.scrollTo({ top: bm.y, behavior: 'smooth' });
-    }
+    });
 
-    function removeBookmark(id: string) {
+    const removeBookmark = $((id: string) => {
         bookmarksStore.items = bookmarksStore.items.filter((b) => b.id !== id);
-        saveBookmarks();
-    }
+        try {
+            localStorage.setItem(BOOKMARK_KEY, JSON.stringify(bookmarksStore.items));
+        } catch (e) { console.warn("Bookmark save error:", e);}
+    });
 
     // ------------------------- drag logic -------------------------
-    function onBookmarkPointerDown(e: PointerEvent, id: string) {
+    const onBookmarkPointerDown = $((e: PointerEvent, id: string) => {
         const target = e.target as HTMLElement;
         (target as HTMLElement).setPointerCapture(e.pointerId);
         // track offset between pointer and top of element (we'll compute inline when rendering)
@@ -5366,50 +5353,59 @@ export default component$(() => {
         const rect = bmEl?.getBoundingClientRect();
         const offsetY = rect ? e.clientY - rect.top : 0;
         dragging.value = { id, offsetY };
-    }
-
-    function onDocumentPointerMove(e: PointerEvent) {
-        if (!dragging.value) return;
-        const id = dragging.value.id!;
-        const yViewport = e.clientY;
-        // show visual follow by setting inline style on element
-        const bmEl = document.getElementById(`bm-${id}`) as HTMLElement | null;
-        if (bmEl) {
-            bmEl.style.position = 'fixed';
-            bmEl.style.left = `calc(100% - 56px)`; // keep on right side
-            bmEl.style.top = `${yViewport - dragging.value.offsetY}px`;
-        }
-    }
-
-    function onDocumentPointerUp(e: PointerEvent) {
-        if (!dragging.value) return;
-        const id = dragging.value.id!;
-        // compute absolute y = pageY (clientY + scrollY)
-        const pageY = e.clientY + window.scrollY - dragging.value.offsetY;
-        const nearest = findNearestParagraph(pageY);
-        if (nearest) {
-            // snap bookmark data to that paragraph
-            const bm = bookmarksStore.items.find((b) => b.id === id);
-            if (bm) {
-                bm.anchorId = nearest.id || bm.anchorId;
-                bm.y = pageY;
-                saveBookmarks();
-            }
-        }
-        // cleanup dragging visuals: remove inline position, it will be re-rendered by top
-        const bmEl = document.getElementById(`bm-${id}`) as HTMLElement | null;
-        if (bmEl) {
-            bmEl.style.position = '';
-            bmEl.style.left = '';
-            bmEl.style.top = '';
-        }
-        dragging.value = null;
-    }
+    });
 
     // attach global pointer listeners while dragging
     useVisibleTask$(() => {
-        const onMove = (e: PointerEvent) => onDocumentPointerMove(e);
-        const onUp = (e: PointerEvent) => onDocumentPointerUp(e);
+        const onMove = (e: PointerEvent) => {
+            if (!dragging.value) return;
+            const id = dragging.value.id!;
+            const yViewport = e.clientY;
+            const bmEl = document.getElementById(`bm-${id}`) as HTMLElement | null;
+            if (bmEl) {
+                bmEl.style.position = 'fixed';
+                bmEl.style.left = `calc(100% - 56px)`;
+                bmEl.style.top = `${yViewport - dragging.value.offsetY}px`;
+            }
+        };
+
+        const onUp = (e: PointerEvent) => {
+            if (!dragging.value) return;
+            const id = dragging.value.id!;
+            const pageY = e.clientY + window.scrollY - dragging.value.offsetY;
+            const paras = Array.from(document.querySelectorAll<HTMLElement>('.reader-paragraph'));
+            let nearestId: string | undefined;
+            if (paras.length) {
+                let best = paras[0];
+                let bestDist = Math.abs(best.getBoundingClientRect().top + window.scrollY - pageY);
+                for (const p of paras) {
+                    const top = p.getBoundingClientRect().top + window.scrollY;
+                    const d = Math.abs(top - pageY);
+                    if (d < bestDist) {
+                        bestDist = d;
+                        best = p;
+                    }
+                }
+                nearestId = (best.dataset.id ?? best.id) || undefined;
+            }
+            if (nearestId) {
+                const bm = bookmarksStore.items.find((b) => b.id === id);
+                if (bm) {
+                    bm.anchorId = nearestId || bm.anchorId;
+                    bm.y = pageY;
+                    try {
+                        localStorage.setItem(BOOKMARK_KEY, JSON.stringify(bookmarksStore.items));
+                    } catch (err) { console.warn("Bookmark save error:", err);}
+                }
+            }
+            const bmEl = document.getElementById(`bm-${id}`) as HTMLElement | null;
+            if (bmEl) {
+                bmEl.style.position = '';
+                bmEl.style.left = '';
+                bmEl.style.top = '';
+            }
+            dragging.value = null;
+        };
 
         window.addEventListener('pointermove', onMove);
         window.addEventListener('pointerup', onUp);
