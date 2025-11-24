@@ -5169,261 +5169,319 @@ cюда в каждый день. У меня ребёнок, от Ивана к
     },
 ];
 
-export default component$(() => {
-  const theme = useSignal<'dark' | 'light'>('dark');
-  const fontScale = useSignal(1); // 1 = базовый размер
-  const currentChapterIndex = useSignal(0);
-  const progress = useSignal(0);
-  const isMenuOpen = useSignal(false);
-  const scrollPosition = useSignal(0); // можно оставить, если где-то используешь для прогресса/анимаций
+// Нормализация текста главы:
+// 1) убираем переносы слов "сига-\nрету" -> "сигарету"
+// 2) объединяем строки в абзацы
+// 3) диалоги (строки, начинающиеся с "—") оставляем отдельными абзацами
+function normalizeChapterText(raw: string): string {
+  // приведение переносов и маркеров страниц
+  let text = raw
+    .replace(/\r\n/g, '\n')
+    .replace(/---page---/g, '\n\n'); // твой маркер страницы превращаем в пустую строку (новый абзац)
 
-  // ================== ВОССТАНОВЛЕНИЕ ПОЗИЦИИ И СОХРАНЕНИЕ ПРОГРЕССА ==================
-  useVisibleTask$(() => {
-    const STORAGE_KEY = 'maxim-book-progress';
+  // склейка переносов слов: "сло-\nво" → "слово"
+  text = text.replace(
+    /([A-Za-zА-Яа-яЁё])-\n(?=[A-Za-zА-Яа-яЁё])/g,
+    '$1'
+  );
 
-    // ----- восстановление -----
-    const stored = localStorage.getItem(STORAGE_KEY);
-    if (stored) {
-      try {
-        const parsed = JSON.parse(stored) as {
-          chapterIndex?: number;
-          scrollY?: number;
-          theme?: 'dark' | 'light';
-          fontScale?: number;
-        };
+  const lines = text.split('\n');
 
-        if (typeof parsed.chapterIndex === 'number') {
-          currentChapterIndex.value = parsed.chapterIndex;
-        }
-        if (typeof parsed.theme === 'string') {
-          theme.value = parsed.theme;
-        }
-        if (typeof parsed.fontScale === 'number') {
-          fontScale.value = parsed.fontScale;
-        }
+  const paragraphs: string[] = [];
+  let buf: string[] = [];
 
-        requestAnimationFrame(() => {
-          if (typeof parsed.scrollY === 'number') {
-            window.scrollTo(0, parsed.scrollY);
-          } else {
-            window.scrollTo(0, 0);
-          }
-        });
-      } catch {
-        // ignore
-      }
+  const pushBuf = () => {
+    if (!buf.length) return;
+    const para = buf.join(' ')
+      .replace(/\s+/g, ' ')
+      .trim();
+    if (para.length) paragraphs.push(para);
+    buf = [];
+  };
+
+  for (const rawLine of lines) {
+    const line = rawLine.trim();
+
+    // пустая строка — просто конец абзаца
+    if (!line) {
+      pushBuf();
+      continue;
     }
 
-    // ----- сохранение при скролле -----
-    const onScroll = () => {
-      const doc = document.documentElement;
-      const max = doc.scrollHeight - window.innerHeight;
-      progress.value = max > 0 ? (window.scrollY / max) * 100 : 0;
-      scrollPosition.value = window.scrollY;
+    // строка начинается с "—" и в буфере уже есть текст —
+    // считаем, что это новая реплика диалога => новый абзац
+    if (line.startsWith('—') && buf.length) {
+      pushBuf();
+      buf.push(line);
+    } else {
+      buf.push(line);
+    }
+  }
 
-      localStorage.setItem(
-        STORAGE_KEY,
-        JSON.stringify({
-          chapterIndex: currentChapterIndex.value,
-          scrollY: window.scrollY,
-          theme: theme.value,
-          fontScale: fontScale.value,
-        }),
-      );
-    };
+  pushBuf();
 
-    // лёгкая защита от копирования / печати (можешь убрать, если захочешь)
-    const onKeyDown = (e: KeyboardEvent) => {
-      if (
-        (e.metaKey || e.ctrlKey) &&
-        (e.key === 'c' || e.key === 's' || e.key === 'p')
-      ) {
-        e.preventDefault();
-      }
-    };
+  // итог: абзацы разделены двумя переводами строки
+  return paragraphs.join('\n\n');
+}
 
-    window.addEventListener('scroll', onScroll);
-    document.addEventListener('keydown', onKeyDown);
-    scrollPosition.value = window.scrollY;
+export default component$(() => {
+    const theme = useSignal<'dark' | 'light'>('dark');
+    const fontScale = useSignal(1); // 1 = базовый размер
+    const currentChapterIndex = useSignal(0);
+    const progress = useSignal(0);
+    const isMenuOpen = useSignal(false);
+    const scrollPosition = useSignal(0); // можно оставить, если где-то используешь для прогресса/анимаций
 
-    return () => {
-      window.removeEventListener('scroll', onScroll);
-      document.removeEventListener('keydown', onKeyDown);
-    };
-  });
+    // ================== ВОССТАНОВЛЕНИЕ ПОЗИЦИИ И СОХРАНЕНИЕ ПРОГРЕССА ==================
+    useVisibleTask$(() => {
+        const STORAGE_KEY = 'maxim-book-progress';
 
-  // ================== РЕНДЕР ==================
-  return (
-    <div class={['reader-root', `reader-root--${theme.value}`].join(' ')}>
-      {/* Прогресс-бар */}
-      <div class="reader-progress">
-        <div
-          class="reader-progress__bar"
-          style={{ width: `${progress.value}%` }}
-        />
-      </div>
+        // Находим наш скроллящийся контейнер
+        const container = document.querySelector<HTMLElement>('.reader-frame__inner');
+        if (!container) return;
 
-      {/* Хэдер */}
-      <header class="reader-header">
-        {/* Левая часть: инфа о книге */}
-        <div class="reader-header__left">
-          <div class="reader-book-meta">
-            <div class="reader-book-title">
-              Позвони мне, я свой номер не менял
-            </div>
-            <div class="reader-book-author">Максим Лянка</div>
-          </div>
-        </div>
+        // ----- восстановление -----
+        const stored = localStorage.getItem(STORAGE_KEY);
+        if (stored) {
+            try {
+                const parsed = JSON.parse(stored) as {
+                    chapterIndex?: number;
+                    scrollY?: number;
+                    theme?: 'dark' | 'light';
+                    fontScale?: number;
+                };
 
-        {/* Центр: выбор главы */}
-        <div class="reader-header__center">
-          <select
-            value={chapters[currentChapterIndex.value].id}
-            onChange$={(e) => {
-              const select = e.target as HTMLSelectElement;
-              const idx = chapters.findIndex((ch) => ch.id === select.value);
-              if (idx === -1) return;
+                if (typeof parsed.chapterIndex === 'number') {
+                    currentChapterIndex.value = parsed.chapterIndex;
+                }
+                if (typeof parsed.theme === 'string') {
+                    theme.value = parsed.theme;
+                }
+                if (typeof parsed.fontScale === 'number') {
+                    fontScale.value = parsed.fontScale;
+                }
 
-              currentChapterIndex.value = idx;
+                // Восстанавливаем именно scrollTop контейнера
+                requestAnimationFrame(() => {
+                    if (typeof parsed.scrollY === 'number') {
+                        container.scrollTo({ top: parsed.scrollY });
+                    } else {
+                        container.scrollTo({ top: 0 });
+                    }
+                });
+            } catch {
+                // ignore
+            }
+        }
 
-              const anchor = document.getElementById(`chapter-${select.value}`);
-              if (anchor) {
-                anchor.scrollIntoView({ behavior: 'smooth', block: 'start' });
-              } else {
-                window.scrollTo({ top: 0 });
-              }
+        // --- сохранение при скролле именно контейнера ---
+        const onScroll = () => {
+            const max = container.scrollHeight - container.clientHeight;
+            const y = container.scrollTop;
 
-              const STORAGE_KEY = 'maxim-book-progress';
-              localStorage.setItem(
+            progress.value = max > 0 ? (y / max) * 100 : 0;
+
+            localStorage.setItem(
                 STORAGE_KEY,
                 JSON.stringify({
-                  chapterIndex: currentChapterIndex.value,
-                  theme: theme.value,
-                  fontScale: fontScale.value,
+                    chapterIndex: currentChapterIndex.value,
+                    scrollY: y,
+                    theme: theme.value,
+                    fontScale: fontScale.value,
                 }),
-              );
-            }}
-          >
-            {chapters.map((ch) => (
-              <option value={ch.id} key={ch.id}>
-                {ch.title}
-              </option>
-            ))}
-          </select>
-        </div>
+            );
+        };
 
-        {/* Правая часть: шрифт + бургер */}
-        <div class="reader-header__right">
-          {/* Размер шрифта для десктопа */}
-          <button
-            type="button"
-            class="reader-icon-btn"
-            onClick$={() => {
-              fontScale.value = Math.max(0.9, fontScale.value - 0.1);
-            }}
-          >
-            A–
-          </button>
-          <button
-            type="button"
-            class="reader-icon-btn"
-            onClick$={() => {
-              fontScale.value = Math.min(1.4, fontScale.value + 0.1);
-            }}
-          >
-            A+
-          </button>
-        </div>
+        // лёгкая защита от копирования / печати (можешь убрать)
+        const onKeyDown = (e: KeyboardEvent) => {
+            if (
+                (e.metaKey || e.ctrlKey) &&
+                (e.key === 'c' || e.key === 's' || e.key === 'p')
+            ) {
+                e.preventDefault();
+            }
+        };
 
-        {/* Кнопка “три точки” — только стили решают, где она видна */}
-        <button
-          type="button"
-          class="reader-menu-trigger"
-          onClick$={() => (isMenuOpen.value = !isMenuOpen.value)}
-          aria-label="Настройки чтения"
-        >
-          <span />
-          <span />
-          <span />
-        </button>
+        container.addEventListener('scroll', onScroll);
+        document.addEventListener('keydown', onKeyDown);
 
-        {/* Выпадающее меню на мобильном */}
-        {isMenuOpen.value && (
-          <div class="reader-menu">
-            <div class="reader-menu__row">
-              <button
-                type="button"
-                class="reader-menu__btn"
-                onClick$={() => {
-                  fontScale.value = Math.max(0.9, fontScale.value - 0.1);
-                }}
-              >
-                A–
-              </button>
-              <button
-                type="button"
-                class="reader-menu__btn"
-                onClick$={() => {
-                  fontScale.value = Math.min(1.4, fontScale.value + 0.1);
-                }}
-              >
-                A+
-              </button>
+        return () => {
+            container.removeEventListener('scroll', onScroll);
+            document.removeEventListener('keydown', onKeyDown);
+        };
+    });
+
+    // ================== РЕНДЕР ==================
+    return (
+        <div class={['reader-root', `reader-root--${theme.value}`].join(' ')}>
+            {/* Прогресс-бар */}
+            <div class="reader-progress">
+                <div
+                    class="reader-progress__bar"
+                    style={{ width: `${progress.value}%` }}
+                />
             </div>
-          </div>
-        )}
-      </header>
 
-      {/* Рамка и контент */}
-      <main class="reader-frame">
-        <div class="reader-frame__inner">
-          <article
-            class="reader-page"
-            style={{ fontSize: `${fontScale.value}rem` }}
-          >
-            {chapters.map((ch) => {
-              const paragraphs = ch.content
-                .replace(/---page---/g, '\n')
-                .split(/\n\s*\n/)
-                .map((p) => p.trim())
-                .filter((p) => p.length > 0);
+            {/* Хэдер */}
+            <header class="reader-header">
+                {/* Левая часть: инфа о книге */}
+                <div class="reader-header__left">
+                    <div class="reader-book-meta">
+                        <div class="reader-book-title">
+                            Позвони мне, я свой номер не менял
+                        </div>
+                        <div class="reader-book-author">Максим Лянка</div>
+                    </div>
+                </div>
 
-              return (
-                <section
-                  class="reader-chapter"
-                  id={`chapter-${ch.id}`}
-                  key={ch.id}
+                {/* Центр: выбор главы */}
+                <div class="reader-header__center">
+                    <select
+                        value={chapters[currentChapterIndex.value].id}
+                        onChange$={(e) => {
+                            const select = e.target as HTMLSelectElement;
+                            const idx = chapters.findIndex((ch) => ch.id === select.value);
+                            if (idx === -1) return;
+
+                            currentChapterIndex.value = idx;
+
+                            const anchor = document.getElementById(`chapter-${select.value}`);
+                            if (anchor) {
+                                anchor.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                            } else {
+                                window.scrollTo({ top: 0 });
+                            }
+
+                            const STORAGE_KEY = 'maxim-book-progress';
+                            localStorage.setItem(
+                                STORAGE_KEY,
+                                JSON.stringify({
+                                    chapterIndex: currentChapterIndex.value,
+                                    theme: theme.value,
+                                    fontScale: fontScale.value,
+                                }),
+                            );
+                        }}
+                    >
+                        {chapters.map((ch) => (
+                            <option value={ch.id} key={ch.id}>
+                                {ch.title}
+                            </option>
+                        ))}
+                    </select>
+                </div>
+
+                {/* Правая часть: шрифт + бургер */}
+                <div class="reader-header__right">
+                    {/* Размер шрифта для десктопа */}
+                    <button
+                        type="button"
+                        class="reader-icon-btn"
+                        onClick$={() => {
+                            fontScale.value = Math.max(0.9, fontScale.value - 0.1);
+                        }}
+                    >
+                        A–
+                    </button>
+                    <button
+                        type="button"
+                        class="reader-icon-btn"
+                        onClick$={() => {
+                            fontScale.value = Math.min(1.4, fontScale.value + 0.1);
+                        }}
+                    >
+                        A+
+                    </button>
+                </div>
+
+                {/* Кнопка “три точки” — только стили решают, где она видна */}
+                <button
+                    type="button"
+                    class="reader-menu-trigger"
+                    onClick$={() => (isMenuOpen.value = !isMenuOpen.value)}
+                    aria-label="Настройки чтения"
                 >
-                  <h2 class="reader-chapter-title">{ch.title}</h2>
+                    <span />
+                    <span />
+                    <span />
+                </button>
 
-                  {paragraphs.map((para, idx) => {
-                    const paraId = `p-${ch.id}-${idx}`;
-                    return (
-                      <p
-                        class="reader-paragraph"
-                        data-id={paraId}
-                        key={paraId}
-                      >
-                        {para}
-                      </p>
-                    );
-                  })}
-                </section>
-              );
-            })}
-          </article>
+                {/* Выпадающее меню на мобильном */}
+                {isMenuOpen.value && (
+                    <div class="reader-menu">
+                        <div class="reader-menu__row">
+                            <button
+                                type="button"
+                                class="reader-menu__btn"
+                                onClick$={() => {
+                                    fontScale.value = Math.max(0.9, fontScale.value - 0.1);
+                                }}
+                            >
+                                A–
+                            </button>
+                            <button
+                                type="button"
+                                class="reader-menu__btn"
+                                onClick$={() => {
+                                    fontScale.value = Math.min(1.4, fontScale.value + 0.1);
+                                }}
+                            >
+                                A+
+                            </button>
+                        </div>
+                    </div>
+                )}
+            </header>
+
+            {/* Рамка и контент */}
+            <main class="reader-frame">
+                <div class="reader-frame__inner">
+                    <article
+                        class="reader-page"
+                        style={{ fontSize: `${fontScale.value}rem` }}
+                    >
+                        {chapters.map((ch) => {
+                            const normalized = normalizeChapterText(ch.content);
+
+                            const paragraphs = normalized
+                                .split('\n\n')          // мы сами поставили \n\n между абзацами
+                                .map((p) => p.trim())
+                                .filter((p) => p.length > 0);
+
+                            return (
+                                <section class="reader-chapter" id={`chapter-${ch.id}`} key={ch.id}>
+                                    <h2 class="reader-chapter-title">
+                                        {ch.title}
+                                    </h2>
+
+                                    {paragraphs.map((para, idx) => {
+                                        const paraId = `p-${ch.id}-${idx}`;
+                                        return (
+                                            <p
+                                                class="reader-paragraph"
+                                                data-id={paraId}
+                                                key={paraId}
+                                            >
+                                                {para}
+                                            </p>
+                                        );
+                                    })}
+                                </section>
+                            );
+                        })}
+                    </article>
+                </div>
+            </main>
         </div>
-      </main>
-    </div>
-  );
+    );
 });
 
 export const head: DocumentHead = {
-  title: 'Позвони мне, я свой номер не менял — онлайн чтение',
-  meta: [
-    {
-      name: 'robots',
-      content: 'noindex, nofollow', // чтобы книгу не индексировали
-    },
-  ],
+    title: 'Позвони мне, я свой номер не менял — онлайн чтение',
+    meta: [
+        {
+            name: 'robots',
+            content: 'noindex, nofollow', // чтобы книгу не индексировали
+        },
+    ],
 };
