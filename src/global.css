@@ -645,7 +645,7 @@ select {
   display: flex;
   align-items: stretch;
   justify-content: center;
-  padding-top: 40px;
+  padding-top: 90px;
   box-sizing: border-box;
 }
 
@@ -813,7 +813,7 @@ select {
   .reader-frame {
  
       position: fixed;
-  inset: 84px 20px 20px;       /* подстрой под высоту хедера */
+  inset: 24px 20px 20px;       /* подстрой под высоту хедера */
   border-radius: 24px;
 
 
