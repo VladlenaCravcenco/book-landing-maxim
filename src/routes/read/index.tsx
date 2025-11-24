@@ -5172,58 +5172,76 @@ cюда в каждый день. У меня ребёнок, от Ивана к
 // Нормализация текста главы:
 // 1) убираем переносы слов "сига-\nрету" -> "сигарету"
 // 2) объединяем строки в абзацы
-// 3) диалоги (строки, начинающиеся с "—") оставляем отдельными абзацами
+// 3) диалоги (строки с тире в начале) делим на отдельные абзацы
 function normalizeChapterText(raw: string): string {
-  // приведение переносов и маркеров страниц
-  let text = raw
-    .replace(/\r\n/g, '\n')
-    .replace(/---page---/g, '\n\n'); // твой маркер страницы превращаем в пустую строку (новый абзац)
+    // 1. нормализуем переносы и page-маркеры
+    let text = raw
+        .replace(/\r\n/g, '\n')
+        .replace(/---page---/g, '\n\n'); // страница = новый абзац
 
-  // склейка переносов слов: "сло-\nво" → "слово"
-  text = text.replace(
-    /([A-Za-zА-Яа-яЁё])-\n(?=[A-Za-zА-Яа-яЁё])/g,
-    '$1'
-  );
+    // 2. убираем переносы слов: "сло-\nво" -> "слово"
+    text = text.replace(
+        /([A-Za-zА-Яа-яЁё])-\n(?=[A-Za-zА-Яа-яЁё])/g,
+        '$1'
+    );
 
-  const lines = text.split('\n');
+    const lines = text.split('\n');
 
-  const paragraphs: string[] = [];
-  let buf: string[] = [];
+    const roughParas: string[] = [];
+    let buf: string[] = [];
 
-  const pushBuf = () => {
-    if (!buf.length) return;
-    const para = buf.join(' ')
-      .replace(/\s+/g, ' ')
-      .trim();
-    if (para.length) paragraphs.push(para);
-    buf = [];
-  };
+    const pushBuf = () => {
+        if (!buf.length) return;
+        const para = buf.join(' ')
+            .replace(/\s+/g, ' ')
+            .trim();
+        if (para.length) roughParas.push(para);
+        buf = [];
+    };
 
-  for (const rawLine of lines) {
-    const line = rawLine.trim();
+    // 3. Собираем "грубые" абзацы по пустым строкам
+    for (const rawLine of lines) {
+        const line = rawLine.trim();
 
-    // пустая строка — просто конец абзаца
-    if (!line) {
-      pushBuf();
-      continue;
+        if (!line) {
+            // пустая строка — конец абзаца
+            pushBuf();
+            continue;
+        }
+
+        buf.push(line);
+    }
+    pushBuf();
+
+    // 4. Режем диалоги:
+    // поддерживаем оба вида тире: длинное — и среднее –
+    const finalParas: string[] = [];
+
+    for (const p of roughParas) {
+        const trimmed = p.trim();
+
+        // если в абзаце нет тире с пробелом — оставляем как есть
+        if (!/[–—]\s/.test(trimmed)) {
+            finalParas.push(trimmed);
+            continue;
+        }
+
+        // делим по местам, где начинается новая реплика: "– " или "— "
+        const pieces = trimmed
+            .split(/(?=[–—]\s)/g) // разрезать перед тире, если после пробел
+            .map((s) => s.trim())
+            .filter(Boolean);
+
+        if (pieces.length <= 1) {
+            finalParas.push(trimmed);
+        } else {
+            finalParas.push(...pieces);
+        }
     }
 
-    // строка начинается с "—" и в буфере уже есть текст —
-    // считаем, что это новая реплика диалога => новый абзац
-    if (line.startsWith('—') && buf.length) {
-      pushBuf();
-      buf.push(line);
-    } else {
-      buf.push(line);
-    }
-  }
-
-  pushBuf();
-
-  // итог: абзацы разделены двумя переводами строки
-  return paragraphs.join('\n\n');
+    // 5. Склеиваем абзацы обратно, разделяя \n\n
+    return finalParas.join('\n\n');
 }
-
 export default component$(() => {
     const theme = useSignal<'dark' | 'light'>('dark');
     const fontScale = useSignal(1); // 1 = базовый размер
