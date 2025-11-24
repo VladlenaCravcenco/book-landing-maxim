@@ -1,4 +1,4 @@
-import { $, component$, useSignal, useStore, useVisibleTask$ } from '@builder.io/qwik';
+import { component$, useSignal, useVisibleTask$ } from '@builder.io/qwik';
 import type { DocumentHead } from '@builder.io/qwik-city';
 
 type Chapter = {
