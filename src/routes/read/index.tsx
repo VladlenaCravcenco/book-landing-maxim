@@ -5230,7 +5230,6 @@ export default component$(() => {
     const currentChapterIndex = useSignal(0);
     const progress = useSignal(0);
     const isMenuOpen = useSignal(false);
-    const scrollPosition = useSignal(0); // можно оставить, если где-то используешь для прогресса/анимаций
 
     // ================== ВОССТАНОВЛЕНИЕ ПОЗИЦИИ И СОХРАНЕНИЕ ПРОГРЕССА ==================
     useVisibleTask$(() => {
