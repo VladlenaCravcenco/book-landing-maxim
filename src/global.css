@@ -806,16 +806,17 @@ select {
     border-radius: 20px;
     flex-direction: column;
     align-items: start;
+    top: 5px;
   }
 
   .reader-frame {
-    padding-top: 80px;
+    padding-top: 50px;
   }
 
   .reader-frame__inner {
     padding: 40px 16px 32px;
     border-radius: 24px;
-    height: 84vh;
+    height: 86vh;
   }
 
   .reader-page {
