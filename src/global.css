@@ -815,6 +815,7 @@ select {
   .reader-frame__inner {
     padding: 40px 16px 32px;
     border-radius: 24px;
+    height: 84vh;
   }
 
   .reader-page {
