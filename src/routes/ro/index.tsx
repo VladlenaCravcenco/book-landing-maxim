@@ -1,34 +1,36 @@
 import { component$ } from '@builder.io/qwik';
 import { Link, useLocation } from '@builder.io/qwik-city';
+
 import type { DocumentHead } from '@builder.io/qwik-city';
 
 export default component$(() => {
+  const loc = useLocation();
+  const isRo = loc.url.pathname.startsWith('/ro');
 
-   const loc = useLocation();
-    const isRo = loc.url.pathname.startsWith('/ro');
-
-    const ruHref = '/';
-    const roHref = '/ro';
+  const ruHref = '/';
+  const roHref = '/ro';
 
   return (
+
+
     <>
-      
-        <div class="lang-switcher">
-            <Link
-                href={ruHref}
-                class={['lang-btn', !isRo ? 'lang-btn--active' : ''].join(' ')}
-            >
-                RU
-            </Link>
-            
-            <Link
-                href={roHref}
-                class={['lang-btn', isRo ? 'lang-btn--active' : ''].join(' ')}
-            >
-                RO
-            </Link>
-        </div>
-      
+
+      <div class="lang-switcher">
+        <Link
+          href={ruHref}
+          class={['lang-btn', !isRo ? 'lang-btn--active' : ''].join(' ')}
+        >
+          RU
+        </Link>
+
+        <Link
+          href={roHref}
+          class={['lang-btn', isRo ? 'lang-btn--active' : ''].join(' ')}
+        >
+          RO
+        </Link>
+      </div>
+
       <div class="social-pill">
         <a
           href="https://www.instagram.com/leancamaxim/"
@@ -58,15 +60,15 @@ export default component$(() => {
         </div>
 
         <div class="hero-full__content">
-          <div class="badge">Книга</div>
+          <div class="badge">roman</div>
           <h1 class="title-main">
-            Позвони мне, я свой<br />номер не менял
+            SUNĂ-MĂ, NU MI-AM<br />SCHIMBAT NUMĂRUL
           </h1>
-          <p class="author-name">Максим Лянка</p>
+          <p class="author-name">MAXIM LIANKA</p>
 
           <div class="btn-row">
             <a href="https://pay.revolut.com/YOUR-LINK" class="btn-3d">
-              купить электронную книгу
+              CUMPĂRĂ CARTEA ELECTRONICĂ
             </a>
             <button
               type="button"
@@ -78,11 +80,11 @@ export default component$(() => {
                 }
               }}
             >
-              Печатная версия
+              VERSIUNE TIPĂRITĂ
             </button>
           </div>
           <p class="btn-caption">
-            Безопасная оплата через Revolut.<br />Доступ к чтению — сразу после покупкu.
+            Plată sigură prin Revolut.<br />Acces la lectură imediat după cumpărare.
           </p>
         </div>
       </section>
@@ -91,14 +93,14 @@ export default component$(() => {
       <section class="second-screen" id="print-book">
         <div class="second-screen__content">
           <div>
-            <div class="badge">Печатная книга</div>
+            <div class="badge">CARTE TIPĂRITĂ</div>
             <h2 class="title-main">
-              Позвони мне,<br />я свой номер<br />не менял
+              SUNĂ-MĂ,<br />NU MI-AM<br />SCHIMBAT NUMĂRUL
             </h2>
 
             <div class="btn-row-single">
               <h3>
-                Заказать печатную книгу
+                COMANDĂ CARTEA TIPĂRITĂ
                 <span style="font-size: 20px; margin-left: 8px;">↓</span>
               </h3>
               <div class="btn-flex">
@@ -129,12 +131,12 @@ export default component$(() => {
 });
 
 export const head: DocumentHead = {
-  title: 'Позвони мне, я свой номер не менял — книга Максима Лянки',
+  title: 'Sună-mă, nu mi-am schimbat numărul — cartea lui Maxim Liancă',
   meta: [
     {
       name: 'description',
       content:
-        'Электронная и печатная версия книги «Позвони мне, я свой номер не менял» Максима Лянки. Купить книгу онлайн и получить доступ к чтению сразу после оплаты.'
+        'Versiune electronică și tipărită a cărții „Sună-mă, nu mi-am schimbat numărul” de Maxim Liancă. Cumpără cartea online și obține acces la lectură imediat după plată.'
     }
   ]
 };
