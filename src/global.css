@@ -83,9 +83,9 @@ body {
 }
 
 .lang-btn--active {
-  background: #b9353c; /* или твой акцентный */
+  background: #c40a0a; /* или твой акцентный */
   color: #fff;
-  border-color: #b9353c;
+  border-color: #c40a0a;
 }
 
 /* ---------------------------------------------------------- */
