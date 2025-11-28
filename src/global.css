@@ -189,7 +189,7 @@ body {
 }
 
 .title-main {
-  font-size: clamp(40px, 5vw, 130px);
+  font-size: clamp(45px, 5vw, 130px);
   line-height: 1.12;
   font-family: "Amatic SC", sans-serif; /* твой шрифт */
   font-weight: 700;
