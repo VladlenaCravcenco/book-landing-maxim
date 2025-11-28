@@ -189,7 +189,7 @@ body {
 }
 
 .title-main {
-  font-size: clamp(45px, 5vw, 130px);
+  font-size: clamp(40px, 5vw, 130px);
   line-height: 1.12;
   font-family: "Amatic SC", sans-serif; /* твой шрифт */
   font-weight: 700;
@@ -200,7 +200,7 @@ body {
 
 .author-name {
   margin: 0 0 50px;
-  font-size: 18px;
+  font-size: 14px;
   text-transform: uppercase;
   letter-spacing: 0.1em;
   color: var(--text-muted);
@@ -299,7 +299,7 @@ body {
 }
 
 .btn-caption {
-  font-size: 14px;
+  font-size: 12px;
   color: var(--text-muted);
   margin-top: 14px;
 }
@@ -312,7 +312,7 @@ body {
 @media (max-width: 768px) {
   .badge {
     margin-bottom: 10px;
-    font-size: 14px;
+    font-size: 10px;
   }
   .title-main {
     margin-bottom: 8px;
@@ -370,6 +370,7 @@ select {
 }
 
 .social-pill {
+  backdrop-filter: blur(3px);
   position: fixed;
   right: 40px;
   top: 47%;

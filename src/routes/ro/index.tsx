@@ -95,7 +95,7 @@ export default component$(() => {
           <div>
             <div class="badge">CARTE TIPĂRITĂ</div>
             <h2 class="title-main">
-              SUNĂ-MĂ,<br />NU MI-AM<br />SCHIMBAT NUMĂRUL
+              SUNĂ-MĂ, NU MI-AM<br />SCHIMBAT NUMĂRUL
             </h2>
 
             <div class="btn-row-single">
