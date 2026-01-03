@@ -38,5 +38,8 @@
     "undici": "*",
     "vite": "7.1.11",
     "vite-tsconfig-paths": "^4.2.1"
+  },
+  "dependencies": {
+    "resend": "^6.6.0"
   }
 }
