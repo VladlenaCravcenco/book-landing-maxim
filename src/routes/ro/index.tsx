@@ -1,6 +1,7 @@
 import { component$ } from '@builder.io/qwik';
 import { Link } from '@builder.io/qwik-city';
 import type { DocumentHead } from '@builder.io/qwik-city';
+import { BuyEbookButtonRo } from '~/components/BuyEbookButtonRo';
 
 export default component$(() => {
   return (
@@ -53,39 +54,7 @@ export default component$(() => {
           <p class="author-name">MAXIM LEANCA</p>
 
           <div class="btn-row">
-            <button
-              type="button"
-              class="btn-3d"
-              onClick$={async () => {
-                try {
-                  const res = await fetch('/api/maib/create-payment', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({
-                      amount: 200, // <-- поставь свою цену
-                      currency: 'MDL',
-                      description: '11book — carte electronică',
-                    }),
-                  });
-
-                  const data = await res.json();
-
-                  if (!res.ok || !data?.payUrl) {
-                    console.error('MAIB create-payment error:', data);
-                    alert('Nu am putut iniția plata. Încearcă din nou.');
-                    return;
-                  }
-
-                  // ✅ редирект на страницу оплаты MAIB
-                  window.location.href = data.payUrl;
-                } catch (err) {
-                  console.error(err);
-                  alert('Eroare. Încearcă din nou.');
-                }
-              }}
-            >
-              CUMPĂRĂ CARTEA ELECTRONICĂ
-            </button>
+            <BuyEbookButtonRo />
 
             <button
               type="button"
