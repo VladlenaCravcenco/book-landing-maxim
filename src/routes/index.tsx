@@ -1,6 +1,7 @@
 import { component$ } from '@builder.io/qwik';
 import { Link } from '@builder.io/qwik-city';
 import type { DocumentHead } from '@builder.io/qwik-city';
+import { BuyEbookButtonRu } from '~/components/BuyEbookButtonRu';
 
 export default component$(() => {
   return (
@@ -53,9 +54,7 @@ export default component$(() => {
           <p class="author-name">Максим Лянка</p>
 
           <div class="btn-row">
-            <a href="https://pay.revolut.com/YOUR-LINK" class="btn-3d">
-              купить электронную книгу
-            </a>
+            <BuyEbookButtonRu />
 
             <button
               type="button"

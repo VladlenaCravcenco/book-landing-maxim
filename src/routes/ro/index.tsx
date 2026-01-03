@@ -48,14 +48,44 @@ export default component$(() => {
         <div class="hero-full__content">
           <div class="badge">Книга</div>
           <h1 class="title-main">
-            SUNĂ-MĂ, NU MI-AM<br />SCHIMBAT NUMĂRUL
+            Sună-mă, numărul meu<br />nu s-a schimbat
           </h1>
-          <p class="author-name">MAXIM LIANKA</p>
+          <p class="author-name">MAXIM LEANCA</p>
 
           <div class="btn-row">
-            <a href="https://pay.revolut.com/YOUR-LINK" class="btn-3d">
+            <button
+              type="button"
+              class="btn-3d"
+              onClick$={async () => {
+                try {
+                  const res = await fetch('/api/maib/create-payment', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                      amount: 200, // <-- поставь свою цену
+                      currency: 'MDL',
+                      description: '11book — carte electronică',
+                    }),
+                  });
+
+                  const data = await res.json();
+
+                  if (!res.ok || !data?.payUrl) {
+                    console.error('MAIB create-payment error:', data);
+                    alert('Nu am putut iniția plata. Încearcă din nou.');
+                    return;
+                  }
+
+                  // ✅ редирект на страницу оплаты MAIB
+                  window.location.href = data.payUrl;
+                } catch (err) {
+                  console.error(err);
+                  alert('Eroare. Încearcă din nou.');
+                }
+              }}
+            >
               CUMPĂRĂ CARTEA ELECTRONICĂ
-            </a>
+            </button>
 
             <button
               type="button"
@@ -81,7 +111,7 @@ export default component$(() => {
           <div>
             <div class="badge">CARTE TIPĂRITĂ</div>
             <h2 class="title-main">
-              SUNĂ-MĂ, NU MI-AM<br />SCHIMBAT NUMĂRUL
+              Sună-mă, numărul meu<br />nu s-a schimbat
             </h2>
 
             <div class="btn-row-single">
