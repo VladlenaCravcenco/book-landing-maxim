@@ -112,7 +112,7 @@ export default component$(() => {
           </div>
 
           <p class="btn-caption">
-            Безопасная оплата через Revolut.<br />
+            Безопасная онлайн-оплата через maib.<br />
             Доступ к чтению — сразу после покупки.
           </p>
         </div>
