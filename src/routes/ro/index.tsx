@@ -1,9 +1,41 @@
-import { component$ } from '@builder.io/qwik';
+import { component$, useSignal, useVisibleTask$, $ } from '@builder.io/qwik';
 import { Link } from '@builder.io/qwik-city';
 import type { DocumentHead } from '@builder.io/qwik-city';
 import { BuyEbookButtonRo } from '~/components/BuyEbookButtonRo';
 
 export default component$(() => {
+
+  const amazonOpen = useSignal(false);
+
+  const AMAZON = [
+    { label: 'Italy', url: 'https://www.amazon.it/dp/B0GD9BHWMK' },
+    { label: 'England', url: 'https://www.amazon.co.uk/dp/B0GD9BHWMK' },
+    { label: 'Ireland', url: 'https://www.amazon.ie/dp/B0GD9BHWMK' },
+    { label: 'USA', url: 'https://www.amazon.com/dp/B0GD9BHWMK' },
+    { label: 'Germany', url: 'https://www.amazon.de/dp/B0GD9BHWMK' },
+    { label: 'France', url: 'https://www.amazon.fr/dp/B0GD9BHWMK' },
+    { label: 'Spain', url: 'https://www.amazon.es/dp/B0GD9BHWMK' },
+    { label: 'Netherlands', url: 'https://www.amazon.nl/dp/B0GD9BHWMK' },
+    { label: 'Poland', url: 'https://www.amazon.pl/dp/B0GD9BHWMK' },
+    { label: 'Sweden', url: 'https://www.amazon.se/dp/B0GD9BHWMK' },
+    { label: 'Belgium', url: 'https://www.amazon.com.be/dp/B0GD9BHWMK' },
+    { label: 'Japan', url: 'https://www.amazon.co.jp/dp/B0GD9BHWMK' },
+    { label: 'Canada', url: 'https://www.amazon.ca/dp/B0GD9BHWMK' },
+    { label: 'Australia', url: 'https://www.amazon.com.au/dp/B0GD9BHWMK' },
+  ];
+
+  useVisibleTask$(({ track, cleanup }) => {
+    track(() => amazonOpen.value);
+    if (!amazonOpen.value) return;
+
+    const onKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') amazonOpen.value = false;
+    };
+
+    window.addEventListener('keydown', onKeyDown);
+    cleanup(() => window.removeEventListener('keydown', onKeyDown));
+  });
+
   return (
     <>
       {/* Переключатель языка — у тебя две отдельные страницы */}
@@ -26,7 +58,13 @@ export default component$(() => {
           class="social-pill__icon"
           aria-label="Instagram"
         >
-          <span class="social-pill__icon-inner social-pill__icon-inner--ig" />
+          <img
+            class="social-pill__img"
+            src="/images/icons/instagram.png"
+            alt=""
+            width={18}
+            height={18}
+          />
         </a>
 
         <a
@@ -36,10 +74,15 @@ export default component$(() => {
           class="social-pill__icon"
           aria-label="Facebook"
         >
-          <span class="social-pill__icon-inner social-pill__icon-inner--fb" />
+          <img
+            class="social-pill__img"
+            src="/images/icons/facebook.png"
+            alt=""
+            width={18}
+            height={18}
+          />
         </a>
       </div>
-
       {/* 1. Первый экран */}
       <section class="hero-full">
         <div class="hero-full__bg">
@@ -104,6 +147,61 @@ export default component$(() => {
                 <a href="https://bookstore.md/ru/catalog/1057/801505/" class="btn btn--ghost">
                   <img src="/images/bookstore-logo.png" alt="Bookstore" />
                 </a>
+
+                <div class="amazon-wrap">
+                  <button
+                    type="button"
+                    class="btn btn--ghost amazon-trigger"
+                    onClick$={() => (amazonOpen.value = !amazonOpen.value)}
+                  >
+                    <img src="/images/amazon-logo.png" alt="Amazon" />
+                    <span class={amazonOpen.value ? 'amazon-chev amazon-chev--open' : 'amazon-chev'}>▾</span>
+                  </button>
+
+                  {amazonOpen.value && (
+                    <>
+                      {/* overlay — закрытие по клику мимо */}
+                      <div
+                        class="amazon-overlay"
+                        onClick$={() => (amazonOpen.value = false)}
+                      />
+
+                      {/* модалка */}
+                      <div
+                        class="amazon-menu"
+                        role="dialog"
+                        aria-modal="true"
+                        onClick$={(e) => e.stopPropagation()} // чтобы клик внутри не закрывал
+                      >
+                        <button
+                          type="button"
+                          class="amazon-close"
+                          onClick$={() => (amazonOpen.value = false)}
+                          aria-label="Close"
+                        >
+                          ✕
+                        </button>
+
+                        <div class="amazon-title">Choose Amazon region</div>
+
+                        <div class="amazon-grid">
+                          {AMAZON.map((x) => (
+                            <a
+                              key={x.label}
+                              class="amazon-item"
+                              href={x.url}
+                              target="_blank"
+                              rel="noreferrer"
+                              onClick$={() => (amazonOpen.value = false)}
+                            >
+                              {x.label}
+                            </a>
+                          ))}
+                        </div>
+                      </div>
+                    </>
+                  )}
+                </div>
               </div>
             </div>
           </div>
@@ -121,9 +219,9 @@ export default component$(() => {
             {/* Юридическая информация */}
             <div class="site-footer__col">
               <h4 class="site-footer__title">Informații legale</h4>
-              <p class="site-footer__text">SRL „Numele Companiei”</p>
-              <p class="site-footer__text">IDNO: 1234567890123</p>
-              <p class="site-footer__text">Adresa juridică: Chișinău, str. Exemplu 10</p>
+              <p class="site-footer__text">Summit Property SRL</p>
+              <p class="site-footer__text">IDNO: 1024600059151</p>
+              <p class="site-footer__text">Adresa juridică: Moldova, or. laloveni, str. Alexandru cel Bun,5/4.</p>
             </div>
 
             {/* Контакты */}
@@ -131,14 +229,14 @@ export default component$(() => {
               <h4 class="site-footer__title">Contacte</h4>
               <p class="site-footer__text">
                 Email:{' '}
-                <a class="site-footer__link" href="mailto:support@11book.online">
-                  support@11book.online
+                <a class="site-footer__link" href="mailto:grunge.studio.rental@gmail.com">
+                  grunge.studio.rental@gmail.com
                 </a>
               </p>
               <p class="site-footer__text">
                 Тел:{' '}
-                <a class="site-footer__link" href="tel:+37360000000">
-                  +373 60 000 000
+                <a class="site-footer__link" href="tel:+37378042077">
+                  +373 78 04 20 77
                 </a>
               </p>
             </div>

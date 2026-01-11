@@ -415,65 +415,13 @@ select {
   transform: translateY(-2px);
 }
 
-/* иконки внутри */
-
-.social-pill__icon-inner {
+.social-pill__img {
+  width: 95%;
+  height: 95%;
   display: block;
-  width: 58%;
-  height: 58%;
-  border-radius: 12px;
-  border: 2px solid #000;
-  position: relative;
+  object-fit: contain;
+  opacity: 90%;
 }
-
-/* IG */
-.social-pill__icon-inner--ig::before {
-  content: "";
-  position: absolute;
-  width: 40%;
-  height: 40%;
-  border-radius: 999px;
-  border: 2px solid #000;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-}
-
-.social-pill__icon-inner--ig::after {
-  content: "";
-  position: absolute;
-  width: 12%;
-  height: 12%;
-  border-radius: 999px;
-  background: #000;
-  right: 16%;
-  top: 16%;
-}
-
-/* FB */
-.social-pill__icon-inner--fb::before,
-.social-pill__icon-inner--fb::after {
-  content: "";
-  position: absolute;
-  background: #000;
-}
-
-.social-pill__icon-inner--fb::before {
-  width: 2px;
-  height: 60%;
-  left: 50%;
-  top: 10%;
-  transform: translateX(-50%);
-}
-
-.social-pill__icon-inner--fb::after {
-  width: 38%;
-  height: 2px;
-  left: 50%;
-  top: 38%;
-  transform: translateX(-50%);
-}
-
 /* на мобиле — компактнее, в верхнем углу */
 
 @media (max-width: 768px) {
@@ -514,6 +462,183 @@ select {
     filter: brightness(0.55) contrast(1.1);
     object-position: center 60%;
   }
+}
+
+/* ===== Amazon dropdown (inline) ===== */
+
+.amazon-wrap {
+  position: relative;
+  display: inline-flex;
+}
+
+/* кнопка как остальные, но компактнее */
+.amazon-trigger {
+  width: 100%;
+  min-height: 64px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.amazon-trigger img {
+  height: 30px;
+  width: auto;
+  display: block;
+  object-fit: contain;
+}
+
+.amazon-chev {
+  font-size: 14px;
+  opacity: 0.75;
+  transition:
+    transform 0.15s ease,
+    opacity 0.15s ease;
+}
+
+.amazon-chev--open {
+  transform: rotate(180deg);
+  opacity: 1;
+}
+
+
+
+/* ===== десктоп-панель вбок ===== */
+.amazon-menu {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 999;
+
+  width: min(92vw, 420px);
+  padding: 16px;
+  border-radius: 18px;
+
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(0, 0, 0, 0.65);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 12px 34px rgba(0, 0, 0, 0.45);
+}
+
+/* заголовок внутри */
+.amazon-title {
+  font-weight: 600;
+  font-size: 14px;
+  opacity: 0.9;
+  margin: 2px 0 10px;
+}
+
+/* крестик: логика есть всегда, визуально скрыт на десктопе */
+.amazon-close {
+  display: inline-flex;
+  position: absolute;
+  top: -50px;
+  right: 12px;
+  width: 34px;
+  height: 34px;
+  z-index: 1000;
+
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.06);
+  color: #fff;
+
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+/* сетка стран: компактно */
+.amazon-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr)); /* ✅ компактно */
+  gap: 8px;
+
+  max-height: 240px;
+  overflow: auto;
+}
+
+/* твой стиль кнопок */
+.amazon-item {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 10px;
+
+  border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.04);
+  text-decoration: none;
+
+  font-size: 13px;
+  font-weight: 600;
+  color: #fff;
+  transition: transform 0.15s ease-out;
+}
+
+.amazon-item:hover {
+  transform: translateY(-1px);
+}
+.amazon-overlay {
+  display: block;
+  position: fixed;
+  inset: 0;
+  z-index: 998;
+  background: rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(2px);
+}
+/* ===== mobile: превращаем в модалку по центру ===== */
+@media (max-width: 768px) {
+  .amazon-overlay {
+    display: block;
+    position: fixed;
+    inset: 0;
+    z-index: 998;
+    background: rgba(0, 0, 0, 0.55);
+    backdrop-filter: blur(2px);
+  }
+
+  .amazon-menu {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 999;
+
+    width: min(92vw, 420px);
+    padding: 16px;
+  }
+
+  .amazon-close {
+    display: inline-flex;
+    position: absolute;
+    top: -50px;
+    right: 12px;
+    width: 34px;
+    height: 34px;
+
+    border-radius: 999px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    background: rgba(255, 255, 255, 0.06);
+    color: #fff;
+    opacity: 1;
+    pointer-events: auto;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+  }
+
+  .amazon-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    max-height: 55vh;
+  }
+}
+
+/* показываем крестик при наведении на панель */
+.amazon-wrap:hover .amazon-close,
+.amazon-menu:hover .amazon-close {
+  opacity: 1;
+  pointer-events: auto;
 }
 
 /* ---------------------------------------------------------- */

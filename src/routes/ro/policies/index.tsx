@@ -29,10 +29,7 @@ export default component$(() => {
 
                     <p>
                         Prezenții Termeni și Condiții se aplică tuturor comenzilor efectuate
-                        pe site-ul <strong>www.11book.online</strong> (denumit în continuare
-                        „Site”), deținut de <strong>[[Denumirea juridică a companiei]]</strong>
-                        (denumit în continuare „Vânzătorul”).
-                    </p>
+                        pe site-ul <strong>www.11book.online</strong>, deținut de <strong>Summit Property SRL.</strong>                    </p>
 
                     <p>
                         Prin plasarea unei comenzi pe Site, Cumpărătorul confirmă că a citit,
@@ -150,11 +147,11 @@ export default component$(() => {
                     <h2>6. Date de contact</h2>
 
                     <ul>
-                        <li><strong>Denumirea juridică:</strong> [[Denumirea companiei]]</li>
-                        <li><strong>IDNO:</strong> [[IDNO]]</li>
-                        <li><strong>Adresa juridică:</strong> [[Adresa juridică]]</li>
-                        <li><strong>Telefon:</strong> [[Telefon]]</li>
-                        <li><strong>Email:</strong> [[Email]]</li>
+                        <li><strong>Denumirea juridică:</strong> Summit Property SRL</li>
+                        <li><strong>IDNO:</strong> 1024600059151</li>
+                        <li><strong>Adresa juridică:</strong> Moldova, or. laloveni, str. Alexandru cel Bun,5/4.</li>
+                        <li><strong>Telefon:</strong> +373 78 04 20 77</li>
+                        <li><strong>Email:</strong> grunge.studio.rental@gmail.com</li>
                     </ul>
                 </article>
             </div>

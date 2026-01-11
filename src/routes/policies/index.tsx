@@ -29,9 +29,9 @@ export default component$(() => {
 
                     <p>
                         Настоящие Условия использования применяются ко всем заказам,
-                        оформляемым на сайте <strong>www.11book.online</strong> (далее — «Сайт»),
-                        принадлежащем <strong>[[Юридическое название компании]]</strong>
-                        (далее — «Продавец»).
+                        оформляемым на сайте <strong>www.11book.online</strong>,
+                        принадлежащем <strong>Summit Property SRL</strong>
+                        .
                     </p>
 
                     <p>
@@ -151,11 +151,11 @@ export default component$(() => {
                     <h2>6. Контактные данные</h2>
 
                     <ul>
-                        <li><strong>Юридическое название:</strong> [[Юридическое название компании]]</li>
-                        <li><strong>IDNO:</strong> [[IDNO]]</li>
-                        <li><strong>Юридический адрес:</strong> [[Юридический адрес]]</li>
-                        <li><strong>Телефон:</strong> [[Телефон]]</li>
-                        <li><strong>Email:</strong> [[Email]]</li>
+                        <li><strong>Юридическое название:</strong> Summit Property SRL</li>
+                        <li><strong>IDNO:</strong> 1024600059151</li>
+                        <li><strong>Юридический адрес:</strong> Moldova, or. laloveni, str. Alexandru cel Bun,5/4.</li>
+                        <li><strong>Телефон:</strong> +373 78 04 20 77</li>
+                        <li><strong>Email:</strong> grunge.studio.rental@gmail.com</li>
                     </ul>
                 </article>
             </div>
