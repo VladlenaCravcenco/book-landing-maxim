@@ -1,11 +1,17 @@
 import type { RequestHandler } from '@builder.io/qwik-city';
 import { Resend } from 'resend';
 
-const resend = new Resend(process.env.RESEND_API_KEY);
+function mustEnv(name: string) {
+  const v = process.env?.[name];
+  if (!v) throw new Error(`${name} is missing`);
+  return v;
+}
 
 export const onPost: RequestHandler = async ({ request, json }) => {
   try {
-    const { email, language = 'ru' } = await request.json();
+    const resend = new Resend(mustEnv('RESEND_API_KEY'));
+
+    const { email, language = 'ru' } = await request.json().catch(() => ({}));
 
     if (!email) {
       json(400, { error: 'Email is required' });
@@ -46,8 +52,8 @@ export const onPost: RequestHandler = async ({ request, json }) => {
     }
 
     json(200, { ok: true });
-  } catch (e) {
+  } catch (e: any) {
     console.error(e);
-    json(500, { error: 'Server error' });
+    json(500, { error: e?.message || 'Server error' });
   }
 };
