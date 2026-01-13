@@ -48,7 +48,7 @@ export const onPost: RequestHandler = async (ctx) => {
 
     const body: any = await request.json().catch(() => ({}));
 
-    const amount = Number(body.amount ?? 200);
+    const amount = Number(body.amount ?? 10);
     const currency = String(body.currency ?? 'MDL');
     const language = String(body.language ?? 'ru');
 
