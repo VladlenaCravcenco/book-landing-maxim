@@ -48,7 +48,7 @@ export default component$(() => {
 
       sent.value = true;
       sending.value = false;
-    } catch (e) {
+    } catch {
       sendError.value = 'Ошибка сети при отправке письма. Попробуйте обновить страницу.';
       sending.value = false;
     }
