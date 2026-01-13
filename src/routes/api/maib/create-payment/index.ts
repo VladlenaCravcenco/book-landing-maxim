@@ -4,7 +4,7 @@ const DEFAULT_MAIB_API = 'https://api.maibmerchants.md/v1';
 
 function getEnvValue(ctx: any, name: string): string | undefined {
   // Qwik adapters могут давать env.get()
-  const fromAdapter = ctx?.env?.get?.(name);
+  const fromAdapter = ctx?.env?.get?.(name); 
   if (fromAdapter) return fromAdapter;
 
   // Node/Vercel serverless
