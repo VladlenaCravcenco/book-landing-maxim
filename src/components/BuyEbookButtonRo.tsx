@@ -27,7 +27,7 @@ export const BuyEbookButtonRo = component$(() => {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          amount: 200,
+          amount: 10,
           currency: 'MDL',
           description: '11book — carte electronică',
           customerEmail: e,
