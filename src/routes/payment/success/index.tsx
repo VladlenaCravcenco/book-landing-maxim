@@ -9,17 +9,22 @@ export default component$(() => {
   const sendError = useSignal<string>('');
 
   useVisibleTask$(async () => {
-    // Важно: useVisibleTask$ выполняется только в браузере (там есть localStorage)
     if (sent.value || sending.value) return;
 
     const payId = String(loc.url.searchParams.get('payId') || '');
     const orderId = String(loc.url.searchParams.get('orderId') || '');
     const email = localStorage.getItem('lastEmail') || '';
 
-    // Если нет email — не можем отправить письмо автоматически
     if (!email) {
       sendError.value =
         'Мы не нашли email в браузере. Пожалуйста, напишите на support@11book.online, и мы вышлем доступ вручную.';
+      return;
+    }
+
+    // ✅ защита от повторов (ключ по payId/orderId/email)
+    const key = `email_sent:${payId || 'nopay'}:${orderId || 'noorder'}:${email}`;
+    if (localStorage.getItem(key) === '1') {
+      sent.value = true;
       return;
     }
 
@@ -45,6 +50,9 @@ export default component$(() => {
         sending.value = false;
         return;
       }
+
+      // ✅ помечаем как отправленное, чтобы рефреш не слал заново
+      localStorage.setItem(key, '1');
 
       sent.value = true;
       sending.value = false;
