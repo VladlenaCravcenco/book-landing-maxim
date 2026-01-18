@@ -42,16 +42,28 @@ async function handleCallback(ctx: any) {
   let bodyPayId = "";
   let bodyOrderId = "";
 
-  // попробуем распарсить JSON, если похоже на JSON
-  if (raw && contentType.includes("application/json")) {
+  if (raw) {
+    // JSON
     try {
-      const parsed = JSON.parse(raw);
-      bodyPayId = parsed?.payId ? String(parsed.payId) : "";
-      bodyOrderId = parsed?.orderId ? String(parsed.orderId) : "";
-    } catch (err) {
-      console.warn("[maib callback] JSON parse failed", err);
+      const parsed: any = JSON.parse(raw);
+      bodyPayId =
+        (parsed?.payId && String(parsed.payId)) ||
+        (parsed?.result?.payId && String(parsed.result.payId)) ||
+        "";
+      bodyOrderId =
+        (parsed?.orderId && String(parsed.orderId)) ||
+        (parsed?.result?.orderId && String(parsed.result.orderId)) ||
+        "";
+    } catch {
+      // form-urlencoded
+      try {
+        const params = new URLSearchParams(raw);
+        bodyPayId = params.get("payId") || "";
+        bodyOrderId = params.get("orderId") || "";
+      } catch {}
     }
   }
+
   const payId = qpPayId || bodyPayId;
   const orderId = qpOrderId || bodyOrderId;
 
