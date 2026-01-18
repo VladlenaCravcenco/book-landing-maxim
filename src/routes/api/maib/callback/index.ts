@@ -54,13 +54,19 @@ async function handleCallback(ctx: any) {
         (parsed?.orderId && String(parsed.orderId)) ||
         (parsed?.result?.orderId && String(parsed.result.orderId)) ||
         "";
-    } catch {
-      // form-urlencoded
+    } catch (err) {
+      // не JSON — попробуем как form-urlencoded
       try {
         const params = new URLSearchParams(raw);
         bodyPayId = params.get("payId") || "";
         bodyOrderId = params.get("orderId") || "";
-      } catch {}
+      } catch (err2) {
+        console.warn("[maib callback] cannot parse body", {
+          err,
+          err2,
+          raw: raw.slice(0, 200),
+        });
+      }
     }
   }
 
