@@ -1,19 +1,20 @@
 import type { RequestHandler } from '@builder.io/qwik-city';
 import { Resend } from 'resend';
 
-function getEnvValue(ctx: any, name: string): string | undefined {
-  const fromAdapter = ctx?.env?.get?.(name);
-  if (fromAdapter) return fromAdapter;
+function getEnv(ctx: any, name: string) {
+  // 1) Qwik adapters (server/edge)
+  const v1 = ctx?.env?.get?.(name);
+  if (v1) return v1;
 
-  const fromNode =
-    (globalThis as any)?.process?.env?.[name] ??
-    process?.env?.[name];
+  // 2) Node/Vercel serverless
+  const v2 = (globalThis as any)?.process?.env?.[name] ?? process?.env?.[name];
+  if (v2) return v2;
 
-  return fromNode;
+  return undefined;
 }
 
 function mustEnv(ctx: any, name: string) {
-  const v = getEnvValue(ctx, name);
+  const v = getEnv(ctx, name);
   if (!v) throw new Error(`${name} is missing`);
   return v;
 }
@@ -35,6 +36,8 @@ export const onPost: RequestHandler = async (ctx) => {
       return;
     }
 
+    const from = mustEnv(ctx, 'MAIL_FROM'); // лучше строго must, чтобы не стрелять в onboarding@resend.dev
+
     const subject =
       language === 'ro'
         ? 'Acces la cartea „Sună-mă, nu mi-am schimbat numărul”'
@@ -42,27 +45,26 @@ export const onPost: RequestHandler = async (ctx) => {
 
     const html =
       language === 'ro'
-        ? `<h2>Mulțumim!</h2><p><a href="https://11book.online/read">Citește cartea</a></p>
-           <p><small>payId: ${payId || '-'} | orderId: ${orderId || '-'}</small></p>`
-        : `<h2>Спасибо!</h2><p><a href="https://11book.online/read">Читать книгу</a></p>
-           <p><small>payId: ${payId || '-'} | orderId: ${orderId || '-'}</small></p>`;
+        ? `<h2>Mulțumim!</h2><p><a href="https://11book.online/read">Citește cartea</a></p><p><small>payId: ${payId || '-'} | orderId: ${orderId || '-'}</small></p>`
+        : `<h2>Спасибо!</h2><p><a href="https://11book.online/read">Читать книгу</a></p><p><small>payId: ${payId || '-'} | orderId: ${orderId || '-'}</small></p>`;
 
-    const from = getEnvValue(ctx, 'MAIL_FROM') || 'onboarding@resend.dev';
-
-    const result = await resend.emails.send({ from, to: email, subject, html });
+    const result = await resend.emails.send({
+      from,
+      to: email,
+      subject,
+      html,
+    });
 
     const err = (result as any)?.error;
     const data = (result as any)?.data;
 
     if (err) {
-      console.error('[send-email] resend error', err);
       json(500, { error: 'Email send failed', details: err });
       return;
     }
 
     json(200, { ok: true, id: data?.id || null });
   } catch (e: any) {
-    console.error('[send-email] server error', e);
     json(500, { error: e?.message || 'Server error' });
   }
 };
