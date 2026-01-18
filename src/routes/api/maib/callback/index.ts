@@ -111,22 +111,31 @@ async function handleCallback(ctx: any) {
       return;
     }
 
-    // confirm
-    const { res: confRes, data: confData } = await fetchJson(
-      `${MAIB_API}/confirm`,
-      {
-        method: "POST",
-        headers: {
-          "content-type": "application/json",
-          Authorization: `Bearer ${accessToken}`,
-        },
-        body: JSON.stringify({ payId, orderId }),
-      },
-    );
+    // confirm (form-urlencoded)
+    const body = new URLSearchParams({ payId, orderId });
 
+    const confRes = await fetch(`${MAIB_API}/confirm`, {
+      method: "POST",
+      headers: {
+        "content-type": "application/x-www-form-urlencoded",
+        accept: "application/json",
+        Authorization: `Bearer ${accessToken}`,
+      },
+      body,
+    });
+
+    // ВАЖНО: прочитать текстом, потому что MAIB может вернуть НЕ JSON
+    const confText = await confRes.text();
+    let confData: any = {};
+    try {
+      confData = JSON.parse(confText);
+    } catch (err) {
+      console.warn("[maib callback] parse failed", err);
+    }
     console.log("[maib callback] confirm result", {
       status: confRes.status,
       ok: confRes.ok,
+      confText: confText.slice(0, 500),
       confData,
     });
 
