@@ -90,7 +90,7 @@ export default component$(() => {
         </div>
 
         <div class="hero-full__content">
-          <div class="badge">Книга</div>
+          <div class="badge">carte</div>
           <h1 class="title-main">
             Sună-mă, numărul meu<br />nu s-a schimbat
           </h1>
@@ -99,16 +99,7 @@ export default component$(() => {
           <div class="btn-row">
             <BuyEbookButtonRo />
 
-            <button
-              type="button"
-              class="btn btn--ghost"
-              onClick$={() => {
-                const el = document.getElementById('print-book');
-                el?.scrollIntoView({ behavior: 'smooth' });
-              }}
-            >
-              VERSIUNE TIPĂRITĂ
-            </button>
+            
           </div>
 
           <p class="btn-caption">
