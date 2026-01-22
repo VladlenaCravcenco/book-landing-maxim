@@ -4,9 +4,9 @@ import type { DocumentHead } from '@builder.io/qwik-city';
 import { BuyEbookButtonRo } from '~/components/BuyEbookButtonRo';
 
 export default component$(() => {
-
   const amazonOpen = useSignal(false);
 
+  // оставляю массив и логику, чтобы ничего не ломать, если вернёшь секцию позже
   const AMAZON = [
     { label: 'Italy', url: 'https://www.amazon.it/dp/B0GD9BHWMK' },
     { label: 'England', url: 'https://www.amazon.co.uk/dp/B0GD9BHWMK' },
@@ -37,13 +37,13 @@ export default component$(() => {
   });
 
   return (
-    <>
-      {/* Переключатель языка — у тебя две отдельные страницы */}
+    // ✅ ВАЖНО: обёртка, которая переключит CSS-поведение hero (не fixed) только для RO
+    <div class="page page--single">
+      {/* Переключатель языка */}
       <div class="lang-switcher">
         <Link href="/" class="lang-btn">
           RU
         </Link>
-
         <Link href="/ro" class="lang-btn lang-btn--active">
           RO
         </Link>
@@ -83,7 +83,8 @@ export default component$(() => {
           />
         </a>
       </div>
-      {/* 1. Первый экран */}
+
+      {/* 1 экран (в RO станет обычным блоком 100vh через CSS override) */}
       <section class="hero-full">
         <div class="hero-full__bg">
           <img src="/images/unnamed.webp" alt="Максим Лянка" />
@@ -91,131 +92,40 @@ export default component$(() => {
 
         <div class="hero-full__content">
           <div class="badge">carte</div>
+
           <h1 class="title-main">
-            Sună-mă, numărul meu<br />nu s-a schimbat
+            Sună-mă, numărul meu<br />
+            nu s-a schimbat
           </h1>
+
           <p class="author-name">MAXIM LEANCA</p>
 
           <div class="btn-row">
             <BuyEbookButtonRo />
-
-            
           </div>
 
           <p class="btn-caption">
-            Plată sigură prin MAIB.<br />Acces la lectură imediat după cumpărare.
+            Plată sigură prin MAIB.<br />
+            Acces la lectură imediat după cumpărare.
           </p>
         </div>
       </section>
 
-      {/* 2. Второй экран */}
-      <section class="second-screen" id="print-book">
-        <div class="second-screen__content">
-          <div>
-            <div class="badge">CARTE TIPĂRITĂ</div>
-            <h2 class="title-main">
-              Sună-mă, numărul meu<br />nu s-a schimbat
-            </h2>
+      {/* ✅ 2 экран удалён полностью по требованию */}
 
-            <div class="btn-row-single">
-              <h3>
-                COMANDĂ CARTEA TIPĂRITĂ
-                <span style="font-size: 20px; margin-left: 8px;">↓</span>
-              </h3>
-
-              <div class="btn-flex">
-                <a href="https://carturesti.md/carte/236634017" class="btn btn--ghost">
-                  <img src="/images/carturesti-logo.png" alt="Carturesti" />
-                </a>
-
-                <a
-                  href="https://www.bestseller.md/kniga-pozvoni-mne-maxim-leanca.html"
-                  class="btn btn--ghost"
-                >
-                  <img src="/images/bestseller-logo.png" alt="Bestseller" />
-                </a>
-
-                <a href="https://bookstore.md/ru/catalog/1057/801505/" class="btn btn--ghost">
-                  <img src="/images/bookstore-logo.png" alt="Bookstore" />
-                </a>
-
-                <div class="amazon-wrap">
-                  <button
-                    type="button"
-                    class="btn btn--ghost amazon-trigger"
-                    onClick$={() => (amazonOpen.value = !amazonOpen.value)}
-                  >
-                    <img src="/images/amazon-logo.png" alt="Amazon" />
-                    <span class={amazonOpen.value ? 'amazon-chev amazon-chev--open' : 'amazon-chev'}>▾</span>
-                  </button>
-
-                  {amazonOpen.value && (
-                    <>
-                      {/* overlay — закрытие по клику мимо */}
-                      <div
-                        class="amazon-overlay"
-                        onClick$={() => (amazonOpen.value = false)}
-                      />
-
-                      {/* модалка */}
-                      <div
-                        class="amazon-menu"
-                        role="dialog"
-                        aria-modal="true"
-                        onClick$={(e) => e.stopPropagation()} // чтобы клик внутри не закрывал
-                      >
-                        <button
-                          type="button"
-                          class="amazon-close"
-                          onClick$={() => (amazonOpen.value = false)}
-                          aria-label="Close"
-                        >
-                          ✕
-                        </button>
-
-                        <div class="amazon-title">Choose Amazon region</div>
-
-                        <div class="amazon-grid">
-                          {AMAZON.map((x) => (
-                            <a
-                              key={x.label}
-                              class="amazon-item"
-                              href={x.url}
-                              target="_blank"
-                              rel="noreferrer"
-                              onClick$={() => (amazonOpen.value = false)}
-                            >
-                              {x.label}
-                            </a>
-                          ))}
-                        </div>
-                      </div>
-                    </>
-                  )}
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="hero-book">
-            <img src="/images/Book-cover.png" alt="Печатная версия книги" />
-          </div>
-        </div>
-      </section>
-
-      {/* ✅ ФУТЕР — под требования MAIB */}
+      {/* ФУТЕР */}
       <footer class="site-footer">
         <div class="site-footer__inner">
           <div class="site-footer__grid">
-            {/* Юридическая информация */}
             <div class="site-footer__col">
               <h4 class="site-footer__title">Informații legale</h4>
               <p class="site-footer__text">Summit Property SRL</p>
               <p class="site-footer__text">IDNO: 1024600059151</p>
-              <p class="site-footer__text">Adresa juridică: Moldova, or. laloveni, str. Alexandru cel Bun,5/4.</p>
+              <p class="site-footer__text">
+                Adresa juridică: Moldova, or. laloveni, str. Alexandru cel Bun,5/4.
+              </p>
             </div>
 
-            {/* Контакты */}
             <div class="site-footer__col">
               <h4 class="site-footer__title">Contacte</h4>
               <p class="site-footer__text">
@@ -225,57 +135,39 @@ export default component$(() => {
                 </a>
               </p>
               <p class="site-footer__text">
-                Тел:{' '}
+                Tel:{' '}
                 <a class="site-footer__link" href="tel:+37378042077">
                   +373 78 04 20 77
                 </a>
               </p>
             </div>
 
-            {/* Политики (обязательно для MAIB) */}
             <div class="site-footer__col">
               <h4 class="site-footer__title">Politici</h4>
               <ul class="site-footer__list">
                 <li>
-                  <a
-                    class="site-footer__link"
-                    href="/ro/policies#terms"
-                    data-qwik-city="reload"
-                  >
+                  <a class="site-footer__link" href="/ro/policies#terms" data-qwik-city="reload">
                     Termeni și condiții
                   </a>
                 </li>
                 <li>
-                  <a
-                    class="site-footer__link"
-                    href="/ro/policies#privacy"
-                    data-qwik-city="reload"
-                  >
+                  <a class="site-footer__link" href="/ro/policies#privacy" data-qwik-city="reload">
                     Politica de confidențialitate
                   </a>
                 </li>
                 <li>
-                  <a
-                    class="site-footer__link"
-                    href="/ro/policies#refund"
-                    data-qwik-city="reload"
-                  >
+                  <a class="site-footer__link" href="/ro/policies#refund" data-qwik-city="reload">
                     Politica de retur
                   </a>
                 </li>
                 <li>
-                  <a
-                    class="site-footer__link"
-                    href="/ro/policies#delivery"
-                    data-qwik-city="reload"
-                  >
+                  <a class="site-footer__link" href="/ro/policies#delivery" data-qwik-city="reload">
                     Livrare / Prestare servicii
                   </a>
                 </li>
               </ul>
             </div>
 
-            {/* Оплата */}
             <div class="site-footer__col">
               <h4 class="site-footer__title">Plăți</h4>
 
@@ -297,7 +189,7 @@ export default component$(() => {
           </div>
         </div>
       </footer>
-    </>
+    </div>
   );
 });
 

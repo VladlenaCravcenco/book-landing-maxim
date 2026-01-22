@@ -126,19 +126,23 @@ export default component$(() => {
                     <h2>5. Politica de retur</h2>
 
                     <p>
-                        Rambursarea mijloacelor bănești se efectuează exclusiv pe cardul
-                        bancar utilizat la achitare.
+                        În conformitate cu natura produsului digital și cu faptul că accesul este oferit,
+                        returnarea fondurilor după obținerea accesului la cartea electronică nu este posibilă.
+
                     </p>
 
                     <p>
-                        Având în vedere natura digitală a produsului, returul este
-                        posibil doar în cazul imposibilității tehnice de livrare a
-                        produsului din vina Vânzătorului.
+                        <strong>Returnarea este posibilă exclusiv în următoarele cazuri:</strong>
                     </p>
 
                     <p>
-                        Cererea de retur este analizată în termen de
-                        <strong> [[X]] zile lucrătoare</strong> de la primirea solicitării.
+                        plata a fost efectuată cu succes, însă accesul la cartea electronică nu
+                        a fost furnizat din motive tehnice imputabile Vânzătorului;
+                    </p>
+
+                    <p>
+                        a intervenit o eroare a sistemului de plată, în urma căreia suma
+                        a fost debitată incorect (de exemplu, debitare dublă).
                     </p>
                 </article>
 
