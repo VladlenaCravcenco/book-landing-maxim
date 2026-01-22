@@ -6,23 +6,6 @@ import { BuyEbookButtonRo } from '~/components/BuyEbookButtonRo';
 export default component$(() => {
   const amazonOpen = useSignal(false);
 
-  // оставляю массив и логику, чтобы ничего не ломать, если вернёшь секцию позже
-  const AMAZON = [
-    { label: 'Italy', url: 'https://www.amazon.it/dp/B0GD9BHWMK' },
-    { label: 'England', url: 'https://www.amazon.co.uk/dp/B0GD9BHWMK' },
-    { label: 'Ireland', url: 'https://www.amazon.ie/dp/B0GD9BHWMK' },
-    { label: 'USA', url: 'https://www.amazon.com/dp/B0GD9BHWMK' },
-    { label: 'Germany', url: 'https://www.amazon.de/dp/B0GD9BHWMK' },
-    { label: 'France', url: 'https://www.amazon.fr/dp/B0GD9BHWMK' },
-    { label: 'Spain', url: 'https://www.amazon.es/dp/B0GD9BHWMK' },
-    { label: 'Netherlands', url: 'https://www.amazon.nl/dp/B0GD9BHWMK' },
-    { label: 'Poland', url: 'https://www.amazon.pl/dp/B0GD9BHWMK' },
-    { label: 'Sweden', url: 'https://www.amazon.se/dp/B0GD9BHWMK' },
-    { label: 'Belgium', url: 'https://www.amazon.com.be/dp/B0GD9BHWMK' },
-    { label: 'Japan', url: 'https://www.amazon.co.jp/dp/B0GD9BHWMK' },
-    { label: 'Canada', url: 'https://www.amazon.ca/dp/B0GD9BHWMK' },
-    { label: 'Australia', url: 'https://www.amazon.com.au/dp/B0GD9BHWMK' },
-  ];
 
   useVisibleTask$(({ track, cleanup }) => {
     track(() => amazonOpen.value);
