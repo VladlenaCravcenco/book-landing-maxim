@@ -3,11 +3,9 @@ import type { RequestHandler } from "@builder.io/qwik-city";
 const DEFAULT_MAIB_API = "https://api.maibmerchants.md/v1";
 
 function getEnvValue(ctx: any, name: string): string | undefined {
-  // Qwik adapters могут давать env.get()
   const fromAdapter = ctx?.env?.get?.(name);
   if (fromAdapter) return fromAdapter;
 
-  // Node/Vercel serverless
   const fromProcess =
     (globalThis as any)?.process?.env?.[name] ?? process.env?.[name];
   return fromProcess;
@@ -33,44 +31,42 @@ async function fetchJson(url: string, init: RequestInit, timeoutMs = 15000) {
 }
 
 export const onGet: RequestHandler = async ({ json }) => {
-  json(200, { ok: true, route: "maib/create-payment" });
+  json(200, { ok: true, route: "maib/refund" });
 };
 
 export const onPost: RequestHandler = async (ctx) => {
   const { request, json } = ctx;
 
   try {
-    console.log("[create-payment] hit");
+    console.log("[refund] hit");
 
     const projectId = mustEnv(ctx, "MAIB_PROJECT_ID");
     const projectSecret = mustEnv(ctx, "MAIB_PROJECT_SECRET");
-
     const MAIB_API = getEnvValue(ctx, "MAIB_API_URL") || DEFAULT_MAIB_API;
 
     const body: any = await request.json().catch(() => ({}));
 
-    const amount = 199;
-    const currency = String(body.currency ?? "MDL");
-    const language = String(body.language ?? "ru");
+    const payId = body.payId ? String(body.payId) : "";
+    if (!payId) {
+      json(400, { ok: false, error: "payId is required" });
+      return;
+    }
 
-    const email = body.customerEmail
-      ? String(body.customerEmail)
-      : body.email
-        ? String(body.email)
-        : undefined;
+    // refundAmount НЕ обязателен.
+    // Если не передать — будет FULL refund (полный возврат).
+    // Если передать — частичный/полный, но в формате X.XX
+    const refundAmountRaw = body.refundAmount ?? body.amount;
+    const refundAmount =
+      refundAmountRaw === undefined || refundAmountRaw === null || refundAmountRaw === ""
+        ? undefined
+        : Number(refundAmountRaw);
 
-    const xf = request.headers.get("x-forwarded-for") || "";
-    const clientIp = (xf.split(",")[0] || "").trim() || "127.0.0.1";
-
-    const BASE = "https://11book.online";
-
-    const okUrl = `${BASE}/payment/success`;
-    const failUrl = `${BASE}/payment/fail`;
-    const callbackUrl = `${BASE}/api/maib/callback`;
-
-    const orderId = String(
-      body.orderId ?? globalThis.crypto?.randomUUID?.() ?? `${Date.now()}`,
-    );
+    if (refundAmount !== undefined) {
+      if (!Number.isFinite(refundAmount) || refundAmount <= 0) {
+        json(400, { ok: false, error: "refundAmount must be a positive number" });
+        return;
+      }
+    }
 
     // 1) generate-token
     const { res: tokenRes, data: tokenData } = await fetchJson(
@@ -80,7 +76,7 @@ export const onPost: RequestHandler = async (ctx) => {
         headers: { "content-type": "application/json" },
         body: JSON.stringify({ projectId, projectSecret }),
       },
-      15000,
+      15000
     );
 
     const accessToken = tokenData?.result?.accessToken;
@@ -88,6 +84,7 @@ export const onPost: RequestHandler = async (ctx) => {
     if (!tokenRes.ok || !tokenData?.ok || !accessToken) {
       console.error("MAIB token error:", tokenRes.status, tokenData);
       json(500, {
+        ok: false,
         error: "MAIB token error",
         status: tokenRes.status,
         details: tokenData,
@@ -95,49 +92,37 @@ export const onPost: RequestHandler = async (ctx) => {
       return;
     }
 
-    // 2) pay
-    const { res: payRes, data: payData } = await fetchJson(
-      `${MAIB_API}/pay`,
+    // 2) refund
+    const payload: any = { payId };
+    if (refundAmount !== undefined) payload.refundAmount = refundAmount;
+
+    const { res: refundRes, data: refundData } = await fetchJson(
+      `${MAIB_API}/refund`,
       {
         method: "POST",
         headers: {
           "content-type": "application/json",
           Authorization: `Bearer ${accessToken}`,
         },
-        body: JSON.stringify({
-          clientIp,
-          amount,
-          currency,
-          description: body.description
-            ? String(body.description)
-            : "11book.online",
-          language,
-          orderId,
-          email,
-          callbackUrl,
-          okUrl,
-          failUrl,
-        }),
+        body: JSON.stringify(payload),
       },
-      15000,
+      15000
     );
 
-    const payUrl = payData?.result?.payUrl;
-    const payId = payData?.result?.payId;
-
-    if (!payRes.ok || !payData?.ok || !payUrl) {
-      console.error("MAIB pay error:", payRes.status, payData);
+    if (!refundRes.ok || !refundData?.ok) {
+      console.error("MAIB refund error:", refundRes.status, refundData);
       json(500, {
-        error: "MAIB pay error",
-        status: payRes.status,
-        details: payData,
+        ok: false,
+        error: "MAIB refund error",
+        status: refundRes.status,
+        details: refundData,
       });
       return;
     }
 
-    json(200, { ok: true, payId, orderId, payUrl });
+    json(200, refundData);
   } catch (e: any) {
-    console.error("[create-payment] ERROR:", e);
-    json(500, { error: e?.message || "Server error" });
+    console.error("[refund] ERROR:", e);
+    json(500, { ok: false, error: e?.message || "Server error" });
   }
 };
