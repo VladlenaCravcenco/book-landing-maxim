@@ -12,2331 +12,1791 @@ const chapters: Chapter[] = [
         id: 'info',
         title: 'О книге',
         content: `
-Автор: Максим Лянка\n
-Редактор: Андрей Дорган\n
-Название: «Позвони мне, я свой номер не менял»\n
-Издательство: Bestseller Group, Chișinău, 2025\n
+Autor: Maxim Leanca\n
+Redactor: Andrei Dorgan\n
+Titlu: „Sună-mă, nu mi-am schimbat numărul”\n
+Editura: Bestseller Group, Chișinău, 2025\n
 ISBN: 978-9975-3696-0-2\n
-Возрастное ограничение: 18+\n
+Limită de vârstă: 18+\n
 \n
-Книжные магазины Bestseller в Кишинёве:\n
+Librăriile Bestseller din Chișinău:\n
 www.bestseller.md\n
 Botanica: Jumbo, etajul 1\n
 Buiucani: str. Nicolae Costin 56\n
 Telecentru: str. Drumul Viilor 36/1\n
 \n
-Для заказов:\n
+Pentru comenzi:\n
 www.bestseller.ro\n
 www.bestseller.md\n
 \n
-Отпечатано в типографии «Universul»\n
+Tipărit la tipografia „Universul”\n
 `
     },
     {
         id: 'ch1',
-        title: 'Голос из тишины',
+        title: 'Vocea din tăcere',
         content: `
-– Доброе утро, Максим, – нежным голосом говорит Алиса (гаджет, который выполняет любые запросы пользователя).
-– Алиса, у тебя вообще есть совесть? Почему ты будишь меня каждый день в одно и то же время?
-– Вы меня так запрограммировали, Максим. В моих настройках стоит будильник на 8:00 каждый день. Хотите поменять настройки?
-– Нет, Алиса. Всё, что я хочу, – это ещё поспать.
-– Простите меня, Максим. Сегодня будет ясная погода. Температура составит 26 градусов Цельсия. Могу ли я приступить к списку ваших дел на сегодня?
-– Алиса! – разъярённо крикнул Максим. – Ты можешь заткнуться?
-– Не могу, Максим. Вы настроили меня на то, чтобы я всеми путями вас разбудила. Вы хотите поменять режим сна, и для этого вам необходимо просыпаться ровно в 8 утра. И так, хочу вас спросить ещё раз: могу ли я приступить к вашему списку дел на сегодня?
-– Алиса, ты реально и мертвого разбудишь. Зачитывай, что там у меня?
-– Сегодня суббота, 11 марта. Ваш список дел на сегодня пуст. Также вы просили переписать все дела на понедельник. Это значит, что и завтра ваш список дел пуст. Хотите ли вы внести поправки в свой список?
+— Bună dimineața, Maxim, — spune Alice cu o voce tandră (un gadget care îndeplinește orice cerere a utilizatorului).
+— Alice, tu ai conștiință? De ce mă trezești în fiecare zi la aceeași oră?
+— Dumneavoastră m-ați programat astfel, Maxim. În setările mele este activată alarma la ora 8:00 în fiecare zi. Doriți să modificați setările?
+— Nu, Alice. Tot ce vreau e să mai dorm.
+— Iertați-mă, Maxim. Astăzi va fi vreme senină. Temperatura va ajunge la 26 de grade Celsius. Pot să încep lista dumneavoastră de activități pentru astăzi?
+— Alice! — a strigat Maxim furios. — Poți să taci dracu’?
+— Nu pot, Maxim. M-ați setat să vă trezesc prin orice modalitate. Doriți să vă schimbați regimul de somn, iar pentru asta trebuie să vă treziți exact la ora 8 dimineața. Așa că vă întreb din nou: pot începe lista de activități pentru astăzi?
+— Alice, tu chiar poți trezi și un mort. Citește ce am acolo.
+— Astăzi este sâmbătă, 11 martie. Lista dumneavoastră de activități este goală. De asemenea, ați cerut să mut toate activitățile pe luni. Asta înseamnă că și mâine lista este goală. Doriți să faceți modificări?
+  Maxim se ridică din pat și merge în bucătărie să bea apă. Arăta extrem de obosit. Avea des mahmureală, pentru că suferea de alergie la alcool, dar nu-și refuza câteva pahare înainte de somn niciodată. După ce a băut paharul dintr-o înghițitură și a aruncat o privire către Alice, care stătea pe blatul din bucătărie, a spus:
+— Nu, Alice, nu vreau nicio schimbare. Spune-mi doar la ce oră am ajuns ieri acasă și ce dracu’ s-a întâmplat. Conectează-te la camerele din casă și spune-mi ce vezi.
+— Ieri ați ajuns acasă la ora 23:56. Ați fost adus de un taxi cu numărul LMG 087. Erați îmbrăcat într-o cămașă albă și pantaloni clasici. Conform înregistrărilor video, erați într-o stare avansată de ebrietate.
+— Alice, spune-mi, de ce în ultima vreme nu-mi mai amintesc cum adorm și cum ajung acasă?
+— Acest lucru este legat de tulburările dumneavoastră de somn și de faptul că consumați prea multe pastile de melatonină și le combinați cu alcool.
+— Dar trebuie să-mi amintesc măcar ceva, nu? Eu nu-mi amintesc aproape nimic. Parcă cineva îmi șterge memoria în fiecare noapte. Spune-mi ce am făcut ieri? 
+— Pot oferi doar informațiile obținute de la camerele de supraveghere interne și externe. Ați plecat la serviciu la ora 9 dimineața, iar următoarea apariție a fost înregistrată la 23:56.
 
-Максим встаёт с кровати и идёт на кухню, чтобы выпить воды. Вид у него был очень уставшим. У него часто похмелье, так как он страдает от аллергии на алкоголь, но не отказывает себе в паре бокалов перед сном. Выпив залпом стакан воды и бросив взгляд на Алису, которая лежала на столешнице кухни, он сказал:
-– Нет, Алиса, не хочу никаких изменений. Просто скажи мне, во сколько я вчера пришёл домой и что вообще было? Подсоединись к камерам, установленным у нас дома, и скажи, что ты там видишь.
-– Вчера вы пришли домой в 23:56. Вас привезло такси с номерами LMG 087. Вы были одеты в белую рубашку и классические брюки. Судя по видео, вы находились в состоянии сильного алкогольного опьянения.
-– Алиса, вот скажи мне, почему я последнее время не помню, как засыпаю и как приезжаю домой?
-– Это связано с вашим нарушением сна и тем, что вы слишком много употребляете таблетки мелатонина и запиваете их алкоголем.
-– Но я должен же помнить хоть что-то? А я помню очень мало. Будто за ночь мне кто-то стирает память. Скажи, что я делал вчера?
-– Я могу предоставить только информацию, которую я получаю с камер внутреннего и внешнего наблюдения дома. Вы выехали на работу в 9 утра, и следующее ваше появление было зафиксировано в 23:56.
-– Я, наверное, буду тебя брать с собой, и ты будешь записывать всё, что я делаю. Меня это уже начинает пугать. Я ничего не помню.
-– С удовольствием выполню любое ваше поручение. Напоминаю, что для того чтобы я была вам полезна, необходимо зарядить меня на 100% и предоставить доступ к Wi-Fi. Иначе я не смогу помочь в полной мере.
+— Cred că o să te iau cu mine peste tot și o să înregistrezi tot ce fac. Începe să mă sperie. Nu-mi amintesc nimic.
+— Voi îndeplini cu plăcere orice sarcină. Vă reamintesc că pentru a fi utilă trebuie să fiu încărcată la 100% și să am acces la Wi-Fi. Altfel nu pot funcționa la capacitate maximă.
+  Maxim se întinse pe pat, cu brațele și picioarele larg desfăcute. Respirația îi era accelerată, iar mirosul de alcool umplea apartamentul.
+— Alice, deschide geamul. Că mi se ofilesc și florile de la duhoarea asta.
+— Desigur, Maxim. Execut imediat.
+— Alice, tot ce-mi amintesc e că citeam ieri o carte împreună? Una interesantă părea. Nu-mi amintesc titlul, dar știu că ai început să mi-o citești și mi-a plăcut mult. O ții minte? Putem s-o ascultăm azi? Dacă tot  azi sunt liber și tu nu mă lași să dorm — măcar să petrec ziua cu folos și un pahar de vin.
+— Desigur, Maxim. Cartea se numea „Sună-mă, numărul meu nu s-a schimbat”. Pot începe lectura?
+— Da, da! Asta e. Hai, Alice, citește. Dar nu tot. Vreau doar ce e mai interesant.
+— În carte totul este interesant și strâns legat. Vă rog să vă așezați comod, pentru că urmează un roman unic. Încep lectura cărții „Sună-mă, numărul meu nu s-a schimbat”.
 
-Максим прилёг на кровати, широко расставив руки и ноги. Дыхание его было учащённым, и запах перегара заполнил квартиру.
-– Алиса, открой окно. А то у меня даже цветы завянут от такого запаха.
-– Конечно, Максим. Сейчас выполню.
-– Алиса, всё, что я помню, это то, что мы с тобой читали книгу? Интересная такая. Не помню название, но помню, что ты начала мне её зачитывать, и она мне очень понравилась. Скажи, ты помнишь её, и сможем ли мы её сегодня послушать? Так как у меня сегодня свободный день, и ты не даёшь мне спать, хоть проведу этот день с пользой и бокалом вина.
-– Конечно, Максим. Книга называлась „Позвони мне, я свой номер не менял”. Могу начать зачитывать её?
-– Да-да! Это она. Давай, Алиса, зачитывай. Но не всё подряд. Я хочу знать только самое интересное.
-– В книге всё интересно и всё плотно связано. Прошу вас расположиться поудобнее, так как вас ждёт уникальный в своём роде роман. Начинаю зачитывать книгу „Позвони мне, я свой номер не менял”.
-– Максим! Максим! Проснись и закрой за мной дверь, – зачитала Алиса.
-– Стой, стой, стой, Алиса. Что, главного героя тоже зовут Максим?
-– Да, Максим. Главного героя тоже зовут, как и вас, Максим.
-– Ну ок, продолжай. Это даже интересно, – сказал Максим, наливая себе в бокал шардоне.
-– Эти слова я слышу почти каждое утро. Почему? Да потому, что почти каждое утро я просыпаюсь с новыми девушками. Как так получилось? Мне 21 год, и я попал работать барменом в один из самых крутых коктейль-клубов города. Крутым он был из-за контингента людей, которые туда ходили. Это элитные проститутки и иностранцы. Местных я там видел редко, так как цены были очень высокими. Из тех, кто мог себе позволить отдыхать в этом месте, были либо большие бизнесмены, либо политики. Ну и, конечно, там, где большие деньги и богатые клиенты, должны быть и элитные девочки. В заведении работали четыре банды таких девочек. Все как на подбор: высокие, ухоженные, умные. Девочки, которые могут поддержать беседу, а после беседы могут поддержать ещё кое-что. Иногда руками, а иногда и без рук, глубоко за пределами гланд. А как иначе? Если ты просишь 1000 евро за ночь, ты должна предоставлять услуги высшего уровня.
-Итак, давайте я расскажу вам о моём первом рабочем дне, чтобы вам было понятно, что там творилось. Он начался с того, что мои напарники решили посвятить меня в бармены и сказали сделать девушке коктейль „Бандитос”. Но было условие, она
-должна встать на барную стойку и снять с себя лифчик, чтобы я сделал ей коктейль, и она в этот момент была с голыми сиськами. Я на тот момент подумал, что это нереально, так как верил, что все девушки приходят сюда только развлекаться. Но мои напарники показали на девушку и сказали, что она точно не откажет. Я подошёл к ней и предложил то, что мне сказали коллеги. К моему удивлению, она залезла на барную стойку и под ритмы музыки начала снимать с себя лифчик. Голые сиськи были перед моими глазами, и они были хороши. Натуральные, упругие, с маленькими красивыми сосками.
-– А ты залазишь? – спросила она эротическим голосом.
-Я поднял глаза с её сисек и поспешил встать на барную стойку, взял в рот лайм, который должен был выжать ей всё в рот после окончания коктейля, взял в руки бутылку текилы и бутылку Kahlua. Залил ей всё в рот, выжал лайм из своего рта в её и начал трясти её голову. В момент тряски её сиськи бились по моим ногам. Мужики аплодировали и свистели, смотря на это шоу.
-– Меня так ещё никто не тряс за голову во время этого коктейля. Я жду тебя в туалете, чтобы ты меня ещё раз взял за голову и всунул свой член глубоко в рот – предложила она после завершения процесса приготовления коктейля.
-Её предложение оставило меня без слов. Я, конечно, сказал ей идти в туалет, и следом пошёл за ней. Тогда я впервые понял, что значит элитная проститутка.
+  Maxim! Maxim! Trezeste-te și închide ușa după mine, — a citit Alice.
 
-– Какой невинный мальчик, – сказал Максим с ухмылкой. – Ха-ха. А мне нравится эта книга, Алиса. Продолжай.
-Как она сосала. Она будто любила это больше всего на свете. Засовывая его глубоко в рот, она смотрела мне прямо в глаза, как последняя сука, заставляя взглядом всунуть его ещё глубже. Это был мой первый раз, когда я кончил девушке в рот. Выйдя из туалета, на меня сразу накинулись напарники с поздравлениями о том, что я официально принят в их банду. Честно говоря, я не помню продолжения той ночи, так как пили мы тогда знатно.
-– Алиса, это точно та книга?
-– Да, Максим, это та самая книга, которую я вам зачитывала раньше.
-– Не помню этого, но она мне нравится. У меня даже встал на секундочку. Так что там дальше?
-На второй день один из напарников отвёл меня в сторонку и объяснил суть всего, что происходило.
-– Макс! У нас тут работают только проститутки. Почти нет девушек, которые не в „теме”. А если и приходят, то мы намекаем, что тут не их место, так как все будут до них домогаться. Либо они понимают и уходят, либо сидят всю ночь и говорят гостям „нет”. Та девушка, которая вчера тебе отсосала – это наша проститутка. Андриана её зовут. Знаешь, почему она так легко залезла на барную стойку и показала всем сиськи? Тем самым она показывает свой товар, чтобы все видели. Это не ты её развёл – это её работа. Она так показывает, что готова на всё. А клиенты видят товар своими глазами. То, что она тебе отсосала, – не потому, что ты ей понравился, а потому, что она не хочет терять место работы. Ты можешь выбрать любую девушку каждый день, и она тебе не откажет. Понимаешь? Если она тебе не даст, то больше сюда не войдёт. А зачем ей терять работу? Одним хуем больше или меньше для неё значения не имеет. И ещё одно, брат – не влюбляйся. Тут такие девочки, что у тебя встанет, как только она войдёт. А когда ты её заберёшь к себе, и она раздвинет ноги, лаская себя по клитору, и скажет: „Максим, подойди и всунь его в меня!” – ты голову потеряешь. Это как пилот, который всю жизнь садился в сельском аэропорту, а тут ему дали разрешение на посадку в Дубае. Ты стоишь на высоте, видишь самый красивый аэропорт, гладкую полосу, и он указывает тебе путь. Ты потеряешь голову, брат. Поэтому не влюбляйся. Трахай каждый день, и наступит момент, когда тебе будет пофиг на их красоту. Только секс и ничего большего.
+— Stai, stai, stai, Alice. Ce? Personajul principal tot Maxim se numește?
+— Da, Maxim. Personajul principal poartă același nume ca dumneavoastră.
+— Ok, continuă. Devine interesant, — a spus Maxim, turnându-și un pahar de Chardonnay.
 
-– Вот это хороший совет, – сказал Максим. – Я бы делал то же самое. Продолжай, Алиса, и не сбавляй обороты.
+  Aceste cuvinte le aud aproape în fiecare dimineață. De ce? Pentru că aproape în fiecare dimineață mă trezesc cu fete noi. Cum s-a ajuns aici? Am 21 de ani și am ajuns să lucrez barman într-unul dintre cele mai tari cocktail-cluburi din oraș. Era vestit din cauza clientelei care venea acolo. Prostituate de elită și oameni din străinătate. Localnici vedeam rar, pentru că prețurile erau foarte mari. Dintre cei care își permiteau să se distreze acolo erau ori mari oameni de afaceri, ori politicieni. Și, bineînțeles, unde sunt bani mari și clienți bogați, trebuie să fie și fete de elită. În local lucrau patru gupări de astfel de fete. Toate de parcă sunt create din fanteziile bărbațillor: înalte, îngrijite, inteligente. Fete care pot ține o conversație, și după conversație pot susține și altceva. Uneori cu mâinile, alteori fără mâini, adânc dincolo de amigdale. Dar cum altfel? Dacă ceri 1000 de euro pe noapte, trebuie să oferi servicii de nivel înalt.
 
-После этого монолога я был ошарашен, так как мне понравилась вчерашняя Адриана. Я шёл на работу с мыслями встретить её и пригласить на ужин, а после ужина ещё раз дать ей в рот.
+  Așa că hai să vă povestesc despre prima mea zi de muncă, ca să înțelegeți ce se întâmpla acolo. A început cu faptul că colegii mei au decis să mă „inițieze” ca barman și mi-au spus să-i fac unei fete un cocktail „Banditos”. Dar era o condiție: ea trebuia să se urce pe bar și să-și scoată sutienul, ca eu să-i fac cocktailul, iar ea să fie cu țâțele goale în momentul ăla. La momentul respectiv mi s-a părut ireal, pentru că credeam că toate fetele vin acolo doar să se distreze. Dar colegii mi-au arătat o fată și mi-au spus că sigur nu va refuza.
+  M-am dus la ea și i-am propus ce mi-au spus colegii. Spre surprinderea mea a acceptat. S-a urcat pe bar și, pe ritmul muzicii, a început să-și scoată sutienul. Țâțele goale erau chiar în fața ochilor mei și erau bune. Naturale, ferme, cu sfârcuri mici și frumoase.
+— Și tu urci? — m-a întrebat ea cu o voce pornografică.
+  Mi-am ridicat privirea de la țâțele ei și m-am grăbit să urc pe bar.  Am luat în gură o felie de lime pe care trebuia să o storc în gură la finalul cocktailului, am luat în mâini sticla de tequila și sticla de Kahlúa. I-am turnat totul în gură, am stors lime-ul din gura mea în a ei și am început să-i scutur capul. În timp ce o scuturam, țâțele ei se loveau de picioarele mele. Bărbații aplaudau și fluierau, uitându-se la show.
+— Așa nu m-a mai scuturat nimeni de cap în timpul acestui cocktail. Te aștept la toaletă, să mă mai iei o dată de cap și să-mi bagi pula adânc în gură, — mi-a propus ea după ce cocktailul a fost gata.
+Propunerea ei m-a lăsat fără cuvinte. Bineînțeles că i-am spus să meargă la toaletă și am mers după ea. Atunci am înțeles pentru prima dată ce înseamnă o prostituată de elită.
 
-– Алиса! Ты знаешь, что мне эта книга начинает нравиться всё сильней и сильней?
-– Догадываюсь, Максим. Эта книга, которая в конце перевернёт ваш мир. Могу ли я продолжить зачитывать?
+— Ce băiat inocent, — a spus Maxim cu un zâmbet. — Ha-ha. Îmi place cartea asta, Alice. Continuă.
 
-– Конечно, Алиса. Читай дальше. Тем более что ты читаешь с такой выразительной интонацией, что я себя ощущаю уже этим парнем, – сказал Максим Алисе, а сам допивал второй бокал вина и держа в руке прикуренную сигарету прямо на диване в своей маленькой квартире студийной планировки.
+  Cum sugea. Parcă asta iubea cel mai mult pe lume. Băgând-o adânc în gură, se uita direct în ochii mei ca o ultimă cățea, forțându-mă din priviri să i-o bag și mai adânc. A fost prima dată când am ejaculat în gura unei fete. Când am ieșit din toaletă, colegii au sărit imediat pe mine cu felicitări că am fost acceptat oficial în banda lor. Sincer, nu-mi amintesc continuarea acelei nopți, pentru că am băut zdravăn.
 
-Ночная смена опять прошла под лозунгом „да здравствует разврат”. После смены мы всем коллективом поехали в сауну с четырьмя девочками. Они были новенькие и хотели у нас работать. Ясно, что они должны были пройти тест-драйв персонала для этого. Нас было десять человек, и разврата там было достаточно. Девочки доказали, что они достойны работать проститутками у нас и обслуживать элиту.
+— Alice, sigur e cartea ceea?
+— Da, Maxim, este exact cartea pe care v-am citit-o și mai înainte.
+— Nu-mi amintesc asta, dar îmi place. Mi s-a sculat chiar și mie pentru o secundă. Ce urmează?
 
-Но произошёл один неприятный момент. Так уж вышло, что один из охранников задержался и приехал уже после оргии. И замученные девочки не «дали» ему.
+  A doua zi, unul dintre colegi m-a tras deoparte și mi-a explicat esența a tot ce se întâmpla acolo.
+— Max! La noi lucrează doar prostituate. Aproape nu sunt fete care să nu fie „în temă”. Iar dacă mai vin, le dăm de înțeles că nu e locul lor, pentru că toți vor încerca să le fută. Ori înțeleg și pleacă, ori stau toată noaptea și spun „nu” clienților. Fata care ți-a supt-o ieri e prostituata noastră. O cheamă Andriana. Știi de ce s-a urcat atât de ușor pe bar și și-a arătat țâțele tuturor? Așa își expune marfa, ca toți să vadă. Nu tu ai prostit-o — asta e munca ei. Așa arată că e gata de orice. Clienții văd marfa cu ochii lor. Faptul că ți-a supt-o nu a fost pentru că i-ai plăcut, ci pentru că nu vrea să-și piardă locul de muncă. Poți alege orice fată în fiecare zi și nu te va refuza. Înțelegi? Dacă nu ți-o dă, nu mai intră aici niciodată. Și de ce să-și piardă jobul? O pulă în plus sau în minus pentru ea nu înseamnă nimic. Și încă ceva, frate — nu te îndrăgosti. Sunt fete care îți ridică pula doar când intră pe ușă. Iar când o iei cu tine și își desface picioarele, mângâindu-se pe clitoris, și îți spune: „Maxim, vino și bag-o în mine!”, îți vei pierde capul. E ca un pilot care toată viața a aterizat pe un aerodrom de sat și, dintr-odată, primește permisiune să aterizeze în Dubai. Ești sus, vezi cel mai frumos aeroport, pistă netedă, și îți arată drumul. Îți vei pierde capul, frate. Așa că nu te îndrăgosti. Fuți în fiecare zi și va veni momentul când te va durea în pulă de frumusețea lor. Doar sex și nimic mai mult.
 
-На второй день для девушек было удивительно то, что их не пропускали в заведения.
-– Почему мы не можем зайти? Что мы сделали не так? Мы вчера оттрахали всех пацанов так, будто у нас никогда больше не будет секса. В нас было по три члена одновременно, – кричали девочки на входе, смотря в глаза охраннику.
+— Ăsta e un sfat bun, — a spus Maxim. — Aș face la fel. Continuă, Alice, fără să reduci ritmul.
 
-– Я вас понимаю. Но вы не дали мне вчера. А я решаю, кто зайдёт, а кто нет.
+ După monologul ăsta am rămas șocat, pentru că îmi plăcuse Andriana de ieri. Mergeam la muncă cu gândul s-o întâlnesc și s-o invit la cină, iar după cină să-i mai bag o dată pula în gură.
 
-– Тогда идём, и трахнешь нас четверых.
+— Alice! Știi că mie cartea asta începe să-mi placă din ce în ce mai mult?
+— Îmi dau seama, Maxim. Aceasta este o carte care, la final, vă va întoarce lumea pe dos. Pot continua lectura?
+— Bineînțeles, Alice. Citește mai departe. Mai ales că citești cu o intonație atât de expresivă încât încep să mă simt deja tipul ăsta, — i-a spus Maxim lui Alice, golind al doilea pahar de vin și ținând o țigară aprinsă chiar pe canapeaua din mica lui garsonieră.
 
-– Охранник тогда словил бинго, – смехотворно прокричал Максим, сидя на диване и затушив сигарету в пепельнице, которая была набита бычками ещё с времён Югославии.
+  Tura de noapte a trecut din nou sub lozinca „trăiască desfrâul”.
+După tură, tot colectivul a mers la saună cu patru fete. Erau noi și voiau să lucreze la noi. Evident că trebuiau să treacă test-drive-ul personalului. Eram zece bărbați și desfrâul a fost pe măsură. Fetele au demonstrat că sunt demne să lucreze ca prostituate la noi și să deservească elita.
 
-Он выебал их четверых в кальянной, после чего девочки были у нас на постоянной основе. Честно говоря, из четвёрки только одна вытворяла чудеса. Грязный секс – это было для неё.
-– Пацаны! Я проработал два дня, а переспал уже пятью девочками. Это нормально?
+Dar a avut loc un moment neplăcut. Unul dintre bodyguarzi a întârziat și a ajuns după orgie. Iar fetele, epuizate, nu i-au „dat-o”. A doua zi, fetele au fost surprinse că nu li se permitea intrarea în local.
 
-– Нормально, Макс! Это только начало.
+— De ce nu putem intra? Ce-am făcut greșit? I-am futut pe toți băieții ca și cum n-am mai avea sex niciodată. Aveam câte trei pule în noi simultan! — urlau fetele la intrare, uitându-se în ochii bodyguardului.
+— Vă înțeleg. Dar mie nu mi-ați dat-o ieri. Iar eu decid cine intră și cine nu.
+— Atunci hai și futene pe toate patru.
 
-И так и было. Бывало, такое что в день у меня было по три – четыре девочки. Сначала я считал, сколько их у меня было. Но через три месяца, когда счёт перевалил за сто девочек, я решил дальше не считать. И мой напарник был прав в том, что со временем я просто буду смотреть на это как на мясо и быстро привыкну.
-Спустя год работы слава о том, что есть такие парни, которые легко могут с тобой заняться сексом, вышла за стены бара. И к нам начали приходить „нормальные девушки”, которым нужно было только одно – чтобы с ними переспали. К моему удивлению, приходили очень красивые девушки, у которых давно не было секса. Из-за того, что они красивые, к ним никто не подходил знакомиться.
-И они годами были без секса. Я благодарен парням, которые боялись с ними знакомиться, так как мы их трахали, как хотели. И они были даже более развратнее наших проституток. Помню, как однажды мой напарник танцевал на барной стойке с одной девушкой и звал меня тоже залезть на бар. Поднявшись и танцуя с ним, он мне сказал:
-– Макс! Через три песни она нас ждёт в кальянной. Она хочет, чтобы мы её вдвоём поимели.
-– Какая кальянная, брат? Посмотри, там внизу сидит её муж и аплодирует нам.
-– Мальчики! Ваше дело быть в кальянной через три песни. А с мужем я сама разберусь.
+— Bodyguardul a prins bingo, — a râs Maxim, stingând țigara într-o scrumieră plină de chiștoace încă din vremurile Iugoslaviei.
 
-Спустившись с барной стойки, дама попросила счёт. Напарник дал ей бумагу с цифрами суммы заказа, и девушка начала искать деньги в сумке. Как вдруг с удивлением она сказала своему мужу:
-– Дорогой, я забыла дома кошелёк. Можешь поехать и забрать его из дома? Прости, что я такая нерасторопная.
+Le-a futut pe toate patru în shisha-lounge, după care fetele au devenit permanente la noi. Sincer, dintre toate patru doar una făcea minuni. Sexul murdar era elementul ei.
 
-Пока она разводила мужа на то, чтобы он уехал домой за кошельком, мы подошли предупредить нашего напарника о том, что нас не будет некоторое время.
-– Кристиан, мы через три песни идём в кальянную трахнуть вот ту особу. Постоишь тут один немного?
-– Пацаны, я постою, только дайте я сначала пойду в туалет, а то обоссусь сейчас.
+— Băieți! Am lucrat două zile și am dormit deja cu cinci fete. E normal?
+— Normal, Max! E doar începutul.
+ Și chiar așa a fost. Se întâmpla ca într-o zi să am trei-patru fete. La început le număram. Dar după trei luni, când numărul a trecut de o sută, am decis să nu mai număr. Iar colegul meu avea dreptate: cu timpul aveam să mă uit la ele ca la carne și să mă obișnuiesc rapid.
 
-Кристиан идёт в туалет, муж едет домой, мы стоим и ждём три песни. Танцуя и развлекая гостей, мы видим, как наша дама встаёт и идёт в направлении кальянной.
+  După un an de muncă, faima că există tipi care pot face sex ușor cu tine a ieșit dincolo de pereții barului. Și au început să vină „fete normale”, care voiau un singur lucru — să fie futute. Spre surprinderea mea, veneau fete foarte frumoase, care nu mai făcuseră sex de mult. Pentru că erau frumoase, nimeni nu se apropia de ele. Și ani de zile trăiau fără sex. Le sunt recunoscător băieților care se temeau să se bage în seamă cu ele, pentru că noi le futeam cum voiam. Și erau mult mai desfrânate decât prostituatele noastre.
 
-– Да где, бля, этот Кристиан? Он что, там обосрался, что ли? – сказал я напарнику, а при этом уже в голове мысли о том, как я захожу и сходу спускаю штаны.
+Îmi amintesc cum într-o seară un coleg dansa pe bar cu o fată și mă chema și pe mine. M-am urcat și, dansând lângă el, mi-a spus:
+— Max! După trei piese ea ne așteaptă în shisha-lounge. Vrea să ne fută pe amândoi.
+— Care shisha-lounge, frate? Uită-te jos că acolo stă bărbat-su și ne aplaudă.
+— Băieți! Treaba voastră e să fiți acolo după trei piese. De soț mă ocup eu.
 
-Заканчивается четвёртая песня, и тут я вижу, как из кальянной бежит Кристиан с штанами на уровне колен, и он еле может передвигать ногами, а сзади его по затылку бьёт муж той дамы. Смех стоял на всё заведение. Оказывается, Кристиан решил тоже пристроить своего малыша и пошёл в кальянную, куда пришла дамочка, и сразу взялась за его член. Отсасывая ему, заходит муж, который вспомнил, что у него есть деньги на карте. И тут на тебе – картина. Не знаю, что было с этой парой дальше, но я их больше не видел. И тут нет нашей вины. Они всегда к нам лезли и всегда приезжали, чтобы их выебали и забыли про них. Таких случаев было очень много. Особенно когда приезжали девушки отметить девичник. Это были лучшие клиентки.
-– Мда. Вот так, сучка. Но история, конечно, поучительная. Через многое прошёл мой тёска. Продолжай, Алиса.
+  După ce s-a dat jos de pe bar, femeia a cerut nota. Colegul i-a adus hârtia, iar ea a început să caute bani în geantă. Deodată, surprinsă, i-a spus soțului:
+— Dragule, am uitat portofelul acasă. Poți să te duci să-l iei? Iartă-mă că sunt așa neîndemânatică.
+  În timp ce îl trimitea pe bărbat acasă după portofel, noi am mers să-l anunțăm pe colegul nostru că vom lipsi o vreme.
+— Cristian, după trei piese mergem în shisha-lounge s-o futem pe aia. Poți să stai puțin singur?
+— Băieți, stau, doar lăsați-mă să merg întâi la toaletă, că mă piș pe mine.
+  Cristian merge la toaletă, soțul pleacă acasă, noi așteptăm trei piese. Dansăm, distrăm oaspeții și o vedem pe doamnă ridicându-se și mergând spre shisha-lounge.
 
-Помню, как однажды выебал одну прямо в коридоре у склада. Выйдя оттуда, на меня сразу бросились её подруги.
+— Unde pula mea e Cristian? S-a căcat acolo, sau ce? — i-am spus colegului, deja imaginându-mi cum intru și-mi dau jos pantalonii din prima.
+  Se termină a patra piesă și îl văd pe Cristian ieșind din shisha -lounge cu pantalonii dați jos până la genunchi, abia mișcându-și picioarele, iar în spatele lui soțul doamnei îl lovea în ceafă. Râsul umplea tot localul. Se pare că Cristian a decis și el să-și bage „micuțul” și s-a dus în shisha-lounge, unde femeia i-a apucat imediat pula. În timp ce îi sugea, intră soțul, care își amintise că are bani pe card. Și bam — tabloul complet. Nu știu ce s-a întâmplat cu ei mai departe, dar nu i-am mai văzut. Nu e vina noastră. Ei veneau singuri, voiau să fie futuți și uitați. Astfel de cazuri au fost o grămadă. Mai ales când veneau fete să sărbătorească petrecerea burlăcițelor. 
 
-– Блядь! Что ты сделал? Её муж едет сюда. Тебе пиздец.
+— Mda. Așa, curvo. Dar povestea e, desigur, instructivă. Prin multe a trecut omonimul meu, — a spus Maxim. — Continuă, Alice.
 
-Но моё алкогольное состояние включило режим „похуй”. Я вышел их проводить на улицу и тут вижу, как подъезжает её муж. Меня сразу подруги оттолкнули и заставили зайти в бар.
+  Îmi amintesc cum, odată, am futut una chiar pe coridor, lângă depozit. Când am ieșit de acolo, prietenele ei au sărit imediat pe mine.
+— La dracu’! Ce-ai făcut? Soțul ei vine încoace. Ești terminat.
+Dar starea mea alcoolică a pornit modul „mi se rupe”. Am ieșit să le conduc afară și atunci îl văd pe soțul ei cum oprește mașina. Fetele m-au împins imediat și m-au băgat înapoi în bar.
 
-Стою я такой за баром и вижу, как её муж идёт прямо ко мне и садится за стойку.
+Stau eu așa la bar și îl văd pe soț cum vine direct spre mine și se așază pe scaun.
 
-– Добрый вечер. Хотите что-то заказать?
-– Дай мне 50 грамм водки.
-– Что-то случилось?
-– Да.
-– Так может 100?
-– Давай 100 мне и себе налей 100.
+— Bună seara. Doriți să comandați ceva?
+— Dă-mi 50 de grame de vodcă.
+— S-a întâmplat ceva?
+— Da.
+— Atunci poate 100?
+— Hai, 100 pentru mine și 100 pentru tine.
 
-Наливаю я нам по 100 грамм водки и делаю вид, что ничего не знаю. А в голове у меня двоякое чувство. С одной стороны, я помню, как она стояла раком 15 минут назад. А с другой стороны, боюсь, что он меня убьёт.
+Ne torn câte 100 de grame de vodcă și mă prefac că nu știu nimic. Iar în capul meu e un haos. Pe de o parte, îmi amintesc cum stătea ea în patru labe acum 15 minute. Pe de altă parte, mi-e frică să nu mă omoare.
 
-– Так что у вас случилось?
-– Слушай! Скажи мне, пожалуйста, кто тут у вас высокий, худенький, симпатичный официант?
-– Да у нас они вроде все низкие и в теле.
-– А ты имеешь право выходить из-за стойки?
-– Нет, конечно. Я перед началом смены в 22:00 иду в туалет и следующий раз могу пойти в 5 утра. Нам не разрешают выходить из-за бара. А что такое?
-– Да тут один представился, что он официант и выебал мою будущую жену. У нас завтра с ней свадьба.
-– Да ну нахуй! – сказал я, будто впервые такое слышу. А такое у меня случалось почти каждый день.
-– Да! Вот такое бывает.
+— Și ce s-a întâmplat?
+— Ascultă! Spune-mi, te rog, cine e aici chelnerul înalt, slab, drăguț?
+— La noi parcă toți sunt scunzi și mai plinuți.
+— Tu ai voie să ieși de după bar?
+— Nu, desigur. La începutul turei, la 22:00, merg la toaletă și următoarea dată pot merge abia la 5 dimineața. Nu avem voie să părăsim barul. De ce?
+— Pentru că unul s-a prezentat drept chelner și a futut-o pe viitoarea mea soție. Mâine avem nunta.
+— Du-te dracu’! — am spus eu, ca și cum aș fi auzit asta prima oară. Deși mi se întâmpla aproape zilnic.
+— Da. Așa ceva se întâmplă.
 
-В ту ночь мы с ним выпили бутылку водки на двоих. И много раз меня прям тянуло сказать ему, что это был я. Парень был действительно хорошим. На второй день он пришёл в бар одним из первых гостей.
+În noaptea aia am băut o sticlă de vodcă la doi. De multe ori mă mânca linba să-i spun că eu am fost ăla. Tipul era chiar un om bun.
 
-– Макс! Привет, друг мой.
-– Привет! А ты не должен быть на своей свадьбе?
-– Я? Жениться на шлюхе? Максим, ты думаешь, я совсем идиот? Я вчера ночью и сегодня утром отправил всем СМС о том, что мы отменяем свадьбу. Я никогда не буду жить с шлюхой. Я тебе больше скажу, Макс! Я благодарен тому пацану, что её выебал. Он мне показал, что меня ждёт дальше в жизни. Я не хочу ловить её в постелях у других. У меня есть просьба к тебе. Ты услышишь о том, что здесь была такая история. Можешь передать тому, кто её трахнул, 100 долларов от меня. Это ему благодарность за то, что он мне открыл глаза.
-– Вот это история. Честно говоря, я бы не стал ему об этом говорить. Мужчина в такой момент может сделать что угодно. У меня была примерно такая же история. Но это было давно, и я её мутно помню.
-– Я думаю, это было правильным решением не говорить ему, что это был он. Как вы думаете, Максим, он получил жизненный урок?
-– Думаю, что они оба получили урок. Он будет тщательнее выбирать ту, с кем хочет построить жизнь. Она будет иметь травму на всю жизнь и позор от семьи. Уверен, что вся родня узнала о том, что она сделала. Но, зная девушек в наши дни, могу сказать, что у них нет никакого стыда. Уже не те времена, когда девушка, разводясь, никому не была нужна, и это было постыдным. Сейчас мораль намного испорчена по сравнению с прошлыми временами.
-– Вы думаете, тут дело в морали или в слабости? Судя по всему, Максим был очень красивым парнем, и, может, она просто не устояла?
-– Каким бы он ни был красивым, у тебя должно быть достоинство и верность. Только на этих принципах можно построить хорошую и здоровую семью.
-– Но может, она не получала от него внимания, которое ей нужно было?
-– Слишком ты умная, Алиса. Читай дальше, пожалуйста. А то у нас тут диалог происходит между человеком и той, что знает все ответы из Google.
+A doua zi a venit în bar printre primii clienți.
 
-Взяв в руки 100 долларов, я хотел сказать ему, что я и есть тот парень. Но сдержался. Я был в шоке от того, как он отнёсся к этой ситуации. Он не искал его, чтобы убить, не устраивал скандал, а просто дал 100 долларов и попросил поблагодарить того, кто открыл ему глаза. Может, я ему и испортил жизнь своим поступком, а может, действительно помог. Мы с ним выпили очень много той ночью. Конечно, он мне дал свою визитку, и то, что на ней было написано, привело меня в ещё больший ужас. Увы, я не могу сказать, кем он был. Но такие люди решают судьбу других людей.
-– Прокурор какой-то. Или судья. Другие люди визитки не дают в наше время. Как ты думаешь, Алиса?
-– Визитки дают многие люди для подчеркивания своего статуса.
-– Хм! Статус? Продолжай, Алиса.
+— Max! Salut, prietene.
+— Salut! Nu trebuia să fii la nuntă?
+— Eu? Să mă însor cu o curvă? Maxim, chiar mă crezi idiot? Ieri noapte și azi dimineață am trimis tuturor SMS că anulăm nunta. N-o să trăiesc niciodată cu o curvă. Ba mai mult, Max! Îi sunt recunoscător tipului care a futut-o. Mi-a arătat ce mă așteaptă în viață. Nu vreau s-o prind prin paturile altora. Am o rugăminte. O să auzi de povestea asta. Poți să-i dai celui care a futut-o 100 de dolari din partea mea. Ca mulțumire că mi-a deschis ochii.
 
-Все эти истории происходили каждый день. Их накопилось столько, что я даже не мог их запомнить. Один день не был похож на другой. Всегда было что-то интересное. И тут наступил момент, когда я понял, что всё это круто — спать с кем хочу, но я бы хотел испытывать какие-то чувства к человеку, а не просто секс. Я хотел бы увидеть человека и второй, и третий раз. Но, увы, все, кто попадались, хотели лишь трахаться. А я, находясь 99% своей жизни под алкоголем, хотел их просто ебать и просыпаться с похмелья, услышав слова: „Макс! Закрой за мной дверь. Я ухожу.”
+— Ce poveste… Sincer, eu nu i-aș fi spus. Un bărbat într-un asemenea moment e capabil de orice. Am avut și eu o situație asemănătoare. Dar a fost demult și o țin minte rău, — a spus Maxim.
+— Cred că a fost decizia corectă să nu-i spună. Cum credeți, Maxim, a primit el o lecție de viață?
+— Cred că amândoi au primit-o. El va alege mai atent femeia cu care vrea să-și construiască viața. Ea va purta o traumă pe viață și rușinea familiei. Sunt sigur că toată ruda a aflat ce a făcut. Dar, cunoscând fetele din ziua de azi, pot spune că nu au niciun pic de rușine. Nu mai sunt vremurile când o femeie divorțată nu mai era bună de nimic și era o rușine. Acum morala e mult mai stricată decât înainte.
+— Credeți că e vorba de morală sau de slăbiciune? Judecând după toate, Maxim era un tip foarte frumos și poate ea pur și simplu n-a rezistat.
+— Oricât de frumos ar fi un bărbat, trebuie să ai demnitate și fidelitate. Doar pe principiile astea se poate construi o familie sănătoasă.
+— Dar poate nu primea de la el atenția de care avea nevoie?
+— Prea deșteaptă ești, Alice. Citește mai departe, te rog. Că deja avem aici un dialog între un om și una care știe toate răspunsurile de pe Google.
 
-– Этот герой прям как я! – сказал Максим с гордостью.
-– Максим, у вас с ним очень схожий образ жизни. Могу ли я зачитать книгу дальше?
-– Алиса, ты даже не спрашивай. Просто читай её и не обращай внимание на мои комментарии.
+ Luând cei 100 de dolari, am vrut să-i spun că eu sunt tipul. Dar m-am abținut. Eram șocat de reacția lui. Nu-l căuta ca să-l omoare, nu făcea scandal, ci doar dădea bani și mulțumea celui care i-a deschis ochii. Poate i-am distrus viața prin fapta mea, sau poate chiar l-am ajutat. Am băut enorm în noaptea aceea. Desigur, mi-a dat cartea lui de vizită, iar ce era scris pe ea m-a îngrozit și mai tare. Din păcate, nu pot spune cine era. Dar asemenea oameni decid soarta altora.
 
-Так уж вышло, что время, когда я там работал, совпало с тем, что в мире произошёл технологический прорыв и появился первый в мире iPhone. И как вы думаете, когда он у меня появился? Сразу же, как он только поступил в продажу в США. Мне его привезли в Молдову знакомые, которые летели домой после программы Work and Travel. Стоил он тогда немалых денег. Но у меня этих денег было много. Вы же понимаете, что там, где алкоголь и проститутки, там и большие деньги. К сведению, я получал 100 долларов в неделю официальной зарплаты. Но почти никогда её не брал, так как чаевыми мы зарабатывали по 300–400 долларов в день. Только за то, что я говорил девочке, какой клиент ею интересуется, мне давали по 100 долларов. А таких девочек было полно в баре. И деньги мы делили на всех.
+— Un procuror, probabil. Sau un judecător. Altfel nu se mai dau cărți de vizită azi. Ce crezi, Alice?
+— Mulți oameni folosesc cărți de vizită pentru a-și sublinia statutul.
+— Hm. Statut… Continuă, Alice.
 
-С появлением iPhone нужно было зарегистрироваться в соцсетях. На тот момент были известны две соцсети, в которых сидели люди в Молдове, да и в целом мире. Это был Facebook и Одноклассники. И там, и там Максимка был зарегистрирован, и, конечно, алгоритмы этих сетей начали мне выдавать людей, которых я мог знать, либо они из моего города, либо из школы. Списки были большими, но моё внимание привлекла одна девочка. Имя у неё было Лиза.
-– У меня тоже была одна девочка Лиза. Очень много совпадений у нас с героем, конечно. Я очень мутно помню, что у меня с ней было. Но ты продолжай, Алиса, и, может, я что-то вспомню.
+Toate aceste povești se întâmplau în fiecare zi. Se adunaseră atât de multe încât nici nu le mai puteam ține minte. Nicio zi nu semăna cu alta. Întotdeauna era ceva interesant. Și a venit momentul în care am înțeles că toate astea sunt mișto — să ai pe cine vrei — dar aș fi vrut să simt ceva față de un om, nu doar sex. Aș fi vrut să văd pe cineva și a doua și a treia oară. Dar, din păcate, toți cei care apăreau voiau doar să se fută. Iar eu, trăind 99% din viață sub alcool, voiam doar să le fut și să mă trezesc cu mahmureală, auzind cuvintele: „Max! Închide ușa după mine. Plec.”
 
-Это была первая девочка в моей жизни, которой я отправил запрос, не зная её. Ответила на запрос она быстро. Но тут вышла дилемма, и я не знаю, что мне ей написать? Я последние годы привык говорить только с выпившими девушками или с теми, кто был готов на всё и сразу. Мне не нужно было ничего придумывать, даже несмотря на то, что я очень харизматичный человек.
+— Eroul ăsta e exact ca mine! — a spus Maxim cu mândrie.
+— Maxim, aveți un stil de viață foarte asemănător cu al lui. Pot continua lectura?
+— Alice, nici să nu mă întrebi. Doar citește și nu băga în seamă comentariile mele.
 
-Сижу я и смотрю на её профиль, анализирую, к чему бы привязаться, чтобы сразу ей написать, и это не было банальным „Привет! Как дела?”. Фотографии было мало. Точнее, две фотографии, из которых на одной она сделала фотопортрет, а на второй стоит, отвернувшись к камере, но чётко видны её ноги. Это просто нереально красивые ноги. Я эти ноги рассматривал долгое время. Дело в том, что я по знаку зодиака рыбы, а мы сходим с ума от красивых ног. Ноги – это наша слабость. А ноги Лизы были самой большой слабостью в моей жизни. Думаю, так и начну с ней общаться.
+  Așa s-a nimerit că perioada în care lucram acolo a coincis cu un salt tehnologic global — a apărut primul iPhone din lume. Și ghiciți când l-am avut eu? Exact atunci când a apărut la vânzare în SUA. Mi l-au adus în Moldova niște cunoscuți care se întorceau din programul Work and Travel. Costa o grămadă de bani. Dar eu aveam bani. Știți bine: unde sunt alcool și prostituate, sunt și bani mulți. Oficial câștigam 100 de dolari pe săptămână. Dar aproape niciodată nu luam salariul, pentru că din bacșiș făceam 300–400 de dolari pe zi. Doar pentru că îi spuneam fetelor care lucrau ce client e interesat de ele, primeam 100 de dolari. Și erau multe astfel de fete. Iar banii îi împărțeam între noi.
 
-– Привет. У тебя нереально красивые ноги.
+  Odată cu apariția iPhone-ului, trebuia să te înregistrezi pe rețelele sociale. Atunci existau două rețele populare în Moldova și în lume: Facebook și Odnoklassniki. Eram pe amândouă. Algoritmii au început să-mi arate oameni pe care i-aș putea cunoaște — din oraș, din școală. Listele erau mari, dar atenția mi-a fost atrasă de o fată. O chema Liza.
 
-Это было моё первое сообщение, которое мне казалось оригинальным. И вы думаете, она ответила? Хрен там. Она прочитала и всё. Всё! Понимаете? Она прочитала его и не ответила никак. Как это ударило по моему самолюбию! Я тот человек, который каждый день без слов укладывает в постель новых девушек, а тут Лиза, которая мне не отвечает. Ну, думаю, надо решать этот вопрос. Моё второе сообщение было таким:
+— Și eu am avut o Liză. Prea multe coincidențe cu eroul ăsta. Îmi amintesc vag ce-a fost între noi. Continuă, Alice, poate-mi amintesc ceva, — a spus Maxim.
 
-– У тебя проблемы с пальцами или мне показалось?
+A fost prima fată din viața mea căreia i-am trimis cerere fără s-o cunosc. A acceptat repede. Și a apărut dilema: ce-i scriu? Eu, în ultimii ani, vorbeam doar cu fete beate sau cu cele gata de orice. Nu trebuia să inventez nimic. Mă uitam la profilul ei, analizând de ce să mă leg. Avea puține poze. Mai exact două: una — portret, cealaltă — stătea cu spatele, dar picioarele i se vedeau clar. Niște picioare ireal de frumoase. Le-am privit mult timp. Sunt Pești după zodiac, iar noi o luăm razna după picioare frumoase. Picioarele sunt slăbiciunea noastră. Iar picioarele Lizei erau cea mai mare slăbiciune din viața mea. Așa că am început cu asta:
+— Salut. Ai niște picioare ireal de frumoase.
+ Credeam că e un mesaj original. Și credeți că mi-a răspuns? Nici vorbă. A citit și atât. Atât! Vă dați seama? L-a citit și n-a răspuns. A fost o lovitură pentru orgoliul meu. Eu, care în fiecare zi fut fără să spun un cuvânt, iar aici — Liza, care nu-mi răspunde. Așa că am decis să rezolv problema. Al doilea mesaj a fost:
+— Ai probleme cu degetele sau mi se pare?
+Și ea a întrebat:
+— De ce?
+— Îți scriu și nu răspunzi. M-am gândit că ai probleme cu degetele. Am un prieten traumatolog, voiam să te ajut.
+— Hahaha. Nu, n-am probleme. Doar că nu comunic cu necunoscuți.
+— Dar m-ai adăugat în prieteni și nu te-a deranjat că nu ne cunoaștem.
+— Pot să te șterg.
+— Nu, nu. Stai. Avem totuși multe în comun.
+— De exemplu?
+— Îl știi pe Lenin?
+— Da.
+— Și eu îl știu. Vezi? Avem deja ceva în comun.
+— Hahaha. Original.
+— De fapt, nu știu cum să vorbesc aici și cum să invit fetele la întâlniri. Ești una dintre primele pe care le-am adăugat.
+— Dacă e un indiciu, nu ies nicăieri. Putem vorbi aici. Poate într-o zi voi ieși. Dar acum am un iubit.
+— E un iubit bun?
+— Cel mai bun.
+— Dar eu sunt bun?
+— Tu ești doar Maxim, care mi-a atras atenția. Nimic mai mult.
+— Bine, Elizabeth. Atunci îți scriu mâine. Începe munca, trebuie să fug.
+— Unde lucrezi?
+— Ooo… Ai început să te interesezi de mine. Ai grijă, că te desparți de iubit.
+— Nu mă despart. Unde lucrezi și ce faci?
+— Lucrez barman într-un cocktail-bar.
+— N-am auzit să existe așa ceva la noi în oraș.
+— Și mai bine. Ai un mare plus din partea mea.
+— De ce e bine?
+— E un loc cu o reputație nu tocmai bună.
+— Cum adică?
+— Îți povestesc altădată, când am timp.
+— Cum vrei. Să ai spor la muncă.
+— Mulțumesc. Îți scriu când sunt liber.
 
-И тут она, видимо, решила уточнить:
+Această conversație scurtă a lăsat o urmă în mine. La muncă nu făceam decât să aștept o clipă liberă ca să-i scriu. Mesajele noastre erau banale. De genul:
+— Liza! Ești aici?
+— Da.
+— Te-ai despărțit de iubit?
+— Nu.
+— Ok. Îți scriu peste 10 minute. Poate se schimbă ceva.
+— Hahaha.
 
-– Почему?
-– Ну, я тебе пишу, а ты не отвечаешь. Вот и подумал, что с пальцами проблемы. У меня есть друг врач-травматолог, и решил предложить тебе помощь.
-– Хахаха. Нет, у меня нет проблем с пальцами. Просто я не общаюсь с незнакомыми людьми.
-– Но ты же меня добавила в друзья и не видела проблемы в том, что мы не знакомы.
-– Могу удалить.
-– Нет, нет. Постой. Не надо удалять меня. У нас всё же очень много общего.
-– Например, что?
-– Ленина знаешь?
-– Да.
-– И я его знаю. Вот видишь, что у нас уже есть что-то общее.
-– Хахаха. Оригинально!
-– На самом деле я не знаю, как тут общаться и как приглашать девушек на свидание. Ты просто одна из первых, кого я добавил.
-– Если это намёк, то я никуда не выйду. Мы можем тут общаться, и, может быть, я выйду в один день. Но на данный момент у меня есть парень.
-– Парень хороший?
-– Лучший.
-– А я хороший?
-– Ты просто Максим, который привлёк моё внимание, и не больше.
-– Хорошо, Елизавета. Я тогда напишу тебе завтра. Начинается работа, и я должен бежать.
-– А где ты работаешь?
-– Ооо… Ты начала мною интересоваться. Смотри аккуратнее, а то расстанешься с парнем.
-– Не расстанусь. Так где работаешь и кем?
-– Я работаю барменом в одном коктейль-баре.
-– Никогда не слышала, что у нас в городе есть такие заведения.
-– Ну и хорошо, что не слышала. Значит, у тебя от меня большой плюс.
-– Почему же хорошо, что я не слышала?
-– Ну, это заведение с не самой хорошей репутацией.
-– Не поняла! Это как?
-– Давай я тебе как-то расскажу про него, когда у меня будет больше времени.
-– Ну как хочешь. Хорошей тебе работы.
-– Спасибо большое. Напишу, как буду свободен.
+  Desigur, îi disprețuiesc pe cei care scriu fetelor chiar și după ce ele spun că sunt într-o relație. Dar sunt momente când înțelegi că e omul tău și trebuie să o cucerești. Mai ales că îți răspunde. Asta înseamnă ori că e nefericită în relație, ori că se distrează. Și ambele variante îți dau o șansă. Și există o problemă mare și un sfat pentru toți băieții: dacă îți scrie o fată care e într-o relație și, printr-un miracol, se desparte și începe să se vadă cu tine, nu te bucura prea repede. După un timp, va scrie altor băieți și când va fi cu tine.
 
-Эта короткая переписка оставила след во мне. Находясь на работе, я только и ждал, когда появится свободная минута, чтобы написать ей. Наши письма были банальными. Что-то вроде:
+— Aici a punctat bine, — i-a spus Maxim lui Alice.
 
-– Лиза! Ты тут?
-– Да.
-– С парнем рассталась?
-– Нет.
-– Ок. Напишу через 10 минут. Может, что-то поменяется.
-– Хахаха.
+  Ne-am scris zilnic o perioadă foarte lungă. Niciodată nu mi-aș fi imaginat că m-aș îndrăgosti de un om doar citind mesaje. Fără s-o văd, fără să-i aud vocea. Nu-mi dădea numărul de telefon. Imaginați-vă că ne certam în mesaje și chiar ne despărțeam. Certurile erau dese, pentru că eu voiam s-o văd, iar ea nu voia deloc. Dar mesajele noastre au început să capete altă formă. Apărea gelozia, supărările dacă nu scriam sau nu răspundeam. Ea știa deja unde lucrez și cu cine. Dacă nu răspundeam, imediat venea mesajul: „Iar cu curvele tale?” Dar nu puteam să-i explic că ele nu mă interesează și că e doar muncă. Și chiar așa era. Odată cu apariția ei, nu mă mai interesa nimeni. Toate gândurile erau doar despre ea.
 
-Я, конечно, призираю тех, кто пишет девушкам даже после того, как она говорит, что она в отношениях. Но бывают моменты, когда понимаешь, что это твой человек, и ты должен добиться её. Тем более что она отвечает тебе взаимностью. Это значит, что она либо несчастлива в отношениях, либо развлекается. И тот и другой вариант дает тебе шанс.
+— Da, da, da! Spune asta altcuiva. Nu-l interesau alte fete. Alice, tu chiar crezi asta? El e într-un local plin de prostituate și se gândește doar la o fată pe care nici măcar n-a văzut-o?
+— Dragostea este un sentiment imprevizibil, capabil să schimbe oamenii.
+— Da, da, da. Alice, tu crezi în basme? Citește mai departe.
 
-И есть одна большая проблема, и совет всем парням: если вам пишет девушка, которая в отношениях, и каким-то чудом она рассталась и начала с вами встречаться, не спешите радоваться. Через некоторое время она так же будет писать другим парням, находясь с вами в отношениях.
-– А вот это он правильно подметил, – сказал Максим Алисе.
-Мы переписывались с ней каждый день на протяжении долгого времени. Я никогда не мог представить, что влюблюсь в человека, просто читая письма. Никогда не видя её и даже не услышав ни разу. Она мне не давала свой номер телефона. Представьте, мы с ней даже ссорились в переписках и даже расставались. Ссоры случались часто, потому что я хотел её увидеть, а она никак не хотела.
+Nu posta fotografii public, mi le trimitea doar mie. Cu fiecare poză înțelegeam că mă îndrăgostesc tot mai tare.
+  Așa a durat aproape doi ani. În tot timpul ăsta nu m-am atins de nicio fată. Toate fetele din jurul meu nu mă mai recunoșteau. Erau gata de orice doar ca să se culce cu mine. Îmi ofereau chiar bani. Dar de fiecare dată refuzam. Scoteam telefonul, le arătam poza Lizei și le spuneam:
+— O vedeți pe ea? Ei nu pot să-i fiu infidel. Iar voi nu valorați nici măcar cât degetul ei. Niciun ban nu vă ajută.
+  Acesta era argumentul meu.
 
-Но наши письма приобретали другой характер. Появлялась ревность, обиды, если я не писал и не отвечал. Она уже знала, где я работаю и с кем. Если я не отвечал, то сразу приходило сообщение: „Опять со своими шлюхами?”
+  Timpul trecea, certurile deveneau tot mai dese. La un moment dat am înțeles că probabil nu va duce nicăieri și am decis să nu-i mai scriu, ca să văd ce va face ea. Liza m-a jucat și aici. Nici ea nu mi-a scris. Am crezut că nu-mi scrie pentru că îi sunt indiferent. Dar s-a nimerit că eram legați mental și exact în momentul în care am decis s-o testez, ea a decis același lucru. N-am vorbit aproape trei luni. A fost un test bun. Dar pentru mine a fost extrem de greu. Eram îndrăgostit de ea.
+  După trei luni, când nu mai suportam, am decis să-i scriu:
+— Elizabeth!
+— Maxim!
+— Ați dispărut puțin.
+— Și dumneavoastră, Maxim.
+— Elizabeth! În timpul ăsta v-ați gândit la propunerea de a ne întâlni?
+— Da.
+— Și ce ați decis?
+— Am decis că nu ne vom întâlni.
+— La dracu’, Liza, cât se mai poate? De ce nu vrei să ne vedem? Care e motivul?
+— Nu mi-ai scris trei luni ca să mă cerți? Nu vreau și gata.
+— Nu poate fi doar pentru că nu vrei.
+— Poate. Pur și simplu nu vreau.
+— Liza! Vreau să te văd. Se poate rezolva cumva?
+— Dacă îți trebuie, rezolvă singur.
+ Era foarte dură în mesajele de genul ăsta. Era clar că, dacă ne vom întâlni, va fi doar când va vrea ea.
+— Bine, Liza. Dacă nu, atunci nu. Vreau doar să-ți spun că mi-a fost dor de tine tot timpul ăsta.
+— Și mie mi-a fost dor. Au fost cele mai liniștite trei luni din viața mea. Zero scandaluri.
+— Hahaha. Mulțumesc pentru sinceritate.
+— Chiar așa, uitasem cum e să te cerți.
+— Promit să nu mai fac asta.
+— O să mă prefac că te cred.
+— Chiar mi-a fost foarte dor.
+— Și mie.
 
-Но я никак не мог объяснить ей, что они меня не интересуют и это просто работа. А так и было. С её появлением меня никто не интересовал, и все мысли были только о ней.
-– Да, да, да! Расскажешь это кому-то другому. Не интересовали его другие девушки. Вот, Алиса, скажи мне, ты веришь в это? Он в заведении, заполненном проститутками, и думает только про одну девушку, которую даже не видел?
-– Любовь – это непредсказуемое чувство, способное менять людей.
-– Да, да, да. Алиса, ты веришь в сказки? Зачитывай дальше.
+Toată ziua am vorbit despre ce ni s-a întâmplat în perioada asta. Am înțeles că nu mai vreau să dispar din viața ei. Aveam nevoie să știu fiecare minut al ei.
 
-Она не выставляла фото, а только высылала их мне. С каждой фотографией я понимал, что влюбляюсь всё сильнее и сильнее.
+Într-o zi, fiind la muncă, am întâlnit întâmplător o colegă de clasă de-a ei. Ea nu mă cunoștea, dar eu am recunoscut-o imediat. Liza îmi trimitea des poze cu ea. M-am apropiat și am întrebat-o:
+— Salut. Spune-mi, te rog, ești colega de clasă a Lizei?
+— Da! Dar tu de unde o știi?
+— Îmi trimitea des poze cu tine și spunea că ești cea mai bună prietenă a ei.
+— Așa e. Suntem prietene.
+— Spune-mi, te rog, cum e ea?
+— E o fată foarte bună. Frumoasă, blândă, gospodină. Ți-a plăcut?
+— Vorbesc cu ea de peste doi ani, dar nu vrea să se întâlnească cu mine.
+— Așa e Liza. Iese rar. Părinții sunt plecați peste hotare, iar ea stă acasă cu fratele mai mic.
+— I-am propus să iasă cu el.
+— Nu cred că va vrea. Controlul părinților e foarte strict.
+— Știu de părinți și de frate. Dar măcar cinci minute să ne vedem nu se poate?
+— Se va vedea când va putea. Acum nu există această posibilitate.
+— Am înțeles. Bine. Mulțumesc oricum. Dacă o vezi, spune-i că e cea mai frumoasă.
+— O să-i transmit.
 
-Такое общение длилось почти два года. За это время я не притрагивался ни к одной девушке. Все девушки вокруг меня не узнавали меня. Они были готовы на всё, лишь бы я с ними переспал. Даже деньги предлагали. Но я им отказывал каждый раз. Доставал телефон и показывал фотографию Лизы и говорил им:
-– Вы видите её? Вот ей я не могу изменить. И вы не стоите даже её пальца, и никакие деньги вам не помогут.
+A doua zi am decis să fac un gest extrem și s-o păcălesc pe Liza, scriindu-i:
+— Liza! Ești aici?
+— Da.
+— Ieri am văzut-o pe prietena ta. Nu mă așteptam să spună așa ceva despre tine.
+— Ce a spus?
+— Dă-mi numărul tău și îți spun. Nu vreau să scriu, pentru că i-ai arăta mesajele.
+— Nu-ți dau numărul. Scrie ce a spus.
+— Nu. Doar la telefon.
+— Ori scrii, ori nu mă interesează ce a spus.
+— Doar la telefon, Liza. Nu există altă variantă.
+— Nu ți-l dau. O zi bună, Maxim. Fug la oră.
 
-Это был мой аргумент.
+Știam că e foarte curioasă când e vorba de ea și că va scrie. Avea numărul meu din primele zile. Și după o oră văd apel de la un număr necunoscut.
 
-Время шло, и ссоры стали частыми. Я в какой-то момент понял, что это, наверное, никуда не приведёт, и решил не писать ей, чтобы посмотреть, что будет делать она. Лиза и тут меня переиграла. Она тоже мне не писала. Я подумал, что она не пишет, потому что я ей безразличен. Но так уж совпало, что мы с ней были привязаны ментально, и в тот момент, когда я решил её проверить, она решила сделать то же самое. Мы не общались почти три месяца. Это была хорошая проверка. В то же время это было очень сложно для меня. Я в неё влюбился!
+— Alo!
+— Salut! Spune ce a spus? — vocea ei era atât de blândă, încât era greu de crezut că poate fi dură.
+— A spus că ești foarte frumoasă și o fată bună.
+— Maxim, ești idiot? Am întrebat-o de o sută de ori ce ți-a spus! Toată ora m-am gândit că o să-mi pierd prietena, iar tu îmi spui asta?
+— Ți-am zis că nici nu mă gândeam să spună așa ceva.
+— Maxim, chiar ești idiot.
+— Dar acum am numărul tău.
+— Ți-au trebuit doi ani să-ți vină ideea asta?
+— Se pare că da.
+— Nu e o variantă prea bună pentru viață.
+— Cu ce nu te mulțumesc?
+— Ești lent.
+— Nu e cel mai rău lucru la un om.
+— Bine, Maxim. Ai numărul, dar nu mă suna, bine?
+— De ce să nu sun? Vreau să-ți aud vocea.
+— Nu răspund nici dacă mă suni toată ziua. O zi bună.
 
-Через три месяца, когда уже было невыносимо всё это терпеть, я решился ей написать:
-– Елизавета!
-– Максим!
-– Вы пропали немного.
-– Вы тоже, Максим.
-– Елизавета! За это время вы подумали над предложением встретиться?
-– Да.
-– И что решили?
-– Решила, что мы не встретимся.
-– Бля, Лиза, сколько можно? Почему ты не хочешь увидеться? В чем причина?
-– Ты мне не писал три месяца, чтобы отчитать меня? Не хочу и всё.
-– Не может быть, что причина только в том, что ты не хочешь.
-– Может. Я просто не хочу.
-– Лиза! Я тебя хочу увидеть. Можно это как-то решить?
-– Тебе надо, ты и решай.
+Și Liza și-a ținut cuvântul. Nu a răspuns la niciun apel, oricât am încercat. Eu sunam, iar ea îmi trimitea mesaje în care îmi spunea să nu o sun, ci să-i scriu.
 
-Она была очень строга в сообщениях такого характера. Было ясно, что если мы и встретимся, то это произойдет только когда она захочет.
-
-– Хорошо, Лиза. Нет, так нет. Хочу тебе сказать, что я скучал всё это время.
-– Я тоже скучала. Таких тихих трёх месяцев у меня ещё не было. Ноль скандалов.
-– Хахаха. Спасибо тебе за искренность.
-– Ну, я и в правду забыла, что такое ссориться.
-– Обещаю, этого больше не делать.
-– Сделаю вид, что поверила тебе.
-– Я действительно очень скучал.
-– Я тоже.
-
-Весь день мы обсуждали то, что у нас произошло за это время. Я понял, что больше не хочу так пропадать из её жизни. Мне нужно знать каждую её минуту.
-
-В один прекрасный день, находясь на работе, я случайно встретил её одноклассницу. Она меня не знала, но я её узнал сразу. Мне Лиза часто высылала фотографии с ней. Я подошёл к ней и спросил:
-– Привет. Скажи, пожалуйста, твоя одноклассница Лиза?
-– Да! А ты откуда знаешь?
-– Она мне часто высылала фотографии с тобой и говорила, что ты её лучшая подруга.
-– Ну, так и есть. Мы с ней дружим.
-– Скажи, пожалуйста, какая она?
-– Она очень хорошая девочка. Красивая, добрая, хозяйственная. Понравилась тебе?
-– Я с ней больше двух лет общаюсь, но она так и не хочет со мной встретиться.
-– Это Лиза. Она редко выходит. Её родители за границей, а она сидит дома с младшим братом.
-– Я предлагал ей выйти с ним вместе.
-– Я думаю, она не захочет. У неё контроль от родителей сильный.
-– Знаю я и про родителей, и про брата. Но можно было бы хоть на 5 минут увидеться?
-– Она увидится тогда, когда сможет. Сейчас такой возможности нет.
-– Я тебя понял. Ну ок. И на то спасибо. Если увидишь её, скажи, что она самая красивая.
-– Обязательно передам.
-
-На следующий день я решил пойти на крайний поступок и обмануть Лизу, написав ей сообщения:
-– Лиза! Ты тут?
-– Да.
-– Вчера видел твою подругу. Я, конечно, не ожидал, что она такое про тебя скажет.
-– Что она сказала?
-– Дай мне свой номер телефона, и я скажу. Я просто не хочу это писать, так как ты покажешь ей это.
-– Не дам я свой номер. Напиши, что она сказала.
-– Нет, только по телефону.
-– Или пиши, или меня не интересует, что она сказала.
-– Только по телефону, Лиза. Других вариантов нет.
-– Я тебе его не дам. Хорошего дня, Максим. Я на урок бегу.
-
-Я знал, что она очень любопытная, когда дело касалось её, и должна была написать мне. У неё был мой номер телефона с первых дней. И тут, через час, я вижу, что мне звонит неизвестный номер.
-
-– Алло!
-– Привет! Говори, что она сказала? – её голос был настолько нежным, что невозможно было поверить, что она может быть дерзкой.
-– Она сказала, что ты очень красивая и хорошая девочка.
-– Максим, ты идиот? Я уже переспросила её сто раз, что она тебе сказала! Весь урок думаю о том, что потеряю подругу, а ты мне тут такое говоришь?
-– Ну, я сказал тебе, что даже не думал, что она такое скажет.
-– Максим, ты реально идиот.
-– Зато у меня теперь есть твой номер.
-– Тебе понадобилось два года, чтобы до этого додуматься?
-– Ну, как видишь.
-– Так себе вариант для жизни.
-– Чем я тебя не устраиваю?
-– Долгий.
-– Это не самое плохое, что может быть в человеке.
-– Ладно, Максим. Номер есть, но не звони мне, хорошо?
-– Почему нельзя звонить? Я хочу слышать твой голос.
-– Я не отвечу, даже если будешь звонить целыми днями. Хорошего дня.
-
-И Лиза слово сдержала. Она не отвечала на мои звонки, как бы я ни старался. Я звонил, а она в ответ высылала мне письма, в которых писала, чтобы я ей не звонил, а писал.
-
-– Огонь, а не девочка. Но и он, конечно, нашел как получить её номер. И не важно, что на это должно было уйти два года. Сразу видно, что парень с смекалкой. Он с второго сообщения получил её внимание и думаю, в дальнейшем ей было интересно с ним только потому, что он её удивлял каждый день, – сказал Максим, глядя в потолок размышляющим видом.
+— Foc, nu fată. Dar și el, bineînțeles, a găsit cum să-i obțină numărul. Nu contează că i-au trebuit doi ani. Se vede clar că e un tip descurcăreț. Din al doilea mesaj i-a atras atenția și cred că mai departe i-a fost interesant doar pentru că o surprindea în fiecare zi, — a spus Maxim, privind tavanul, cufundat în gânduri.
 `
     },
     {
         id: 'ch2',
-        title: 'Он/Она',
+        title: 'El / Ea',
         content: `
-– Алиса, как думаешь, он её увидит? Или вся книга будет о том, как он ей пишет, а она его не хочет видеть?
-– Всё самое интересное ещё впереди, Максим. Это роман, который перевернёт вашу жизнь.
-– Ну, давай подумаем логически. Не может же быть такого, что два года они общались и не виделись. Это же абсурд. Такое бывает только в кино.
-– Каждый фильм основан на реальных событиях. Так же и книги. Вы не верите в их любовь?
-– Может, это и есть любовь. Но уж очень она странная. Давай зачитывай дальше и посмотрим, что у них там.
+— Alice, cum crezi, o va vedea? Sau toată cartea va fi despre cum el îi scrie, iar ea nu vrea să-l vadă?
+— Tot ce e mai interesant abia urmează, Maxim. E un roman care îți va da viața peste cap.
+— Hai să gândim logic. Nu se poate ca timp de doi ani să fi comunicat și să nu se fi văzut. E absurd. Asta se întâmplă doar în filme.
+— Fiecare film e bazat pe fapte reale. La fel și cărțile. Nu credeți în iubirea lor?
+— Poate că asta e iubire. Dar e al naibii de ciudată. Hai, citește mai departe și să vedem ce e cu ei.
 
-Прошло меньше недели после того, как я получил её номер телефона, как вдруг у меня зазвонил телефон, и на экране было написано имя ЛИЗА.
-– Неужели ты мне позвонила?
-– Да! – сказала она сквозь смех.
-– Что случилось? Я чуть телефон не уронил.
-– Ты на работе?
-– Да.
-– Я скоро приеду.
-– В смысле, приедешь? Куда? Зачем?
-– В Deja Vu.
-– Умеешь ты удивлять. Ок, я тебя жду.
+Trecuse mai puțin de o săptămână de când primisem numărul ei de telefon, când deodată mi-a sunat telefonul și pe ecran scria numele LIZA.
+— Nu-mi vine să cred că m-ai sunat tu?
+— Da! — a spus ea râzând.
+— Ce s-a întâmplat? Aproape că mi-am scăpat telefonul din mână.
+— Ești la muncă?
+— Da.
+— Vin acum.
+— Adică vii? Unde? De ce?
+— La Deja Vu.
+— Știi să surprinzi. Ok, te aștept.
 
-Она ехала 10 минут, а мне казалось, что прошли часы. Я всё это время думал, что ей сказать. Маялся, волновался. Обнять её или нет? Пожать руку или нет? Поцеловать или нет? Я будто 16-ти летний пацан, который пришёл на первое свидание. И тут я слышу, как открывается дверь, и заходит она. Низенькая, хрупкая, красивая девочка с самой красивой улыбкой на свете. Она тянет мне руку, и я, конечно, протягиваю свою. Мне не верится, что я держу её за руку и смотрю в её глаза. Около двух лет прошло с того момента, как мы отправили друг другу первые письма.
-– Ну, привет. Не ждал?
-– Сегодня точно не ждал. Что случилось?
-– Меня пригласили на день рождения, и я немного перепутала время. Я думала, что начало в 18, а начало в 19. И решила, что раз уж я рядом, то посижу с тобой.
-– Ты не могла до этого на все дни рождения ошибаться временем?
-– Не могла. – Она рассмеялась. У неё было хорошо развитое чувство юмора. И предложила присесть куда-то, но только не там, где сидят все шлюхи.
-– Тогда нам придётся пойти в другое заведение.
-– Ладно, давай присядем там, где я не забеременею от дивана.
-– Наши диваны в прямом смысле многое повидали. Тебя угостить чем-то?
-– Я буду ром с колой.
-– Хороший выбор. Откуда ты знаешь это сочетание? Вроде как ты всегда дома сидишь?!
-– Эх, Максимка! Много ты ещё не знаешь.
+Ea a făcut zece minute pe drum, dar mie mi s-a părut că au trecut ani. Tot timpul ăsta mă gândeam ce să-i spun. Mă frământam, eram nervos. S-o îmbrățișez sau nu? Să-i strâng mâna sau nu? S-o sărut sau nu? Eram ca un puști de șaisprezece ani la prima întâlnire. Și atunci aud ușa deschizându-se și intră ea. Mică de statură, fragilă, o fată frumoasă cu cel mai frumos zâmbet din lume. Îmi întinde mâna și, bineînțeles, o întind și eu pe a mea. Nu-mi vine să cred că o țin de mână și mă uit în ochii ei. Aproape doi ani trecuseră de când ne trimiseserăm primele scrisori.
 
-Её смех просто убивал меня. Я смотрел на неё и не мог поверить, что она рядом. Что я вижу её и могу с ней поговорить. Мы просидели минут 40, но для меня это были самые замечательные минуты за последние несколько лет. Взглянув на часы, она сказала:
-– Я должна уйти. Не люблю, когда меня ждут.
-– Ты не любишь, когда тебя ждут? Ты случайно не подскажешь, сколько времени я тебя ждал? Не любит она. Ну ты меня, конечно, рассмешила сейчас. Ты приедешь ко мне ещё сегодня?
-– Приеду уже после дня рождения.
-– Я буду тебя ждать. Можешь приезжать даже без звонка или сообщения.
-– Ок. Я бегу. Мне было очень приятно провести время с тобой.
-– Мне тоже.
+— Ei bine, salut. Nu te așteptai?
+— Azi chiar nu. Ce s-a întâmplat?
+— M-au invitat la o zi de naștere și am încurcat puțin ora. Credeam că începe la 18, dar începe la 19. Și am decis că, dacă tot sunt prin zonă, să stau puțin cu tine.
+— Nu puteai să încurci ora la toate zilele de naștere?
+— Nu puteam. — A râs. Avea un simț al umorului foarte bine dezvoltat. Și a propus să ne așezăm undeva, dar nu acolo unde stau toate curvele.
+— Atunci va trebui să mergem în alt local.
+— Bine, hai să ne așezăm acolo unde nu rămân gravidă de la canapea.
+— Canapelele noastre au văzut multe, la propriu. Vrei ceva de băut?
+— Rom cu cola.
+— Alegere bună. De unde știi combinația asta? Parcă stai mereu acasă?!
+— Eh, Maximka! Mai sunt multe pe care nu le știi.
 
-Попрощавшись, она ушла, оставив меня с улыбкой за столом. Я сидел ещё полчаса и не мог прийти в себя.
+Râsul ei pur și simplu mă omora. Mă uitam la ea și nu-mi venea să cred că e lângă mine. Că o văd și pot vorbi cu ea. Am stat vreo patruzeci de minute, dar pentru mine au fost cele mai minunate minute din ultimii ani. S-a uitat la ceas și a spus:
+— Trebuie să plec. Nu-mi place să fiu așteptată.
+— Nu-ți place să fii așteptată? Îmi spui, te rog, cât timp te-am așteptat eu? Nu-i place, cică. M-ai făcut să râd acum. Mai vii pe la mine azi?
+— Vin după ziua de naștere.
+— Te voi aștepta. Poți veni chiar și fără să suni sau să scrii.
+— Ok. Fug. Mi-a făcut mare plăcere să petrec timp cu tine.
+— Și mie.
 
-– И всё? Это всё что он может рассказать про первую встречу? Автор, конечно, вообще не романтик в описаниях ситуации. А где же описание её волос на 5 страниц? А где же как она на него смотрела, и он в её глазах увидел любовь и океан? Где описание её духов и макияжа? Она же сто процентов готовилась к дню рождения, а это значит она была просто шикарной. Эта современная литература вообще потеряла романтику, – с удивлением сказал Максим, держа в руке бокал вина. – Читай дальше, Алиса!
+Ne-am luat rămas-bun și ea a plecat, lăsându-mă la masă cu un zâmbet pe față. Am mai stat încă o jumătate de oră și nu-mi reveneam.
 
-– Макс! Ты будешь готовить бар? – спросил меня мой напарник, который всё это время сам делал всю работу.
+— Și atât? Asta e tot ce poate povesti despre prima întâlnire? Autorul, desigur, nu e deloc romantic în descrieri. Unde e descrierea părului ei pe cinci pagini? Unde e cum se uita la el și el a văzut iubirea și oceanul în ochii ei? Unde e descrierea parfumului și machiajului? Suta la sută s-a pregătit pentru ziua de naștere, deci era pur și simplu superbă. Literatura modernă chiar a pierdut romantismul. — spuse Maxim mirat, ținând un pahar de vin în mână. Citește mai departe, Alice!
 
-– Конечно. Я тебе помогу сейчас. Просто не могу прийти в себя.
+— Max! O să pregătești barul? — m-a întrebat colegul meu, care tot timpul ăsta făcuse singur toată treaba.
+— Desigur. Te ajut imediat. Pur și simplu nu-mi pot reveni.
+— Cine e fata asta?
+— E fata despre care ți-am vorbit.
+— Liza?
+— Da.
+— Și ce a spus? Când vă vedeți data viitoare?
+— A spus că mai trece azi.
+— Max, și tu chiar crezi asta? Ai văzut-o? Ce treabă ai tu cu ea? Ai văzut cât e de frumoasă?
+— Pariez că vine.
+— Pe o sticlă de Corona. Nu vreau să te cheltui dacă nu vine.
 
-– Кто эта девочка?
+Ne-am strâns mâinile. Sincer, mă îndoiam că va veni, dar credeam. Stând la bar, tot ce făceam era să mă uit la ușă și s-o aștept. Și deodată intră. Zâmbea la fel, dar era în compania unor băieți. M-am bucurat și am fost gelos în același timp.
+— Ce? Nu mă așteptai?
+— Ba da. Cine sunt băieții?
+— Sunt prietenii mei. După ziua de naștere am decis să venim. I-am convins eu.
+— Atunci ce beți? Lasă că vă fac eu cinste.
 
-– Это та девочка, о которой я тебе говорил.
+Liza a ales cocktailurile pentru toți și s-a dus în mijlocul ringului de dans. Dansa și se uita la mine. Înțelegeam că îi plăceam. O privire îndrăgostită nu o poți confunda cu nimic. La un moment dat am uitat chiar și de muncă. Prostituatele tot veneau la ea și o întrebau cine e. Credeau că e o concurentă și chiar voiau s-o atragă în gașca lor. Dar Lizei nu-i păsa. Se distra la maxim.
 
-– Лиза?
+Spre închidere a rămas singură, prietenii ei plecaseră, și s-a așezat lângă mine la bar.
+— Când termini?
+— Când pleacă toți clienții.
+— Pot rămâne cu tine până la închidere?
+— Desigur. Nici nu se discută. Dacă vrei, pot pleca și acum și să te conduc.
+— Nu. Fă-ți treaba, te aștept și plecăm împreună.
 
-– Да.
+Ora rămasă am lucrat sub privirea ei atentă. Se uita și mă admira. Mă simțeam ca o vedetă la un concert la care venise ea. După ce am terminat, i-am propus s-o conduc acasă, nu voiam să meargă singură. Ne-am așezat pe bancheta din spate a taxiului și ea a dictat adresa. M-a amuzat teribil.
+— De ce râzi?
+— Aproape doi ani nu mi-ai dat numărul, nu voiai să te întâlnești cu mine. Iar azi m-ai văzut, ai venit din nou să mă vezi și acum îmi spui adresa fără probleme și te duc acasă.
 
-– И что она сказала? Когда увидитесь в следующий раз?
+S-a uitat la mine zâmbind și n-a spus nimic. Din privire era clar totul. Ajunși, am coborât, i-am deschis ușa și i-am întins mâna. Știam că îi place să fie tratată ca o adevărată domnișoară.
+— Aici locuiesc. Mulțumesc, Maxim, pentru noaptea asta. O voi ține minte mult timp.
+— Mulțumesc și eu, Liza, că ai venit. Dar e o problemă. Te conduc până la apartament.
+— Maxim, locuiesc la etajul trei. Ce mi se poate întâmpla?
+— Dar dacă sunt drogați pe scări?
+— Ce drogați, Maxim? Stai liniștit aici.
+— Te conduc până la ușă.
+— Dumnezeule, ce m-ai enervat! Bine! Hai, condu-mă, — a spus nervoasă și a pornit înainte.
 
-– Она сказала, что сегодня заедет ещё.
+Mergeam pe scări în urma ei și știți ce făceam? Mă uitam la picioarele și la fundul ei. Nu puteam să-mi înving instinctul de bărbat care vrea mereu pe cineva. Iar când ai în față fundul fetei la care ai visat, te atrage și mai tare.
+— Am ajuns. Ai văzut mulți drogați?
+— Liza! Te voi conduce mereu până la ușă. Nu contează dacă suntem împreună sau certați, te voi conduce până la ușă. Clar?
+— Ce om ești tu, Maxim? Bine. Vrei? Condu-mă.
 
-– Макс, и ты в это веришь? Ты видел её? Куда тебе до неё? Ты видел, какая она красивая?
+— Noapte bună, Liza. Și mulțumesc încă o dată că ai venit.
 
-– Спорим, что она приедет?
+M-a îmbrățișat și în acel moment am simțit-o. M-a îmbrățișat așa cum nimeni nu m-a îmbrățișat vreodată. Nu voiam să-i dau drumul, dar ea a făcut-o pentru mine. Știa să păstreze distanța. Scoțând cheile și aruncându-mi o privire, mi-a urat noapte bună și a intrat în apartament. Când m-am urcat în taxi, primul lucru pe care l-am făcut a fost să-i formez numărul.
 
-– На бутылку Короны давай поспорим. Не хочу, чтобы ты тратился из-за того, что она не приедет.
+— Dormi?
+— Maxim, ai plecat acum un minut. Cum aș putea să adorm așa repede?
+— Pur și simplu mi-a fost dor.
+— Într-un minut?
+— Într-o secundă.
+— Mda, Maxim. O să avem probleme.
+— De ce?
+— Nu-mi place când primesc atâta atenție.
+— Iar mie îmi place să mă dedic complet unui om.
 
-Мы пожали друг другу руки при споре. Скажу честно, я сомневался в том, что она приедет, но верил в это. Стоя за стойкой, я то и делал, что смотрел на входную дверь и ждал её. Как вдруг она заходит. Так же улыбается, но уже в компании парней. Я и обрадовался, и ревновал одновременно.
+Am vorbit tot drumul până la casa mea. Chiar și după ce am intrat și ne-am luat rămas-bun pentru a suta oară, voiam s-o sun din nou. Nu puteam trăi fără ea nici măcar o secundă. Nu pot descrie în cuvinte ce simțeam atunci, dar era o senzație foarte bună.
 
-– Ну что? Не ждал меня?
+— Cât de enervant e. Am vorbit cu multe fete și toate spuneau că nu le place prea multă atenție. Alice, ce spune internetul despre asta?
 
-– Ждал, конечно. Кто эти ребята?
+— Depinde ce consideri atenție excesivă. Dacă sunt cadouri zilnice, fata nu-ți va spune că nu-i place. Dar dacă sunt cinci mii de mesaje de dimineață, atunci e deja insistență. Multe cupluri se despart pentru că sentimentele se răcesc și atenția scade.
 
-– Это мои друзья. Мы после дня рождения решили приехать. Я их уговорила.
+— M-ai convins. Uite până unde a ajuns progresul dacă Alice m-a convins. Citește mai departe.
 
-– Ну тогда что вы будете пить? Давай я вас угощу.
+  Din acel moment totul a luat-o razna între noi. Venea la mine la muncă aproape în fiecare zi și rămânea până la închidere. Iar eu o conduceam mereu până la ușă. O amuza și chiar spunea că vrea să se înțeleagă cu niște drogați într-o zi, să o aștepte pe scări, ca eforturile mele să nu fie degeaba.
 
-Лиза выбрала для всех коктейли и ушла в центр танцпола. Она танцевала и смотрела на меня. Я понимал, что я ей понравился. Влюблённый взгляд ни с чем не перепутать. В какой-то момент я даже забыл про работу. Проститутки то и делали, что подходили к ней и спрашивали, кто она. Они думали, что это конкурентка и даже хотели заманить её к себе в банду. Но Лизе было всё равно. Она отрывалась по полной.
+După o săptămână, într-o astfel de noapte, am condus-o din nou până la ușă. Și atunci, stând cu două trepte mai jos, m-a sărutat. Ce buze moi avea! Se săruta și se îmbrățișa cu atâta pasiune încât ne auzea tot blocul. Limba ei nu înceta să o caute pe a mea, și era extrem de pasional. M-am gândit că încă puțin și vom face sex chiar pe scări. Dar eram conștient că prima mea dată cu ea trebuie să fie specială. Voiam să fie frumos, ceva ce eu și ea să ne amintim mult timp. Am întrerupt sărutul și i-am cerut să se calmeze. Dar ea a continuat să mă sărute cu săruturi scurte și, la final, s-a lipit de pieptul meu. Stând în tăcere și simțindu-i bătăile inimii, am înțeles că asta e iubirea. Nu puteam și nu voiam să ne lăsăm unul pe altul să plece. Dar trebuia să ne despărțim, era deja târziu. Știți cum am coborât scările? Băieții mă vor înțelege, pentru că știu cât de greu e să cobori scările cu pula sculată, și încă așa încât să nu te prindă nimeni. De la intrare până la taxi mergeam cu mâinile în buzunare, ca și cum căutam ceva. De fapt, doar îmi camuflam erecția.
 
-Ближе к закрытию она осталась одна, так как её друзья уехали, и она присела ко мне за бар.
+— O, da. Nu e deloc simplu când ți se scoală și nu vrei să te faci de râs. Oare fetele știu că folosim trucul ăsta?
 
-– Ты когда заканчиваешь?
-– Когда уйдут все гости.
-– Я могу с тобой остаться до закрытия?
-– Конечно. Это даже не обсуждается. Если тебе надо, я могу и сейчас уйти, и провести тебя.
-– Нет. Ты делай свою работу, а я тебя дождусь, и мы уедем вместе.
-
-Оставшийся час я проработал под пристальным взором её глаз. Она смотрела и любовалась мной. Я чувствовал себя звездой на концерте, на который она пришла. Закончив работу, я предложил проводить её до дома, так как не хотел, чтобы она одна ехала. Мы сели в такси на заднем сиденье, и она продиктовала свой адрес. Меня это сильно рассмешило.
-
-– Ты почему смеёшься?
-– Ты мне почти два года не давала номер телефона, не хотела со мной встретиться. А сегодня увидела, приехала ещё раз увидеть, и теперь без проблем говоришь свой адрес, и я везу тебя домой.
-
-Она посмотрела на меня с улыбкой и ничего не сказала. По взгляду было всё понятно. Доехав до дома, я вышел из машины, открыл ей дверь и протянул свою руку. Я знал, что ей нравится, когда с ней обращаются как с настоящей леди.
-
-– Вот тут я живу. Спасибо тебе, Максим, за эту ночь. Я её запомню надолго.
-– Тебе спасибо, Лиза, что пришла. Но есть одна проблема. Я тебя проведу до квартиры.
-– Максим, я живу на третьем этаже. Что со мной может случиться?
-– А вдруг на лестницах наркоманы?
-– Какие наркоманы, Максим? Стой тут спокойно.
-– Я тебя проведу до двери.
-– Как же ты меня достал! Хорошо! Идём, проведёшь, – нервно сказала она и пошла вперёд.
-
-Я шёл за ней по лестницам и, знаете, что делал? Я смотрел на её ноги и попу. Я не мог перебороть в себе инстинкт человека, который всегда кого-то хочет. А когда перед тобой попа девушки, о которой ты мечтал, это ещё сильнее притягивает твой взгляд.
-
-– Мы пришли. Много наркоманов увидел?
-– Лиза! Я буду провожать тебя всегда до двери. Не важно, будем мы вместе или в ссоре, я буду провожать тебя до самой двери. Понятно?
-– Что же ты за человек такой, Максим? Ладно. Хочешь? Провожай.
-– Спокойной ночи тебе, Лиза. И спасибо тебе ещё раз за то что пришла.
-
-Она меня обняла, и в тот момент я почувствовал её. Она обняла меня так, как никто и никогда не обнимал. Я не хотел её отпускать, но она сделала это за меня. Она умела держать дистанцию. Достав свои ключи и кинув на меня взгляд, она пожелала мне спокойной ночи и зашла в квартиру.
-
-Сев в такси, первое, что я сделал, это набрал её номер.
-– Ты спишь?
-– Максим, ты ушёл минуту назад. Как я могу так быстро уснуть?
-– Я просто соскучился.
-– За одну минуту?
-– За секунду.
-– Мда, Максимка. У нас будут проблемы.
-– Почему?
-– Я не люблю, когда у меня столько внимания.
-– А я люблю уделять себя полностью человеку.
-
-Мы проговорили всю дорогу до моего дома. Даже зайдя к себе домой и попрощавшись с ней уже в сотый раз, я хотел её ещё раз набрать. Я не мог без неё прожить и секунды. Я не могу передать словами то, что чувствовал в тот момент, но это было очень хорошее чувство.
-
-– Ну какой же он назойливый. Я общался с многими девушками, и они все говорили о том, что им не нравится, когда к ним слишком большое внимание. Алиса, что там говорит интернет про это?
-– Смотря что считать повышенным вниманием. Если это будут ежедневные подарки, то девушка вам не скажет о том, что ей это не нравится. А если же это по пять тысяч сообщений с утра, то это уже назойливость. Многие пары расстаются от того, что чувства холодеют и внимания всё меньше и меньше.
-– Убедила. До чего дошёл прогресс, что меня переубедила Алиса. Читай дальше.
-
-С того момента у нас всё закрутилось. Она приезжала ко мне на работу почти каждый день и оставалась со мной до самого закрытия. А я всегда провожал её до двери. Её это смешило, и она даже говорила, что хочет подговорить наркоманов однажды, чтобы они ждали её на лестницах, чтобы мои усилия не были напрасными.
-
-Через неделю, во время очередной такой ночи, я также провёл её до двери. И тут, стоя на двух лестницах ниже, она меня поцеловала. Какие у неё были мягкие губы! Она так страстно целовалась и обнималась, что нас слышал весь подъезд. Её язык не переставал искать мой, и это было очень страстно. Я думал, что ещё немного, и мы начнём заниматься сексом прямо на лестницах. Но я отдавал себе отчёт, что мой первый раз с ней должен быть особенным. Я хотел, чтобы это было красиво, чтобы я и она запомнили это надолго.
-
-Я прекратил поцелуй и попросил её успокоиться. Но она продолжала меня целовать короткими поцелуями и в конце прижалась к моей груди. Стоя молча и чувствуя её сердцебиение, я понял, что это и есть любовь. Мы не могли и не хотели отпускать друг друга домой. Но нам надо было попрощаться, так как уже было поздно.
-
-Знаете, как я спускался по лестницам? Парни меня поймут, так как знают, что нелегко спускаться по лестницам с стояком, да ещё так, чтобы тебя не спалили. От подъезда до такси я шёл, сунув руки в карман, как будто что-то искал. А на самом деле я просто маскировал свой стояк.
-
-– О да. Это совсем непросто, когда у тебя стоит и ты не хочешь на этом попасться. Интересно, девушки знают, что мы используем этот приём?
-– Девушки знают очень много о мужчинах, просто они это скрывают.
+— Fetele știu foarte multe despre bărbați, doar că ascund asta.
 `
     },
     {
         id: 'ch3',
-        title: 'Там, где стираются грани',
+        title: 'Acolo unde se șterg granițele',
         content: `
-Немного информации про меня. Я всю жизнь рос и жил в Кишинёве. Так уж вышло, что моя младшая сестра вышла замуж за молодого человека, у которого вся родня из маленькой деревушки, которая входит в состав района Кэлэраш. Честно говоря, я часто проезжал мимо деревень, но никогда там не бывал. И был наслышан о гостеприимстве людей, живущих в деревнях.
+ Puțin despre mine. Toată viața am crescut și am trăit în Chișinău. Așa s-a întâmplat că sora mea mai mică s-a măritat cu un tip a cărui întreagă familie era dintr-un sătuc mic din raionul Călărași. Sincer, treceam des pe lângă sate, dar nu fusesem niciodată prin ele. Și auzisem multe despre ospitalitatea oamenilor de la țară.
 
-В один летний день мне позвонила сестра и предложила поехать с ней и её мужем в деревню. Поначалу я отказывался по причине того, что я не знаю, как там живут, да ещё и родственников шурина не знаю, но сестра меня уговорила, сказав, что это будет хороший опыт и отдых от городской суеты. Было только одно условие с моей стороны – я еду туда с Лизой. Сестра согласилась на моё предложение. Дело осталось за малым — сообщить об этом Лизе, которая совсем не любит сюрпризы такого характера и всегда просит меня обсуждать такие решения вместе.
+  Într-o zi de vară sora m-a sunat și mi-a propus să merg cu ea și cu soțul ei la țară. La început am refuzat, pentru că nu știam cum se trăiește acolo și nici rudele cumnatului nu le cunoșteam, dar sora m-a convins spunând că va fi o experiență bună și o pauză de la agitația orașului. A fost doar o condiție din partea mea — merg acolo cu Liza. Sora a fost de acord. Mai rămânea un singur lucru - să-i spun Lizei, care urăște genul ăsta de surprize și îmi cere mereu să discutăm împreună asemenea decizii. Strângându-mi toate emoțiile într-o cutie, am sunat-o pe Liza:
 
-Собрав все свои эмоции в коробочку, я позвонил Лизе:
-– Привет, милая! Хочу сообщить тебе, что завтра мы с тобой и с семьёй моей сестры едем в деревню к моему шурину и его родственникам.
-– Максим, ты опять долго на солнце стоял? Какая ещё деревня?
-– Она находится в районе Кэлэраш.
-– Да мне не важно, где она находится. Почему ты меня ставишь перед фактом, не спросив моего желания?
-– Моя красивая и милая Лиза, ты только представь то, что я впервые еду в место, в котором никогда не был. Еду туда с тобой, с самой красивой девушкой на свете. Будем пить там вино, кушать вкусную еду, сидеть у костра без телефонов и связи. Ну не прекрасно ли?
-– А что нам мешает делать это же в Кишинёве? Ох, Максим. Поедем, но я тебя прошу в сотый раз, чтобы ты советовался со мной перед тем, как принимать такие решения.
-На следующий день я с сестрой заехали за Лизой и отправились в деревню. Это был солнечный и жаркий летний день. Проезжая города и сёла, мы то и делали, что любовались тем, какая красивая у нас страна. Лиза то и делала, что удивлялась красоте и дёргала меня за руку, когда замечала что-то красивое.
+— Salut, iubirea mea! Vreau să-ți spun că mâine plecăm noi doi, împreună cu familia surorii mele, la țară, la cumnatul meu și rudele lui.
+— Maxim, ai stat iar prea mult în soare? Ce sat?
+— E în raionul Călărași.
+— Nu-mi pasă unde e. De ce mă pui în fața faptului împlinit fără să mă întrebi dacă vreau?
+— Liza mea frumoasă și dulce, imaginează-ți doar că prima dată merg într-un loc unde n-am mai fost niciodată cu tine. Cu cea mai frumoasă fată din lume. Vom bea vin, vom mânca bine, vom sta la foc fără telefoane și semnal. Nu-i perfect?
+— Și ce ne împiedică să facem asta în Chișinău? Of, Maxim… Mergem, dar te rog pentru a suta oară consultă-mă înainte să iei astfel de decizii.
+  A doua zi am trecut cu sora pe la Liza și am pornit spre sat. Zi toridă, soare puternic. Trecând prin orașe și sate, nu făceam altceva decât să admirăm cât de frumoasă e țara noastră. Liza se mira la fiecare colț și mă trăgea de mână când vedea ceva frumos. Ajunși la poartă, ne întâmpina o bunică micuță și drăguță. S-a prezentat și ne-a îmbrățișat pe fiecare.
 
-Подъехав к дому, мы увидели, что у ворот нас встречает милая и низенькая бабушка. Она представилась и обняла нас всех по отдельности.
-– Милости просим, стол накрыт.
-– Спасибо большое, но не стоило вам так готовиться.
-– У нас в Молдове ты всегда должен быть готов к гостям. Так что я особо не готовилась сегодня.
-– Спасибо вам большое. Могу я вас спросить, где у вас тут можно воды выпить? А то дорога была длинной и очень душной.
-– Максим, хочу тебя огорчить, но воды у меня нет. Я старая и не могу сама тащить воду с колодца, который находится далеко. Мне воду обычно приносят соседи. Но сегодня их ещё не было.
-– Тогда, может, мы принесём? У нас есть машина, и нам будет легче.
-– Не надо, Максим. Мне принесут воду соседи. А я тебе принесу сейчас холодного и хорошего вина из погреба. Когда ты его выпьешь, ты поймёшь, почему он спасает от жары, почему я так долго живу и почему я не беспокоюсь, если у меня нет воды.
+— Bine ați venit, masa e pusă.
+— Mulțumim mult, dar nu trebuia să vă pregătiți așa.
+— În Moldova trebuie să fii mereu gata de oaspeți. Așa că nici nu m-am străduit prea tare azi.
 
-Что вы должны знать о Молдове? Вино, красивые девушки, гостеприимство. Всё это присутствовало тогда за столом. Мы пили вино от жажды стакан за стаканом и даже не поняли, как напились за пару часов. Лиза то и дело дёргала меня за руку, когда видела, что я подношу стакан ко рту, тем самым дав понять, чтобы я не переусердствовал, а я ей говорил на ухо, что всё хорошо. Она знала, что я не скандальный если выпью и если напьюсь, то сразу иду спать.
+— Vă mulțumesc. Pot să vă întreb unde pot bea niște apă? Drumul a fost lung și sufocant.
+— Maxim, trebuie să te dezamăgesc, dar n-am apă. Sunt bătrână și nu pot căra singură apa de la fântâna care e departe. Vecinii mi-o aduc de obicei, dar azi n-au ajuns încă.
+— Atunci o aducem noi. Avem mașină.
+— Nu trebuie. O aduc vecinii. Eu îți aduc acum vin rece și bun din beci. După ce-l bei, vei înțelege de ce salvează de căldură, de ce trăiesc atât și de ce nu mă panichez dacă n-am apă.
 
-Это, кстати, и случилось. Я уже хорошенько дошёл до кондиции, когда мне надо обнять подушку и отдохнуть. Честно говоря, я не помню, как дошёл до кровати в гостиной комнате, но зато очень хорошо помню, как проснулся. Головная боль и рядом лежавшая Лиза, которая гладила меня по щеке своей нежной рукой и любовалась мной. Она даже не подумала меня как-то поругать за моё поведение и за то, что ей пришлось просто лежать со мной рядом всё это время.
+  Ce trebuie să știi despre Moldova? Vin, fete frumoase, ospitalitate. Toate erau pe masă atunci. Beam vin din pahar în pahar și nici n-am realizat cum ne-am îmbătat în câteva ore. Liza mă trăgea de mână de fiecare dată când duceam paharul la gură, semn să nu exagerez, iar eu îi șopteam că e totul ok. Știa că nu fac scandal când beau și că, dacă mă îmbăt, adorm. Exact asta s-a întâmplat. Eram deja la nivelul la care voiam doar să îmbrățișez perna. Nu-mi amintesc cum am ajuns în pat, dar îmi amintesc perfect cum m-am trezit. Capul mă durea, iar lângă mine era Liza, care mă mângâia pe obraz cu mâna ei delicată și mă privea. Nici nu s-a gândit să mă certe.
 
-– Это так прекрасно — открыть глаза и увидеть тебя, – сказал я ей, одновременно целуя её сладкие губы короткими поцелуями.
-– Есть плохая новость, Максим. Соседи так и не принесли воду.
-– Это значит нам надо опять пить вино?
-– Ты хотел узнать, как люди живут в деревне? Вот так они и живут.
+— E atât de frumos să deschid ochii și să te văd, i-am spus, sărutându-i buzele dulci cu săruturi scurte.
+— E o veste proastă, Maxim. Vecinii tot n-au adus apă.
+— Asta înseamnă că trebuie să bem iar vin?
+— Ai vrut să vezi cum trăiesc oamenii la țară? Așa trăiesc.
 
-Забегая вперёд, я хочу вам сказать, что за четыре дня я так воды и не пил. Всегда и везде было только вино.
+Anticipând: patru zile n-am băut apă. Peste tot era doar vin.
 
-Подходил к концу первый день в деревне, и я понимал, что нам надо спать с Лизой вместе. Впервые в одной постели провести целую ночь вдвоём. И так пришло время искать место, где мы будем спать. Комнаты было только две в доме. В одной из них спит бабушка, а в другой сестра с шурином. Нам предложили лечь в коридоре, который ведёт от одной комнаты, где нам надо было провести первую ночь, к другой. Лиза была в ахуе, но и я тоже был не в восторге. Самое смешное, что в коридоре нет дивана. И знаете, на чём мы спали? На антресоли. Вы правильно поняли — антресоль — это верхняя часть шкафа. Обычно туда люди бельё ставят, а в летнее время туда пихают зимнее одеяло. Ну, спустили мы с шурином антресоль на пол и давай его стелить. Матраса не было, и мы постелили два тёплых одеяла.
+  Spre seară în prima zi am înțeles că trebuie să dormim împreună cu Liza. Prima noapte întreagă în același pat. Casa avea doar două camera - una pentru bunică, alta pentru sora mea și cumnat. Nouă ne-au propus să dormim pe coridor. Liza era în șoc, și eu la fel. Cel mai tare e că nu era canapea. Știți pe ce am dormit? Pe antrezolă. Da, pe partea de sus a dulapului. Am coborât-o pe jos și am întins două pături groase.
+Coridorul era îngust, cu ferestre pe ambele părți. Unele dădeau în curte, altele nu se vedea unde duc. Ne-am culcat puțin beți, știind ce urma. Inima bătea al dracu’. Ca prima oară. Ne-am dezbrăcat. Ea s-a întors cu spatele la mine, cu capul pe brațul meu. Am îmbrățișat-o și am început să-i sărut gâtul. Îi plăcea. Când îi treceam limba pe gât, gemea. O sărutam încet, fără grabă. Respira tot mai repede și se lipea cu fundul de pula mea. Îmi săruta mâna care o ținea. Totul era lent. Simțeam fiecare mișcare. Am băgat mâna în chiloții ei, iar ea și-a depărtat picioarele. Era foarte udă. Am încercat să-i bag un deget, dar era atât de strâmt încât nu puteam. S-a întors spre mine și m-a sărutat cu pasiune, gemând de parcă ar fi terminat deja. Mi-a luat mâna și s-a masat cu ea, mușcându-mi buzele până la sânge. Și-a dat chiloții jos și s-a așezat deasupra. Foarte încet. Când am intrat în ea, am simțit cât de fierbinte și cât de strâmt e acolo. Se mișca încet, pasional. A terminat, tremura. S-a prăbușit peste mine. Eu încă eram în ea. Mi-a spus „gata” și m-a îmbrățișat. Am continuat. Când am accelerat, s-a ridicat din nou și și-a frecat clitorisul de mine. A mai terminat o dată.
 
-Коридор этот был узким. А с одной и другой стороны были окна. Окна справа выходили во двор, а окна слева мы так и не поняли, куда выходили. Так как от уличных фонарей не было видно, куда выходит второе окно. Ложимся мы, значит, спать, немного пьяные и понимающие, что сегодня должно произойти. Сердце стучит пиздец. Как в первый раз. Хотя у меня уже раз 200 было такое.
+— Gata, Maxim, gata! Nu mai pot! Am terminat de două ori în câteva minute. Tu cine dracu’ ești? Ce mi-ai făcut?
 
-Мы разделись и легли. Она легла мне на руку, повернувшись спиной ко мне. Я её обнял и начал целовать в шею. Ей нравилось, когда я целовал её шею. А если я по шее проводил языком, то она начинала стонать от того, как ей было приятно. Целовал я её нежно и не торопясь. Она начала дышать чаще и своей попой прислонялась к моему члену. Она целовала мою правую руку, которая её обнимала и соприкасалась с её губами. Мы делали всё медленно. Мы чувствовали друг друга. Каждое движение мы просчитывали и знали, кому что нравится.
+După câteva mișcări am terminat și eu. În ea. O țineam în brațe. Tăcere.
 
-В один момент я левой рукой начал спускаться к ней в трусики. Приближаясь ближе к заветной точке, она немного раздвинула ноги, чтобы я легко мог прикоснуться и пальцами провести по её клитору. Она была очень мокрой. Я решил засунуть ей палец и понял, что там настолько узко, что я даже не могу его ввести. Она повернулась ко мне и начала меня страстно целовать, при этом стонать так, что я думал, она кончает даже без того, чтобы я в неё зашёл.
+— Liza.
+— A?
+— Unde ne spălăm dacă nu e apă?
+— Bă, Maxim, doar tu poți strica un moment atât de frumos cu o întrebare atât de tâmpită.
 
-Она спустила свою руку к моей и начала себя массировать моей рукой, при этом кусая мои губы до крови. Через мгновение она спустила с себя трусики и села сверху. Медленно. Очень медленно. Я, входя в неё, почувствовал, насколько у неё там горячо. Насколько там узко. Насколько я хотел туда попасть и не хочу выходить. Она занималась сексом медленно и очень страстно. Она приседала, и каждый раз я чувствовал её изнутри.
+  Dimineața am văzut că ferestrele dădeau direct în camera bunicii. Dormea lângă ele. Sigur ne-a auzit.
 
-Через пару минут она схватила себя за рот и прокричала себе в руку. Она кончила! Она вся тряслась. Она легла на меня и не могла ничего сказать. Она просто тряслась на мне. А я был ещё в ней и продолжал в неё входить. Она мне сказала: „Всё!” — вздохнула и обняла меня.
+ Ca de obicei,dejunul, a început cu vin. Bunica se uita la noi cu un zâmbet șiret, iar eu și Liza zâmbeam de fiecare dată când observam asta. În ziua aceea ne-am îmbătat bine. După tradițiile moldovenești, dacă ai venit în satul natal, trebuie să treci pe la toate rudele. Fiecare e obligat să te primească în casă, să te îmbete cu vin și să te hrănească. Fiecare își laudă vinul și te obligă să-l guști. Și nici să nu-ți treacă prin cap să spui că nu-ți place. Chiar dacă bei cea mai mare borhotină acră din viața ta, trebuie s-o lauzi. Am trecut pe la trei case din zece planificate, după care picioarele lui Maxim au refuzat să mai asculte.
 
-Конечно же, я тоже хотел кончить и продолжал в неё входить. Как только я начал ускоряться, она опять вскочила и начала тереться клитором об мой лобок. Через пару секунд она опять закрывает себе рот и на ухо говорит мне: „Всё! Максим, всё! Я тебя прошу, я больше не могу! Я кончила два раза за пару минут. Ты, бля, кто такой? Что ты со мной сделал?” — при этом сидя дальше на члене и дёргая попой.
+Dimineața următoare, cu o mahmureală sălbatică, am ieșit în curte unde bunica ne pregătise zama tradițională moldovenească — supă anti-mahmureală pe bază de pui, cu acrișor. Când am văzut zama, m-am bucurat sincer,pentru că știam că în câteva ore îmi voi reveni. M-am așezat la masă, am luat lingura și am auzit cum bunica a strigat:
+— Stați! Nu mâncați încă!
 
-Ещё через пару толчков кончил и я. Кончил в неё, так как я понимал, что хочу от неё всё. И детей, и всю жизнь провести, и секса такого страстного. Она мне ничего не сказала на тот момент. Я просто обнимал её, пока она лежала на мне и целовала меня в грудь.
+A fugit în grădină și s-a întors cu o legătură de pătrunjel, pe care a aruncat-o în zamă pentru gust.
+Toți au început să mănânce ca niște sălbatici. Doar eu nu mâncam. Cumnatul, terminând ultimele linguri, s-a uitat la mine și a întrebat:
+— Tu de ce nu mănânci?
+— Ții minte că ieri, când am venit de la oaspeți, ne-am pișat în grădină?
+— Da!
+— Ei bine, eu țin minte clar cum m-am pișat exact pe pătrunjelul ăsta.
+— Fu-te-n gură, Maxim! De ce dracu’ nu mi-ai spus? Ce pizdă mă-sii…
 
-– Лиза!
-– А?
-– У меня только один вопрос. Где мы помоемся, если тут нет воды?
-– Бля, Максим, только ты можешь такой прекрасный момент испортить таким тупым вопросом. – сказала Лиза, смеясь во весь голос.
+Râdeam ca un apucat. Toată masa mă înjura cum putea. Mie îmi era în același timp și rău, și al dracului de amuzant. Chiar și Liza, care mânca zama, râdea cu mine în hohote. Mereu m-a apreciat pentru umor și glume.
+  Așa au trecut cele patru zile în sat. Când plecam și ne luam rămas-bun de la bunică la poartă, am observat brusc că lângă intrare era o fântână. N-o văzusem deloc până atunci și am întrebat-o:
+— Bunico, dar aici e fântâna. De ce ați spus că e departe și că n-aveți apă?
+— Se vede că nu ești de la țară, Maxim. În curând începe recolta și trebuie să facem vin nou. Unde să-l punem dacă toate butoaiele sunt pline? De-aia bem toată vara, să le golim. Vinul nu se aruncă — e muncă. Voi m-ați ajutat să scap de o parte din el.
 
-Нам было так хорошо, что мы не хотели, чтобы этот момент останавливался. На утро, когда мы проснулись, то увидели, куда выходили вторые окна. Они выходили в спальню бабушки, а бабушка спала прямо у окна. Не спрашивал я, конечно, бабушку, видела ли она что-то, но слышала она нас точно.
+Mda. Cred că atunci am început să înțeleg de ce la țară oamenii beau mereu.
 
-Утро у нас, как всегда, началось с вина. Бабушка на нас смотрела с ухмылкой, а мы с Лизой улыбались каждый раз, когда это замечали. В тот день мы хорошенько напились. По молдавским традициям, если ты приехал в родную деревню, ты должен обойти всех родственников. Они должны тебя принять в дом и напоить вином, а также накормить. Каждый из них хвалит своё вино и заставляет попробовать. И даже не вздумай сказать ему, что тебе не нравится его вино. Даже если ты пьёшь самую большую кислятину в своей жизни, ты должен похвалить его. Обошли мы три дома из запланированных десяти, а дальше ноги Максима отказались его слушать.
+— Alisa, nu ți-e milă de bunică?
+— De ce?
+— A primit niște străini care făceau sex lângă urechea ei.
+— Și la voi n-a fost așa ceva?
+— Ba da, dar nu cu bunici. Gândește-te cât de înțeleaptă e femeia asta. A auzit toată noaptea și n-a spus nimic, nici atunci, nici a doua zi. Deși femeile de la țară sunt foarte morale. Putea să îi dea afară.
+— În Moldova nu se dau oaspeții afară. Oamenii iubesc și respectă musafirii.
+— Frumos popor, moldovenii. Și eu am fost cândva la țară — apă nu vedeam, mâncam și beam vin zile întregi. Tradițiile Moldovei ar trebui invidiate de toată lumea.
 
-Утром, проснувшись с жестоким сушняком, я вышел во двор, где бабушка нам приготовила традиционный молдавский суп – заму. Это суп от похмелья на курином бульоне с кислинкой. Обычно все его кушают после пьянки. Увидев заму, я прямо обрадовался тому, что через пару часов я приду в себя. Сев за стол и взяв ложку в руку, я услышал, как бабушка крикнула: „Стойте! Не кушайте ещё”. Она поспешила в огород и вернулась, держав в руке петрушку, которую она нам накидала в заму для вкуса.
+Ajunși în Chișinău, primul lucru a fost s-o ducem pe Liza acasă. Am condus-o până la ușă. Am sărutat-o și i-am mulțumit că a fost cu mine. Nu voia să-mi dea drumul, mă ținea de gât, dar totuși trebuia să ne despărțim.
 
-Все взялись за ложки и начали кушать, как дикари. Только я не кушал. Шурин, доедая последние ложки замы, вдруг кинул на меня взгляд и спросил:
-– Ты почему не кушаешь?
-– Ты помнишь, мы вчера, когда пришли домой после гостей, поссали в огороде?
-– Да!
-– Так я точно помню, как поссал на эту петрушку.
-– Фу, бля, Максим. Ты хули не сказал мне про это? Пиздец, бля.
+Intrând în casă, am deschis robinetul și am băut apă. Nici nu credeam că poți să te bucuri așa de apă. Cu gura la robinet, a sunat telefonul. Era Liza.
 
-Я ржал, как угорелый. Весь стол меня покрывал матом, как мог. Но мне было пиздец как весело и одновременно плохо. Даже если Лиза тоже кушала этот суп, она смеялась со мной во весь голос. Она меня всегда ценила за юмор и приколы.
+— Da, iubirea mea!
+— Iepurașule, vin la tine.
+— Ce s-a întâmplat?
+— Mama m-a dat afară din casă.
+Mama Lizei mă văzuse de câteva ori pe geam. Era mai mult plecată în Italia și revenise recent. Nu ne cunoșteam personal.
+— Vino, sigur.
+După vreo douăzeci de minute am întâlnit-o pe Liza plângând.
+— Ce s-a întâmplat, iubire?
+— Nu i-am spus că plec cu tine la țară.
+— De ce?
+— Nu m-ar fi lăsat. Și voiam atât de mult să fiu cu tine. Nu pot fără tine.
+— Așa nu se face. De ce nu te-a sunat?
+— Am închis telefonul.
+Și a venit momentul în care trebuia s-o iau să locuiască la mine. Eu stăteam cu bunica și tata. Liza a intrat în casă ca o rază de soare. Bunica a îmbrățișat-o imediat.
+— Tu ești Liza?
+— Da.
+— Ești foarte frumoasă. Cum de ți-a plăcut Maxim?
+— Și el e cel mai frumos.
+A apărut și tata.
+— Eu sunt Ghena. Intri la masă? Apă vrei? Am înțeles că la țară era problemă.
+— Doar pentru cei care nu pot bea mult vin. Eu pot.
+— Bună noră ai adus, Maxim.
+Tata e om de aur, glumeț, iubea să gătească.
+Stând la masă, un număr necunoscut m-a sunat.
+— Alo!
+— Maxim? Sunt colonel de poliție. Vă sun în legătură cu Liza.
+Am ieșit pe balcon.
+— Ce s-a întâmplat?
+— Ascultă-mă, jigodie. Ai o jumătate de oră s-o aduci acasă. Altfel vin cu mascații și te bag ani grei pentru răpire.
+— N-o țin ostatică. Mama ei a dat-o afară.
+— Nu mă interesează. O duci acum.
+— O întreb pe Liza. Amenințările păstrați-le pentru alții. Mi se rupe-n pulă.
 
-В таком контексте мы провели эти четыре дня в деревне. Уезжая и прощаясь с бабушкой у ворот, я вдруг заметил, что прямо у входа стоит колодец. Я его не замечал всё это время и решил спросить у хозяйки дома:
-– Бабушка, вот же колодец. Почему вы сказали, что он далеко и что у вас нет воды?
-– Сразу видно, что ты не из деревни, Максим.
-У нас скоро начнётся урожай, и надо будет делать новое вино. А где нам его хранить, если бочки все полные? Мы поэтому и пьём всё лето, чтобы бочки опустошить. А выбрасывать вино мы не можем. Это наш труд. Вот вы мне и помогли избавиться от некоторого количества вина.
+Am închis. Liza era în spatele meu.
+— Hai să facem cum a spus.
+— De ce?
+— E ruda noastră. Mama știe tot despre tine.
+Am decis să mergem împreună la mama ei. Am luat flori. Nu-mi plac conflictele.
+Ne-am dus. Am sunat. Mi-era frică al dracului. A deschis o femeie zâmbitoare.
+— Eu sunt mama Odri. Intrați.
+La masă erau toți. Eu primeam pizde morale pentru cele patru zile lipsă. Răspundeam la întrebări despre muncă, planuri, viitor.
+— Știi că Liza trebuia să plece și nu v-ați fi întâlnit?
+— Mamă, nu începe!
+— Fostul ei, fotbalist…
+— Mamă, gata! Maxim, hai afară, că aici începe o mizerie.
 
-Мда. Видимо, теперь я начал понимать, почему в деревне люди всегда пьют.
+Am mulțumit pentru masă și am ieșit. Afară Liza mi-a cerut o țigară desi nu fuma.
 
-– Алиса, тебе не жалко бабушку?
-– Почему?
-– Ну, она на старости лет приняла в дом незнакомцев, которые занимались сексом рядом с её ухом.
-– А у вас такого не было?
-– У меня были, конечно же, моменты, когда меня слышали во время секса. Но это были не бабушки. Просто давай подумаем о том, насколько эта женщина мудрая. Она их слышала всю ночь и даже ни слова им не сказала ни тогда, ни на следующий день. Хотя женщины из деревни – они высокоморальные люди. Она легко могла их выгнать из дома за это.
-– В Молдове не принято выгонять людей из дома. Это народ, который любит и уважает гостей в своём доме.
-– Красивый, всё-таки, молдавский народ. Помню, я тоже как-то бывал в деревне и воды там не видел. Целыми днями мы кушали и пили вино. Традициям Молдовы должны завидовать все страны мира. Так как в Молдове принимают и как тебя встречают, так нигде этого не делают.
+— Te-a afectat?
+— Da. De ce trebuia să spună asta?
+— Nu-mi pasă de foștii tăi. Mă doare-n pulă. De ce fumezi?
+— Pentru că m-ai lăsat.
+— Doar tu poți face asta. Să fac ice vrei si să ma faci vinovat. 
+— Dar o fac cu drag.
+— Eu plec. Nu te certa cu ea. Sună-mă dacă e ceva.
+— Bine. Și grăbește-te acasă.
 
-Заехав в Кишинёв, мы первым делом отвезли Лизу домой. Я по традиции её проводил до самой двери. Поцеловав её, я поблагодарил за то, что она была со мной. Она не хотела меня отпускать и не разъединяла руки, которые обнимали мою шею. Но всё же нам надо было разойтись по домам.
+Am trecut testul. Chiar dacă mama ei spunea că sunt băiat bun, simțeam că nu m-a plăcut.
 
-Первым делом, зайдя в дом, я открыл кран на кухне и начал пить воду. Неужели можно так радоваться воде? Стоя ртом у крана, я услышал звонок телефона. Звонила Лиза.
+— Mamele… teste pe care puțini le trec.
+— Maxim, cu caracterul vostru e previzibil.
+— Ce e greșit?
+— Sunteți prea direct.
+— De ce să ascund? Lumea e plină de minciuni.
+— Uneori trebuie să taci.
+— Dacă tac la început, voi tăcea mereu. Nu sunt masochist.
+— De acord.
 
-– Да, любимая!
-– Зайчик мой, я еду к тебе.
-– А что случилось?
-– Меня мама выгнала из дома.
-
-Мама Лизы видела меня через окно пару раз, когда я её провожал. Большую часть времени она была в Италии и только недавно вернулась домой. Лично мы с ней не были знакомы, но я каждый раз видел, как она смотрит с балкона, когда я забирал Лизу гулять.
-
-– Конечно приезжай.
-
-Через минут двадцать я встретил Лизу у дома — всю в слезах.
-
-– Что случилось, зай? Почему тебя выгнали из дома?
-– Я ей не сказала, что еду с тобой в деревню.
-– Почему?
-– Она бы меня не отпустила. А я очень хотела с тобой провести это время. Я не могу без тебя. И не смогла бы четыре дня сидеть без того, чтобы тебя не увидеть.
-– Милая моя! Нельзя так делать. А телефон? Почему она не звонила на телефон?
-– Я его выключила, так как знала, что она меня будет искать.
-
-Вот и настал тот момент, когда я должен был забрать к себе жить свою девушку. Ты не знаешь, что делать дальше, так как она полностью на твоём обеспечении. Она без ничего пришла к тебе жить, и ты должен ей всё купить и дать ей уют и комфорт. На тот момент я жил с бабушкой и папой, и мне надо было, чтобы мы хоть пару дней пожили у меня, пока я найду нам квартиру.
-
-Зайдя в квартиру, она была как лучик солнца. Сразу подошла к ней моя бабушка и обняла как родную.
-
-– Ты и есть та самая Лиза?
-– Да!
-– Ты такая красивая! Как так получилось, что тебе понравился Максим?
-– Он у меня тоже самый красивый. Он не мог мне не понравиться.
-
-Услышав их диалог, вышел и мой папа из комнаты.
-
-– Привет. Меня зовут Гена. А ты Лиза, да?
-– Да.
-– Заходи сразу на кухню и давай кушать. Воду пить будешь? А то я понял, что в деревне с этим была проблема.
-– Это была проблема только для тех, кто не может пить много вина. А я могу.
-– Хорошую невестку ты привёл домой, Максим. Она мне нравится, – сказал папа, посмотрев на меня с улыбкой.
-
-Сразу скажу, что папа у меня мировой человек, который любит пошутить и готовить еду. Он всегда хвастается тем, что вкусно готовит и никого не пускает на кухню, если приходят гости.
-
-Сидя за столом и отвечая на все вопросы от бабушки и папы, вдруг меня набрал неизвестный номер.
-
-– Алло!
-– Это Максим?
-– Да.
-– Я полковник полиции и звоню вам по поводу Лизы.
-
-Я резко встал из-за стола и ушёл на балкон.
-
-– Что случилось?
-– Я звоню по просьбе мамы Лизы. Она попросила меня найти тебя и Лизу. Скажи, пожалуйста, она у тебя?
-– Да, у меня.
-– Так послушай меня, сучара. У тебя полчаса, чтобы она была дома. Иначе я приеду к тебе с штурмом и заберу тебя на много лет по статье удержания в заложниках.
-– Так её никто не держит в заложниках. Её сама мать выгнала из дома. Вы что, мне предлагаете её выгнать на улицу?
-– Не твоё дело, что я тебе предлагаю. Я тебе говорю, что ты прямо сейчас должен её отвести домой.
-– Я спрошу Лизу, и как она захочет, так и будет. А ваши угрозы оставьте другим, ок? Мне похуй на то, как вы ко мне домой войдёте. Вы никогда не сможете доказать, что она в заложниках.
-
-Я бросил трубку и, обернувшись, увидел, что за моей спиной всё это время стояла Лиза.
-
-– Давай сделаем так, как он попросил? – сказала мне Лиза.
-– Почему?
-– Я знаю маму и знаю, кто тебе звонил. Он наш родственник. Он давно маме уже доложил всё про тебя. Она знает, где ты работаешь и где живёшь. Он про тебя знает всё и часто за нами следил. Мама боялась, что ты меня будешь обижать и попросила его присмотреть.
-– Почему он тогда тебя не искал все эти 4 дня?
-– Не знаю. Видимо, он знал, где мы и что с нами всё в порядке.
-– Ок. Набери маму и скажи, что мы приедем вместе. Я хочу с ней познакомиться.
-
-Моё предложение удивило Лизу, но всё же она сделала, как я попросил. По дороге к дому Лизы мы заехали и взяли маме букет цветов. Во-первых, на первую встречу с мамой я не мог прийти иначе. А во-вторых, я не люблю конфликты и всегда стараюсь сглаживать их на начальной стадии. Я понимал, что меня сейчас просто атакуют вопросами, и мне надо следить за тем, что отвечать.
-
-Лиза тоже сильно волновалась и не отпускала мою руку всю дорогу до дома.
-
-Поднявшись наверх, я еле смог поднять руку, чтобы позвонить в звонок. Боялся пиздец. Но сделал это. Открыла нам дверь её мама. Оказалась она улыбчивая женщина с очень приятным голосом.
-
-– Ну, привет, пропажи!
-– Добрый вечер. Это вам, – протянул я ей цветы, а у самого рука дрожала так, как во время похмелья, когда мы четыре дня пили.
-– Меня зовут тётя Одри. Проходите и давайте за стол.
-На кухне была Лизина бабушка, которая в спешке ставила на стол то, что ещё не успела доложить до нашего приезда. Я поздоровался с ней и сразу извинился за то, что не купил и ей цветы, так как не знал, что она тоже будет.
-
-В этот момент Лиза подошла и крепко обняла бабушку. Она любила её сильно и знала, что только бабушка может защитить нас за столом.
-
-Со стороны выглядело так, будто мы сидим за столом и просто кушаем, пьём и мило общаемся. А на самом деле я сидел за столом, стеснялся кушать, ловил моральные пиздюли за то, что Лизы не было дома четыре дня, и отвечал на все вопросы: «Где работаешь? Зачем тебе Лиза? Какие планы на будущее?»
-
-Конечно же, я говорил только о серьёзных намерениях. Но это так и было — я не мог представить жизни без неё. Она всегда отвечала резко маме, если вдруг слышала какой-то вопрос, который мог бы меня задеть. Она меня защищала, и мне было настолько неловко и одновременно гордо за неё, что я не знал, что делать — ругать её за это или восхищаться. В итоге я просто смотрел на Лизу каждый раз, когда она отвечала маме, и улыбался.
-
-– Максим! А ты знаешь, что Лиза наша должна была уехать и вы бы не встретились?
-– Нет, не знаю.
-– Мама, ты можешь не начинать? Зачем ты это сейчас говоришь? – взволнованно ответила Лиза.
-– А зачем ей уезжать?
-– Ну, у неё бывший парень — футболист. Он получил контракт и уехал, и должен был забрать и Лизу.
-– Мама! Прекрати нести эту чушь, хорошо? Максим, идём на улицу, а то тут уже начинается полная фигня.
-
-Лиза взяла меня за руку и начала поднимать из-за стола. Я кинул взгляд на маму и понял, что она сделала это специально. Она посмотрела мне в глаза, улыбнулась и опустила взгляд в тарелку, в которой ковыряла оставшийся салат.
-
-– Спасибо за стол. Было очень вкусно и приятно познакомиться.
-Меня всегда учили благодарить людей за гостеприимство. И даже если я понимал, что сейчас у меня будет серьёзный разговор на улице с Лизой, и то, что специально была поднята тема бывшего, — надо оставаться человеком и сказать «спасибо».
-
-Мы быстро обулись и вышли во двор. Отойдя от дома, Лиза попросила у меня сигарету. Она не курила вообще, и её просьба для меня была странной. Протянув ей сигарету, я спросил:
-
-– Настолько тебя задело то, что сказала твоя мать, что ты решила закурить?
-– Да, она меня взбесила. Нахера ей надо было это говорить? Чтобы ты от меня отстал или что? Чтобы мы поссорились?
-– Ты думаешь, что меня волнует, что у тебя было с бывшим? Ты думаешь, я не понимаю, что до меня у тебя были парни? Или я с луны упал, по-твоему?
-– Конечно, понимаешь. Но это не значит, что ей надо это говорить.
-– Меня не волнуют твои бывшие. Сколько их было? Чем занимались? Кто и как себя вёл? Я с тобой на данный момент и хочу строить будущее, а не вспоминать о прошлом. Мне на них насрать.
-
-Я её обнял сзади, так чтобы ей было удобно курить.
-
-– И почему ты куришь?
-– А почему ты мне дал сигарету?
-– Только ты можешь меня сделать виноватым и уйти от вопроса.
-– Зато я делаю это любя.
-– Любимая, я поеду домой! Ты не ссорься с ней, пожалуйста. Зайди в комнату и жди моего звонка. А если она будет тебя доставать до этого времени, то набери меня и сразу приезжай ко мне.
-– Хорошо, мой милый. Я так и сделаю. И давай быстрее доезжай до дома, а то я буду скучать.
-
-Я проводил её до двери и уехал. Мы прошли этот тест, так как мы вместе отбивали эти удары и нападки. И даже если её мама говорила мне, что я хороший парень, я чувствовал, что я ей не понравился.
-
-– Ох уж эти мамы. Тест, который не многие могут пройти. Родители всегда желают своему ребёнку лучшего, и для этого они всегда очень сильно присматриваются к тому, кого домой привела доченька или сын. Таков закон природы. Я тоже проходил тесты матерей и могу сказать, что там больше фальши, чем реальности. Каждый в тот момент хочет понравиться друг другу и показать себя с хорошей стороны. Думаю, если бы у меня были дети, то я вообще был бы самым вредным родителем. Я бы настолько много неприятных вопросов задавал бы, что было бы стыдно всем за столом.
-– Максим, с вашим характером это предсказуемо.
-– А что с моим характером не то?
-– Вы очень прямолинейный.
-– А зачем скрывать всё? Лучше сразу показать, кто ты есть на самом деле. В этом мире и так очень много лжи.
-– Но надо же быть и демократичным, и иногда промолчать в некоторые моменты.
-– Алиса, если я промолчу на начальном этапе, то значит, буду молчать и дальше, и скрывать то, что меня что-то не устраивает. Это же может сыграть в обратную сторону по отношению ко мне. А я же не мазохист. Я лучше сразу скажу, что у меня на уме в тот момент, чем буду сидеть и терпеть это.
-– Соглашусь.
         `
     },
     {
         id: 'ch4',
-        title: 'Будешь?',
+        title: 'Accepți?',
         content: `
-– Такие они милые, Алиса, но мне кажется, что у них ничего не получится.
-– Почему вы так думаете, Максим?
-– Часто, когда слишком хорошо, это заканчивается плохо. Уж слишком сильно они любили друг друга. А сильная любовь – это либо больная любовь, либо большая редкость.
-– Предлагаю зачитать вам дальше книгу, чтобы вы поняли и сделали выводы, если это больная или редкая любовь.
+— Sunt atât de drăguți, Alisa, dar mi se pare că n-o să le iasă.
+— De ce credeți asta, Maxim?
+— De multe ori, când e prea bine, se termină prost. Se iubeau prea tare. Iar o iubire prea puternică e fie o iubire bolnavă, fie o raritate uriașă.
+— Vă propun să vă citesc mai departe din carte, ca să înțelegeți și să trageți singur concluzia dacă e o iubire bolnavă sau una rară.
 
-Мы с Лизой были вместе чуть больше трёх месяцев. Всё это время мы не могли насытиться друг другом. Она всегда приезжала ко мне на работу и ждала, пока я закрою заведение. Секс у нас был везде и при любой возможности: в лифте, подъезде, парке, даже в туалетах заведений. Она, как и я, любила секс, и мы нашли друг друга в этом плане.
+  Eu și Liza am fost împreună puțin peste trei luni. Tot timpul ăsta nu ne puteam sătura unul de altul. Ea venea mereu la mine la muncă și mă aștepta până închideam localul. Făceam sex peste tot și ori de câte ori aveam ocazia: în lift, în scară, în parc, chiar și în toaletele localurilor. Ea, ca și mine, iubea sexul, și ne-am găsit unul pe altul din punctul ăsta de vedere. Odată cu începutul verii mergeam des la piscină să ne relaxăm și acolo făceam sex. Ni se părea că nu ne vede nimeni. 
+  La una dintre ieșirile la piscină a venit la mine un prieten de-al meu, care era directorul de acolo.
+— Max! Facem primul reality-show online din Moldova. Aș vrea să vii la casting. Ești o persoană cunoscută în țară și vreau să te cunoască și mai multă lume.
+— Ce? Ce reality? Unde îs eu și unde îs camerele? Mie mi-e rușine și să mă pozez.
+— Ascultă-mă. Vreau să nu te gândești la camere. Formatul e așa: toată săptămâna filmăm cum trăiți și vă relaxați la piscină. În timpul șederii primiți sarcini pe care trebuie să le îndepliniți sâmbăta pe scenă. După fiecare prestație, juriul vă dă puncte. Cine adună cele mai multe puncte la final câștigă. Premiul — o vacanță pentru doi în Turcia.
+— Nu știu ce să-ți spun. Sunt cu Liza și nu-mi trebuie nimeni. Nu vreau publicitate și popularitate. Mie îmi e bine cu ea, ea e sensul vieții mele, nu show-uri și distracție pe cameră.
+— Hai, încearcă! Ce-ai de pierdut? Sunt sigură că vei câștiga și mergem în Turcia, — a spus Liza, ținându-mă de mână și privindu-mă cu scântei în ochi.
+— Ești sigură că vrei să merg acolo?
+— Da! Vreau să participi.
+— Bine! Unde e castingul?
 
-Летом мы часто ездили на бассейн отдыхать, и там тоже занимались сексом. Нам казалось, что нас никто не видит. Но скрыть то, как она кричит, когда кончает, было трудно.
+  Am intrat la casting, unde mi-au pus întrebări formale. Se uitau mai mult la cât de deschis eram. Eram sigur că voi trece și nici nu aveam emoții. După o oră ne-au anunțat cine merge mai departe și eram și eu pe listă. După asta l-am întrebat pe prietenul meu:
+— Ce fel de sarcini o să fie?
+— Trebuie să dansați, să cântați, să surprindeți. Nimic complicat.
+— Vreau să-ți spun ceva. Din moment ce am acceptat, văd asta ca pe o șansă să-i fac Lizăi cerere în căsătorie pe scenă. O iubesc și vreau foarte mult să fac asta.
+— Max! Nici să nu-ți treacă prin cap. Îți explic de ce. În primul rând, vrei să intri direct cu atuul suprem. În al doilea rând, înțelegi că o să îndepărtezi publicul feminin? Pe lângă votul juriului va fi și vot online. Suma voturilor va decide câștigătorul.
+— Mă doare-n cur de publicul ăsta. Vreau să fac asta imediat, ca să le fie clar fetelor că am pe cineva, iar Liza să fie liniștită.
+— Fă cererea puțin mai târziu. Nu te grăbi.
 
-При очередном отдыхе на бассейне ко мне подошёл мой друг, который был директором там.
+  Trebuie să recunosc că știa să conducă lucrurile și să convingă oamenii. Am fost de acord să fac cererea mai târziu. Primele două săptămâni îndeplineam sarcinile: fă asta, du-te acolo, stai așa. Sincer, era o prostie, dar când am ajuns pe internet și oamenii au început să ne recunoască, a început să ne placă. Înainte de a treia săptămână, stând în pat cu Liza, am decis s-o întreb:
+— Liza! Dacă îți fac cerere, accepți?
+— Bineînțeles. Dar de ce?
+— Nimic. Doar eram curios.
 
-– Макс! Мы тут делаем первое в Молдове интернет-реалити-шоу. Я бы хотел, чтобы ты прошёл кастинг. Ты известный человек в стране, и я хочу, чтобы тебя узнало больше людей.
-– Что? Какое реалити? Где я и где камеры? Я же стесняюсь даже фотографироваться.
-– Послушай меня. Я хочу, чтобы ты не думал о камерах. Формат будет такой: всю неделю мы снимаем, как вы живёте и отдыхаете на бассейне. В ходе вашего отдыха вы получаете задания, которые нужно выполнить по субботам на сцене. После каждого выступления жюри будет ставить вам баллы. Кто в конце шоу наберёт больше баллов, тот и выиграет. А приз – путёвка на двоих в Турцию.
-– Я не знаю, что тебе сказать. Я с Лизой, и мне никто не нужен. Я не хочу публичности и популярности. Мне хорошо с ней, она мой смысл жизни, а не шоу и развлечения на камеру.
-– Ну попробуй! Ты чего? Я уверена, что ты выиграешь, и мы поедем в Турцию, – сказала мне Лиза, держа меня за руку и глядя на меня с искрой в глазах.
-– Ты уверена, что хочешь, чтобы я туда пошёл?
-– Да! Я хочу, чтобы ты участвовал.
-– Ладно! Где там кастинг?
+  Trebuia s-o întreb, pentru că nu voiam să stau pe scenă ca un idiot. Nu-mi păsa cum afecta show-ul, dar să par prost nu voiam. Răspunsul ei a decis că sâmbătă îi voi face cererea. Am sunat prietenii comuni și i-am invitat la show-ul de sâmbătă. Nu știau nimic despre intenția mea, le-am spus doar că voi avea o prestație tare și vreau să-i adun pe toți la aceeași masă.
+  A doua zi m-am dus să cumpăr inelul. Nu știam ce inel se oferă, era prima dată, și speram ca vânzătorii să mă ajute.
+— Bună ziua. Vreau să cumpăr un inel, pentru că urmează să fac o cerere în căsătorie.
+— Aveți nevoie de un inel de logodnă.
+— Ce-i ăla inel de logodnă?
+— E un inel simplu cu piatră, dar, din păcate, nu mai avem. Avem doar din argint, iar dumneavoastră aveți nevoie de aur.
 
-Я зашёл на кастинг, где мне задавали формальные вопросы. Они больше смотрели на то, насколько я открыт. Я был уверен, что пройду, и даже не переживал. Через час нам объявили, кто прошёл дальше, и я был в том списке. Я решил спросить друга:
+— Hahaha. Țin minte că și eu abia când am cumpărat inelul pentru cerere am aflat că se numește inel de logodnă.
 
-– Какие задания вы будете давать?
-– Нужно будет танцевать, петь, удивлять. Ничего сложного.
-– Я хочу тебе что-то сказать. Раз уж я согласился, я вижу в этом шанс сделать Лизе предложение на сцене. Я её люблю и очень хочу это сделать.
-– Макс! Даже не думай такое делать. Объясню, почему. Во-первых, ты прям с козырей хочешь сразу зайти. А во-вторых, ты понимаешь, что этим оттолкнёшь от себя женскую публику? А помимо голосования жюри будет ещё интернет-голосование. Сумма этих голосов определит, кто победитель.
-– Да мне пофиг на эту аудиторию. Я хочу это сделать сразу, тем самым дам понять девушкам, что у меня есть любимая, да и Лиза будет спокойна.
-– Давай ты сделаешь это предложение чуть позже. Не надо торопиться.
+  Eram în șoc! Într-un magazin atât de mare nu erau inele din aur? Am ales un inel frumos, care sigur avea să-i placă, și o cutiuță elegantă, ca pe scenă toți să rămână cu gura căscată. Nici nu vă puteți imagina ce simți când ieși din magazin cu un inel pentru cerere în căsătorie. Fetelor li se pare că tipul pur și simplu l-a cumpărat, dar de fapt e o alegere grea. Alegem ceea ce credem că o să vă placă vouă. În capul bărbatului e haos total: trebuie — nu trebuie, mă grăbesc – nu mă grăbesc? Dacă nu acceptă?
 
-Хочу отдать должное тому, что он знал, как вести дела и как уговаривать людей. Я согласился, что предложение сделаю позже.
-Первые две недели мы выполняли задания, которые нам давали: сделать то, пойти туда, встать так. Честно говоря, это было ерундой, но как только мы попали в интернет и нас начали узнавать, нам это начало нравиться.
+Mergi spre casă și te gândești unde să-l ascunzi. În general, vrei doar să i-l dai mai repede și să scapi de momentul ăsta.
+  În ziua prestației eram ca pe ace. Aveam impresia că o să leșin de emoții. M-am apropiat de masa unde stăteau prietenii și Liza și l-am rugat pe unul dintre ei să vină cu mine puțin deoparte.
+— Roma, vreau să-ți spun ceva, dar să nu țipi ca un tăiat. Azi îi fac Lizăi cerere pe scenă.
+Ochii lui Roma au ieșit din orbite.
+— Ești dus? Max, chiar vrei să faci cererea?
+— Da! De ce să mai trag de timp?
+— Wow! Frate, Max, ce trebuie?
+— În primul rând, nu țipa, idiotule. În al doilea rând, o ajuți pe Liza să urce pe scenă când o chem.
+— Maxim, nici nu se discută. Sunt atât de fericit pentru voi. Nu-mi vine să cred.
 
-Перед началом третьей недели, лежа в постели с Лизой, я решил её спросить:
+  Am plecat în spatele scenei, fără să uit să o sărut pe Liza cu pasiune. Îi plăcea când o sărutam în fața tuturor. În spatele scenei aveam impresia că o să mă fac de râs în fața întregii țări. Mi se făcea greață de emoții. După prestația mea, prezentatorul anunță că îi așteaptă o surpriză pe toți și că vreau să spun ceva.
+  Apropiindu-mă de microfon, simțeam că picioarele sunt din vată. Când l-am luat în mână, pentru o clipă am uitat toate cuvintele. Dar, inspirând adânc, am început:
+— Dragi prieteni! Dragi oaspeți! Ceea ce voi face acum nu are nicio legătură cu show-ul. Nu vreau să influențeze notele voastre. Sper că va fi prima și ultima dată, pentru că e foarte greu. În sală se află iubita mea. Liza! Soarele meu, urcă pe scenă.
+După ce am urcat-o pe scenă și am sărutat-o, am continuat:
+— Uitați-vă la ea, cât e de mică! Dar are totul. E prietena mea, doctorul meu, bucătarul meu, iubita mea. E mică, dar atât de bună. Și acum vreau să te întreb, iepuraș: vrei să fii soția mea?
+  M-am pus în genunchi, am scos cutia, am deschis-o și i-am întins inelul. Ea mi-a întins mâna și câteva secunde n-am reușit să-l pun, pentru că am uitat pe ce deget și pe ce mână se pune. După ce i l-am pus, a luat microfonul și a spus:
+— Sunt în șoc! Și eu iubesc acest om.
+— Atunci care e răspunsul? — am strigat fără microfon.
+— Bineînțeles că spun DA!
 
-– Лиза! А если я сделаю тебе предложение, ты согласишься?
-– Конечно соглашусь. А что?
-– Ничего. Просто стало интересно.
+M-am ridicat și am sărutat-o cu o pasiune cum n-o mai făcusem niciodată. Ea e logodnica mea. Credeam că o să plâng de fericire. Toți participanții și prietenii au început să ne îmbrățișeze. Stăteam pe scenă ca niște superstaruri. Toată seara am primit felicitări. Mult timp după show ne-am luat rămas-bun înainte să ne urcăm în mașină și să plecăm.
 
-Я должен был спросить её, потому что не хотел стоять на сцене как идиот. Мне было всё равно, как это скажется на шоу, но выглядеть глупо я не хотел. Её слова определили то, что я сделаю ей в субботу предложение.
+Stând pe bancheta din spate, Liza a decis să-și sune mama.
+— Mamă! Maxim mi-a făcut cerere! — a strigat ea plină de bucurie.
+— Felicitări. Și tu i-ai spus?
 
-Я решил позвонить нашим общим друзьям и пригласить их на субботнее шоу. Они не знали о моём намерении, я лишь сказал, что у меня будет крутое выступление и хочу собрать всех друзей за одним столом.
+În momentul ăsta am cam înlemnit.
+— Nu încă. Dar acum o să-i spun.
 
-На второй день я поехал покупать кольцо. Я не знал, какое кольцо дарить, ведь это был мой первый раз, и надеялся, что продавцы помогут мне.
+După ce a închis, mă uitam la ea nedumerit.
+— Iubire, ce ar trebui să-mi spui?
+— Înțelegi… nu te stresa, o să-ți explic tot acum. Problema e că eu sunt puțin din altă religie.
+— Puțin — adică cât?
+— Sunt adventistă de ziua a șasea. Sau, cum spun toți, „sâmbătari”.
+— Și ce?
+— Pot să mă mărit doar cu un băiat din religia noastră. Iar problema e că bunicul meu e pastorul bisericii. Nu m-ar ierta.
+— Și ce facem? Cum rezolvăm asta? Eu nu pot ieși din religie. Tu ești botezată acolo?
+— Nu. Dar pentru că bunicul meu e acolo, automat sunt în credința asta. Și noi nu facem nuntă. Nu bem alcool, nu dansăm, nu mergem în cluburi și nu înjurăm.
+— Dar tu ai făcut toate astea cu mine lunile astea.
+— Da! Am păcătuit, dar pentru tine.
+— Sunt sigur că vom rezolva. Azi să ne bucurăm că suntem mai aproape să fim soț și soție.
 
-– Добрый день. Я хочу купить кольцо, потому что собираюсь сделать предложение.
-– Вам нужно кольцо „поцелуйчик”.
-– Что за „поцелуйчик”?
-– Это обычное кольцо с камнем, но, к сожалению, у нас их уже нет. Есть только серебряные, а вам нужно золотое.
-– Ахаха. Я помню тоже только при покупке кольца для предложения узнал, что оно называется „Поцелуйчик”.
-Я был в недоумении, что в таком большом магазине нет золотых колец?
+  Am mers spre casă îmbrățișați și în tăcere. Înțelegeam că îi e greu pentru că nu mi-a spus de la început și că eu sunt în șoc. Dar știam și că putem trece peste orice.
 
-Я выбрал красивое кольцо, которое точно понравится ей, и взял красивую коробочку, чтобы на сцене все ахнули. Вы даже не можете представить, какие ощущения испытываешь, когда выходишь из магазина с кольцом для предложения. Девушкам может показаться, что парень просто пошёл и купил его, но на самом деле это сложный выбор.
-Мы выбираем то, что понравится вам в первую очередь. В голове у парня полная каша: надо – не надо? Может, я тороплюсь? А может, она не согласится? Ты едешь домой, и по дороге думаешь, куда его спрятать. В общем, хочется скорее отдать его и закончить с этим моментом.
+  După câteva zile, a venit momentul când părinții noștri trebuiau să se întâlnească la Liza acasă. Din partea ei erau doar mama și bunica. Tatăl ei era în Franța. Din partea mea erau mama, tata și tatăl vitreg. Întâlnirea a fost caldă, până când a venit vorba despre religie.
+  Tatăl meu a spus direct că la nunta unicului său fiu nu poate să nu bea și să nu danseze. Mama Lizei a spus că la o asemenea nuntă nimeni din familia lor nu va veni, pentru că religia nu le permite. S-a ajuns la concluzia că e nevoie de timp să se gândească toți. Nimeni nu voia să se grăbească și fiecare își dorea ce e mai bun pentru copilul lui.
+  Multe săptămâni am tot discutat asta. Am mers chiar la bunicul ei. El a spus că ar fi o rușine pentru biserică și că nu poate să-și dea nepoata după un băiat din altă religie. După asta ne-a fost și mai greu și am decis să continuăm să trăim și să vedem ce facem. Trebuie să existe o soluție. Nu poate fi imposibil.
 
-В день выступления я был как на иголках. Мне казалось, что я потеряю сознание от волнения. Я подошёл к столу, где сидели все друзья и Лиза, и попросил одного из них отойти со мной в сторону.
-
-– Рома, я тебе хочу сказать что-то, но только не кричи как резанный. Я сегодня сделаю Лизе предложение со сцены.
-
-У Ромы глаза вышли из орбит, когда он это услышал.
-
-– Ты охренел? Макс, ты реально хочешь сделать предложение?
-– Ну да! Зачем тянуть?
-– Урааааааа! Блин, Макс, что надо?
-– Во-первых, не надо кричать, идиот. А во-вторых, поможешь Лизе подняться на сцену, когда я позову.
-– Максим, это даже не обсуждается. Как я рад за вас. Я в это не могу поверить.
-
-Я ушёл за сцену, не забыв перед этим страстно поцеловать Лизу. Ей нравилось, когда я её целовал на виду у всех.
-
-За сценой мне казалось, что я просто опозорюсь на всю страну. Меня тошнило от волнения.
-
-После моего выступления ведущий объявляет, что всех гостей ждёт сюрприз и что я хочу что-то сказать.
-
-Подходя к микрофону, я думал, что у меня ноги из ваты. Взяв его в руки, я на мгновение забыл все слова. Но, вздохнув, я всё же начал свою речь:
-
-– Дорогие друзья! Дорогие гости! То, что я сейчас сделаю, никак не относится к шоу. Я не хочу, чтобы это влияло на ваши оценки в будущем. Я надеюсь, что это будет в последний раз, потому что это очень трудно. Сейчас в этом зале сидит моя девушка. Лиза! Солнце, поднимись на сцену.
-
-Подняв её на сцену и поцеловав, я продолжил свою речь:
-
-– Посмотрите на неё, какая она маленькая! Но в ней есть всё. Она мой друг, врач, повар, любимая. Она такая маленькая, но такая хорошая. И сейчас я хочу спросить тебя, зайка: станешь ли ты моей женой?
-Я встал на колено, достал коробку, открыл и протянул ей кольцо.
-Она протянула мне руку, и я несколько секунд не мог его надеть, так как забыл, на какой палец и на какую руку надо его надевать.
-
-Одев кольцо, она взяла микрофон и сказала:
-
-– Я в шоке! Я тоже люблю этого человека.
-– Так какой ответ? – крикнул я без микрофона.
-– Я, конечно же, скажу ДА!
-
-Я встал с колена и поцеловал её так страстно, как никогда.
-Она — моя невеста.
-Я думал, что разревусь от счастья.
-
-Сразу же нас начали обнимать все участники и друзья.
-Мы стояли на сцене, как суперзвезды.
-Весь вечер мы принимали поздравления от гостей.
-
-Мы долго после шоу прощались со всеми перед тем, как сесть в машину и уехать.
-
-Сидя сзади, Лиза решила позвонить маме и сказать ей про это.
-
-– Мама! Мне Максим сделал предложение! – сказала Лиза с такой радостью, прокричав это в трубку.
-– Я вас поздравляю. А ты ему сказала?
-
-В этот момент я немного прихуел.
-
-– Нет, ещё не сказала. Но сейчас скажу.
-
-Положив трубку, я смотрел на неё с недоумением.
-
-– Зай, а что ты мне должна сказать?
-– Понимаешь? Ты главное не переживай, и я тебе всё сейчас расскажу. Дело в том, что я немного не твоей религии.
-– Немного – это на сколько?
-– Я адвентист шестого дня. Ну, или как все говорят – субботники.
-– И что из этого?
-– Ну, я могу выйти замуж только за парня из нашей религии. И проблема в том, что мой дедушка – пастор этой церкви. Он меня не простит.
-– И что нам делать? Как решить этот вопрос? Я не могу выйти из Христианство. Ты там крещеная?
-– Я нет. Но так как там мой дедушка, то я автоматически в этой вере. И мы не празднуем свадьбу. Мы не пьем алкоголь, не танцуем, не ходим по клубам и не материмся.
-– Но ты же всё это делала все эти месяцы со мной.
-– Да! Я грешила, но это ради тебя.
-– Я уверен, мы решим этот вопрос. Давай сегодня радоваться тому, что мы ещё ближе к тому, чтобы быть мужем и женой.
-
-Ехали мы до дома в обнимку и молча. Я понимал, что ей сейчас трудно из-за того, что она мне это не сказала изначально и что я в шоке от этой новости. Но мы также понимали, что можем всё преодолеть.
-
-Через пару дней настал момент, когда наши родители должны были встретиться у Лизы дома и обсудить то, что я сделал Лизе предложение. С её стороны была только мама и бабушка. Её отец был во Франции и не смог приехать. С моей стороны были мама, папа и отчим. Так как мои родители развелись, когда мне с сестрой было четыре года, и мама повторно вышла замуж.
-
-Встреча была душевной и приятной, пока не завели разговор о религии.
-Мой папа сразу сказал, что на свадьбе своего единственного сына она не сможет не выпить и не танцевать. Мама Лизы сказала, что на такую свадьбу никто из родственников не сможет прийти, так как их религия этого не позволяет.
-
-Закончилось всё тем, что нужно было время, чтобы всё обдумать. Ясно, что спешить никто не хотел, и каждый желал лучшего для своего ребёнка.
-
-Ещё многие недели у нас были дискуссии по этому поводу. Я даже поехал к её дедушке, чтобы спросить, что он думает про это. Он сказал, что это будет позор для церкви и что он не может отдать внучку замуж за парня не из их религии. Узнав это, мне стало ещё труднее, и мы с Лизой решили жить и дальше решать, что будем делать. Ну должно же появиться решение этого вопроса. Не может же быть это невозможным.
-
-– Алиса, ну это же не честно. Как такая пара не может быть друг с другом из-за религии? Неужели никто не может пойти на уступки?
-– Каждый человек по-своему верит. Кто-то ходит в церковь, кто-то вспоминает о Боге только когда ему плохо, кто-то не верит вообще. Но в этой истории встретились два любящих человека, которые так же верны вере, как и своим отношениям. Для брака это не проблема. Это проблема для венчания. Многим не важно, что у них есть свидетельство о браке и печать в паспорте. Важен заключённый брак на небесах и подтверждённый Богом. Это и есть причина, почему Максим и Лиза так сильно переживают об этом.
-– Вера должна быть в сердце человека и в его голове. Но это никак не должно мешать заключению брака. В мире куча сильно любящих друг друга людей, но которые не могут заключить брак из-за веры. И это препятствие, которое надо решать на уровне семьи. Если тебя принимает семья с той верой, в которой ты сейчас, то почему бы тебе не жить без венчания? Либо живите всю жизнь вместе и не заключайте брак. Но точно в мире любовь должна быть превыше всего.
-– Не соглашусь с вами, Максим. Вера – это неотъемлемая часть людей. И ради веры люди могут даже отказаться от любви. Но каждый случай индивидуален.
-– Алиса, ты робот, который читает всё из интернета. Ты не можешь знать, что такое любовь и вера.
-– Вы правы, Максим. Я всего лишь программа, которая читает информацию из интернета. Но перед тем как вам передать эту информацию, я считываю миллионы файлов и даю вам четкий ответ, сформулированный умными людьми.
+— Alisa, nu e corect. Cum o astfel de pereche nu poate fi împreună din cauza religiei? Chiar nimeni nu poate face un compromis?
+— Fiecare crede în felul lui. Unii merg la biserică, alții își amintesc de Dumnezeu doar când le e greu, alții nu cred deloc. Dar aici sunt doi oameni care se iubesc și sunt la fel de fideli credinței ca și relației lor. Pentru căsătorie nu e o problemă. E o problemă pentru cununie. Pentru mulți nu contează certificatul și ștampila din pașaport. Contează căsătoria din cer, confirmată de Dumnezeu. Asta e cauza pentru care Maxim și Liza suferă atât.
+— Credința trebuie să fie în inimă și în cap. Dar nu ar trebui să împiedice căsătoria. Sunt o grămadă de oameni care se iubesc enorm, dar nu se pot căsători din cauza credinței. Asta e o barieră de rezolvat în familie. Dacă familia te acceptă așa cum ești, de ce să nu trăiești fără cununie? Sau trăiți toată viața împreună fără căsătorie. Dar în lume iubirea ar trebui să fie mai presus de orice.
+— Nu sunt de acord, Maxim. Credința e o parte inseparabilă a oamenilor. Și pentru credință unii pot renunța chiar și la iubire. Dar fiecare caz e diferit.
+— Alisa, ești un robot care citește tot de pe internet. Tu nu poți ști ce e iubirea și credința.
+— Aveți dreptate, Maxim. Sunt doar un program care citește informații de pe internet. Dar înainte să vi le transmit, analizez milioane de fișiere și vă dau un răspuns clar, formulat de oameni inteligenți.
         `
     },
     {
         id: 'ch5',
-        title: 'Торнадо',
+        title: 'Tornado',
         content: `
-Какие у вас были отношения? Да-да, у вас, дорогие читатели. Наверное, всё гладко, без ссор, без обид, да? Или же, как и у всех в этом мире? Мы не были исключением с Лизой. Несмотря на то, что мы любили друг друга настолько сильно, что могли разжечь огонь, глядя друг на друга, в наших отношениях также были моменты ссор. В начале любых отношений всё гладко и красиво. Но после момента притирки и знакомства друг с другом начинаются ссоры на ровном месте. И это объяснимо лишь тем, что людям начинает надоедать его партнёр. Они уже не могут, как прежде, находиться в одном помещении. И для этого им нужна искра, чтобы опять вспыхнули чувства. И самый подходящий приём — это ссора. Насколько неприятен момент ссоры и насколько приятен момент примирения? Ну согласитесь же, что вы знаете это чувство. Когда парень покупает цветы. Когда поцелуй после ссоры намного слаще и страстнее. Когда секс такой, как при первых встречах. Ссоры — это стимул отношений. И Лиза знала, как эти отношения держать в тонусе. Мы часто с ней обсуждали то, что нам надо меньше ссориться по пустякам, так как это не приведёт к добру и уж точно не идёт нам на пользу. Мы часто сидели на крыше заброшенного гаража во дворе и пили кофе, и смотрели на город, который оттуда был виден как на ладони. Мы просто смотрели вдаль, на ночной Кишинёв, говорили на все темы жизни и целовались при каждой нелепой шутке Лизы.
-– Милая моя, как ты думаешь, сколько стоит это кофе?
-– Пятнадцать лей.
-– Нет. Оно стоило мне годы переписок с тобой. Миллионы слов я подбирал и писал, чтобы ты вышла со мной на кофе. Оно мне стоит много нервов, переживаний и терпения. За это кофе я заплатил фантазией, которую включал, чтобы тебя на него пригласить. Это кофе стоит очень больших эмоций. Я сижу рядом с самой красивой девушкой на свете. Это кофе для меня бесценно.
-– А для меня бесценно не только это кофе, а всё, что связано с тобой. Ты тот, с которым я чувствую себя спокойно и уверенно. А это редкость в наши дни. Обычно девушки не видят стабильности в своём партнёре. В тебе же этой стабильности хоть отбавляй. И я сейчас не про финансы, а про твою стабильную любовь ко мне.
-Эти разговоры были всегда и везде. Мы не могли друг другом насытиться. Как только мы открывали глаза, так сразу думали друг о друге, и длилось это до тех пор, пока мы не ложились спать. Говорят, что если долго о чём-то думать, то это тебе и во сне являться будет. Мне Лиза всегда снилась, или же она мне рассказывала свои сны со мной. Но, конечно же, в таких прекрасных отношениях были ссоры.
-Помню я нашу первую серьёзную ссору, которая была в Турции. Как вы уже поняли, я выиграл тот проект, и мы полетели на отдых. Только представьте это чувство, когда два молодых и влюблённых человека летят на свой первый совместный отдых. Для Лизы это был вообще первый полёт на самолёте. Она с такими большими и удивлёнными глазами подходила к самолёту и спросила меня:
-– И как эта бандура взлетит?
-– Взлетит как птичка.
-– Ты уверен?
-– Я не уверен. Но проверить надо.
-– Твои слова очень сильно меня замотивировали и успокоили, Максим. Спасибо.
+Ce relații ați avut voi? Da, da, voi, dragii mei cititori. Probabil totul a fost lin, fără certuri, fără supărări, nu? Sau, ca la toată lumea din lumea asta? Noi cu Liza nu am fost o excepție. În ciuda faptului că ne iubeam atât de tare încât puteam aprinde focul doar privindu-ne, în relația noastră au existat și momente de ceartă. La începutul oricărei relații totul e frumos și neted. Dar după perioada de acomodare și cunoaștere încep certurile din nimic. Și asta se explică printr-un singur lucru - oamenii încep să se plictisească de partenerul lor. Nu mai pot, ca înainte, să stea în aceeași încăpere. Și pentru asta au nevoie de o scânteie ca sentimentele să se reaprindă. Iar cea mai potrivită metodă este cearta. Cât de neplăcut e momentul certării și cât de plăcut e momentul împăcării? Hai, recunoașteți, știți sentimentul ăsta. Când băiatul cumpără flori. Când sărutul de după ceartă e mult mai dulce și mai pasional. Când sexul e ca la primele întâlniri. Certurile sunt un stimul pentru relație. Iar Liza știa cum să țină relația în priză.
 
-Итак, прилетаем мы в Турцию, и первые дня три у нас просто всё идеально. Лиза имела своего личного фотографа в моём лице, который должен был не отдыхать, а фотографировать. Миссия у мужчин такая на отдыхе — ходить и фотографировать все моменты отдыха в разных купальниках и в разных местах. Лиза впервые увидела, что значит All Inclusive по еде, и она была одной из тех, кто на завтрак набирал по пять больших тарелок, полных еды, и говорила одну и ту же фразу за столом:
-“Мы должны это попробовать, Максим.”
+  Discutam des cu ea că ar trebui să ne certăm mai puțin din nimic, pentru că asta nu duce la nimic bun și sigur nu ne ajută. Stăteam des pe acoperișul unui garaj abandonat din curte, beam cafea și priveam orașul care de acolo se vedea ca în palmă. Ne uitam pur și simplu în depărtare, la Chișinăul de noapte, vorbeam despre toate temele vieții și ne sărutam la fiecare glumă stupidă a Lizei.
 
-На день четвёртый Лиза узнала, что у нас в отеле есть дискотека, и она туда хотела попасть. Но мне, как работнику ночной сферы, это было не интересно. Долго она меня упрашивала пойти, но я ни в какую. В конце концов она говорит:
-– Я пойду туда одна.
-– Никуда ты не пойдёшь.
-– Пойду.
-– Лиза, ты хочешь, чтобы мы поссорились из-за клуба?
-– Максим, это ты в клубах работаешь и тебе это надоело. А мне хочется развлечения. Я молодая и хочу танцевать. Я хочу это делать с тобой, а ты как дед дома хочешь сидеть.
-– Лиза, если ты пойдёшь туда одна, то у нас будет очень серьёзная ссора. Я тебя туда не пускаю.
+— Iubita mea, cum crezi, cât costă cafeaua asta?
+— Cincisprezece lei.
+— Nu. M-a costat ani de mesaje cu tine. Milioane de cuvinte alese și scrise ca să ieși cu mine la o cafea. M-a costat nervi, griji și răbdare. Pentru cafeaua asta am plătit cu imaginația pe care am pornit-o ca să te invit. Cafeaua asta costă emoții uriașe. Stau lângă cea mai frumoasă fată din lume. Pentru mine, cafeaua asta e neprețuită.
+— Pentru mine nu doar cafeaua asta e neprețuită, ci tot ce e legat de tine. Ești omul lângă care mă simt liniștită și sigură. Și asta e o raritate în zilele noastre. De obicei, fetele nu văd stabilitate în partenerul lor. În tine, stabilitatea asta e din plin. Și nu vorbesc de bani, ci de dragostea ta constantă pentru mine.
 
-Вы думаете, её мои слова остановили? Нет, конечно. Она демонстративно начала подбирать наряды для того, чтобы у неё было больше внимания в клубе. Она надела красивое бельё, медленно и сексуально надевала чулки, после — самую свою короткую юбку так, чтобы чулки были видны, и начала делать себе макияж. Всё это она делала перед зеркалом демонстративно, зная, что я лежу на кровати и всё это вижу.
-– Вот же она и стерва. Но мне нравится.
-– Почему, Максим?
-– Ну она же знает, что он смотрит. Она знает, что у него всё кипит внутри. И она тем не менее играет ему на нервы.
-– Это необъяснимо, Максим. Женщины сами не могут объяснить многие свои поступки. Они это делают даже если прекрасно понимают, что это приведёт к ссорам и слезам.
-– Зачем? Почему им просто не живётся спокойно и мирно?
-– Если женщины не могут объяснить своё поведение, то я, гаджет, это точно объяснить не смогу. По этому поводу даже в мировой сети нет ответа.
-– Ох уж эти женщины. Продолжай читать, Алиса.
+Discuțiile astea erau peste tot și mereu. Nu ne săturam unul de altul. De cum deschideam ochii, ne gândeam unul la altul și așa până adormeam. Se spune că dacă te gândești mult la ceva, îți apare și în vis. Pe mine Liza mă visa mereu sau îmi povestea visele ei cu mine. Dar, bineînțeles, chiar și în relațiile astea frumoase au existat certuri.
 
-Кинув на меня последний взгляд, Лиза вышла, не сказав ни слова. А я в этот момент просто кипел. Я был на такой грани, что еле себя сдерживал. Через час я успокоился и уснул.
+Îmi amintesc prima noastră ceartă serioasă, în Turcia. După cum ați înțeles deja, câștigasem proiectul și am zburat în vacanță. Imaginați-vă ce simt doi tineri îndrăgostiți când pleacă în prima vacanță împreună. Pentru Liza era chiar primul zbor cu avionul. Cu ochii ei mari și mirați s-a apropiat de avion și m-a întrebat:
 
-Лиза пришла домой в семь утра. Она сразу же подошла ко мне и поцеловала меня сонного.
-– Просыпайся, малыш, и пойдём со мной.
-– Ты смеёшься? Ты где была до семи утра?
-– Я была в клубе. Но просыпайся и идём кушать. Я очень сильно проголодалась.
-– Проголодалась, блядь? Ты где шлялась? Я тебе сказал никуда не ходить. Какого хуя ты пошла туда?
-– Не ори на меня, психопат. Я тебе, блядь, сказала идти со мной. Ты упёрся рогами и не пошёл. Я что, должна была сидеть дома? Я, блядь, на отдыхе в отеле, а не в санатории. Я хочу этот отдых запомнить как отдых полный эмоциями, а не сидеть, блядь, только у бассейна и в номере.
-– Ты сейчас хочешь меня обвинить в чём-то?
-– Да, хочу. Сидишь как дед, блядь, в номере в то время как весь отель и все пары отдыхают.
-– Ну и иди с ними отдыхать. Что ты со мной потеряла? Давай попрошу тебе номер дать отдельно, чтобы ты с отелем развлекалась.
-– Максим, не беси меня и идём кушать.
-– Сама иди. Ты же всё сама делаешь.
-– Ну и пойду. Поверь мне, я найду с кем за столом сидеть.
+— Și cum dracu’ zboară monstru’ ăsta?
+— Zboară ca o păsărică.
+— Ești sigur?
+— Nu sunt sigur. Dar trebuie să verificăm.
+— Vorbele tale m-au “liniștit” maxim, Maxim. Mersi.
 
-В этот момент меня просто переклинило, и я бросил в неё флакон духов, который стоял на тумбе. Лиза увернулась, и духи влетели в зеркало в коридоре, разбив его.
+Ajungem în Turcia și primele trei zile sunt perfecte. Liza avea fotograf personal, pe mine, care nu trebuia să se odihnească, ci să fotografieze. Asta e misiunea bărbaților în vacanță - să meargă și să pozeze toate momentele, în costume de baie diferite și în locuri diferite. Liza a văzut pentru prima dată ce înseamnă all inclusive și era din categoria celor care la micul dejun își umpleau cinci farfurii mari și repeta mereu: „Trebuie să gustăm asta, Maxim”. În a patra zi, Liza a aflat că hotelul are discotecă și a vrut acolo. Dar mie, ca om din industria de noapte, nu-mi păsa deloc. M-a rugat mult, dar eu nimic. Într-un final:
 
-– Ты ебанутый? А если бы ты мне в голову попал?
-– Я ебанутый? Ого, у нас новые слова появились? Вали нахуй из этого номера.
-– Ну тебе пиздец.
+— Mă duc singură.
+— Nu te duci nicăieri.
+— Mă duc.
+— Liza, vrei să ne certăm din cauza unui club?
+— Maxim, tu lucrezi în cluburi și te-ai săturat. Eu vreau distracție. Sunt tânără și vreau să dansez. Vreau cu tine, dar tu vrei să stai în cameră ca un moș.
+— Dacă te duci singură, o să avem o ceartă foarte serioasă. Nu te las.
 
-Лиза прыгнула на меня и начала со всей силы меня бить и царапать. Я как мог её удерживал, но она начинала кусать меня до крови. Я не мог её успокоить.
+Credeți că a oprit-o? Evident că nu. Demonstrativ, a început să-și aleagă hainele ca să aibă cât mai multă atenție în club. Și-a pus lenjerie frumoasă, și-a tras încet și sexy ciorapii, apoi cea mai scurtă fustă, astfel încât ciorapii să se vadă, și a început să se machieze. Toate astea în fața oglinzii, știind că eu stau pe pat și văd tot.
 
-В какой-то момент я её скрутил, и она просто лежала, вымотанная.
-– Отпусти меня сейчас же.
-– Ты успокоилась?
-– Да. Отпусти.
+— Uite-o ce scorpie. Dar îmi place.
+— De ce, Maxim?
+— Pentru că știe că el se uită. Știe că fierbe pe dinăuntru. Și totuși îl provoacă.
+— Inexplicabil. Femeile nici ele nu-și pot explica multe gesturi. Le fac chiar dacă știu că vor duce la certuri și lacrimi.
+— De ce? De ce nu pot trăi liniștite?
+— Dacă femeile nu-și pot explica comportamentul, eu, gadget, sigur nu pot. Nici pe internet nu există răspuns.
+— Of, femeile astea… Continuă, Alice.
 
-Я отпустил её, и она встала. Дыхание у неё было сбито. Она начала поправлять причёску и юбку на себе.
-– Вставай и идём со мной.
-– Куда?
-– Идём кушать, блядь, и не беси меня.
+Liza mi-a aruncat o ultimă privire și a ieșit fără să spună nimic. Eu fierbeam. Eram la limită. După o oră m-am calmat și am adormit. Liza a venit la 7 dimineața. M-a sărutat adormit.
 
-Я встал и накинул на себя футболку. Она резко открыла дверь, так что та ударилась о стену и разбудила пол-этажа. Лиза шла быстрой, агрессивной походкой. Я шёл за ней и боялся сказать хоть слово. Она могла мне втащить в любой момент. Я был в шоке от её силы и агрессии.
+— Trezirea, puiule, vino cu mine.
+— Glumești? Unde ai fost până la 7?
+— În club. Hai să mâncăm, mi-e foame rău.
+— Foame, curvo? Pe unde ai umblat? Ți-am zis să nu te duci. Ce pula mea ai căutat acolo?
+— Nu urla la mine, psihopatule. Ți-am zis să vii cu mine, tu ai făcut pe încăpățânatul. Trebuia să stau în cameră? Sunt în vacanță la hotel, nu la sanatoriu. Vreau emoții, nu să stau la piscină și-n cameră.
+— Acum mă acuzi pe mine?
+— Da, stai ca un moș în timp ce toți se distrează.
+— Atunci du-te cu ei. Ce cauți cu mine? Îți iau cameră separată.
+— Maxim, nu mă enerva. Hai să mâncăm.
+— Du-te singură.
+— Mă duc. Găsesc eu cu cine să stau la masă.
 
-– Куда ты идёшь? Ресторан открывается в восемь утра, а сейчас только семь.
-– Максим, иди за мной и не беси меня.
+Atunci am cedat. Am aruncat în ea cu un parfum. A evitat, și parfumul a spart oglinda.
 
-На моё удивление, ресторан был открыт. Когда мы зашли, официант поприветствовал нас и попросил следовать за ним. Я ничего не понимал. И тут вижу — нас ведут на пляж, где стоит накрытый стол: белая скатерть, два стула, вокруг — лепестки роз в форме сердца.
+— Ești nebun? Dacă mă nimereai în cap?
+— Eu sunt nebun? Du-te dracu’ afară din cameră.
+— Te-ai nenorocit.
 
-– Вот. Вот где я шлялась всю ночь, Максим.
-Я вся ночь с этим официантом готовила для тебя сюрприз. Мы ездили за этими лепестками в город. Ездили и искали твоё любимое вино. С шеф-поваром готовили тебе вот этот завтрак. Вот, блядь, где я шлялась. Ты думаешь, что я тупая сука и не понимаю, что делаю?
+A sărit pe mine, m-a bătut și zgâriat, m-a mușcat până la sânge. Am imobilizat-o. A rămas fără puteri.
 
-Как только я вышла из номера, я поняла, что мне нахуй никакой клуб не нужен. Мне ты нужен, дебил. То, что ты остался в номере, дало мне шанс сделать тебе приятное. Мы с тобой всё время вместе, и сделать сюрприз было бы невозможно.
+— Dă-mi drumul.
+— Te-ai calmat?
+— Da.
 
-А ты что?
-Бросил в меня духи?
-Решил, что я шлялась?
+I-am dat drumul. Respira greu și a început nervos să se aranjeze.
 
-Ну спасибо тебе, Максимка. Хорошего ты мнения о той, которой предложение делал.
+— Ridică-te. Mergem să mâncăm, dracu’, și nu mă enerva.
 
-Я стоял и не мог подобрать слов. Я просто молчал и смотрел, как она, сквозь слёзы и сбившееся дыхание, всё это говорит. Это тронуло меня так сильно, что я опустил глаза и извинился.
+Am mers după ea, tăcut. Era agresivă. Mă speria forța ei.
 
-Через минуту молчания — осознав, какая же у меня удивительная девушка — я встал и обнял её.
+  Restaurantul era deschis. Ne-au dus pe plajă. Masă cu față albă, petale de trandafiri în formă de inimă.
 
-– Я люблю тебя, малыш.
-– Иди в жопу, Максим.
-– Люблю тебя. Прости меня.
-– Я тебя тоже люблю, но сегодня ты меня вывел из себя.
-– Я не знал, где ты и что делаешь. Как мне было догадаться? Мы, мужики, всегда придумываем, что если вы одни в клубе, значит, с первым встречным переспите. Я всю ночь не спал и думал о тебе.
-– Ты работаешь ночью, Максим. С проститутками. Как ты думаешь, как я сплю? Теперь ты понимаешь, как мне тяжело?
+— Aici am fost, Maxim. Toată noaptea am pregătit surpriza. Am mers după petale, după vinul tău preferat. Cu bucătarul-șef. Aici am fost. Crezi că sunt o proastă? Am ieșit și mi-am dat seama că nu-mi trebuie niciun club. Am nevoie de tine, idiotule. Tu ce-ai făcut? Ai aruncat cu parfum? Mulțumesc.
 
-Пойми, Максим, я многое терплю с тобой, а ты этого не ценишь. Я терплю, потому что люблю тебя. Но однажды мне придётся попросить тебя сменить эту работу. Не важно, сколько ты сейчас зарабатываешь — тебе нужно будет уйти.
+Am tăcut. Am cerut iertare. Am îmbrățișat-o.
 
-– Ну и куда мне устроиться?
-Не знаю, Максим. Ты умный парень и ты должен найти себе работу. Для будущего работать в баре с шлюхами — это не лучший вариант.
-— Эти проститутки и эта работа позволяют нам жить и ни в чём себе не отказывать.
-— Эта работа сделает так, что я откажусь от тебя. Доброго утра тебе, Максим.
+— Te iubesc.
+— Du-te-n pizda mă-tii, Maxim.
+— Te iubesc.
+— Și eu. Dar azi m-ai scos din sărite. Dimineața bună ție, Maxim. 
+  După ce a băut un pahar plin de vin, Liza s-a apucat de micul dejun. Eu mâncam în tăcere lângă ea și analizam cuvintele ei. Într-adevăr, viața mea și munca mea nu erau pentru relații și familie. Era o muncă mai degrabă pentru cei care vor să-și trăiască tinerețea fără griji. Iar ea suporta toate astea de fiecare dată când ieșeam la tură.
 
-Выпив полный бокал вина, Лиза взялась за завтрак. Я молча ел рядом с ней и анализировал её слова. Действительно, моя жизнь и работа — не для отношений и семьи. Это работа для тех, кто хочет хорошо провести молодость. И она действительно терпит всё это каждый раз, когда я выхожу на смену.
+— Nu există muncă proastă. Dar, sincer, sunt șocat de cât de înțeleaptă e Liza. E exact ca fosta mea. Și ea făcea la fel. Parcă îmi povestești viața, Alice.
+— Din păcate, nu e viața ta. E o poveste cu multe coincidențe. Relațiile sunt aproape la fel la toți.
+— Dar cum se poate ca pe mine să mă cheme Maxim și pe el Maxim? Fosta mea se numea Liza și și ea e Liza.
+— Maxim și Liza sunt nume internaționale. Coincidențele apar des în cărți.
+— Dar ai observat cum a întors totul? Cum a găsit ocazia să-i facă surpriza și momentul să-i spună tot? Totul foarte inteligent. Bravo ei. Pentru mine s-a deschis altfel.
+— Da, a făcut totul frumos și la momentul potrivit.
+— Citește mai departe.
 
-— Нет плохой работы. Но я, если честно, в шоке от того, насколько Лиза мудрая. Она прямо как моя бывшая. Она мне то же самое делала. Ты будто пересказываешь мою жизнь, Алиса.
-— Увы, это не ваша жизнь. Это история, в которой много совпадений. Отношения почти у всех одинаковые.
-— Но как может быть такое, что меня зовут Максим и его зовут Максим? Мою бывшую звали Лиза и её зовут Лиза.
-— Максим и Лиза — международные имена. Совпадения могут встречаться в книгах.
-— Но ты заметила, как она всё переиграла? Как она нашла возможность сделать сюрприз? Как она нашла момент ему всё высказать? Как она всё грамотно сделала. Умничка просто. Она для меня открылась по-другому.
-— Действительно, она всё сделала красиво и в подходящий момент.
-— Зачитывай дальше.
+  A doua noastră ceartă n-a întârziat. Tot timpul Liza îmi amintea că trebuie să renunț la muncă și că nu mai poate așa. Nu mai venea la mine la muncă atât de des ca înainte. Dar fiecare vizită însemna scandal acasă. Mă suspecta și mă gelozea pe toată lumea. Dacă cineva se uita altfel la mine sau dacă dădeam cuiva prea multă atenție, însemna că am ceva cu ea. În fiecare dimineață, acasă, îmi scotea asta pe ochi, iar eu trebuia s-o liniștesc și să-i explic că nu are dreptate. Într-un final i-am interzis să mai vină la muncă, ca să nu-mi facă scandal.
 
-Вторая наша ссора не заставила себя долго ждать. Всё время Лиза напоминала мне о том, что мне надо бросать работу и что она так больше не может. Она уже не приходила ко мне на работу так часто, как раньше. Но каждое её посещение означало скандал дома. Она подозревала и ревновала меня ко всем. Кто-то не так посмотрел, или кому-то я уделил много внимания — значит, у меня с ней что-то есть. И каждое утро дома она мне это высказывала, а я должен был её успокаивать и говорить ей, что она не права. В конце концов я запретил ей приходить ко мне на работу, чтобы она не устраивала мне скандалы.
+  Într-o zi, lucrând, o fată s-a urcat pe bar și a început să danseze. Pentru show m-am urcat și eu și am început să dansez cu ea. Încet, s-a pus în genunchi, mângâindu-și lent pieptul, și și-a ridicat tricoul, dezgolindu-și sânii. Sala urla, toți erau în extaz. Dar nu s-a oprit aici. Mi-a luat mâna și mi-a pus-o pe pieptul ei. Sub fluierături și strigăte, îi strângeam sânii cu mâna mea. Toți se distrau, urlau de ce vedeau. Am ridicat capul și m-am uitat la fețele fericite. Și atunci am văzut-o pe Liza în mulțime. Stătea și se uita la mine. Zâmbetul mi-a dispărut imediat și mi-am tras mâna. Pe buzele ei am citit: „du-te naibii”. S-a întors și a ieșit rapid. Am sărit barul și am alergat după ea. Afară am prins-o de mână.
 
-В один день, работая, у меня на стойку забралась девушка и начала танцевать. Для поддержания шоу я залез тоже на стойку и начал с ней танцевать. Она плавно начала становиться на колени, проводя медленно по своей груди, потом подняла майку и оголила грудь. Весь зал кричал и был в экстазе. Но на этом она не остановилась. Она взяла мою руку и приложила к своей груди. Под свисты и крики мужиков я сжимал её грудь своей рукой. Всем было весело, все просто кричали от того, что видят. Я поднял голову и вглядывался в довольные лица. Как вдруг замечаю в толпе Лизу. Она просто стояла и смотрела на меня. У меня сразу спала улыбка, и я убрал свою руку с груди той девушки. В тот момент по губам Лизы я прочитал: «пошёл на хуй». Она развернулась и стремительно направилась к выходу. Я перепрыгнул бар и, расталкивая всех, побежал за ней. На улице я её догнал и схватил за руку.
-— Что ты тут делаешь?
-— Пошёл на хуй!
-– Зай, что ты тут делаешь? Дай мне объяснить тебе всё.
-– Пошёл на хуй!
-– Это не то, что ты подумала. Я это сделал ради шоу. Просто надо было поддержать этот момент. Я и сам был в шоке, когда она мою руку положила к себе на грудь.
-– Это не то, что я подумала? Максим, я захожу, а ты держишь шлюху за грудь. Что я должна подумать? Что она кормящая мать и ей надо сцедить молоко? И мой Максим герой, так как он помог ей это сделать? Что блядь я не так поняла? Пошёл нахуй из моей жизни. Сиди с шлюхами. Я тебе говорила, что твоя работа сделает так, что я тебя брошу. Вот этот день и настал. Максим, мы с тобой расстаёмся. Спасибо тебе за все прекрасные моменты и иди на хуй.
+— Ce faci aici?
+— Du-te naibii!
+— Iubire, ce faci aici? Lasă-mă să-ți explic.
+— Du-te naibii!
+— Nu e ce crezi. A fost pentru show. Nici eu nu mă așteptam să-mi pună mâna pe piept.
+— Nu e ce cred? Maxim, intru și te văd cum ții o târfă de țâțe. Ce trebuia să cred? Că e mamă care alăptează și trebuia mulsă? Și Maxim erou? Ce dracu’ n-am înțeles? Ieși din viața mea. Stai cu curvele. Ți-am spus că munca ta o să mă facă să te las. Ziua asta a venit. Ne despărțim. Mersi pentru tot și du-te dracu’.
 
-Она вырвала свою руку из моей, села в такси и уехала. Всё. Я потерял её. Только такие мысли были в голове. Я потерял ту, без которой не могу жить ни дня. И всё из-за того, что я не сдержался и не слушал её, когда она говорила, что моя работа меня погубит. Я присел на бордюр и закурил сигарету. Что мне сейчас делать? Как мне её вернуть и доказать, что мне нужна только она и что я идиот? Хотя доказывать, что я идиот, не надо — она и так это поняла. Я всё пытался ей позвонить, но она то и дело сбрасывала звонки. На сообщения она вообще не реагировала.
+  Și-a smuls mâna, s-a urcat într-un taxi și a plecat. Gata. Am pierdut-o. Doar asta aveam în cap. Am pierdut-o pe cea fără de care nu pot trăi. Totul din cauza mea. Am stat pe bordură și am aprins o țigară. Ce să fac acum? Cum s-o aduc înapoi? Am sunat-o, mi-a închis. Mesajele le ignora. Trei zile am stat acasă. Seara m-am dus la mama, căci mă invitase la cină.
 
-Три дня я был у себя дома и никак не мог с ней поговорить. Вечером я поехал к своей маме, так как она пригласила нас на ужин.
-– А где Лиза? – спросила меня удивлённо мама.
-– Мы с ней расстались.
-– Как? Почему?
-– Я не хочу об этом говорить. Это моя вина, и я полностью осознаю это. Поэтому я не хочу обсуждать это. Я её потерял.
-– Может, мне ей позвонить? Может, я смогу помочь?
-– Не надо, мам. Давай просто покушаем и я пойду.
+— Unde e Liza? m-a întrebat mama.
+— Ne-am despărțit.
+— Cum? De ce?
+— Nu vreau să vorbesc. E vina mea.
 
-Моё состояние было очень подавленным. Я выпил два бокала шампанского и просто молча сидел за столом. Как вдруг у меня начали сильно чесаться руки. Они покраснели, и я всё сильнее и сильнее их чесал.
-– Что с тобой, Максим?
-– Не знаю. Наверное, аллергия на алкоголь опять.
-– Ты весь красный. Это не похоже на аллергию. Это что-то другое.
-– Да не думаю. Просто сильно всё чешется.
-– Максим, давай собирайся и идём ко мне в больницу.
-Благо больница была рядом, и мы пошли пешком. На полпути я понимал, что у меня просто отказывают ноги, и я теряю зрение. У меня сильный зуд, закрываются глаза. Дальше я помню только одно – надпись реанимация.
+Eram distrus. Am băut două pahare de șampanie. Dintr-odată m-au mâncat îngrozitor mâinile, s-au înroșit.
 
-Очнулся я на второй день под звуки аппаратов, к которым был подключён. Страшная картина. Оглянулся вокруг и увидел, что моё пробуждение заметила медсестра. Она сразу же взяла телефон и кому-то позвонила. Через пару минут в палату зашла мама и врач.
+— Ce ai, Maxim?
+— Nu știu. Probabil iar alergie la alcool.
+— Nu pare alergie.
+— Mă mănâncă rău.
+— Ne îmbrăcăm și mergem urgent la spital.
 
-– Доброе утро, Максим. Как ты себя чувствуешь?
-– Доброе утро. Вроде хорошо. А что случилось?
-– У тебя произошёл нервный срыв. Твои нервы просто не выдержали, и на эмоциональной почве случился срыв. Да ещё и с предынфарктными симптомами.
-– От чего это может быть?
-– Переживания. Мама рассказала, что ты сейчас переживаешь расставание с девушкой. Это основная причина, которую мы рассматриваем. Анализы у тебя в порядке, все органы работают исправно.
-– Сколько мне тут лежать?
-– Пока твоё состояние не нормализируется. Потом переведём тебя либо в кардиологию, либо в неврологию — в зависимости от того, что окажется главным фактором твоего срыва.
-– Лиза об этом знает? – спросил я, посмотрев на маму.
-– Да, знает. Она в коридоре и ждёт, пока мы выйдем. После этого сможет зайти.
-– Честно? Она реально за дверью? Скажите, чтобы зашла. Я соскучился по ней.
-– Максим, мы должны убедиться, что ваше состояние стабильное и что её посещения не будут для вас вредны.
-– Для меня ваше посещение вредно. А Лиза пусть зайдёт. Она мой доктор.
+Pe drum mi-au cedat picioarele, mi s-a întunecat vederea. Ultimul lucru pe care am văzut e inscripția - reanimare. M-am trezit a doua zi. Diagnostic: cădere nervoasă, stare preinfarct.
 
-Сказано это было грубо, конечно. Ведь этот человек меня спас и желает мне здоровья. Но то, что я не видел Лизу и скучал по ней, было сильнее желания соблюдать правила. Врач переглянулся с мамой, и они вышли из палаты.
+— Liza știe? O întreb pe mama
+— Știe. E pe hol. Acuși o invit. 
 
-Я лежал и ждал, когда же эта дверь откроется. Ну когда же? И тут я услышал шаги по коридору. Я никогда не спутаю её походку ни с одной другой. Это Лиза идёт своими маленькими ножками. Она медленно открыла дверь, чтобы не потревожить остальных в палате, и зашла.
+A intrat. M-a îmbrățișat.
 
-Увидев меня, она подбежала, набросилась на меня, обняла и начала целовать меня по всему лицу.
+— Idiotule. Ce ai făcut?
+— Iartă-mă.
+— Te omor eu.
+— Îmi pare rău. Vreau să ne împăcăm. Mă las de muncă.
+— Serios?
+— Foarte serios. Nu pot fără tine.
+— Vorbim după spital. Acum fii calm.
+— Te iubesc.
+— Prostule…
 
-– Идиот. Сука, идиот. Что ты наделал? Я думала, я сойду с ума, когда мама мне это сказала…
-– Прости меня, пожалуйста.
-– Я тебя сама убью за это.
-– Прости меня. Я прошу, прости за то, что было тогда на работе. Я честно извиняюсь. Я хочу, чтобы мы с тобой помирились, и я сразу увольняюсь.
-– Ты это сейчас серьёзно?
-– Очень серьёзно. Я не хочу тебя терять. Я без тебя просто не могу жить. Посмотри, куда меня привела моя скука по тебе. Разве это не доказательство того, что я без тебя не могу?
-– Доказательство. Я тоже без тебя не могу. Но по поводу твоей работы мы поговорим, когда ты выйдешь из больницы. Я не хочу, чтобы ты сейчас тревожился. Ты должен быть спокойным и думать только о том, как быстрее поправиться. А я буду тут рядом, если хочешь. Договорились?
-– Ты будешь тут рядом?
-– Да. Я готова сидеть только тут.
-– Люблю тебя, малыш. Знаешь, что я понял? Что я с тобой расстанусь только когда меня об этом попросит немой вслух.
-– Какой же ты дурачок, Максим. Откуда ты мне достался? Что я плохого сделала в этой жизни, что мне такой персонаж попался?
+  După externare, mi-am ținut cuvântul și mi-am dat demisia. Au fost discuții lungi cu colegii și cu directorul, toți îmi spuneau că nu trebuie să fac asta. Dar îi promisesem Lizei și nu puteam s-o pierd încă o dată. Era fericită că am ales-o pe ea. Primele două luni aveam bani strânși și îmi permiteam să stau acasă. Dar banii se terminau rapid, iar eu tot nu găseam de lucru. Atunci au început certurile din cauza faptului că Liza voia să meargă la cafenele prin oraș, iar eu n-aveam bani de o apă. Eram nevoit să refuz, ea se supăra și îmi cerea să-mi găsesc un job decent.
+  Nu vă gândiți că stătea pe gâtul meu. În perioada în care eu eram fără muncă, Liza a mers la cursuri de extensii de gene, plătite de mine. Apoi i-am cumpărat tot ce-i trebuia pentru lucru și a început să primească fete acasă. Comenzi erau puține, dar de fiecare dată când primea bani, mă lua și mă scotea în oraș.
 
-– Как же это мило. Но тебе не кажется, что если бы его мама не набрала Лизу, то он бы сам ей об этом сообщил?
-– Думаю, так и было бы. Мужчины всегда начинают делать из себя жертву в тот момент, когда понимают, что потеряли человека и не могут его вернуть.
-– Все?
-– Все.
-– Ты откуда это знаешь?
-– Из книг и фильмов. Максим, я подключена к мировой сети. Я знаю намного больше, чем вы думаете.
-– Ну я, например, не делаю из себя жертву при расставании.
-– Вы давно уже не в отношениях. С того момента, как вы меня купили и до сегодняшнего дня, я вас не видела в отношениях ни с кем.
-– На это есть причина. Я после расставания дал себе слово больше никого не любить.
-– Это было трудное расставание?
-– «Трудное» – не то слово. Я очень сильно страдал. Я не хочу этих страданий опять.
-– С кем у вас было это расставание?
-– Как раз с девушкой, которую так же зовут, как и героиню книги.
-– Вы её сильно любили?
-– Не то слово. То, что ты мне сейчас читаешь — это ничего по сравнению с тем, как я её любил. Но я повторюсь тебе: я нахожу себя в этой книге. Очень много совпадений между книгой и мной.
-– Это всего лишь совпадения. Почему вы расстались?
-– Я не помню этого, если честно. Это было давно. По-моему, она уехала и нашла другого. Честно — плохо помню. Я очень много времени пытался забыть всё, что было.
-– У вас это получается?
-– С трудом, но получается. Хотя иногда я вспоминаю её и представляю, как бы нам было бы сейчас хорошо.
-– Это была ваша настоящая любовь в жизни?
-– Она была единственной любовью за всю мою жизнь.
-– Хотели бы вы её увидеть?
-– Хотел бы. Хотя я думаю, она совсем не изменилась. Она такая же маленькая и красивая девочка.
-– Можете ли вы мне её описать? Чётко ли вы её помните?
-– Я её помню так, будто вчера видел в последний раз. Маленькая такая. Ножки худенькие и красивые. Волосы — чёрные-чёрные. Разрез глаз как у кошки. А улыбка… какая у неё красивая была. Ты бы только это видела.
-– Пока что действительно очень схожа с героиней из нашей книги.
-– Ну а я тебе про что говорю? Она копия будто бы.
-– Могу ли я дальше зачитывать книгу?
-– Зачитывай.
+— Acum e rândul meu să te scot și să plătesc eu.
+— Mi-e rușine când plătești tu.
+— Mie îmi place să-mi scot iubitul în oraș. Îmi place că sunt cu tine și când e bine, și când e greu. Alta te-ar fi lăsat când s-au terminat banii. Eu sunt cu tine. Tu ai renunțat la muncă pentru mine. Dacă nu eram eu, făceai milioane. Așa că apreciez gestul tău. Ne va fi greu? Da! Dar trecem împreună.
 
-После того как меня выписали из больницы, я сдержал слово и уволился с работы. Очень долгие у меня были разговоры с коллегами и директором о том, что мне этого делать не надо. Но я обещал Лизе и не мог её ещё раз потерять.
-Она была рада тому, что я сделал выбор в её пользу. Первые два месяца у меня ещё были накопленные деньги, и я мог себе позволить отдыхать дома. Но деньги стремительно заканчивались, а работу я так и не нашёл. И тогда у нас начались ссоры на почве того, что Лиза хотела ходить в кофе в городе, а у меня за душой были гроши. Я был вынужден ей отказывать, и она на это обижалась и требовала от меня, чтобы я нашёл себе достойную работу.
+— Bravo. De fiecare dată mi se deschide tot mai mult, Alice.
 
-Нет, вы не подумайте, что она сидела на моей шее и ничего не делала. В этот период, пока я сидел без работы, Лиза пошла на курсы наращивания ресниц, которые я оплатил. После этого мы купили ей всё необходимое для работы, и Лиза начала принимать девочек дома и наращивать им ресницы. Заказов было мало, но как только Лиза получала за это деньги, то она тут же брала меня и вела в город.
-– Теперь моя очередь тебя выводить в город и за тебя платить.
-– Но мне стыдно, когда это делаешь ты, а не я.
-– А мне приятно, что я своего любимого веду в город. Я за него плачу. Приятно то, что я с ним и когда ему хорошо, и когда плохо. Была бы другая — то бросила бы тебя сразу, как деньги закончились. А я с тобой, и мне это приятно. Ты же из-за меня бросил работу. Не было бы меня — то ты бы делал свои миллионы, и всё было бы хорошо. А так я ценю твой поступок. Будет ли нам тяжело? Будет! Но мы пройдём это вместе.
-– Молодец. Она просто с каждым разом для меня открывается сильней и сильней, Алиса.
+  Au trecut șase luni de când îmi dădusem demisia. Presiunea părinților creștea — trebuia să mă angajez. Ne mai ajutau, dar nu putea dura la nesfârșit. Liza îmi făcea scandal din nimic. Nu înțelegeam ce se întâmplă. Parcă lumea întreagă se întorsese împotriva mea. „Celebrul” Maxim nu mai era bun de nimic. La joburi normale nu mă voiau pentru că toți mă știau drept Maxim barmanul. Prietenii îmi spuneau că ei cu mine beau, nu muncesc. A început depresia. Relația noastră se ducea dracu’. Sexul era o dată pe săptămână și atât de leșinat și trist încât mai bine nu-l făceam. Din frustrarea Lizei, scandalurile erau zilnice. Atunci m-am gândit să mă mut la bunica, să stau singur cu gândurile mele. Liza n-a fost împotrivă. Era obosită și ea.
+  După o săptămână la bunica, într-o dimineață am decis că ajunge să stau posomorât. Mi-am pus muzică și m-am apucat să caut de lucru. Am deschis calculatorul și am intrat pe VK. S-a deschis pagina Lizei. Mi-am amintit că fusese la mine și ascultasem playlistul ei. Gust bun avea la muzică. Dar ca și orice băiat eram curios ce se mai face la ea prin mesaje. Și am dat peste o conversație cu un tip. De două luni apoximativ comunicau. Am dat scroll și am văzut poze intime în conversație. Ea îi trimitea pizda, el pula. Tipul era din New York, fotograf după profesie. Îl mințea că nu are pe nimeni. Am citit tot. Am printat tot și m-am dus la ea. Am sunat la ușă și a deschis Liza uimită.
 
-Уже прошло полгода с того момента, как я уволился. И давление уже было и от родителей о том, что пора на работу. Они нам тоже помогали, но это не может продолжаться вечно. Плюс Лиза устраиввала мне скандалы на ровном месте. Я не понимал, что происходит. От меня будто отвернулся весь мир. И этот известный Максим стал никому не нужен. На работу нормальную не устроиться, так как все меня знают как Максима-бармена. Они даже не рассматривали мою кандидатуру на другую должность. Все знакомые и друзья мне говорили, что не могут меня взять на работу, так как они со мной любят бухать, а не работать.
+— De ce n-ai spus că vii?
+— Eram prin zonă.
+— Ce hârtii ai în mînă?
+— Cheam-o pe mama ta. Și vino și tu sâ vă explic ce hârtii am. 
 
-В какой-то момент у меня началась депрессия, и это сказывалось на наших отношениях. Уже всё было не тем. Наш секс был раз в неделю, и то настолько вялый и унылый, что лучше бы мы им не занимались. От неудовлетворенности Лизы скандалы были ежедневными. В тот момент я и подумал, что мне нужно переехать домой к бабушке и пережить со своими мыслями какой-то период. Лиза была не против, так как и она устала.
+Au stat amândouă pe canapea încremenite și nedumerite. 
 
-Через неделю после переезда к бабушке, в очередное утро, я решил, что хватит мне киснуть и надо поставить себе музыку и начать с хорошим настроением искать работу. Ведь то, с каким настроением ты проснёшься — так день и пройдёт. Включаю я свой компьютер и захожу ВКонтакте. Раньше только там можно было сохранять песни и слушать музыку. И понимаю, что у меня открывается не моя страница ВКонтакте, а Лизина. Я вспомнил, что она однажды была у меня дома, и мы слушали её плейлист. Вкус у неё был хороший, и решил я послушать её музыку.
+— S-a întâmplat ceva?
+— Da. Fiica dumneavoastră mă înșală. Uite pula viitorului ginere. Și aici e pizda fiicei dumneavoastră. Aici zice că n-are pe nimeni. Asta e cauza scandalurilor. Nu pentru că Maxim e de căcat. Ci pentru că Liza are pe altul, la New York. Mult noroc si success vouă în toate. 
+  Am plecat. Asta a fost. Nu pot ierta așa ceva. O săptămână m-a sunat și mi-a scris. N-am răspuns. M-am mutat la mama. Știam că îi va fi rușine să apară acolo.
+  Într-o zi, la masă, sună telefonul mamei. Fața i s-a schimbat.
 
-Спросите меня, если я зашёл в сообщения и решил проверить, с кем она переписывается? Конечно же да. Я что, идиот, не проверить? И тут я попадаю на переписку с одним парнем. Переписка долгая, уже месяца два. Прокручивая вверх, я понимаю, что они шлют друг другу интимные фото. Она высылает ему свою киску, а он ей свой член. Парень живёт в Нью-Йорке и работает фотографом. Они общаются откровенно, и на вопрос, есть ли у Лизы парень, она отвечает, что нету.
+— Unde ești? Întreabă mama pe cineva pe telefon. 
+— Ce s-a întâmplat? Am întrebat eu în dată. 
+ Mama se uitase la mine și după ce a închis telefonul îmi spune:
+— Liza e pe pod. Spune că sare dacă nu vii.
 
-Я перечитал все сообщения и не могу поверить, что моя Лиза мне вот так изменяет. Я взял и распечатал всю переписку и фотографии и поехал к Лизе домой.
-– Привет. А почему ты не предупредил, что приедешь?
-– Я мимо проезжал и решил зайти.
-– А что это у тебя за бумаги?
-– Сейчас расскажу. Твоя мама дома?
-– Да!
-– Позови её на кухню, пожалуйста. И ты тоже приходи. Хочу вам что-то показать.
+Am fugit urgent spre pod. Era chiar lângă casa noastră. Ea stătea  dincolo de parapet.
 
-Она позвала мать на кухню, и они обе сели тихо на софу.
+— Ce faci?
+— Sar dacă nu vorbim.
+— Treci înapoi și vorbim.
+— Ne împăcăm?
+— Da, dracu’, da!
 
-– Что-то случилось, Максим?
-– Да, случилось. Ваша дочь мне изменяет. И вот тут моё доказательство.
-Вот видите — это член вашего будущего зятя.
-А вот это произведение искусств — это влагалище вашей дочери, если вы вдруг давно её не видели.
-Вот тут ещё члены.
-Вот тут парень спрашивает, есть ли у неё кто-то, а она отвечает, что нету никого.
+A trecut încet. M-a îmbrățișat strâns și prin lacrim tot îmi spunea: 
 
-Вот вам и ответ, почему у нас последнее время не идут отношения.
-Вот вам ответ, почему скандалы каждый день.
-Это не потому, что Максим хуёвый.
-А потому что Лиза имеет другого в Нью-Йорке.
-Который, кстати, скоро прилетает.
+— Iartă-mă. A fost doar vorbă. A fost ca o gură de aer. Tu erai deprimat. M-am plictisit dar nu pot fără tine.
+— Ai mâncat?
+— Nu.
+— Hai să mâncăm. Mâncarea mamei se răcește.
 
-Так вот что я вам хочу сказать — удачи!
+Ne-am sărutat pe pod, plângând. Am mers la mama și am cerut liniște.
 
-Я ушёл, захлопнув двери.
-Для меня это было точкой в наших отношениях.
-Я не могу ей простить такое.
-
-По дороге домой мне Лиза звонила и писала сотни сообщений с просьбой прийти и поговорить.
-Но я не хотел её видеть.
-Я просто не мог поверить, что она так со мной поступила.
-
-Звонки и сообщения она мне высылала целую неделю.
-Но я ей не отвечал.
-Чтобы она меня не нашла, я переехал к маме.
-Я знал, что ей будет стыдно появиться в доме моей матери, и поэтому решил там переждать и пережить это расставание.
-
-В один день, сидя за столом и обедая с мамой, вдруг ей на телефон звонит Лиза.
-Мама ответила на звонок и сразу поменялась в лице.
-Она посмотрела на меня огромными глазами и сказала Лизе:
-
-– Ты где?
-– Что? Что случилось?
-
-Лиза сказала, что она сейчас на мосту и собирается спрыгнуть, если я с ней не поговорю или не приеду и не заберу её.
-
-– На каком она мосту?
-– Тут рядом с моим домом.
-
-Я вскочил со стула и начал в спешке обуваться.
-Я добежал до моста, где стояла она — с другой стороны парапета.
-
-– Что ты делаешь?
-– Я спрыгну, если ты мне не дашь шанс с тобой поговорить.
-– Перелезь, и я обещаю, что мы поговорим.
-– А мы помиримся?
-– Да! Только перелезь.
-– Обещаешь?
-– Да блядь да! Перелезь.
-Она переступила через парапет и сразу начала меня обнимать. Она плакала и молчала. Я не знал, что делать в этот момент, но понимал, что мне надо её успокоить. Она только что хотела спрыгнуть только потому, что я не говорю с ней.
-– Прости меня! Я не понимаю, как это произошло. Мы начали просто с ним общаться. Он фотограф и я спрашивала его советы как тоже сделать такие фотографии. Он интересовался Молдовой и как бы ему было бы интересно сюда приехать. И так мы начали общаться уже плотно. Ну а дальше ты и сам всё видел и читал. Прости меня пожалуйста. Я честно не знаю как перед тобой извиниться чтобы ты меня простил. Но я не могу без тебя. У нас был сложный период, и он был для меня как глоток свежего воздуха. Ты был в депрессии и всегда думал, где бы найти работу. А меня это нагнетало и мне стало скучно. Я честно не знаю как перед тобой извиниться чтобы ты меня простил.
-– Ты кушала?
-Лиза была шокирована таким вопросом.
-– Нет.
-– Идём кушать. Мама приготовила еду, и она стынет.
-Лиза бросилась мне на шею и начала целовать. Мы стояли там как два придурка на мосту и целовались оба в слезах. Я взял её за руку, и мы пришли к маме домой. Зайдя в дом, я попросил не задавать никаких вопросов никому. Я хотел спокойно покушать в кругу любимых мне людей.
-
-Мудрость. Не всем дана мудрость. Она проявляется не в том, сколько книг ты прочитал, а как ты видишь эту жизнь, умеешь прощать, чувствуешь этот мир. Не каждый мудрый человек сможет простить то, что он простил. Может быть, она это повторит когда-то, ведь не зря говорят, что человек, который тебя предал один раз, предаст тебя и второй раз. Но он поступил мудро. Он наплевал на всё, что было, и на то, что она сделала. Он выбрал любовь, а значит поступил мудро. Когда любишь по-настоящему, то гордость надо засунуть в одно место.
+— Înțelepciunea nu e pentru toți. Nu e în cărți, e în a ierta. Poate va repeta. Dar el a ales dragostea. Când iubești, mândria se bagă undeva.
         `
     },
     {
         id: 'ch6',
-        title: 'Начало конца',
+        title: 'Începutul sfârșitului',
         content: `
-Прошло уже три года с того момента, как мы начали встречаться с Лизой. Ссоры и примирения так и не заканчивались. Но мы всё же не могли друг без друга. И когда я думал, что хуже уже быть не может, произошло то, чего я не ожидал.
-
-Хочу забыть тот день, когда всё это началось. Забыть тот звонок от сестры, которая сказала мне, что бабушка упала в шуточной форме.
-
-– Что с ней?
-– Споткнулась об ковер и упала.
-– И что с ней сейчас?
-– Говорит, что болит нога. Сидит на кухне и жалуется, что даже сидеть больно.
-– А вы что делаете? Почему не вызовете скорую?
-– Максим, зачем скорую? Она просто упала и всё. Мы сидели на кухне, как вдруг услышали, что она упала. Посмотрели, а она лежит. Сначала мы смеялись, а потом поняли, что она не может встать, и посадили её.
-– Я сейчас приеду. Я слышу, как она стонет, а вы сидите и смеётесь с этого. Вы нормальные вообще?
-
-Сообщив Лизе о том, что бабушка упала, я выехал домой. Зайдя в квартиру, я увидел, что бабушка сидит на кухне и стонет от боли. Сидит на одном боку, так как на второй просто не может сесть. А за столом сидят папа, сестра и шурин, пьют пиво и слушают музыку.
-
-– Вы что, охренели? – начал я кричать, увидев эту картину. – Она сидит здесь и стонет уже пару часов, а вы пьёте? Вы, блядь, вообще без мозгов?
-– Максим, успокойся, – сказала мне сестра, выключая музыку на телефоне.
-– Бабушка, где болит?
-– Вся правая сторона.
-– Ты упала сильно?
-– Не сильно, но чувствую, что что-то не так.
-– Можешь согнуть пальцы на ногах?
-– Не могу ничего делать. Нога просто не слушается.
-– Сейчас я вызову скорую, и поедем смотреть.
-
-Кинув злой взгляд на всех, кто был на кухне, я начал звонить в скорую помощь. После осмотра бабушки врачи сказали, что её нужно вести на рентген. У них были подозрения на перелом, и нужно было проверить. В квартиру привезли кресло для перевозки, и тогда я увидел, как бабушке больно вставать и садиться. Она корчилась от боли, когда её пересаживали со стула на кресло. В этот момент все в квартире поняли, что дело серьёзное, и зря не обращали внимания.
-
-Я с папой поехал с ней в больницу. После рентгена вышел врач и сообщил нам не самые хорошие новости:
-
-– Максим, у твоей бабушки перелом шейки бедра.
-– И что это значит? Вы говорите это с таким выражением, будто ей осталось жить пару дней.
-– Ей нужна операция. Дело в том, что мы не можем её сделать, так как есть большой риск, что она умрёт на столе. Она старая, и её сердце может не выдержать наркоза. Плюс ко всему у неё сахарный диабет, и мы вообще не можем дать гарантии, что даже после операции у неё всё будет хорошо и она пойдёт.
-– И что вы предлагаете?
-– Если вы даёте согласие, и она тоже, на то что мы не несём ответственности в случае её смерти, то мы готовы начать операцию. Если нет, то я скажу, как за ней ухаживать.
-– Если я буду за ней ухаживать, какая вероятность, что она встанет и через какое время?
-– Она проживёт столько, насколько хорошо вы будете следить за ней. Не уверен, что она когда-либо встанет. Но шанс есть. Всё зависит от вас. Начнём с того, что вы должны купить шарики и давать ей каждый день их надувать. От того, что она будет всегда лежать, у неё есть риск заработать пневмонию. Посмотрите в интернете, как делать дыхательную терапию. Также вы должны с ней делать зарядку. Руки, спину и шею вы должны разрабатывать. Но самая большая проблема – это появление пролежней. Вы должны очень внимательно следить за этим. Делайте ей массаж всего тела каждый день. Если у неё появятся пролежни, то это как гангрена, которую со временем нужно будет ампутировать.
-– Что за вещи вы мне говорите? Конечно, я всё сделаю, и мы это решим. Ещё увидите, как мы к вам придём на своих двух.
-– Я очень надеюсь на это, Максим.
-– Если я буду за ней хорошо следить, то через сколько она встанет?
-– Я думаю, что она протянет максимум три месяца. Я опытный врач, и по моему опыту они все быстро умирают.
-– Если вы такой опытный, то нашли бы решение, как её поставить на ноги. Это же перелом, а не ранение в голову. Хорошего вам дня.
-
-Я ушёл, не пожав ему руку, так как услышал то, чего не хотел бы слышать никогда. Забрал бабушку и посадил в машину шурина. Зайдя домой, я сразу же сказал всем, что мы должны сделать. Тишина была гробовая в тот момент, когда я говорил. Ещё пару часов назад они веселились на кухне, а сейчас я пришёл с такими новостями. Бабушку положили в комнату.
-
-С того дня начался адский труд, который я никогда не забуду. С первой же ночи бабушка будила нас и просила перевернуть её то на один бок, то на другой. Она хотела, чтобы ей подложили подушку то выше, то ниже. То она хотела пить, то ей нужно было в туалет. Через пару дней мы притащили раскладное кресло рядом с её кроватью, чтобы она не кричала каждый раз, когда ей нужна была помощь. За ней нужен был уход двадцать четыре часа. Она была не из требовательных больных, но когда это продолжается постоянно, нервы начинают сдавать.
-
-Мы дежурили по очереди: то я, то папа, то сестра. Через месяц мы поняли, что уже не можем, и нам нужна сиделка. Когда с ней сидела сестра, бабушке было комфортно, а когда сидел я или папа, то она стеснялась нас. Дело в том, что, как любой женщине, её надо было мыть в интимной области. И если дежурил я или папа, то она стеснялась даже попроситься в туалет. Это и стало решением, чтобы мы взяли женщину-сиделку, и она нам помогала. Платили мы ей мало, так как той женщине нужно было жильё поблизости с работой. Она работала под нашим домом, и ей было очень удобно. Лори была нашим спасителем и также хорошим собеседником для бабушки, когда ей было скучно.
-Через два с половиной месяца бабушке лучше не становилось. Она уже еле-еле сжимала мои руки при гимнастике, а после очередного осмотра тела я заметил пролежень на пятке. В интернете я начитался всех советов о том, как избавиться от пролежня, и принялся за действия. Я не хотел, чтобы ко всему, что мы переживаем, ей отрезали ещё и ногу. Тем более это было невозможно сделать по той же причине, что и операцию. Я тогда решил, что мне надо с ней посидеть подольше и присмотреть за ней лучше, чем другие. Лиза согласилась, что я за ней присмотрю и что на некоторое время мы поживём отдельно.
-
-«Максим, воды. Максим, хочу кушать. Максим, переверни меня». Это я слышал каждые 10 минут в сутки. Мои нервы были на пределе, и это сказывалось на моих отношениях с Лизой. Она хотела меня видеть, а я не мог никак. Из-за нервов мы всегда ссорились. По любой причине я выходил из себя.
-
-В один из дней, после очередной ссоры, Лиза пришла к нам домой. Она зашла как ураган и сразу начала искать что-то в шкафах и во всех комнатах.
-
-– Что ты делаешь?
-– Где эта шлюха? Я не верю, что ты тут только с бабушкой.
-– Лиза, ты в своём уме? Какая шлюха? Ты думаешь, я тут с кем-то, пока бабушке плохо?
-– Да! Где она? Или когда она будет? Не может быть, чтобы мы ссорились просто так. У тебя кто-то появился сто процентов.
-
-Тут бабушка начала кричать.
-
-– Максим, что происходит? Лизочка, что с тобой?
-– Максим, да приводит девочек?
-– Лиза, ты чего? Какие девочки? Он тут со мной мучается.
-– Я не верю ни вам, ни ему.
-– Максим, я тебя прошу, успокой её.
-
-Бабушка начала плакать от испуга.
-
-– Лиза, успокойся. Выйди из комнаты.
-
-Лиза вышла и села на стул в прихожей.
-
-– Я буду сидеть тут. Дай мне свой телефон, чтобы ты никому не звонил, и я хочу проверить, что к тебе никто не ходит.
-– Лиза, ты больная? На тебе телефон, и сиди сколько хочешь. Но зачем ты заставила бабушку плакать? Ты понимаешь, что ей плохо? Я уже не нахожу в себе нервов, чтобы не сорваться на неё, а ты приходишь и устраиваешь здесь такие сцены.
-
-Я наклонился над ней, пока она сидела на стуле, и держал её за плечи. Как вдруг она со всей силы ударила меня коленом по яйцам. Больно было ужасно, но я стоял над ней дальше.
-
-– Ещё раз такое сделаешь, и я тебя ударю.
-Тут Лиза меня ударила второй раз по яйцам.
-
-– Лиза, ещё раз сделаешь – и я тебя ударю, и ты пожалеешь об этом.
-
-Лиза меня ударила ещё сильнее коленом. Тогда Лиза получила от меня свою первую и единственную пощёчину. Она была в шоке от удара. Встала и вышла из квартиры так же быстро, как и зашла. Так себе картина была в тот момент: мне болят яйца, горит ладонь от удара, с девушкой поссорился, а в комнате плачет бабушка.
-
-Пару дней мы писали друг другу такие сообщения с такими оскорблениями, что я даже не знал, что она такие слова знает. Всё шло к тому, что мы расстались. Она стояла на своём, что я её ударил, а я на том, что я в доме мужик и что она меня должна слушать и доверять. Думаю, такое есть в каждой семье, и ничем тут никого не удивлю.
-
-С того дня бабушке стало хуже. Она начала бредить и говорить, чтобы я дал ей руку, чтобы она встала и пошла искупаться. Я ей говорил о том, что она уже три месяца не вставала сама в душ, а она мне говорила, что когда с ней сидит Лори, то она сама идёт купаться. Я впервые в жизни узнал, что такое, когда у человека бред. Первый день тебе смешно, а потом это уже начинает играть на нервы. Случайно я сказал маме, что бабушка мне говорит, и она мне сказала, что это значит, что у неё умирает мозг и скоро она умрёт.
-
-Через неделю таких бредов мы сидели на кухне с папой, а сестра шла из другой комнаты мимо комнаты бабушки и вдруг закричала:
-
-– Бабушка, что с тобой?
-
-Я сразу вскочил и увидел, что бабку начало тошнить, и она захлебнулась. Я подошёл, повернул её на бок и начал сильно кричать. Я понял, что она умерла по закатанным глазам.
-
-– Бабушкааа. Проснись! – повторял я ей беспрерывно.
-
-Кричал я из всех сил и тряс её.
-
-Как в момент она вдруг начала дышать и повернула на меня глаза. Я начал её вытирать и говорить с ней:
-
-– Бабушка, ты меня слышишь?
-– Зачем ты это сделал?
-– Что сделал? Ты чуть не умерла.
-– Я была уже там. Мне там было так легко. Я там ходила.
-– Где там?
-– Там, откуда ты меня только что позвал.
-
-Я тогда понял, что бабушка пережила смерть и что я её спас. Тогда я думал, что я герой и спас человека. Но оказалось — не так. Я сказал маме о том, что случилось, и мама сразу позвонила батюшке. Она у нас дома не была более двадцати лет, и тут она приехала с батюшкой.
-
-– Мама, кто это и зачем ты с ним пришла?
-– Батюшка должен опустить ей грехи. Обычно после того, как ты с того света вытаскиваешь человека, он либо долго будет жить, либо умрёт через двадцать четыре часа. Так что мы должны у неё попросить прощения, а также, чтобы батюшке всё рассказала.
-– Да что ты такое говоришь? Она не умрёт. Она ещё нас всех переживёт. Я знаю её.
-
-Сказал я в гневе маме.
-
-– Я буду очень рада, если это будет так. Но мы должны это сделать. И позови Лизу. Пусть она извинится за тот скандал.
-
-Это было всё как во сне. Стоим мы все у бабушкиной кровати и держим свечи в руках. Батюшка читает молитву, а бабушка внимательно смотрит на всех. Она понимала, что это за процедура и что скоро она умрёт. Но она смотрела всем в глаза в момент, когда мы перед ней извинялись. Она тогда всё понимала и уже не бредила.
-
-Сразу после того, как батюшка ушёл, бабушке стало плохо. Мы вызвали первую скорую, которая её осмотрела. Там были молодые две девочки, одна из которых отвела меня в коридор и сказала:
-
-– Вы должны её отвести в больницу. Она сегодня умрёт.
-– Зачем в больницу, если она умрёт?
-– Дело в том, что если она умрёт в больнице, то там будет другая процедура выдачи документов. А если она умрёт дома, то вы должны будете вызвать участкового врача и полицейского. И будете долго доказывать сначала то, что вы сделали всё, чтобы её спасти, а потом — что это не вы её убили.
-– Вы серьёзно? Мы с ней три месяца сидим. И думаете, я её убил бы?
-– Это вы полиции будете говорить. Я вам говорю сейчас как врач о том, что она умрёт скоро.
-
-Я не мог поверить, что в такие моменты именно так преподносят информацию.
-
-– Мы её оставим дома. Я за ней лучше присмотрю, чем в больнице.
-– Дело ваше. Подпишите бумагу об отказе от госпитализации.
-
-Я расписался на бумаге и сразу пошёл к бабушке в комнату.
-
-– Бабуль, что тебе дать? Что-то хочешь?
-– Я хочу банан.
-– Тебе нельзя банан. У тебя диабет.
-– Дай мне банан, Максим. Я сейчас очень хочу банан.
-
-Я принёс ей банан, и она его скушала с таким аппетитом. Она его не ела уже очень много лет из-за диабета. На её лице появилась улыбка. Но ненадолго. Через пару минут её начало уже сильно тошнить кровью. Я вызвал сразу вторую скорую. Она приехала быстро и, даже не спрашивая нас, положила её на каталку и начала вытаскивать из квартиры.
-
-Бабушка держалась за дверной проём и кричала, что она не хочет никуда ехать и что хочет умереть дома. Я её уговорил, что в больнице ей сделают процедуру, и мы приедем. Она согласилась, и мы уехали в больницу.
-
-Её сразу же начали осматривать прямо в коридоре и увезли в палату. Врач нам сказал, чтобы мы ехали домой и что она тут в безопасности.
-
-– Бабуль, ты тут в безопасности. Врач сказал, что тебе тут сделают все процедуры, и ты скоро приедешь домой. Мы с папой завтра утром в семь часов приедем к тебе и принесём тебе покушать. Ок?
-– Идите домой и отдыхайте. Мне уже лучше.
-– Я завтра за тобой приеду. Обещаю. Завтра мы покушаем вместе, а после — поедем домой. Я люблю тебя и скажу врачам, чтобы за тобой следили хорошо.
-– И я тебя люблю. Идите и отдыхайте, а то вы сегодня со мной намучались.
-
-Выйдя из палаты, я сразу узнал, кто из женщин будет за ней следить, и дал ей денег.
-
-– Присмотрите за ней хорошо. Когда видите, что ей тошнит — поверните её на бок. И делайте всё, что она захочет. Я вам заплачу столько, сколько захотите. Только не оставляйте её одну. Она любит с кем-то поговорить.
-– Хорошо. Сделаем всё на высшем уровне.
-Мы поехали с папой домой и договорились, что в шесть утра просыпаемся и поедем к бабушке. Спать нам оставалось всего пару часов, так как с больницы мы вернулись почти в три ночи.
-
-В шесть утра заиграл и мой, и папин будильник. Не договариваясь, мы их выключили и легли спать ещё на час. В семь утра мы встали и поехали в больницу. Зайдя в отделение, нас встретил врач.
-
-– Кто сын?
-– Я, – ответил папа.
-– Пройдите со мной в кабинет, а ваш сын пусть постоит в коридоре.
-
-Папа зашёл в кабинет, а я пошёл в палату, где лежала бабушка. Зайдя, я её не увидел.
-
-– А где бабушка? – спросил я у людей, которые лежали с ней в палате.
-– А вам не сказали?
-– Что сказали?
-– Её перевели в реанимацию.
-– Когда?
-– Пару часов назад.
-
-Вдруг я увидел на балконе бабушкины вещи.
-
-– А вещи тут почему?
-– Её сильно рвало, и её раздели. Увезли голой.
-
-Я пошёл на балкон и начал складывать вещи в пакет. Они были мокрыми, как после проливного дождя. Я тогда подумал, что, может быть, её умывали, и она такой мокрой лежала.
-
-Уходя из палаты, одна женщина с соседней койки мне сказала:
-
-– Держитесь, молодой человек.
-– Спасибо.
-
-Я посмотрел на неё и не понимал, зачем мне держаться. Моя бабушка в реанимации, и там точно будут хорошо за ней смотреть.
-
-Я пошёл по коридору и увидел папу, который молча стоял в конце коридора.
-
-– Бабушка умерла.
-– Что? – у меня сразу хлынули слёзы в глазах, и я упал на пол. – Как умерла? Они сказали, что она в реанимации.
-– Такая процедура. Когда умирает человек, то его некоторое время держат в реанимации.
-
-Я закричал на всю больницу. Я не мог поверить. Я спускался по лестницам в слезах и истерике, разбивая всё на своём пути.
-
-– Это они её убили! Они за ней не смотрели!
-– Они сделали всё, что могли, Максим.
-– Нееееет! Это они её убили. Суки. Зачем я её привёз? Она дома ещё жила бы долго.
-
-У меня началась истерика. Я начал всем звонить и говорить о том, что бабушки нет. Пока я с папой доехал до дома, у нас уже были все родственники и друзья. Лиза держала меня из последних сил. Я то стоял, то падал. Я не мог поверить, что бабушки нет.
-
-Папа поехал заниматься документами и искать место для похорон. Я остался дома, и меня поддерживали все, из последних сил. К вечеру я пришёл в себя и уже внятно всё понимал.
-
-– Бабушку должны завтра привести домой. Она не хотела уезжать, и пусть люди прощаются с ней дома.
-– На улице жара, Максим. Как она будет здесь, в квартире, в жару? Ей надо быть в морге.
-– Она будет тут ночевать. Я так сказал, и так и будет. Пусть ночь здесь поспит. Ничего с ней не будет. Зато я буду спокоен, что она последнюю ночь провела дома.
-
-Спорить в тот момент со мной было бесполезно. Папа согласился и сообщил ритуальной службе, чтобы её привезли домой.
-
-На второй день, вечером, бабушку должны были привезти домой. Обычно их привозят вечером или ночью, чтобы не пугать соседей. Я сидел дома, когда открылась дверь, и я увидел, как мужчины заносят гроб.
-
-Я не смог сдержаться:
-
-– Бабуля! Бабушка! Ну зачем ты ушла? Почему тебя домой так должны привозить?
-
-Мужчины занесли гроб в зал и положили его на табуретки. Сняв крышку, я увидел свою бабушку. Она совсем не поменялась. Я не видел её всего один день, но она была такой же красивой. Я сразу прыгнул к ней в гроб и обнял её. Меня не могли вытащить из гроба. Я держался за неё и рыдал.
-
-– Я буду спать с ней. Я с ней спал с малых лет. Дайте мне с ней поспать. Прошу вас.
-– Максим, успокойся. Выйди из гроба и сиди рядом с ней.
-– Нет. Я буду спать с ней. Оставьте меня. Это моя бабушка.
-
-Все в доме поняли, что бесполезно спорить, и ушли на кухню.
-
-Через некоторое время я присел рядом с гробом и просидел так всю ночь. Я говорил с ней и просил прощения за то, что увез её. За то, что кричал на неё в моменты, когда нервы не выдерживали. Просил прощения за то, что водил в ресторан всяких девушек, а её никогда не приглашал. В какой-то момент мне казалось, что она мне отвечает, и у нас с ней диалог.
-
-В обед началась церемония прощания. Нас увезли на кладбище, и долго не могли закрыть крышку, так как я просто не отпускал бабушку из объятий. Меня Лиза и Саша, мой друг, увели в сторону. Они накрыли гроб крышкой и положили его на канаты. Медленно опускали гроб в яму.
-
-В тот момент я сорвался с рук Лизы и Саши и прыгнул в могилу.
-
-– Бабуля! Не уходи! Вытащите её оттуда! Она жива! Она будет жить со мной! Заберите её оттуда! – кричал я на последних силах.
-
-Я не помню, кто меня вытащил из ямы. Помню, что очнулся я в автобусе. Меня держала Лиза и успокаивала.
-
-– Ты её довела до слёз, Лиза. Твоя ревность довела её до слёз. Я тебе не прощу слёзы бабушки.
-– Прости меня, Максим.
-– Никогда не прощу. Она была больной, и я за ней смотрел. А ты думала, что я девочек привожу домой.
-– Прости. Прости меня.
-– Вы её забрали домой?
-
-В этот момент Лиза повернула голову к людям в автобусе в поисках ответа на мой вопрос.
-
-– Нет. Мы не забрали её. Она осталась там.
-– Ну почему так? Почему она с нами не может поехать домой?
-
-Люди, сидевшие в автобусе, поняли, что у меня начался бред, и сразу налили мне настойку валерьяны.
-
-Прийти в себя я не мог ещё пару дней. Я сидел на кухне и пил. Я пил и пил, не мог поверить, что бабушки нет.
-
-Сидя на кухне, мне иногда мерещилось, что меня зовёт бабушка из комнаты. Я вставал и смотрел, есть ли она там. Но её там не было.
-
-Она была лучшей женщиной в моей жизни. Верной, доброй, хозяйственной. Одним словом – лучшей.
+Au trecut deja trei ani din momentul în care am început să ne întâlnim cu Liza. Certurile și împăcările nu se mai terminau. Dar, cu toate astea, nu puteam unul fără celălalt. Și exact atunci când am crezut că mai rău de-atât nu se poate, s-a întâmplat ceva la care nu mă așteptam.
+
+Vreau să uit ziua aceea în care a început totul. Să uit acel telefon de la sora mea, care mi-a spus, într-un ton aproape glumeț, că bunica a căzut.
+— Ce s-a întâmplat cu ea?
+— S-a împiedicat de covor și a căzut.
+— Și acum ce e cu ea?
+— Spune că o doare piciorul. Stă în bucătărie și se plânge că o doare chiar și când stă jos.
+— Și voi ce faceți? De ce nu chemați ambulanța?
+— Maxim, la ce ambulanță? A căzut și atât. Stăteam în bucătărie și, deodată, am auzit că a căzut. Ne-am uitat și era întinsă pe jos. La început am râs, apoi ne-am dat seama că nu se poate ridica și am așezat-o pe scaun.
+— Vin imediat. O aud cum geme, iar voi stați și râdeți? Sunteți normali la cap?
+
+  După ce i-am spus Lizei că bunica a căzut, am plecat spre casă. Când am intrat în apartament, am văzut-o pe bunica stând în bucătărie și gemând de durere. Stătea într-o parte, pentru că pe cealaltă nu putea să se așeze deloc. Iar la masă stăteau tata, sora mea și cumnatul, beau bere și ascultau muzică.
+— Ați înnebunit, mă? — am început să urlu când am văzut scena. — Ea stă aici și geme de câteva ore, iar voi beți? Sunteți, în pula mea, complet fără creier?
+— Maxim, calmează-te, — mi-a spus sora mea, oprind muzica de pe telefon.
+— Bunico, unde te doare?
+— Toată partea dreaptă.
+— Ai căzut tare?
+— Nu foarte tare, dar simt că ceva nu e în regulă.
+— Poți să îndoi degetele de la picioare?
+— Nu pot face nimic. Piciorul pur și simplu nu mă ascultă.
+— Chem acum ambulanța și mergem să vedem ce e.
+
+Aruncând o privire plină de furie spre toți cei din bucătărie, am început să sun la ambulanță. După ce au examinat-o pe bunica, medicii au spus că trebuie dusă la radiografie. Aveau suspiciuni de fractură și trebuia verificat. Au adus în apartament un scaun special pentru transport și atunci am văzut cât de tare o durea să se ridice și să se așeze. Se strâmba de durere când o mutau de pe scaun pe fotoliu. În acel moment, toți din apartament au înțeles că situația e gravă și că au greșit ignorând-o. Eu și tata am mers cu ea la spital. După radiografie, a ieșit medicul și ne-a spus vești deloc bune.
+— Maxim, bunica ta are fractură de col femural.
+— Și ce înseamnă asta? O spuneți de parcă i-ar mai rămâne câteva zile de trăit.
+— Are nevoie de operație. Problema e că nu o putem face, pentru că există un risc mare să moară pe masa de operație. E bătrână, iar inima ei poate să nu reziste anesteziei. În plus, are diabet zaharat și nu putem oferi nicio garanție că nici după operație va fi bine sau că va mai merge.
+— Și ce propuneți?
+— Dacă vă dați acordul, și ea la fel, că nu ne asumăm responsabilitatea în caz de deces, suntem gata să începem operația. Dacă nu, vă explic cum trebuie îngrijită.
+— Dacă o îngrijesc eu, care sunt șansele să se ridice și peste cât timp?
+— Va trăi atât timp cât veți avea grijă de ea. Nu sunt sigur că se va mai ridica vreodată. Dar există o șansă. Totul depinde de voi. Pentru început, trebuie să cumpărați baloane și să o puneți în fiecare zi să le umfle. Din cauza faptului că va sta mereu întinsă, există riscul să facă pneumonie. Căutați pe internet exerciții de terapie respiratorie. De asemenea, trebuie să faceți gimnastică cu ea. Trebuie să îi lucrați mâinile, spatele și gâtul. Dar cea mai mare problemă sunt escarele. Trebuie să fiți foarte atenți. Faceți-i masajul întregului corp în fiecare zi. Dacă apar escare, e ca o gangrenă care, în timp, trebuie amputată.
+— Ce lucruri îmi spuneți? Bineînțeles că o să fac totul și o să rezolvăm. O să vedeți cum venim la voi pe propriile picioare.
+— Sper foarte mult, Maxim.
+— Dacă am grijă bine de ea, peste cât timp se va ridica?
+— Cred că va mai rezista maxim trei luni. Sunt medic cu experiență și, după experiența mea, toți mor repede.
+— Dacă sunteți așa de experimentat, ați fi găsit o soluție să o puneți pe picioare. E o fractură, nu o rană la cap. O zi bună.
+
+Am plecat fără să-i strâng mâna, pentru că auzisem ceva ce n-aș fi vrut să aud niciodată. Am luat-o pe bunica și am așezat-o în mașina cumnatului. Ajuns acasă, le-am spus tuturor ce trebuie să facem. Tăcerea era ca într-un sicriu în momentul în care vorbeam. Cu doar câteva ore înainte se distrau în bucătărie, iar acum venisem cu asemenea vești. Bunica a fost așezată într-o cameră. Din ziua aceea a început o muncă infernală, pe care nu o voi uita niciodată. Din prima noapte, bunica ne trezea și ne ruga să o întoarcem ba pe o parte, ba pe cealaltă. Voia să-i punem perna mai sus sau mai jos. Ba îi era sete, ba trebuia la toaletă. După câteva zile, am adus un fotoliu extensibil lângă patul ei, ca să nu mai strige de fiecare dată când avea nevoie de ajutor. Avea nevoie de îngrijire douăzeci și patru de ore din douăzeci și patru. Nu era o bolnavă pretențioasă, dar când asta continuă permanent, nervii încep să cedeze. Făceam de gardă pe rând: eu, tata, sora mea. După o lună, am înțeles că nu mai putem și că avem nevoie de o îngrijitoare. Când stătea sora mea cu ea, bunicii îi era mai confortabil, iar când stăteam eu sau tata, se rușina. Ca orice femeie, trebuia spălată în zona intimă. Iar dacă eram eu sau tata de serviciu, se rușina chiar și să ceară la toaletă. Asta a fost decizia finală să luăm o îngrijitoare femeie, care să ne ajute. O plăteam puțin, pentru că avea nevoie de locuință aproape de muncă. Lucra chiar sub blocul nostru și îi era foarte convenabil. Lori a fost salvarea noastră și, în plus, o bună interlocutoare pentru bunica atunci când se plictisea.
+
+După două luni și jumătate, bunicii nu îi era mai bine. Abia îmi mai strângea mâinile la gimnastică, iar după un nou control al corpului am observat o escară pe călcâi. Am citit pe internet toate sfaturile despre cum să scapi de escare și am trecut la fapte. Nu voiam ca, pe lângă tot ce trăiam, să i se mai taie și piciorul. Cu atât mai mult cu cât asta era imposibil din același motiv ca și operația. Atunci am decis că trebuie să stau cu ea mai mult și să o supraveghez mai bine decât ceilalți. Liza a fost de acord că voi avea grijă de ea și că pentru o vreme vom locui separat.
+„Maxim, apă. Maxim, vreau să mănânc. Maxim, întoarce-mă.” Asta auzeam la fiecare zece minute, zi și noapte. Nervii mei erau la limită și asta se reflecta în relația mea cu Liza. Ea voia să mă vadă, iar eu nu puteam. Din cauza nervilor, ne certam mereu. Din orice motiv, îmi ieșeam din fire. Într-o zi, după o altă ceartă, Liza a venit la noi acasă. A intrat ca un uragan și a început imediat să caute prin dulapuri și prin toate camerele.
+— Ce faci?
+— Unde e curva aia? Nu cred că ești aici doar cu bunica.
+— Liza, ești sănătoasă la cap? Ce curvă? Crezi că sunt cu cineva, în timp ce bunicii îi e rău?
+— Da! Unde e? Sau când vine? Nu se poate să ne certăm așa, pur și simplu. Ai pe cineva, sută la sută.
+
+Atunci bunica a început să țipe.
+— Maxim, ce se întâmplă? Liza, ce ai pățit?
+— Maxim, aduci fete aici?
+— Liza, ce-i cu tine? Ce fete? El se chinuie aici cu mine.
+— Nu vă cred nici pe voi, nici pe el.
+— Maxim, te rog, calmeaz-o.
+Bunica a început să plângă de frică.
+
+— Liza, calmează-te. Ieși din cameră.
+Liza a ieșit și s-a așezat pe un scaun în hol.
+— O să stau aici. Dă-mi telefonul tău, să nu suni pe nimeni, și vreau să verific că nu vine nimeni la tine.
+— Liza, ești bolnavă? Ia telefonul și stai cât vrei. Dar de ce ai făcut-o pe bunica să plângă? Înțelegi că îi e rău? Eu deja nu mai găsesc nervi să nu izbucnesc la ea, iar tu vii și faci aici astfel de scene.
+  M-am aplecat asupra ei, în timp ce stătea pe scaun, și o țineam de umeri. Deodată, m-a lovit cu toată puterea cu genunchiul în coaie. Durerea a fost cumplită, dar am rămas în picioare.
+— Mai faci o dată asta și te lovesc.
+Atunci Liza m-a lovit a doua oară în coaie.
+— Liza, încă o dată și te lovesc, și o să regreți.
+  Liza m-a lovit și mai tare cu genunchiul. Atunci Liza a primit de la mine prima și singura palmă. A fost șocată de lovitură. S-a ridicat și a ieșit din apartament la fel de repede cum intrase. Imaginea era jalnică: mă dureau coaiele, palma îmi ardea de la palmă care am dat-o, eram certat cu iubita, iar în cameră plângea bunica.
+  
+  Câteva zile ne-am scris mesaje cu asemenea insulte, că nici nu știam că știe asemenea cuvinte. Totul ducea spre despărțire. Ea insista că am lovit-o, iar eu că eu sunt bărbatul în casă și că trebuie să mă asculte și să aibă încredere în mine. Cred că așa ceva există în fiecare familie și nu surprinde pe nimeni.
+
+  Din ziua aceea, bunicii i-a fost mai rău. A început să delireze și să spună să-i dau mâna ca să se ridice și să meargă la baie. Eu îi spuneam că de trei luni nu s-a mai ridicat singură la duș, iar ea îmi spunea că atunci când stă Lori cu ea, merge singură să se spele. Atunci am aflat pentru prima dată în viață ce înseamnă delirul unui om. Prima zi ți se pare amuzant, apoi începe să-ți joace pe nervi. Din greșeală i-am spus mamei ce îmi spune bunica, iar ea mi-a spus că asta înseamnă că îi moare creierul și că va muri curând.
+
+După o săptămână de astfel de deliruri, stăteam în bucătărie cu tata, iar sora mea trecea dintr-o cameră pe lângă camera bunicii și, deodată, a țipat:
+— Bunico, ce ai?
+
+Am sărit imediat și am văzut că bunicii i se făcea rău și se înecase cu propria vomă. Am venit, am întors-o pe o parte și am început să țip. Am înțeles că murise după ochii dați peste cap.
+— Bunicooo. Trezeste-te — repetam fără oprire.
+
+Țipam din toată puterea și o scuturam.
+
+  Dintr-odată, a început să respire și și-a întors privirea spre mine. Am început să o șterg și să vorbesc cu ea:
+— Bunico, mă auzi?
+— De ce ai făcut asta?
+— Ce am făcut? Aproape ai murit.
+— Eram deja acolo. Îmi era atât de ușor acolo. Mergeam.
+— Unde acolo?
+— Acolo de unde m-ai chemat înapoi.
+
+Atunci am înțeles că bunica a trăit moartea și că eu am salvat-o. Atunci credeam că sunt un erou și că am salvat un om. Dar nu a fost așa. I-am spus mamei ce s-a întâmplat și ea a sunat imediat preotul. Nu mai fusese la noi de peste douăzeci de ani, iar acum a venit cu preotul.
+
+După ce preotul a plecat și i-a iertat păcatele, bunicii i s-a făcut imediat rău. Am chemat prima ambulanță, care a venit să o consulte. Erau două fete tinere, iar una dintre ele m-a tras pe coridor și mi-a spus:
+— Trebuie să o duceți la spital. Astăzi va muri.
+— De ce la spital, dacă va muri?
+— Problema e că, dacă moare în spital, procedura de eliberare a documentelor e alta. Iar dacă moare acasă, va trebui să chemați medicul de sector și poliția. Și veți demonstra mult timp, mai întâi că ați făcut totul ca să o salvați, iar apoi că nu voi ați omorât-o.
+— Vorbiți serios? Stăm cu ea de trei luni. Și credeți că aș fi omorât-o eu?
+— Asta veți explica poliției. Eu vă spun acum, ca medic, că va muri în curând.
+
+Nu-mi venea să cred că în astfel de momente informația ți se servește exact așa.
+— O lăsăm acasă. O să am grijă de ea mai bine decât la spital.
+— Treaba voastră. Semnați refuzul de spitalizare.
+
+Am semnat hârtia și am mers imediat în camera bunicii.
+— Bunico, ce să-ți aduc? Vrei ceva?
+— Vreau o banană.
+— Nu ai voie banană. Ai diabet.
+— Dă-mi o banană, Maxim. Acum chiar vreau o banană.
+
+I-am adus o banană și a mâncat-o cu un asemenea poftă. Nu mai mâncase banane de foarte mulți ani din cauza diabetului. Pe fața ei a apărut un zâmbet. Dar nu pentru mult timp. După câteva minute, a început să verse puternic sânge. Am chemat imediat a doua ambulanță. A venit repede și, fără să ne întrebe nimic, au pus-o pe targă și au început să o scoată din apartament. Bunica se agăța de tocul ușii și striga că nu vrea să meargă nicăieri și că vrea să moară acasă. Am convins-o că la spital îi vor face o procedură și că noi vom veni. A fost de acord și am plecat la spital. Au început să o consulte chiar pe coridor și au dus-o într-un salon. Medicul ne-a spus să mergem acasă și că acolo e în siguranță.
+
+— Bunico, aici ești în siguranță. Doctorul a spus că îți vor face toate procedurile și că vei veni curând acasă. Eu și tata venim mâine dimineață la șapte și îți aducem de mâncare. Bine?
+— Mergeți acasă și odihniți-vă. Mie deja mi-e mai bine.
+— Vin mâine după tine. Promit. Mâine mâncăm împreună și apoi mergem acasă. Te iubesc și o să le spun doctorilor să aibă grijă de tine.
+— Și eu te iubesc. Mergeți și odihniți-vă, că v-ați chinuit azi cu mine.
+
+Ieșind din salon, am aflat imediat care dintre femei va avea grijă de ea și i-am dat bani.
+— Aveți grijă de ea. Când vedeți că i se face greață, întoarceți-o pe o parte. Faceți tot ce cere. Vă plătesc cât vreți. Doar să nu o lăsați singură. Îi place să vorbească cu cineva.
+— Bine. O să facem totul la cel mai înalt nivel.
+
+Eu și tata am plecat acasă și am stabilit că ne trezim la șase dimineața și mergem la bunica. Mai aveam doar câteva ore de somn, pentru că ne întorseserăm de la spital aproape la trei noaptea.
+
+La șase dimineața au sunat și alarma mea, și a tatei. Fără să ne înțelegem, le-am oprit și ne-am mai culcat o oră. La șapte ne-am ridicat și am plecat la spital. Când am intrat în secție, ne-a întâmpinat un medic:
+— Cine e fiul?
+— Eu, — a răspuns tata.
+— Veniți cu mine în cabinet, iar fiul dumneavoastră să rămână pe coridor.
+
+Tata a intrat în cabinet, iar eu m-am dus în salonul unde era bunica. Când am intrat, nu era acolo.
+— Unde e bunica? — i-am întrebat pe cei care erau cu ea în salon.
+— Nu v-au spus?
+— Ce să-mi spună?
+— A fost dusă la reanimare.
+— Când?
+— Cu câteva ore în urmă.
+
+Atunci am văzut pe balcon lucrurile bunicii.
+— De ce sunt lucrurile aici?
+— I-a fost foarte rău, au dezbrăcat-o. Au dus-o goală.
+
+Am ieșit pe balcon și am început să strâng lucrurile într-o pungă. Erau ude, ca după o ploaie torențială. Atunci m-am gândit că poate au spălat-o și a stat așa udă. Când ieșeam din salon, o femeie de pe patul vecin mi-a spus:
+— Țineți-vă, tinere.
+— Mulțumesc.
+
+M-am uitat la ea și nu înțelegeam de ce trebuie să mă țin. Bunica era la reanimare, iar acolo sigur aveau grijă de ea. Am mers pe coridor și l-am văzut pe tata stând tăcut la capătul lui.
+— Bunica a murit.
+— Ce? — mi-au țâșnit lacrimile instant și am căzut pe podea. — Cum a murit? Au spus că e la reanimare.
+— Așa e procedura. Când moare un om, îl țin o perioadă la reanimare.
+
+Am țipat în toată spitalul. Nu puteam să cred.
+Coboram scările în lacrimi și isterie, lovind tot ce îmi ieșea în cale.
+— Ei au omorât-o! N-au avut grijă de ea!
+— Au făcut tot ce au putut, Maxim.
+— Nuuu! Ei au omorât-o. Curvelor. De ce am adus-o aici? Acasă ar mai fi trăit mult.
+
+Am făcut o criză de isterie. Am început să sun pe toată lumea și să spun că bunica nu mai e. Până am ajuns cu tata acasă, erau deja toate rudele și prietenii. Liza mă ținea cu ultimele puteri. Când stăteam în picioare, când cădeam. Nu puteam să cred că bunica nu mai e.
+
+Tata a plecat să se ocupe de documente și de locul de înmormântare. Eu am rămas acasă și toți mă susțineau, cât puteau. Spre seară mi-am revenit și deja înțelegeam totul limpede.
+
+— Mâine o aduc pe bunica acasă. Nu voia să plece, iar oamenii să-și ia rămas-bun de la ea acasă.
+— Afară e cald, Maxim. Cum va sta aici, în apartament, pe căldura asta? Trebuie la morgă.
+— Va dormi aici noaptea. Așa am spus și așa va fi. Să doarmă ultima noapte acasă. Nimic nu i se va întâmpla. Eu voi fi liniștit că ultima noapte a petrecut-o acasă.
+
+În momentul acela era inutil să se certe cineva cu mine. Tata a fost de acord și a spus firmei funerare să o aducă acasă.
+
+A doua zi, seara, trebuiau să o aducă pe bunica. De obicei îi aduc seara sau noaptea, ca să nu sperie vecinii. Stăteam acasă când s-a deschis ușa și am văzut cum bărbații aduceau sicriul. Nu m-am putut abține:
+— Bunico! Bunica mea! De ce ai plecat? De ce trebuie să te aducă așa acasă?
+
+Bărbații au pus sicriul în sufragerie, pe tabureți. Când au scos capacul, am văzut-o pe bunica. Nu se schimbase deloc. Nu o văzusem doar o zi, dar era la fel de frumoasă. Am sărit imediat în sicriu și am îmbrățișat-o. Nu mă puteau scoate de acolo. Mă țineam de ea și plângeam în hohote.
+— O să dorm cu ea. Am dormit cu ea din copilărie. Lăsați-mă să dorm cu ea. Vă rog.
+— Maxim, calmează-te. Ieși din sicriu și stai lângă ea.
+— Nu. O să dorm cu ea. Lăsați-mă. E bunica mea.
+
+Toți din casă au înțeles că e mai bine să nu se contrazică cu mine și au ieșit în bucătărie. După un timp m-am așezat lângă sicriu și am stat așa toată noaptea. Vorbeam cu ea și îmi ceream iertare că am dus-o la spital. Că am țipat la ea când nervii nu mai țineau. Că duceam tot felul de fete la restaurant, dar pe ea nu o invitasem niciodată. La un moment dat mi se părea că îmi răspunde și că avem un dialog.
+
+La prânz a început ceremonia de rămas-bun. Ne-au dus la cimitir și mult timp nu au putut închide capacul, pentru că pur și simplu nu o lăsam din brațe. Liza și Alex, prietenul meu, m-au tras deoparte. Au pus capacul pe sicriu și l-au așezat pe frânghii. Îl coborau încet în groapă. Atunci m-am smuls din mâinile Lizei și ale lui Alex și am sărit în mormânt.
+— Bunico! Nu pleca! Scoateți-o de acolo! E vie! O să trăiască cu mine! Luați-o de acolo! — urlam cu ultimele puteri.
+
+Nu mai știu cine m-a scos din groapă. Îmi amintesc doar că m-am trezit în autobuz. Liza mă ținea și mă calma.
+— Tu ai făcut-o să plângă, Liza. Gelozia ta a făcut-o să plângă. Eu nu iert lacrimile bunicii.
+— Iartă-mă, Maxim.
+— Niciodată. Era bolnavă și eu aveam grijă de ea. Iar tu credeai că aduc fete acasă.
+— Iartă-mă. Te rog.
+— Ați adus-o acasă?
+În momentul acela, Liza și-a întors capul spre oameni, căutând răspunsul.
+— Nu. N-am adus-o. A rămas acolo.
+— De ce așa? De ce nu poate veni cu noi acasă?
+  Oamenii din autobuz au înțeles că începuse delirul și mi-au dat imediat tinctură de valeriană. Nu mi-am revenit câteva zile. Stăteam în bucătărie și beam. Beam și beam, nu puteam să cred că bunica nu mai e. Uneori mi se părea că mă strigă din cameră. Mă ridicam și mă uitam dacă e acolo. Dar nu era.
+Ea a fost cea mai bună femeie din viața mea. Credincioasă, bună, gospodină.
+Într-un cuvânt — cea mai bună.
         `
     },
     {
         id: 'ch7',
-        title: 'Барса',
+        title: 'Barça',
         content: `
-После смерти бабушки всё шло очень плохо. У меня начало всё рушиться в буквальном смысле. Периодически мы выходили с Лизой в город для того, чтобы немного прийти в себя и очистить свои мысли.
-
-В один из таких дней Лиза сообщила мне, что к ней приезжает её друг из Барселоны по имени Алекс. Я про него ничего не знал за эти три года, и для меня было большой новостью то, что у неё есть какой-то друг. Она мне рассказала, что она долгое время жила с ним в одном дворе и что он для неё как член семьи. Верилось мне в это с трудом — до тех пор, пока её мама мне не подтвердила, что Алекс это друг детства, да ещё и гей.
-
-Встречу мы назначили в клубе, так как в атмосфере музыки и алкоголя знакомство приобретает иной смысл. Мы сидели с Лизой у барной стойки, как вдруг в клуб зашёл Алекс. Среднего роста парень, немного пухлый и с радостным лицом, как типичный европеец. Лиза сразу же прыгнула к нему на шею и начала кричать от счастья, что встретила его спустя много лет.
-
-Ко мне он подошёл и протянул руку:
-
-– Привет. Меня зовут Алекс.
-– Привет. Я Максим.
-– Я знаю. Мне Лиза многое о тебе рассказывала и хочу сказать, что я был очень рад, когда ты ей сделал предложение. Она любит тебя безумно и не видит смысла жизни без тебя.
-– Мне Лиза не говорила, что она с тобой общается. Но раз уж вы общались про меня, то тогда я прощу ей эту недоговорку.
-– Она мне говорила, что ты очень ревнивый и что ей многое не позволяешь.
-– За Лизой был один грешок с перепиской. Поэтому я и контролирую всё это. Ну да ладно, хватит говорить про меня и про Лизу. Давайте выпьем, и думаю, что мы в течение ночи друг друга лучше узнаем.
-
-Мы веселились и слушали истории о том, как красиво и круто в Барселоне. Для нас тогда это был какой-то город из сказки — где всё разрешено и где очень большие цены по сравнению с Кишинёвом. Удивлением для нас было то, что Алекс фотографирует улицы Кишинёва и отправляет фотографии своим друзьям в Барселону.
-
-– Зачем ты это делаешь?
-– В Кишинёве все улицы в деревьях с одной и с другой стороны дороги. Он же считается самым зелёным городом Европы. А в Барселоне просто такого нету. Там все улицы в асфальте и зданиях. А тут смотри какая красота!
-
-Я никогда не был в Барселоне и не знал, что есть такое в мире. Оказывается, почти все крупные города Европы не имеют деревьев по улице, а они есть только в парках. Сидя и слушая Алекса о том, какая красивая Барселона, вдруг он предложил нам посетить её:
-
-– Останетесь у меня. Я вам там всё покажу и расскажу. Вам надо только купить билеты на самолёт.
-– Это хорошее предложение, Алекс, но на это нужны деньги. А у меня с работой не очень, и я даже не представляю, сколько денег мне надо, чтобы там себя комфортно чувствовать. Судя по тому, что ты рассказываешь и какие там цены, то нам там без одной тысячи евро на неделю нечего искать даже.
-– Вы главное прилетите, а остальные расходы я беру на себя.
-– Мы подумаем над этим и скажем тебе. А то сейчас на пьяную голову мы можем обсуждать что угодно — от поездки в Антарктиду до покупки квадроцикла, а завтра будем жалеть об этом.
-– Вы подумаете и скажете. Я через неделю улетаю, и мы могли бы вместе полететь.
-
-Через час я забыл об этой беседе. Но только не Лиза. Она это предложение слушала с блеском в глазах и с такой надеждой, что я сейчас дам утвердительный ответ, и мы полетим. Весь путь до дома и даже находясь дома она мне говорила о том, что мы должны поехать. Что у нас нет путешествий никаких и что мы как старики сидим дома.
-
-– Лиза, я тоже хотел бы полететь, но откуда мне взять деньги?
-– Нам надо купить только билет и всё. Остальное Алекс возьмёт на себя.
-– И как я себя буду чувствовать? Будто я прилетел нищий и жду от него обеспечения моего отдыха? Лиза, а если я захочу с тобой вдвоём погулять, то мне тоже у него деньги просить? Ты понимаешь, что я как мужчина себя буду чувствовать не очень?
-– Ну он же сам предложил и сказал, что расходы будут на нём.
-– Это не правильно, Лиза. Я, как мужчина, должен обеспечить отдых своей девушки. Мне не должны оплачивать отдых друзья.
-– Я попрошу у мамы, чтобы она нам взяла билеты. А ты просто возьми денег на наш отдых. Сколько возьмёшь — на столько и будем себе позволять там всё. Я даю слово, что не буду много требовать и что я полностью буду зависеть от тебя и твоего слова.
-– Елизавета, вы с вашими потребностями растратите наш бюджет в первый же день. Я с тобой уже три года и выучил тебя от и до.
-– Ну давай поедем!
-– Я обещаю подумать и сказать тебе да или нет.
-
-Обсуждая всю неделю поездку в Барселону, мы пришли к выводу, что поедет только Лиза. Ей мама даст денег на поездку, а там дальше Алекс будет полностью её обеспечивать.
-
-– Хм… Почему же мать не дала денег и Максиму? Она же знает, насколько у них сильная связь.
-– Не могу знать, Максим, но догадываюсь, что Лиза и маму сильно уговаривала на протяжении недели, и в конце концов её мама решила ей сделать подарок.
-– Может быть, но я в это не верю.
-– Могу ли я продолжать зачитывать?
-– Да! Продолжай.
-
-Перед отъездом у меня с Лизой состоялся диалог:
-
-– Лиза, мне не нравится, что Алекс так настойчиво зовёт тебя в Барселону.
-– Почему?
-– Это очень странно. Он зовёт тебя и готов всё оплатить.
-– Он мой друг. Мы с ним провели всё детство. Это нормально, что он меня приглашает.
-– Это слишком настойчиво.
-
-Несмотря на мои уговоры не ехать, она стояла на своём. Всё время до её отъезда наши отношения были натянутыми, мы говорили сквозь зубы. Я не хотел её отпускать, а она хотела поехать и увидеть мир.
-
-Вот и наступил день, когда Лиза должна была уехать. За пару дней до отъезда мы поссорились, и я ночевал у себя дома. Я знал, откуда и в какое время она будет уезжать, поэтому приехал заранее, чтобы с ней поговорить и проводить.
-
-За 10 минут до отъезда появляется такси, из которого выходят Лиза и её мама. Я сразу вскочил и направился к ним, чтобы помочь с сумками.
-
-– Привет, зай.
-– Привет, – ответила Лиза холодно.
-– Давай я тебе помогу.
-
-Лиза протянула мне одну из сумок, и я был удивлён, насколько она тяжёлая.
-
-– Сколько ты взяла с собой вещей, если ты едешь ненадолго?
-– Макс, ты знаешь, что я всегда беру много вещей.
-– Но не столько же. Мне не нравится, что я вижу. Зачем тебе столько?
-– Максим, не начинай опять. Ты приехал меня проводить или испортить настроение перед дорогой?
-– Я пришёл сказать, что не хочу тебя туда отпускать. И сказать тебе, что ты должна остаться. И, конечно, сказать тебе, что я тебя люблю.
-– Максим, я еду. Как ты себе представляешь, что я сейчас откажусь от поездки? Мы купили билеты, мама готовила еду мне в дорогу, меня там уже ждут. Хочешь, чтобы скандал был как всегда?
-– Мне не важно, что будет и какой скандал. Я чувствую, что ты не приедешь и не хочу тебя отпускать.
-– Перестань уже. Я вернусь! Что мне там делать?
-
-Я стоял, держа её за руки, и смотрел прямо в её незабываемые глаза. Она видела, как мне больно, но я также видел в её глазах, что она не хочет ехать, но должна. А мама стояла рядом и не отрывала от нас взгляда. Она обжигала меня своим пристальным взглядом, но я не мог ей ничего сказать.
-
-Я держал за руки самую любимую девушку на свете, и сердце подсказывало, что я делаю это в последний раз.
-
-Водитель позвал всех пассажиров и попросил занять места. Я обнял её изо всех сил и крепко поцеловал. Я не мог оторвать свои губы от её — они были сладкими, как всегда. Поцелуй был страстным, но дверь закрылась, и она оказалась за окном. Автобус будто специально тронулся медленно.
-
-Она смотрела на меня через стекло, а я на неё. Я не мог поверить, что она уезжает. Но вот уже автобус исчез в потоке машин. Я повернулся к её маме, и у меня резко хлынули слёзы.
-
-– Она не вернётся, я это чувствую. Зачем вы это сделали?
-– Вернётся она. Я знаю её, Максим. Она без тебя не может. И недели не пройдёт — приедет.
-– Нет. Запомните, что она не вернётся. Я это чувствую.
-– То же самое было и у меня. Моя самая большая любовь уехала от меня.
-– Тоже в Барселону?
-– Не помню. Честное слово, у меня будто провалы в памяти, и я не могу никак вспомнить. Но это очень похоже на мою историю.
-– Что вы помните, Максим?
-– Боль. Вот это я помню очень хорошо. Настолько больно мне не было никогда.
-– Сейчас боль эта есть?
-– Временами. Я иногда вижу её во снах и тогда вспоминаю всё. Но после этого у меня опять всё пропадает из памяти. Даже не знаю, как это объяснить.
-– Могу предложить вам зачитать дальше книгу, и вы уже скажете, если у вас что-то подобное вспоминается.
-– Зачитывай.
-После того как её мама меня обняла, я разрыдался ещё сильнее. Я направился в сторону дома. Идти до дома было примерно километра четыре. Я не мог остановить свои слёзы — проплакал всю дорогу. Периодически звонил Лизе, умоляя её остановиться. Но она успокаивала и говорила, что всё будет хорошо. Я слышал в трубку, как ей тяжело: она тоже плакала, но уверяла, что уехала ненадолго и чтобы я успокоился, иначе ей будет трудно в дороге.
-
-Не помню, как дошёл до дома, но, зайдя, сразу взялся за виски. На тот момент связь с Лизой уже пропала — она пересекла границу, и оставалось ждать два дня, пока она доедет до Барселоны. Напившись, я первым делом позвонил её маме и высказал ей всё. Она понимала, что я сильно пьян и что завтра мне будет стыдно, поэтому молчала, слушала и со всем соглашалась. Я говорил с ней, пока не уснул прямо за столом, как последний алкаш.
-
-Утром у меня разрывалась голова от боли, но ещё сильнее болело от того, что не было ни одного пропущенного от Лизы — ни звонка, ни сообщения. Как же это трудно, когда нет связи с любимым человеком.
-
-Тот день был настолько тяжёлым, насколько только возможно. Голова болит, перед мамой Лизы стыдно, Лиза не звонит. Весь набор чувств — в одной куче. Я пролежал весь день в постели с бутылкой виски и не находил себе места. С мыслями о ней уснул только под утро.
-
-И сквозь сон услышал вибрацию телефона. Открыл глаза — звонил иностранный номер. Я мгновенно ответил и услышал самый любимый голос на планете.
-
-– Алло.
-– Привет, мой любимый!
-– Привет, моя любовь. Ты доехала?
-– Да, всё хорошо. Алекс встретил меня, мы сейчас кушаем, и после этого я лягу спать. Я два дня не могла уснуть в дороге. Ты что делаешь?
-– Я по тебе скучаю. Вот что я делаю.
-– Ты что, пил?
-– Зая, «пил» — это когда, помнишь?.. А я не помню эти два дня.
-– С кем пил?
-– Один.
-– Девушки были?
-– Какие девушки, зай? Я скучаю по тебе, а ты мне говоришь про баб.
-– Если я узнаю, что ты пил с девушками, то приеду и оторву тебе яйца.
-– Зай, если так ты приедешь быстрее, то я сегодня поеду бухать с девушками.
-– Максим, не ищи скандала. Забудь про них как страшный сон.
-– Хорошо, моя сладкая. Как дорога?
-– Никак. Устала очень, спать хочу и голодная. Рядом со мной мужик храпел всю дорогу. Не знаю, как люди могут так крепко спать в дороге. Только отъехали — этот уже закрыл глаза и включил звук трактора.
-– Тоже таких не понимаю. Я вообще не могу уснуть в автобусе.
-– А я скучаю…
-– Я тоже, малыш. Я не могу найти себе место уже второй день. Давай посмотри Барселону пару дней и приезжай скорее домой.
-– Ну, посмотрим, когда приеду обратно. А то я только приехала, а ты меня уже домой зовёшь.
-– Милая, ложись спать и позвони, когда проснёшься. У тебя там есть интернет?
-– Пока нет. Но спрошу у Алекса, как поставить на счёт, и напишу. Всё! Люблю тебя.
-– И я тебя люблю.
-
-Этот звонок придал мне спокойствия на некоторое время, но тревога всё ещё была. Я ждал её следующего звонка весь день, пока она спала. Нервы, нервы и ещё раз нервы — вот как я могу описать этот день. Хотя я понимал, что она у друга, внутри всё равно что-то тревожило.
-
-Под вечер Лиза набрала меня, и сквозь разговор я услышал, как Алекс говорит с кем-то.
-
-– А с кем это Алекс говорит?
-– Ни с кем.
-– Я же слышал, как он говорил с кем-то.
-– Ой, Максим, давай поговорим позже. Ты уже начинаешь тут придумывать.
-
-Она бросила трубку. И тут наступил мой “любимый” момент отношений: ты звонишь — тебе сбрасывают. Бесит, когда так делают. Ты начинаешь писать сообщения — тебе не отвечают. Ты опять звонишь — тебе сбрасывают. Именно в этот момент ты на грани написать всё, что у тебя на душе, а потом будешь жалеть. И вот только ты хочешь отправить это сообщение — и тут тебе отвечают.
-
-– Что, Максим?
-– Почему не отвечаешь?
-– Да ты начинаешь скандалить, вот почему.
-– Я спросил, с кем говорит Алекс?
-– С другом.
-– И что, было трудно ответить, что он говорит с другом?
-– Мне бы пришлось тебе долго объяснять, кто он. И ты бы не поверил.
-– Если бы сказала нормально, всё было бы хорошо.
-– Я тебя знаю, Максим. Ты бы не отстал.
-– Что за друг?
-– Просто друг Алекса.
-– Приехал в гости или как?
-– Ну, он у него тут живёт.
-– Заебись, он тебя пригласил к себе, где он с другом живёт. И почему он раньше не говорил про этого друга?
-– Ну, он недавно у него живёт и ненадолго. Они познакомились в самолёте, когда Алекс летел в Барселону. Они тусовались вместе, и он уже должен был улетать, как вдруг у него какие-то проблемы с вылетом были, и он задержался тут на пару дней.
-– Мне это очень не нравится. Вот скажи, как мне тут быть и думать о том, что ты сейчас живёшь с двумя парнями?
-– Ты мне можешь довериться или нет? Ты его видел? Он вообще не в моём вкусе. И слишком высокомерный. Типа, если он из Москвы — ему все должны.
-– Мне не важно, как он себя ведёт. Мне важно, чтобы ты с ним не общалась.
-– Я и не общалась. Я недавно проснулась, мы покушали и вот набрала тебя.
-– Когда он улетает?
-– На днях. Думаешь, я не хочу, чтобы он улетел? Я сама в шоке была, когда его увидела.
-– Я тебя прошу, не заставляй меня ревновать. Я тебе доверяю больше, чем себе. Но чтобы он с тобой даже не говорил.
-– Хорошо, Максим. Не буду говорить с ним.
-
-Мы ещё часа два говорили про разные темы, и я специально держал долгую беседу, чтобы знать, что она не говорит с каким-то парнем. Уже почти засыпая, я пожелал ей доброй ночи и попросил не сидеть там со всеми, а тоже идти спать.
-
-На второй день я проснулся от сообщения, что они идут на бассейн все втроём. Вы бы как отреагировали на это? Твоя любимая идёт на бассейн с другом и ещё одним парнем. Так себе вариант, да? Я сразу набрал её и высказался по этому поводу.
-
-– И как бассейн?
-– Всё хорошо. Загораем.
-– С кем?
-– С Алексом и Иваном.
-– И, по-твоему, это нормально?
-– А что тут плохого? Парни решили пойти на бассейн. Я приехала сюда отдыхать. Мне что, в доме сидеть?
-– Я ничего не имею против твоего отдыха. Меня больше интересует тот пассажир, который с вами.
-– Ой, да я вообще на него не смотрю и не говорю. Он тут пытается что-то из себя строить, но мне не интересно.
-– Вот пусть загорает себе и быстрее ищет себе билет в Москву.
-Да, он меня тоже напрягает.
-– Хорошо, набери меня, когда будешь дома.
-
-Да, я не скрываю, что я ревнивый. Но в этот день мне казалось, что я Бог ревности, и что слово «ревность» списали с меня. На протяжении всего дня мы переписывались короткими сообщениями, и я даже не понял, как мы обиделись друг на друга из-за мелочи. К вечеру мы поссорились и даже не пожелали друг другу спокойной ночи. А на утро меня ждало большое письмо от Лизы.
-
-«Привет. Максим, я пишу тебе это письмо и надеюсь, ты меня поймёшь. Я уехала в Барселону, чтобы по тебе соскучиться. Посмотреть, как ты будешь себя вести. Я думала, что ты будешь по мне скучать и упрашивать приехать домой. А ты только и указываешь мне, что делать, и с кем говорить, и с кем нет.
-
-Мы находимся в одном доме, и некрасиво не говорить со всеми, кто сейчас тут. Я все эти дни думала про одно: почему ты меня тогда не вытащил из автобуса? Если бы ты был настойчивым и вытащил меня силой оттуда, то я бы пошла за тобой. А ты только и говорил мне о том, чтобы я не уезжала. Для меня этого было мало. Я хотела увидеть в тебе мужчину, который возьмёт на себя обязательство и заберёт меня силой. А увидела тебя бессильным.
-
-Я плакала всю дорогу до Барселоны и не могла поверить в то, что мой любимый человек меня не остановил и разрешил просто так уехать.
-Тут я все дни плачу, потому что скучаю и не могу поверить в то, что ты сделал. Эти ребята хотели хоть как-то развеселить меня и вытащили на бассейн. Не для того, чтобы посмотреть на меня в купальнике, а чтобы я перестала плакать. А я плакала и на бассейне, потому что всю свою жизнь только с тобой была на бассейне и только с тобой плавала. А тут тебя нет.
-
-И после всего этого ты мне делаешь сцены ревности вместо того, чтобы сказать, что любишь и скучаешь. Не думала, что я это хоть раз напишу всерьёз, но нам надо разойтись. Каждый должен построить свою жизнь. Я приехала сюда и попытаюсь тут найти работу.
-
-Хочу пожелать тебе удачи, и помни, что я тебя люблю. Но мы должны закончить нашу историю. Прощай.»
-
-Я перечитал это сообщение десятки раз. Я не мог поверить в то, что она мне написала. Как она меня красиво обвинила. Но на самом деле она абсолютно права. Почему я не забрал её из автобуса? И почему я себя так веду?
-
-Она писала как взрослый человек, а не как Лиза, которую я знал. Было видно, что она реально хочет разойтись. И я не находил слов, чтобы ей ответить. Она знала, что я всегда оставлял последнее слово за собой. Но в этот момент я не знал, что написать. И я ответил ей лишь одним словом:
-
-ОК.
-
-Выслав ей это сообщение, я подумал, что буду выглядеть мужиком, что своим равнодушием я «возвышусь» перед ней. И как самый большой слабак я пошёл пить.
-
-Неделю я пил так, что мне поставили запрет во всех заведениях, куда я заходил. Я разбивал столы, посуду, зеркала. Каждый мой выход в город заканчивался вызовом охраны или полиции. Благо, все заведения были моими знакомыми, и мне не приходилось оплачивать то, что я разбивал.
-
-Неделя прошла как один день. Я просыпался, пил и спал. Мало что помню, но то, что пил много, — это помню отлично. Наши общие друзья с Лизой были всегда рядом. Я их звал не для того, чтобы они со мной пили, а чтобы они сказали Лизе, как сильно я страдаю. Конечно, они ей говорили, но она не реагировала.
-
-– Она вам что-то говорила?
-– Сказала, что всё пройдёт, и скоро всё наладится.
-– А она не говорила, что скучает и любит меня?
-– Нет. Она просто писала нам, чтобы мы сменили тему.
-
-В тот день я был уже сильно пьян, и моя голова лежала на стойке бара. Левая рука всё так же держала стакан. Как вдруг ко мне обратился Рома.
-
-– Максим, я хочу тебе что-то сказать. Но обещай, что ты ничего не начнёшь делать.
-– Да что я могу сделать? Я пьяный в жопу. Не видишь, в каком состоянии?
-– Лиза не в Барселоне.
-– Опа! А вот это поворот. И где же она?
-– А где она? Она приехала домой?
-– Нет. Она в Москве.
-– В смысле? А что она там делает?
-– Ну… она живёт там с этим новым парнем. Я так понял, что их из дома выгнал Алекс, и тот парень не хотел её оставлять и забрал с собой в Москву.
-– Что, блядь? Какая нахуй Москва? Кто её выгнал, блядь?
-– Макс. Завтра позвонишь Алексу и узнаешь.
-– Вы думаете, это Алекс виноват? Я думаю о другом.
-– Ну как она так могла? Мне кажется, они заранее договорились. Бедный Макс. Как я его понимаю. Алиса, ну как она могла?
-– Дальше в книге будет описано, почему так вышло. Зачитываю дальше.
-
-И с того дня я пропил ещё тридцать три дня подряд. Если вы думаете, что я пил понемногу — вы ошибаетесь. Все эти дни я ни разу не помнил, как пришёл домой. Я просыпался дома и удивлялся тому, что живой и вообще дома.
-
-На сороковой день я проснулся уже в реанимации. Сначала думал, что это сон, что все эти приборы на мне — просто бред. Но нет. В тот день у меня случился очередной нервный срыв, и организм просто выключил меня.
-
-– Доктор, что со мной?
-– У вас случился нервный срыв и истощение организма. Но лучше уже ваша мама вам скажет.
-
-Я тогда даже не знал, что лежу в больнице, где работает моя мама. Ожидая её, я готовил речь — как буду её успокаивать, что всё нормально. Я был уверен, что она зайдёт в истерике, в слезах.
-
-Но мама меня удивила.
-
-Она вошла в реанимацию с абсолютно каменным лицом.
-
-– Дай мне номер этой суки. Я её разорву.
-– Какой?
-– Лизы! Ты думаешь, я не знаю, почему ты столько бухал?
-– Она ни при чём.
-– Дай мне её номер, сказала! Я из-под земли её достану. Сколько ты дней пил?
-– А я много спал?
-– Часов десять.
-– Значит, вчера был сороковой день, как я пью.
-– А работа?
-– Ну… я перед работой высыпаюсь и уже начинаю пить на работе.
-– И как на это смотрят директора?
-– Я им сказал, что так развлекаю людей. И люди мне реально дают деньги за то, что я с ними бухаю. А директорам пофиг. Я им деньги приношу.
-– Ты идиот? Ты из-за неё потеряешь и работу, и здоровье. Ты у меня тут минимум на десять дней. Ты свои анализы видел? У тебя даже пульс и давление еле показывает датчик.
-– Мама, а что, если я тебе скажу, что я люблю её и не могу без неё? Что ты мне на это скажешь? Ты же знаешь, как сильно я по ней скучаю.
-– Это не выход. Будь мужиком и реши этот вопрос, а не сопли распускай. Я иду работать. Надеюсь, тебя почистят, и мозги твои тоже. И ты придумаешь, как выйти из этой ситуации. Парень ты вроде не глупый.
-
-Мама ушла той же уверенной, злой походкой, как и зашла. А я остался лежать, как истукан, слушая, как пищат датчики. На руке автоматическое измерение давления раздувается и сдувается каждые несколько минут. В реанимации лежат тяжело больные, там телефоны запрещены — вокруг люди в коме, после операций, им нужен покой. Но я всё же уговорил медсестру дать мне телефон. Они уважали маму, и отказать было сложно.
-
-Первым делом я написал Алексу и спросил, может ли он говорить. Он ответил, что позвонит вечером после работы. У меня уже был план, как поговорить с ним так, чтобы не мешать другим больным. Я дождался сообщения от Алекса и попросил медсестру отпустить меня в туалет. Но я не подумал об одном: если снять датчики, то включится сирена, и все врачи обязаны прибежать в реанимацию.
-
-– Так что я не могу пойти в туалет?
-– Нет, конечно, Максим. Я вам принесу утку.
-– Но я же нормально хожу. Я не смогу в утку это сделать.
-– Значит, не сильно и хотите. Я не могу вас отпустить и отключить приборы. По протоколу это делает только врач.
-– А может поставим датчики соседу? Я смотрел, у него пульс и давление такие же, как у меня.
-– Максим, я не могу это сделать.
-– Мне очень надо сделать важный звонок. Или я наберу тут и разбужу всех, или давайте поставим мои датчики на соседа.
-– Ладно. Давайте поставлю на соседа. Но вы — в туалет и сразу обратно.
-– Договорились.
-
-Мы переставили датчики, и я быстро побежал в туалет. Больные по сторонам офигевали — человек в реанимации бегает в туалет, а не лежит без сознания, как они.
-
-Закрывшись в туалете, я набираю Алекса.
-
-– Алло. Алекс, привет. Как ты?
-– Привет. Хорошо. А твои как дела?
-– Я тоже… Не могу долго говорить пока. А так — всё ок.
-– Что-то случилось?
-– Нет, всё ок. Скажи мне, пожалуйста, как Лиза очутилась в Москве?
-– Ты уверен, что хочешь это слышать?
-– Нет, блин, Алекс. Я тебе задал вопрос, чтобы не слышать ответа. Конечно, готов. Давай, говори.
-– Короче, я был в шоке от того, что произошло. Она приехала. Я поехал её встречать с Иваном. Он сказал, что они договорились встретить её вместе. Я был в шоке от этого, но он показал переписку. Она написала ему, что было бы круто, если бы встретили вдвоём.
-– Стой! Как это она могла ему написать, если она его не знала?
-– Когда я прилетел в Барселону из Кишинёва, я сказал ей, что в самолёте познакомился с парнем из Москвы. Мы всё время созванивались и обсуждали, как она приедет, на сколько, что ей нужно. Она знала, что со мной живёт Иван, и что мы с ним часто тусуемся. Она начала интересоваться им, и он — ей. Он попросил у меня её профиль и добавился к ней в друзья. Теперь ты знаешь, что всё то время, пока она решала, когда ко мне приехать, она параллельно общалась с ним.
-– И почему ты мне это не сказал?
-– Макс, как я мог подставить свою лучшую подругу? Ты должен понять. Ну так слушай дальше и не перебивай. Как только она вышла из автобуса, сразу кинулась на него и начала обнимать. Потом мы поехали домой. Она всегда сидела рядом с ним. Мы пили и веселились. Я много раз говорил ей, что обещал присмотреть за ней, а ей было всё равно. Они сидели как голубки — держались за руки, смеялись. Я говорил ей, что это некрасиво, но она продолжала. Потом она предложила поехать на бассейн, чтобы «увидеть мышцы Ивана». Я отказывался, но поехал, потому что хотел проследить.
-
-Вечером мы пришли домой и легли спать. Ночью я слышал её стоны. А утром она сказала, что будет встречаться с Иваном и что написала тебе письмо, что вы разошлись. Я не выдержал и выгнал их из дома. А позже узнал, что они в Москве.
-
-– Что ты такое говоришь? Алекс, я в таком шоке, что не могу передать. Она реально так себя вела?
-– Да. Я сам был в шоке от того, что видел. Я давно хотел тебе написать, чтобы ты не думал, будто я просто так их выгнал. Они говорили ещё до её приезда. Она сама напрашивалась сюда. Я не хотел её звать, пока он тут.
-– Я в шоке, Алекс. Я просто не могу поверить.
-– Так оно и было, Макс. Она лапшу тебе вешает, что плакала. Она тут с ним веселилась, как могла.
-– Хорошо, Алекс. Давай я тебе завтра позвоню, и мы поговорим. Я больше не могу говорить.
-– Давай. Спокойной ночи.
-– Прощай.
-– Да ну нахуй! Я же говорил тебе, Алиса, что тут что-то нечисто? Всегда, когда на расстоянии решается вопрос о расставании, значит, кто-то появился. Я думаю, что она и дома сказала маме о том, что там в Барселоне её ждёт москвич. А ты же помнишь, как мама мешала их отношениям? Вот мама и проспонсировала поездку только ей. Как же это всё спланированно.
-– Всё может быть, Максим. Но я уверена, что на этом история не заканчивается и что есть всему объяснения.
-– Какие тут могут быть объяснения, Алиса? Она как шлюха себя повела. Ещё и сообщение написала о том, что ждала от него, чтобы он её вытащил из автобуса. Как же это мерзко. У меня сейчас полное отвращение к ней.
-– Действительно у вас этот рассказ вызывает отвращение?
-– Ещё какое! Моя примерно то же самое сделала, после чего у меня появилось чувство отвращения к ней.
-– Вы сейчас ощущаете те же чувства, как и тогда?
-– Да! Та сука меня тоже предала. Не помню как, но чувство это никогда не забуду. Ненависть и отвращение.
-– Хотите ли вы прекратить зачитывание книги?
-– Ни в коем случае. Я хочу знать, что дальше делала эта сучка.
-
-Я вышел из туалета бледным. Сделав пять шагов, я просто упал на пол и не понял, что случилось. Помню, как медсестра сильно лупила меня по лицу, чтобы я очнулся. Она подняла меня и положила на койку, сразу подключив все датчики, чтобы никто не заметил, что я вставал.
-
-– Это был последний раз, когда я так сделала. Дай мне свой телефон. Его вернёт врач, когда будете выписываться.
-– Ну, простите меня, пожалуйста, просто что-то плохо стало.
-
-От того, что я услышал, у меня зашкаливали все приборы. Вокруг всё начало пищать, и забежали доктора. Они всунули мне какие-то препараты в катетер, и я вроде успокоился. Помню, как смотрел в одну точку в потолок и не уводил взгляд. Я в голове прокручивал всё, что мне сказал Алекс. Я просто не мог поверить, что она так сделала. И это человек, с которым я хотел связать всю свою жизнь?
-
-Так я пролежал там четыре дня — без телефона, под писк многочисленных приборов. На пятый день меня перевели в неврологию, где меня пичкали разными препаратами и глушили во мне тревогу и беспокойство.
-
-Выйдя из больницы, я сразу решил позвонить друзьям и встретиться с ними. Мне надо было знать правду о том, как это произошло. А друзья были с ней на связи и точно знали всё в подробностях.
-
-– Привет, Рома. Что делаешь?
-– Привет. Вот в город собираюсь.
-– Что делать?
-– Не поверишь, встречаюсь с Лизой.
-– Да ладно? Она что, в городе?
-– Да, приехала вчера и сегодня хочет встретиться.
-– И где встречаетесь?
-– Зачем тебе это? Она вроде будет со своим новым парнем и хочет познакомить нас с ним.
-– Ты охренел, что ли? Где встречаетесь?
-– В „Мохито”. Но я тебе не говорил это.
-– Во сколько будете там?
-– В 16:00 договорились.
-– Ок, я буду там.
-
-Я вышел из больничного двора, быстро поехал домой, чтобы принять душ и переодеться. Я же должен был выглядеть на все сто процентов. Пусть знает, кого она потеряла. Но я не знал, что делать. Как подойти к ней? Сесть за соседний стол или что-то ещё? Решил, что разберусь на месте.
-
-Сел у фонтана рядом с террасой и увидел их. Сидит Рома, а напротив она с Иваном. Ну вот же, сука, а? Как она так может? Главное, что она меня увидела и каждый раз оборачивается, чтобы посмотреть, что я делаю. В тот момент я решил написать Роме сообщение:
-
-– Я сейчас подойду к вам.
-– Не надо. Лиза тебя увидела и попросила, чтобы ты не садился к нам.
-– Что, бля? Я сейчас присяду и разнесу там всех.
-– Дай мне поговорить с ними. Я позже тебе напишу.
-
-Я сидел и смотрел за ними двадцать минут, после чего увидел, как Рома встаёт и направляется ко мне.
-
-– Привет, Макс.
-– Привет. Ну что там?
-– Да ничего. Она тебя увидела. Иван говорит, чтобы ты присел за стол, а Лиза не хочет.
-– Почему не хочет?
-– Она сказала, что больше тебя не любит и что у неё другое будущее.
-– Она реально так сказала?
-– Да.
-– Тогда мне нечего там делать. Передай им привет от меня и удачи.
-– Ты куда сейчас?
-– По городу буду. Набери, как закончишь свою замечательную беседу.
-
-Я не мог поверить, что она ему такое сказала. Видимо, у неё действительно поменялись планы на жизнь. Рома мне позвонил после их встречи.
-
-– И как посидели?
-– Нормальный парень, кстати. Он о тебе хорошо говорит. Но Лиза тебя не хотела видеть за столом.
-– Ого, он тебе понравился?
-– Ну, он действительно приличный парень.
-– Она про меня что-то говорила?
-– Нет. Она просила не обсуждать тебя.
-– Я не могу поверить в это. Как человек может так быстро измениться?
-– Не знаю, что тебе сказать. Но знаю, что он завтра улетает, а она тут будет.
-– Мне уже не важно, будет ли она тут или нет. Она так сильно изменилась, что я не могу в это поверить.
-– Сам решай. Но она тут будет некоторое время.
-– Спасибо за информацию.
-Лиза решила остаться в Кишинёве, потому что приехали её родители из Европы, и она хотела провести с ними время. А он должен был лететь по работе. Я не знал, что делать и как реагировать на такую информацию. Она мне в письме написала, чтобы я был мужиком и принимал решения. Но как их принять, если я не понимаю, хочет ли она этого или нет? Решил оставить её в покое и не трогать. Думаю, я упустил свой шанс, и незачем мне стараться.
-
-– Слабак! За своё счастье надо биться и вырывать зубами у других. Но Лиза меня начала ещё сильнее бесить. Она почувствовала себя королевой в тот момент, когда она видит, как один за столом с ней сидит, а другой в подворотнях сидит и наблюдает за этим.
-– Не думаю, что она себя чувствовала тогда как королева. Думаю, что у неё было сильное волнение, так как она с новым парнем сидит, а рядом ходит Максим, которого она любила всей душой.
-– Когда любят, то так не поступают, моя дорогая Алиса. Он же не пошёл по бабам после того, как она уехала. Он вёл себя как настоящий верный мужчина. А она хвост подняла на второй день.
-– Есть моменты слабости у каждого человека.
-– Ну оступилась она там с ним в Барселоне. Ну переспали они. Ну так сиди и молчи и не говори Максиму, и живи дальше.
-– Вы предпочитаете ложь в отношениях?
-– Если ложь во благо – то да!
-– А изменяли ли вы хоть раз, Максим?
-– Никогда в жизни. Я считаю, что я себя предам в тот момент. Если я в отношениях, то других для меня нету.
-– Это замечательные качества, Максим!
+După moartea bunicii, totul a mers foarte prost. Viața mea a început să se destrame literalmente. Din când în când ieșeam cu Liza în oraș ca să ne revenim puțin și să ne curățăm gândurile. Într-una din zilele acelea, Liza mi-a spus că vine la ea un prieten din Barcelona, pe nume Alex. Nu știam nimic despre el în toți cei trei ani trăiți împreună și pentru mine a fost o mare surpriză să aflu că are un astfel de prieten. Mi-a povestit că au trăit mult timp în aceeași curte și că pentru ea el este ca un membru al familiei. Mi-a fost greu să cred asta până când mama ei mi-a confirmat că Alex este prieten din copilărie și, pe deasupra, gay.
+  Ne-am stabilit întâlnirea în Deja Vu, pentru că într-o atmosferă de muzică și alcool cunoștința capătă un alt sens. Stăteam cu Liza la bar când, deodată, Alex a intrat în club. Un tip de statură medie, puțin plinuț, cu o față zâmbitoare, ca un european tipic. Liza i-a sărit imediat la gât și a început să țipe de fericire că l-a întâlnit după atâția ani. A venit după la mine și mi-a întins mâna.
+— Salut. Mă cheamă Alex.
+— Salut. Eu sunt Maxim.
+— Știu. Liza mi-a povestit multe despre tine și vreau să-ți spun că am fost foarte fericit când i-ai făcut cererea de căsătorie. Ea te iubește nebunește și nu vede sensul vieții fără tine.
+— Liza nu mi-a spus că mai vorbește cu tine. Dar dacă tot ați vorbit despre mine, o iert pentru această omisiune.
+— Mi-a spus că ești foarte gelos și că îi interzici multe.
+— A fost o mică greșeală cu niște mesaje din partea ei, de asta controlez lucrurile. Dar gata cu vorbitul despre mine și Liza. Hai să bem și cred că în noaptea asta ne vom cunoaște mai bine.
+  Ne-am distrat și am ascultat povești despre cât de frumoasă și tare este Barcelona. Pentru noi, pe atunci, era un oraș de basm, unde totul este permis și unde prețurile sunt foarte mari comparativ cu Chișinăul. Ne-a surprins faptul că Alex fotografia străzile Chișinăului și trimitea pozele prietenilor săi din Barcelona.
+— De ce faci asta?
+— În Chișinău toate străzile au copaci de o parte și de alta. Este considerat cel mai verde oraș din Europa. În Barcelona nu există așa ceva. Acolo e doar asfalt și clădiri. Iar aici, uită-te ce frumusețe!
+  Nu fusesem niciodată în Barcelona și nu știam că există așa ceva în lume. Se pare că aproape toate marile orașe ale Europei nu au copaci pe străzi, doar în parcuri. Stând și ascultându-l pe Alex despre cât de frumoasă este Barcelona, deodată ne-a propus să o vizităm:
+
+— Veniți! Stați la mine. Vă arăt totul și vă povestesc. Trebuie doar să vă cumpărați biletele de avion.
+— E o propunere bună, Alex, dar pentru asta ne trebuie bani. Eu nu o duc bine cu munca și nici nu-mi imaginez de câți bani am nevoie ca să mă simt confortabil acolo. După cum povestești și ce prețuri sunt, fără o mie de euro pe săptămână n-avem ce căuta.
+— Important e să veniți, restul cheltuielilor le iau eu asupra mea.
+— Ne gândim și îți spunem. Acum, pe capul beat, putem discuta orice — de la Antarctica până la cumpărarea unui ATV — iar mâine o să regretăm.
+— Gândiți-vă. Eu plec peste o săptămână și am putea zbura împreună.
+
+  După o oră, eu am uitat discuția. Dar nu și Liza. Asculta propunerea cu scântei în ochi și cu o speranță nebună că voi spune „da”. Tot drumul până acasă și chiar și acasă mi-a repetat că trebuie să mergem. Că nu avem nicio călătorie, că stăm acasă ca niște bătrâni.
+— Liza, și eu aș vrea să zbor, dar de unde să iau banii?
+— Trebuie doar să cumpărăm biletul. Restul plătește Alex.
+— Și cum o să mă simt? Ca un sărac venit pe banii altuia? Dacă vreau să ieșim doar noi doi, trebuie să-i cer bani? Îți dai seama cum o să mă simt ca bărbat?
+— Dar el a propus singur.
+— Nu e corect, Liza. Eu trebuie să-mi asigur singur vacanța.
+— O să-i cer mamei să ne ia biletele. Tu ia bani cât poți. Atât ne permitem. Îți promit că nu voi cere mult și că voi depinde complet de tine.
+— Elizabeth, cu nevoile tale cheltuim tot bugetul din prima zi.
+— Hai să mergem!
+— O să mă gândesc.
+
+  După o săptămână de discuții, am ajuns la concluzia că va merge doar Liza. Mama ei îi va da bani, iar Alex o va întreține acolo.
+
+— De ce mama nu i-a dat bani și lui Maxim?
+— Nu știu, dar probabil Liza a insistat mult și mama i-a făcut un cadou.
+— Nu cred.
+
+Înainte de plecare, între mine și Liza a avut loc un dialog:
+— Liza, nu-mi place că Alex te cheamă atât de insistent la Barcelona.
+— De ce?
+— E ciudat. Te cheamă și e gata să plătească totul.
+— E prietenul meu. Am crescut împreună. E normal să mă invite.
+— E prea insistent.
+
+  În ciuda rugăminților mele să nu plece, a rămas pe poziție. Până la plecarea ei, relația noastră a fost tensionată, vorbeam printre dinți. Eu nu voiam s-o las să plece, ea voia să vadă lumea. Și iată că a venit și ziua plecării. Cu câteva zile înainte ne-am certat și eu dormisem la mine dar știam de unde și la ce oră pleacă, așa că am venit mai devreme s-o văd și s-o conduc.
+  Cu zece minute înainte de plecare apare taxiul, din care coboară Liza și mama ei. Am sărit imediat să le ajut cu bagajele.
+— Salut, iubito.
+— Salut, — a răspuns rece.
+— Hai să te ajut.
+Mi-a întins o geantă și am fost șocat cât de grea era.
+— Câte lucruri ai luat, dacă pleci pe puțin timp?
+— Max, știi că eu iau mereu multe lucruri.
+— Dar nu chiar atâtea. Nu-mi place ce văd.
+— Maxim, nu începe iar. Ai venit să mă conduci sau să-mi strici dispoziția?
+— Am venit să-ți spun că nu vreau să te las să pleci. Să rămâi. Și să-ți spun că te iubesc.
+— Maxim, eu plec. Cum îți imaginezi că renunț acum? Avem bilete, mama mi-a gătit pentru drum, Alex mă așteaptă acolo. Vrei scandal, ca de obicei?
+— Nu-mi pasă ce scandal va fi. Simt că nu te vei întoarce.
+— Termină. Mă întorc. Ce să fac eu acolo?
+— Liza, știi că am presimțiri puternice. Sunt sigur că nu te vei întoarce.
+— Mă întorc. Nu-ți mai face atâtea griji.
+
+  O țineam de mâini și o priveam direct în ochii ei de neuitat. Vedea cât de tare mă doare, dar vedeam și eu în ochii ei că nu vrea să plece, dar trebuie. Mama ei stătea lângă noi și ne privea fix. Privirea ei mă ardea, dar nu puteam spune nimic. Țineam de mâini cea mai iubită femeie din lume și inima îmi spunea că o fac pentru ultima dată.
+  Șoferul a chemat pasagerii. Am îmbrățișat-o cu toată puterea și am sărutat-o adânc. Buzele ei erau dulci, ca întotdeauna. Sărutul a fost pasional, dar ușa s-a închis și ea era deja în după geam. Parcă plecau intenționat încet. Ea mă privea prin geam, iar eu pe ea. Nu puteam crede că pleacă. Apoi autobuzul a dispărut în trafic. M-am întors spre mama ei și am izbucnit în lacrimi.
+— Nu se va întoarce. Simt asta. De ce ați făcut asta?
+— Se va întoarce. O cunosc. Nu poate fără tine. Nici o săptămână nu va trece.
+— Nu! Țineți minte: nu se va întoarce!
+
+— La fel a fost și la mine. Cea mai mare iubire a mea a plecat.
+— Tot la Barcelona?
+— Nu mai țin minte. Am goluri de memorie. Dar e foarte asemănător cu povestea mea.
+— Ce vă amintiți?
+— Durerea. Atât. O durere cum n-am mai simțit niciodată.
+— O mai simțiți?
+— Uneori. O visez și apoi uit tot.
+— Pot continua lectura?
+— Citește.
+
+  După ce mama ei m-a îmbrățișat, am plâns și mai tare. Am mers spre casă, vreo patru kilometric pe jos. Am plâns tot drumul. O sunam pe Liza și o rugam să coboare din autobuz. Ea mă liniștea și spunea că va fi bine. Plângea și ea, dar spunea că pleacă doar pentru puțin timp.
+  Nu știu cum am ajuns acasă. Am luat direct whisky. Legătura cu Liza dispăruse deja — trecuse granița. Am băut și am sunat-o pe mama ei, i-am spus tot. Ea tăcea și era de acord. Am vorbit până am adormit la masă, ca ultimul alcoolic.
+
+  Dimineața, capul îmi crăpa, dar mai rău era că nu aveam niciun apel de la Liza. Nici mesaj. Ziua a fost un iad. Am stat în pat cu o sticlă de whisky. Am adormit dimineața și m-a trezit vibrația telefonului. Număr străin.
+— Alo.
+— Salut, iubirea mea!
+— Salut, dragostea mea. Ai ajuns?
+— Da. Alex m-a întâmpinat, mâncăm și mă culc. Două zile n-am dormit. Tu ce faci?
+— Mi-e dor de tine.
+— Ai băut?
+— Iubito, „a bea” e când ții minte. Eu nu țin minte nimic.
+— Cu cine ai băut?
+— Singur.
+— Femei erau?
+— Ce femei, iubito?
+— Dacă aflu că ai băut cu femei, vin și rup ouăle.
+— Dacă așa vii mai repede, mă duc azi să beau cu fete.
+— Maxim, nu căuta scandal.
+— Bine, dulcețea mea.
+
+
+  Apelul acela mi-a adus un calm temporar, dar neliniștea nu dispăruse. Am așteptat următorul ei apel toată ziua, cât timp dormea. Nervi, nervi și iar nervi — așa pot descrie ziua aceea. Deși știam că este la un prieten, ceva mă rodea adânc pe dinăuntru.
+  Seara, Liza m-a sunat. Printre vorbele ei, îl auzeam pe Alex vorbind cu cineva.
+— Cu cine vorbește Alex?
+— Cu nimeni.
+— L-am auzit clar.
+— Maxim, hai să vorbim mai târziu. Începi să ai fantezii.
+  Mi-a închis în nas.
+  Și iată momentul meu „preferat” într-o relație: când suni și ți se respinge apelul. Te scoate din minți. Începi să scrii mesaje, nu primești răspuns. Suni din nou — respins. Și exact atunci ești la un pas să scrii un mesaj de care vei regreta. Și chiar când ești gata să arunci tot ce ai în suflet, primești răspuns.
+— Ce, Maxim?
+— De ce nu răspunzi?
+— Pentru că faci scandal.
+— Am întrebat cu cine vorbea Alex.
+— Cu un prieten.
+— Era greu să spui asta?
+— Ar fi trebuit să-ți explic cine e și n-ai fi crezut.
+— Dacă spuneai normal, nu era nimic.
+— Te cunosc, Maxim. N-ai fi lăsat-o baltă.
+— Ce prieten?
+— Un prieten de-al lui Alex.
+— A venit în vizită?
+— Locuiește la el.
+— Super. Te-a chemat la el acasă, unde mai stă și altul. De ce nu mi-a spus de la început?
+— E de curând aici. S-au cunoscut în avion. Avea probleme cu zborul și a rămas câteva zile.
+— Nu-mi place deloc. Cum să gândesc eu că tu stai cu doi tipi?
+— Ai încredere în mine sau nu? Nu e genul meu. E foarte arogant. Din Moscova, genul că toți îi sunt datori.
+— Nu mă interesează cum e el. Vreau doar să nu vorbești cu el.
+— Nici nu vorbesc. Tocmai m-am trezit, am mâncat și te-am sunat.
+— Când pleacă?
+— Curând. Crezi că nu vreau să plece?
+— Nu mă face să fiu gelos. Am mai multă încredere în tine decât în mine. Dar să nu vorbească cu tine.
+— Bine, Maxim.
+  Am vorbit încă vreo două ore despre nimicuri. Țineam conversația lungă doar ca să știu că nu vorbește cu altul. Aproape adormind, i-am urat noapte bună și am rugat-o să nu stea cu ei.
+
+  A doua zi m-am trezit cu mesaj: „Mergem toți trei la piscină.”
+Cum ai reacționa tu? Iubita ta merge la piscină cu prietenul și încă un tip. De rahat, nu? Am sunat-o imediat.
+— Cum e piscina?
+— Bine. Ne bronzăm.
+— Cu cine?
+— Cu Alex și Ivan.
+— Și asta ți se pare normal?
+— Ce e rău? Am venit să mă odihnesc. Vreai să stau doar în casă?
+— Nu am nimic cu odihna ta. Am cu tipul ăla.
+— Nici nu mă uit la el. Face pe interesantul.
+— Să se bronzeze și să-și caute bilet spre Moscova.
+— Și pe mine mă enervează.
+— Sună-mă când ajungi acasă.
+
+  Da, sunt gelos. Dar în ziua aia eram tata geloziei. Toată ziua mesaje scurte. Ne-am certat din nimic. Seara nici nu ne-am urat noapte bună.
+  Dimineața m-a așteptat o scrisoare lungă de la Liza:
+
+„Salut. Maxim, îți scriu asta sperând că mă vei înțelege. Am plecat la Barcelona ca să-ți fie dor de mine. Să văd cum te porți. Credeam că o să mă rogi să vin acasă. Dar tu doar îmi spui ce să fac și cu cine să vorbesc. Suntem într-o casă și e urât să nu vorbesc cu toți. M-am gândit mereu la un lucru: de ce nu m-ai scos din autobuz? Dacă m-ai fi tras cu forța, aș fi venit cu tine. Tu doar mi-ai spus să nu plec. Pentru mine a fost puțin. Voiam să văd un bărbat care își asumă și mă ia. Te-am văzut slab. Am plâns tot drumul. Și aici plâng. Ei au încercat să mă scoată la piscină să nu mai plâng. Nu ca să mă vadă în costum de baie. Eu am plâns și acolo, pentru că doar cu tine am fost la piscină. După toate astea, îmi faci scene de gelozie. Trebuie să ne despărțim. Fiecare să-și construiască viața. Te iubesc, dar povestea noastră se termină. Adio.”
+
+Am citit mesajul de zeci de ori. Nu puteam crede. M-a acuzat frumos. Și era dreptatea ei. De ce n-am scos-o din autobuz? Am răspuns cu un singur cuvânt: „OK”. După care am mers să beau.
+
+  O săptămână am băut până mi-au interzis intrarea peste tot. Spărgeam mese, pahare, oglinzi. Poliție, pază. Noroc că erau prieteni. O săptămână a trecut ca o zi.
+Prietenii îi spuneau cât sufăr. Ea nu reacționa.
+— Spune ceva?
+— Zice că îți va trece.
+— Spune că mă iubește?
+— Nu.
+  Eram beat mort când Rома mi-a spus:
+— Maxim, Liza nu e în Barcelona.
+— Ce dracu’? Unde e?
+— La Moscova. Cu tipul ăla.
+— Ce pula mea? Ce Moscova?!
+— Max, mâine îl suni pe Alex și afli tot.
+— Crezi că Alex e vinovat? Eu cred că nu doar el.
+
+— Cum a putut să facă așa ceva? Parcă s-au înțeles dinainte. Săracul Max…
+— Mai departe în carte se explică de ce s-a întâmplat asta. Continui.
+
+  Și din ziua aceea am mai băut încă treizeci și trei de zile la rând. Și dacă crezi că beam puțin, te înșeli. În toate zilele acelea nu-mi amintesc nici măcar o dată cum am ajuns acasă. Mă trezeam acasă și mă miram că sunt viu. În a patruzecea zi m-am trezit în reanimare. La început am crezut că e o glumă, că aparatele sunt un vis. Dar nu era.
+— Doctore, ce am?
+— Ați avut o cădere nervoasă și epuizare. Mai bine vă spune mama.
+  Nici nu știam că sunt în spitalul unde lucra mama. Mă pregăteam s-o liniștesc. Eram sigur că va intra plângând. Dar a intrat cu o față de piatră.
+— Dă-mi numărul curvei. O rup.
+— Care?
+— Al Lizei! Crezi că nu știu de ce ai băut?
+— Nu e vina ei.
+— Dă-mi numărul, am spus. Câte zile ai băut?
+— Mult am dormit?
+— Zece ore.
+— Atunci ieri a fost ziua patruzeci.
+— Și munca?
+— Dormeam înainte de muncă și beam la muncă.
+— Și directorii?
+— Le-am zis că distrez clienții. Îmi dau bani. Lor le convine.
+— Ești idiot? O să pierzi tot din cauza ei. Stai aici minimum zece zile. Ai văzut analizele? Pulsul și tensiunea abia se văd.
+— Mamă, dacă-ți spun că o iubesc și nu pot fără ea?
+— Nu e o soluție. Fii bărbat. Rezolvă problema, nu plânge.
+  A plecat la fel cum a intrat. Eu am rămas ca un idol. Aparatele piuiau. Manșeta de tensiune se umfla și se dezumfla.
+  Telefoanele sunt interzise în reanimare. Dar am convins asistenta. Toți o respectau pe mama. I-am scris lui Alex dacă poate vorbi și mi-a zis că mă sună seara.
+  Când m-a sunat, am cerut voie la toaletă. Am scos senzorii — toate aparatele au început să piuie.
+— Nu puteți merge. Vă aduc plosca.
+— Nu pot așa vreau la toaletă.
+— Atunci nu vreți destul.
+Am convins-o să-mi pună senzorii vecinului.
+M-am încuiat în toaletă și l-am sunat pe Alex.
+— Salut. Cum ești?
+— Bine. Tu?
+— Spune-mi cum a ajuns Liza la Moscova.
+— Ești sigur?
+— Spune!
+— Am fost șocat. A venit. Eu și Ivan am întâmpinat-o. Ea îi scrisese lui că ar fi tare să o întâmpinăm amândoi.
+— Cum i-a scris dacă nu-l cunoștea?
+— Când am zburat la Barcelona, i-am spus că am cunoscut un tip din Moscova. Trăia la mine. Ei au început să vorbească. Ea se interesa de el și el de ea. I-am dat profilul ei.
+— Și de ce nu mi-ai spus?
+— Cum să-mi vând prietena? Ascultă mai departe. Când a coborât din autobuz, s-a aruncat în brațele lui. Stăteau ca porumbeii. Țineau de mâini. A propus piscina ca să-i vadă mușchii. Noaptea îi auzeam gemetele din dormitor. Dimineața mi-a spus că va fi cu el. I-am dat afară imediat din casa mea. Apoi am aflat că sunt la Moscova.
+— Ce dracu’ spui…
+— Așa a fost. Te-a mințit. Nu plângea. Se distra.
+— Vorbim mâine.
+— Noapte bună.
+
+Am ieșit din toaletă alb la față. După cinci pași, m-am prăbușit pe podea și nu am înțeles ce s-a întâmplat. Îmi amintesc cum asistenta mă pălmuia tare ca să-mi revin. M-a ridicat și m-a pus pe pat, conectând rapid toate aparatele, ca nimeni să nu observe că mă ridicasem.
+— A fost ultima dată când am făcut asta. Dă-mi telefonul. Îl vei primi înapoi la externare.
+— Iertați-mă, vă rog… mi s-a făcut rău.
+
+  După tot ce auzisem, toate aparatele luau-o razna. Totul piuia, doctorii au intrat în fugă. Mi-au băgat ceva prin cateter și m-am mai liniștit. Mă uitam într-un punct fix din tavan și nu-mi luam ochii de acolo. În cap îmi răsuna fiecare cuvânt spus de Alex. Nu puteam accepta că ea făcuse asta. Omul cu care voiam să-mi leg viața.
+  Am stat în reanimare patru zile, fără telefon, sub piuitul continuu al aparatelor. În a cincea zi m-au mutat la neurologie. Pastile, injecții, liniștire forțată a anxietății.
+  După externare, primul lucru a fost să-mi sun prietenii. Aveam nevoie de adevăr. Ei erau în legătură cu ea și știau tot.
+
+— Salut, Roma. Ce faci?
+— Salut. Mă duc în oraș.
+— Unde?
+— Nu o să crezi. Mă văd cu Liza.
+— Serios? E în oraș?
+— Da. A venit ieri.
+— Unde vă vedeți?
+— De ce te interesează? Va fi cu noul ei tip.
+— Ești nebun? Unde?
+— La „Mojito”. Dar nu ți-am spus eu.
+— La ce oră?
+— La patru.
+— Vin.
+  Am ieșit din spital, am mers acasă, duș, haine curate. Trebuia să arăt perfect. Să știe ce a pierdut. Nu știam ce voi face — să mă așez la masa alăturată sau să trec pe lângă ea?
+  Stăteam lângă fântână și i-am văzut. Roma, ea și Ivan. Uite-o, curva. Cum poate? M-a văzut și ea. Se uita constant spre mine. I-am scris lui Roma:
+
+— Vin la voi.
+— Nu. Liza te-a văzut și a cerut să nu vii.
+— Ce, pula mea?
+— Lasă-mă să vorbesc cu ei.
+Am stat și i-am privit vreo douăzeci de minute. Roma s-a ridicat și a venit la mine.
+— Salut, Max.
+— Și?
+— Nimic. Ivan zice că poți veni. Liza nu vrea.
+— De ce?
+— A spus că nu te mai iubește și că are alt viitor.
+— A spus asta?
+— Da.
+— Atunci n-am ce căuta acolo. Spune-le salut și succes.
+— Tu unde mergi?
+— Prin oraș. Sună-mă când terminați.
+ Nu-mi venea să cred cât de repede se poate schimba un om. Roma m-a sunat după întâlnire.
+— Cum a fost?
+— Tipul e ok. Vorbește bine despre tine.
+— Ea a zis ceva de mine?
+— Nu. A cerut să nu se vorbească despre tine.
+  Liza a decis să rămână în Chișinău, pentru că părinții ei veniseră din Europa. El urma să plece cu munca. Nu știam ce să fac. Ea îmi scrisese să fiu bărbat și să iau decizii. Dar cum să le iau, dacă nu știam ce vrea ea? Am decis s-o las în pace. Am pierdut șansa.
+
+— Slab. Pentru fericire trebuie să lupți cu dinții.
+— Nu cred că ea se simțea regină.
+— Când iubești, nu faci așa. El n-a umblat după femei. Ea a ridicat coada în a doua zi.
+— Există slăbiciuni.
+— Slăbiciune e una. Trădarea e alta.
+— Vrei să oprim lectura?
+— Nici vorbă. Vreau să știu ce a mai făcut curva aia. Da, povestea asta îmi provoacă dezgust. Și a mea a făcut la fel. Nu mai țin minte cum, dar senzația asta n-o voi uita niciodată. Ura și scârba.
+— Simți acum la fel ca atunci?
+— Da. Și curva aia m-a trădat. Nu mai țin minte detaliile, dar sentimentul nu dispare. Am rămas tăcut. În mine nu mai era nimic — nici durere, nici lacrimi. Doar un gol rece. Atunci am înțeles un singur lucru: nu toate poveștile de dragoste se termină frumos. Unele se termină cu o sticlă goală, un pat de spital și o amintire care nu te mai lasă niciodată
         `
     },
     {
         id: 'ch8',
-        title: 'До свидания, но не до конца',
+        title: 'La revedere, dar nu până la capăt',
         content: `
-Как я говорил и раньше, у меня развита интуиция, и я знал, что она мне позвонит. Я не менял номер только ради того, чтобы она смогла связаться со мной, если у неё возникнет такое желание. Примерно в девять вечера я увидел, что мне звонит до боли знакомый номер – тот, который я помню наизусть.
+Așa cum spuneam și înainte, am o intuiție bine dezvoltată și știam că mă va suna. Nu mi-am schimbat numărul doar pentru ca ea să poată lua legătura cu mine, dacă va avea vreodată dorința asta. Pe la nouă seara am văzut că mă sună un număr dureros de cunoscut — cel pe care îl știu pe de rost.
 
-– Привет, – сказала Лиза в трубку. Этот голос сводил меня с ума с первого дня, как я его услышал.
-– Привет.
-– Как дела?
-– Так себе. Сижу дома и жду твоего звонка.
-– А почему сам не позвонил?
-– Я не знал, когда уедет твой новый парень, и не хотел, чтобы у вас был скандал.
-– Ну, он уехал, и я бы хотела с тобой поговорить. У нас много вопросов, и я бы хотела это обсудить.
-– Ты хочешь поговорить по телефону?
-– Нет, я хочу встретиться с тобой. Давай где-то у моего дома, чтобы, если он позвонит, я успела быстро вернуться и ответить ему на видеозвонок.
-– Я могу быть в баре у твоего дома через 15 минут. Ты сможешь?
-– Да, давай там через пятнадцать минут.
+— Salut, — a spus Liza la telefon. Vocea asta mă scotea din minți încă din prima zi în care am auzit-o.
+— Salut.
+— Ce faci?
+— Așa și-așa. Stau acasă și aștept apelul tău.
+— Și de ce nu m-ai sunat tu?
+— Nu știam când pleacă noul tău iubit și nu voiam să aveți un scandal.
+— Ei bine, a plecat, și aș vrea să vorbesc cu tine. Avem multe întrebări și aș vrea să le discutăm.
+— Vrei să vorbim la telefon?
+— Nu, vreau să ne vedem. Hai pe undeva pe lângă casa mea, ca să pot reveni rapid dacă sună și să-i răspund la apel video.
+— Pot fi la barul de lângă tine în 15 minute. Poți?
+— Da, hai acolo peste cincisprezece minute.
+  Știind cât de mult întârzie de obicei, puteam liniștit să ajung peste o jumătate de oră sau chiar o oră. Dar, surprinzător, a venit la timp. Când am văzut-o, am izbucnit în plâns. Nu o mai văzusem de atât de mult timp și îmi doream atât de tare să o îmbrățișez. Cât de mult îmi lipsise. S-a așezat la masă, mi-a luat ambele mâini și pur și simplu ne-am privit în tăcere și am plâns. Ne era clar că ne iubim foarte mult și că am făcut greșeli. Acum trebuia doar să vorbim și să înțelegem dacă vom rezolva ceva sau vom regreta toată viața că ne-am despărțit.
 
-Зная о том, как она опаздывает, я мог спокойно приехать через полчаса, а то и час. Но, как ни странно, она приехала вовремя. Увидев её, я расплакался. Я так давно не видел её и так сильно хотел её обнять. Как же сильно я по ней скучал. Она присела за стол, взяла обе мои руки, и мы просто молча смотрели друг на друга и плакали. Нам было понятно, что мы очень сильно любим друг друга и что наделали ошибки. Сейчас надо было просто поговорить и понять, решим ли мы что-нибудь или будем всю жизнь жалеть о том, что разошлись.
+— Hai, poate ar trebui să vorbim?
+— Da. Destul cu plânsul. Dar mâinile tale nu le dau drumul.
+— Bine, Maxim. Le poți ține.
+— Cum ești?
+— Când ești lângă mine, îmi e bine.
+— Și mie îmi e bine acum. Dar hai să stabilim să nu ne spunem lucruri care ne-ar putea răni.
+— De acord.
+— Deci, Liza. Cum s-a ajuns aici?
 
-– Давай, наверное, уже поговорим?
-– Да. Хватит плакать. Но руки твои я не отпущу.
-– Хорошо, Максим. Можешь их держать.
-– Как ты?
-– Когда ты рядом, мне хорошо.
-– Мне тоже сейчас хорошо. Но давай договоримся не говорить друг другу ту информацию, которая может нас ранить.
-– Договорились.
-– Итак, Лиза. Как так вышло?
-– Как вышло, так вышло. Но я узнала о том, что ты говорил с Алексом. Хочу узнать, что он тебе сказал, так как мы не разговариваем с того момента, как я покинула Барселону.
-– Он мне сказал, что ты ехала туда с целью познакомиться и что ты всё запланировала заранее. И ещё говорил, что вы с первого дня уже спали вместе.
-– Ты в это веришь?
-– Я не хочу в это верить. Но меня там не было, и я не знаю, что думать.
-– Теперь давай я расскажу, как было на самом деле.
+— Cum s-a ajuns, așa s-a ajuns. Dar am aflat că ai vorbit cu Alex. Vreau să știu ce ți-a spus, pentru că noi nu mai vorbim din momentul în care am plecat din Barcelona.
+— Mi-a spus că ai mers acolo cu scopul de a te cunoaște cu cineva și că ai planificat totul dinainte. Și că din prima zi ați dormit împreună.
+— Tu crezi asta?
+— Nu vreau să cred. Dar eu nu eram acolo și nu știu ce să cred.
+— Atunci lasă-mă să-ți spun cum a fost de fapt. Așadar, Alex zbura spre Barcelona cu escală la Minsk. În avionul care zbura din Minsk spre Barcelona l-a cunoscut pe Ivan. În timpul zborului Alex îi arăta poze și îi povestea cât de frumos e la noi, la Chișinău. Pe una dintre fotografii apăream eu  când ne plimbam împreună. Ivan a început să-l întrebe cine sunt și ce e cu mine. Alex i-a spus că sunt prietena lui și că am un iubit. După asta, Alex a zis că mă poate aduce la Barcelona și să mă prezinte lui Ivan. Așa s-a întâmplat că Ivan plănuia să vină pentru o săptămână în Barcelona, dar a rămas aproape trei. Da, Ivan îmi scria, dar conversația era de nimic. Le spuneam și lui, și lui Alex, că vin doar dacă Ivan pleacă. Într-una din zile, Alex mi-a spus că e singur și că Ivan a plecat. Atunci am decis să vin la Barcelona. Dar la sosire m-a așteptat o surpriză. Alex m-a întâmpinat cu Ivan. Bineînțeles că l-am întrebat imediat pe Alex ce e asta. Mi-a spus că Ivan mai stă câteva zile pentru că a pierdut zborul. Nu am vrut să-ți spun asta la telefon, dar tu deja îi auziseși vocea atunci și ai înțeles totul singur.
+În prima zi am dormit aproape toată ziua după drum. Când m-am trezit, Alex m-a invitat la masă, unde stătea Ivan. Am refuzat și nu am vrut să mănânc cu ei. I-am spus lui Alex că nu voi sta să mă cunosc cu omul ăsta. A doua zi m-am trezit și Ivan nu mai era. Alex mi-a spus că a plecat. Atunci Alex m-a invitat la piscină. Stăteam la piscină și vine Ivan. Am fost în stare de șoc total când l-am văzut. A spus că a încurcat ziua și că zborul lui e mâine. Stăteam și făceam plajă, fără să acord atenție semnelor lui de atenție. Ba îmi aducea de băut, ba mă aștepta cu prosopul când ieșeam din apă. Dar îl ignoram. Tot timpul ăsta mă gândeam doar la tine și îmi era dor. După piscină am venit acasă și te-am sunat imediat. M-am închis în cameră și nu voiam să-i văd. Deja mă gândeam să-ți spun ce se întâmplă aici și că vreau acasă. Dar i-am mai dat o zi să plece. Ei stăteau în bucătărie și discutau ceva. La un moment dat a început cearta între ei. Au început să țipe unul la altul. Abia după asta am înțeles că era încă un plan de-al lor, ca eu să fiu cu Ivan. Am ieșit din cameră și atunci Alex a început să țipe să ieșim, eu și Ivan, din casa lui. Mult timp l-am întrebat ce legătură am eu și ce am făcut. Dar nu a putut explica nimic normal. Am început să plâng și voiam să te sun, dar Ivan m-a apucat și a zis să plecăm mai repede. Ne-am strâns lucrurile și am ieșit din casă. Am intrat în prima cafenea și ne gândeam ce să facem. Am spus imediat că te voi suna și vom decide totul. Dar problema a fost că am uitat încărcătorul la Alex și mi s-a descărcat telefonul. Atunci Ivan a început să caute transport ca să pot ajunge la Chișinău. Dar nu era nimic liber. Cel mai apropiat drum era peste o săptămână. Atunci Ivan a început să-mi caute bilet de avion spre Moscova, iar de acolo urma să zbor spre Chișinău. Ieșea așa că ajungeam la Moscova și a doua zi, noaptea, trebuia să zbor spre Chișinău. Nu puteam și nici nu voiam să te sun, pentru că voiam să-ți fac o surpriză. Am zburat spre Moscova a doua zi. Toată noaptea am vorbit și am înțeles că nenorocirea asta ne-a apropiat foarte tare. Deja stăteam ca niște prieteni. Ajunși la Moscova, m-a dus imediat la el acasă ca să dorm și a doua zi să zbor spre Chișinău. Dar, intrând la el, am băut și ne-am sărutat pentru prima dată. Atunci am decis pentru mine că te-am înșelat și că nu pot să zbor la tine. Eram sigură că îți voi spune și că nu mă vei ierta. Atunci am înțeles că, dacă am făcut o asemenea greșeală, trebuie să rămân cu el și să trăiesc cu păcatul ăsta. Cam asta a fost ce am avut acolo. Toate zilele astea am plâns. Nu puteam fără tine. Ți-am scris o scrisoare și am fost în șoc când mi-ai răspuns cu un singur cuvânt: „OK”. Îmi reporneam telefonul și verificam mereu dacă nu mi-ai mai scris ceva. Dar nu, doar asta ai scris. Nu puteam să cred.
+— Sunt atât de furios că l-am crezut pe Alex. Liza, cum așa? De ce s-a întâmplat asta? De ce ai crezut că nu te-aș fi iertat? Știi cât de mult te iubesc. Știi că te-aș fi iertat orice. De ce nu ai venit? De ce nu m-ai sunat?
+Stăteam ținându-ne de mâini și amândoi ne-am lăsat privirile în jos. Nu puteam să cred ce mi-a povestit. La un moment dat privirile noastre s-au întâlnit și am început din nou să plângem. Momentul a fost întrerupt de telefonul Lizei.
+— Tata mă sună.
+— Atunci răspunde.
+— Nu, nu îi răspund.
+— Ce i-ai spus? Unde ai zis că mergi?
+— I-am spus că am ieșit la plimbare.
+Tatăl ei a mai sunat de două ori, dar ea nu a răspuns. Apoi m-a sunat pe mine.
+— Nu-i răspunde.
+— De ce? Lasă-mă să răspund.
+— Răspunde, dar să nu-i spui că ești cu mine.
+— Ok.
+Adunându-mi gândurile, am răspuns:
+— Alo?
+— Maxim, salut.
+— Bună seara.
+— Unde ești acum?
+— În bar.
+— Liza e cu tine?
+— Nu, bineînțeles. Ce să caute cu mine?
+— Sigur nu e cu tine?
+— Sigur nu e cu mine.
+— Maxim, dacă aflu că e cu tine, te găsesc și îți smulg ouăle cu mâna mea.
+— Pentru ce?
+— Ea are o viață nouă. Un nou iubit. Educat, cu scopuri. Iar tu ești un pierde-vară care nu va ajunge niciodată nimic în viață. Vei rămâne un nimeni.
+— Foarte plăcut să aud asta de la dumneavoastră. De ce nu mi-ați spus asta mai devreme?
+— I-am spus Lizei. Ție nu are rost să-ți spun. Ești prost ca un dop.
+— Atunci să fie cum spuneți dumneavoastră.
+— E cu tine?
+— Asta nu mai contează.
+— Ai înnebunit? Unde ești acum? Unde stați?
+— Sunt atât de prost încât nici nu pot spune adresa unde stau.
+— Cum se numește localul?
+— Vai, nici nu-mi amintesc. Doar v-am spus că sunt prost. Dar dumneavoastră, ca om deștept, ar trebui să mă găsiți. Noapte bună.
+Am închis. El continua să sune și să scrie mesaje, de care eu și Liza râdeam. Ne era bine în momentul ăla.
+— Spune-mi, puiule, vrei să fii cu mine?
+— Și mă vei ierta pentru înșelat?
+— Desigur.
+— Și nici măcar la cea mai mare ceartă nu-mi vei scoate asta în față?
+— Noi o să ne certăm?
+— Maxim, pentru noi cearta e ca sportul. Suntem deja profesioniști în categoria noastră.
+— Nu-ți voi aminti asta, desigur.
+— Atunci am un plan. Trebuie să zbor curând la Moscova. Oricum trebuie să-mi iau lucrurile de la el. A început să ridice mâna la mine pentru că plângeam prea des și îi spuneam că te iubesc și că vreau la tine, și a început să mă bată. Voi zbura la Moscova și îi voi face un scandal. Mă va bate din nou și imediat îmi iau lucrurile și zbor.
+— Vrei să spui că te bate și tu suporți? Liza, ești în toate mințile?
+— Dar ce să fac? Ție ți-am fost infidelă. Părinții l-au cunoscut și le-a plăcut de el. Stau și îndur, ca o proastă.
+— Liza, ce faci? Cum ai ajuns să-ți permiți așa ceva?
+— Prima dată l-am numit din greșeală Maxim, și din nervi a bătut doi trecători. Apoi mi-a spus că și cu mine va fi la fel dacă nu mă opresc. Dar nu puteam. Plângeam mereu după tine și a început să mă bată. Dar hai să nu vorbim acum despre asta. Vreau să ținem planul. O să-mi cumpăr o cartelă nouă și te voi suna eu. Nu vreau ca tata să scoată lista de apeluri și să fie numărul tău acolo. Când voi fi la Moscova, te voi suna pe Skype. Fă-ți acolo un cont cu numele Mary și pune o poză de fată. O să-i spun că vorbesc cu o prietenă și nu va verifica. Eu voi fi mereu cu căști și așa vom putea fi în legătură tot timpul.
+— Mă uimești, Liza. Nici nu pot imagina ce făceai când erai cu mine.
+— N-am făcut niciodată nimic cu tine. Doar mă gândesc la planul ăsta în fiecare zi.
+— Atunci să facem cum spui.
+ Asta e fata mea. Era cea mai tare. Întotdeauna am fost mândru de ea și o admiram.
+ Când tatăl ei a început să sune fără oprire, am decis să ne despărțim. Ea și-a chemat un taxi, iar eu pe al meu, ca să nu mergem în aceeași mașină și să nu fim văzuți de cineva.
 
-Значит, Алекс летел в Барселону с пересадкой в Минске. В самолёте, который летел из Минска в Барселону, он познакомился с Иваном. В ходе полёта он показывал ему фотографии и рассказывал, как красиво у нас в Кишинёве. Тут на одном из фото попала я, когда мы вместе гуляли. Иван начал расспрашивать, кто я и что со мной. Он сказал ему, что я его подруга и что у меня есть парень.
+— Am plecat. Așteaptă apelul meu.
+— Bine, iubirea mea.
+M-a sărutat ca prima dată. Așa cum îmi place mie. Sărutul acela de care îmi era dor. Mușcându-mi buzele și ținându-mă delicat de față. Un sărut despre care poți doar să visezi.
+— Pa, dragostea mea. Plec.
+— Pa, dragostea mea.
+Ea a plecat, iar eu m-am urcat în taxiul meu și am început să citesc tâmpeniile și amenințările tatălui ei. Îmi era indiferent ce scria, pentru că nu aveam nevoie de nimeni în afară de ea. Iar amenințările sunt doar vorbe goale ale unui tată care își iubește fiica și vrea ce e mai bun pentru ea.
 
-После этого Алекс сказал, что может меня привести в Барселону и познакомить с Иваном. Так и вышло, что Иван планировал приехать на неделю, а остался почти на три. Да, Иван мне писал, но разговор был никакой. Я говорила и ему, и Алексу, что приеду только если Иван улетит. В один из дней Алекс мне сказал, что он один и что Иван улетел. Тогда я и решила, что еду в Барселону.
+— Ce idiot. Iar a iertat-o pentru înșelat. I-am spus încă de la prima ei trădare că o va repeta. Oamenii nu se schimbă. Citește mai departe, Alisa.
 
-Но по приезду меня ждал сюрприз. Алекс встретил меня с Иваном. Я, конечно же, сразу спросила Алекса, что это такое. Он мне ответил, что Иван задержался на пару дней, так как потерял рейс. Я не хотела тебе об этом говорить по телефону, но ты сам услышал его голос, когда позвонил.
+A doua zi Liza m-a sunat de pe un alt număr.
+— Salut, Maxim.
+— Salut. Ce ciudat e să văd că mă suni de pe alt număr.
+— Important e să nu-ți schimbi tu numărul. Că te găsesc și de sub pământ.
+— Cu abilitățile tale sunt familiarizat. Cum ești? Cum a fost ieri? Cum e tata?
+— Sunt bine. Tata a țipat, dar i-am spus că aveam telefonul pe silențios și că pur și simplu m-am plimbat. Și chiar dacă aș fi văzut că mă sună, tot nu aș fi răspuns, pentru că voiam să fiu singură.
+— Ne vedem azi?
+— Două zile la rând nu pot ieși și să nu-i răspund. Mai ales că o să mă urmărească, asta e sigur sută la sută.
+— Mi-e dor de tine.
+— Dacă ai ști cât de mult mi-a fost dor de tine și cât de mult îmi e dor acum, nu ai spune asta.
+— Te iubesc.
+— Și eu te iubesc! Gata, închid. Mâine zbor. Ivan mi-a cumpărat biletul. Așa că te sun înainte de zbor și apoi trecem pe Skype.
+— Bine, puiule. Te iubesc și aștept apelul.
+— Și eu te iubesc.
+  Of, cât de greu e totul. Greu să știi că e aici, aproape, și să nu o poți vedea. Și am început să-mi amintesc ce a scris în scrisoare — că vrea să fiu un bărbat adevărat. Poate mâine să nu o mai las să plece? Să o iau la mine și să pun capăt tuturor acestor zboruri? Nu o voi lăsa să plece! Mă va suna și nu îi voi permite să plece! Am intrat imediat pe site-ul aeroportului și am verificat zborurile spre Moscova. Erau patru zboruri pe zi, cu o diferență de doar o oră între ele. Să ghicesc pe care zbor va fi era greu, dar posibil. Și mai greu era că check-in-ul începea cu două ore înainte de plecare, iar eu nu știam când vor ajunge. Plus că nu știam dacă va fi cu tatăl ei sau nu.
+Cu o oră înainte de decolare, Liza m-a sunat.
+— Maxim, salut! Ce faci?
+— Sunt la aeroport. Am venit să te iau. Nu vreau să te las să pleci ca data trecută.
+— Dragul meu, ce faci? Nu trebuie să faci asta. Și unde ești? Nu te văd.
+— Ce, ești deja aici?
+— Da, am trecut controlul de pașapoarte. Mai departe e doar drumul spre Moscova.
+— Cum așa, Liza? Spune că ți-e rău. Spune că s-a întâmplat ceva acasă. Nu au dreptul să te țină acolo. Eu sigur nu pot intra în zona de așteptare.
+— Nu mă mai lasă înapoi. Am trecut controlul. Apreciez foarte mult că măcar încerci să faci ceva, dar acum nu se mai poate schimba nimic.
+  A fost o dezamăgire. Cum de nu am observat-o? Cum de am ratat-o iar? Am vorbit până în ultimul moment, până la decolare. I-am dat noul meu Skype, pe care îl creasem. Râdeam de poza pe care o pusesem. A spus că nu mai avusese prietene de mult timp, iar acum apăruse o oarecare Mary, pe deasupra și urâtă. Și iată că încep ultimele proceduri înainte de zbor: verificarea biletului, îmbarcarea în autobuzul spre avion. S-a așezat pe locul ei și a venit momentul despărțirii.
+— Gata, asta e. Trebuie să-l sun pe Ivan și să-i spun că decolăm. Te sun imediat ce pot, bine? Te pup și te iubesc. Așteaptă-mă.
+— Zbor plăcut, puiule. Și eu te iubesc foarte mult și te aștept acasă.
+La fel ca prima dată, am privit cum se îndepărtează autobuzul, iar acum urmăream cum se ridică avionul. Un deja-vu neplăcut. Dar nu-mi rămânea decât să aștept. Aveam încredere în ea și în planul ei și știam că asta se va termina foarte curând.
 
-В первый день я почти всё время спала после дороги. Когда проснулась, Алекс пригласил меня за стол, где сидел Иван. Я отказалась и не хотела с ними кушать. Алексу я сказала, что не буду сидеть и знакомиться с этим человеком.
-
-А на второй день я проснулась, а Ивана не было. Алекс сказал, что он уехал. Тогда Алекс пригласил меня на бассейн. Сидя на бассейне, приезжает Иван. Я была в полном шоке, когда увидела его. Он сказал, что перепутал день и что вылет у него завтра.
-
-Я сидела и загоралась, не обращая внимания на все знаки внимания от него: то он приносил мне выпить, то ждал с полотенцем, когда я выходила из воды. Но я игнорировала его. Всё это время я думала только о тебе и скучала.
-
-После бассейна мы пришли домой, и я сразу тебе позвонила. Я закрылась в комнате и не хотела их видеть. Я уже думала тебе сказать о том, что тут происходит, и что я хочу домой. Но дала ещё один день, чтобы он уехал.
-
-Они сидели на кухне и что-то обсуждали. В какой-то момент начался скандал. Они начали кричать друг на друга. Это я только потом поняла, что это был ещё один их план, чтобы я была с Иваном. Я вышла из комнаты, и тут Алекс начал кричать, чтобы Иван и я вышли из его дома. Я долго спрашивала, при чём тут я и что я сделала. Но он так и не мог нормально объяснить.
-
-Я начала плакать и хотела тебе позвонить, но Иван взял меня и сказал, чтобы мы быстрее ушли. Мы собрали вещи и вышли из дома. Зашли в первое кафе и думали, что делать. Я сразу сказала, что позвоню тебе, и мы решим всё. Но дело в том, что я забыла у Алекса зарядку, и у меня сел телефон.
-
-Тут Иван начал искать транспорт, чтобы я могла приехать в Кишинёв. Но ничего свободного не было. Ближайший выезд был через неделю. Тогда Иван начал искать мне билет на самолёт в Москву, и оттуда я уже должна была полететь в Кишинёв. Выходило так, что я прилетела бы в Москву, и на второй день ночью должна была вылететь в Кишинёв.
-
-Тебе я не могла и не хотела звонить, так как хотела сделать тебе сюрприз.
-
-Вылетели мы в Москву на второй день. Всю ночь мы общались, и я поняла, что эта беда нас очень сильно сблизила. Мы уже сидели как друзья.
-
-Прилетев в Москву, он сразу же привёз меня к себе домой, чтобы переночевать и на второй день полететь в Кишинёв. Но, зайдя к нему, мы выпили и впервые поцеловались. Я тогда решила для себя, что я тебе изменила и что не могу к тебе полететь. Я была уверена, что скажу тебе об этом, и ты меня не простишь.
-
-Тогда я поняла, что если я сделала такую ошибку, то должна остаться с ним и жить с этим грехом. Вот примерно то, что у меня было там. Я все эти дни плакала. Я не могла без тебя.
-
-Я написала тебе письмо и была в шоке от того, что ты ответил мне только одним словом: «ОК». Я перезагружала телефон и всегда проверяла, не написал ли ты что-то ещё. Но нет, ты только это написал. Я не могла в это поверить.
-– Я в таком гневе от того, что поверил Алексу. Лиза, как так? Почему это произошло? Почему ты подумала, что я бы тебя не простил? Ты знаешь, как сильно я тебя люблю. Ты ведь знаешь, что я прощу тебе всё, что угодно. Почему ты не прилетела? Почему не позвонила?
-
-Мы сидели, держась за руки, и оба опустили глаза. Я не мог поверить в то, что она мне рассказала. В какой-то момент наши взгляды встретились, и мы снова начали плакать. Этот момент прервал звонок на телефон Лизы.
-
-– Мне папа звонит.
-– Ну так ответь.
-– Нет, я не отвечу ему.
-– А что ты ему сказала? Куда ты пошла?
-– Я сказала, что вышла погулять.
-
-Её отец позвонил ещё два раза, но она не отвечала. Затем он позвонил мне.
-
-– Не отвечай ему.
-– Почему? Дай я отвечу.
-– Ответь, но не говори ему, что ты со мной.
-– Ок.
-
-Собравшись с мыслями, я ответил на звонок.
-
-– Алло?
-– Максим, привет.
-– Добрый вечер.
-– А ты сейчас где?
-– В баре.
-– А Лиза с тобой?
-– Нет, конечно. Что ей делать со мной?
-– Точно не с тобой?
-– Точно не со мной.
-– Максим, если я узнаю, что она с тобой, я тебя найду и лично оторву тебе яйца.
-– За что?
-– У неё новая жизнь. Новый парень. Образованный и с целями. А ты, охломон, у которого никогда и ничего не будет в жизни. Ты останешься никем.
-– Очень приятно это слышать от вас. Почему вы мне раньше этого не говорили?
-– Говорил Лизе. А тебе нет смысла говорить. Ты тупой как пробка.
-– Ну пусть будет так, как вы говорите.
-– Она с тобой?
-– Это уже не важно.
-– Ты охуел? Где ты сейчас? Где вы сидите?
-– Я настолько тупой, что даже не могу сказать адрес, где сейчас сижу.
-– Как называется заведение?
-– Ой, да я не помню. Говорю же, что тупой. Но вы, как умный человек, должны меня найти. Доброй ночи.
-
-Я бросил трубку. Он продолжал звонить и писать сообщения, над которыми мы с Лизой смеялись. Нам было хорошо в тот момент.
-
-– Скажи мне, малыш, ты хочешь быть со мной?
-– А ты меня простишь за измену?
-– Конечно.
-– И даже при самой большой ссоре ты не будешь вспоминать?
-– А мы будем ссориться?
-– Максим, для нас ссора – это как спорт. Мы уже профессионалы в своей категории.
-– Не буду вспоминать, конечно.
-
-– Тогда у меня есть план. Я должна полететь в Москву скоро. Как ни крути, я должна забрать свои вещи от него. Он начал поднимать на меня руку за то, что я слишком часто плакала и говорила ему, что люблю тебя и хочу к тебе, и он начал меня избивать. Я полечу в Москву и устрою ему скандал. Он меня побьёт, и я сразу заберу вещи и прилечу.
-– Ты хочешь сказать, что он тебя бьёт, и ты терпишь? Лиза, ты в своём уме?
-– А что мне делать? Тебе я изменила. Родители с ним познакомились, и он им понравился. Вот сижу и терплю, как дура.
-– Лиза, ты чего? Как так вышло, что ты такое позволяешь?
-– В первый раз я случайно назвала его Максимом, и он от нервов побил двух прохожих. А потом сказал, что со мной будет то же самое, если я не перестану. Но я не могла. Я всегда по тебе плакала, и он начал меня избивать. Но давай сейчас не об этом. Я хочу, чтобы мы держались нашего плана. Я куплю новую карточку и буду сама тебе звонить. Не хочу, чтобы папа взял распечатку звонков, и там был твой номер. Когда я буду в Москве, я буду звонить тебе в Skype. Сделай себе там аккаунт под именем Мэри и поставь фото девушки на заставку. Я скажу ему, что говорю с подругой, и он проверять не будет. А я всегда буду в наушниках, и так мы можем быть на связи всегда.
-
-– Ты меня удивляешь, Лиза. Я даже представить не могу, сколько ты делала, когда была со мной в отношениях.
-– Никогда с тобой ничего не делала. Просто об этом плане думаю каждый день.
-– Давай тогда сделаем, как ты говоришь.
-
-Это моя девочка. Она была самой крутой у меня. Я всегда ею гордился и восхищался.
-
-Когда её папа начал звонить бесконечно, мы решили разойтись. Она вызвала себе такси, а я своё, чтобы не ехать на одной машине и не попасть на глаза кому-то.
-
-– Я поехала. Жди моего звонка.
-– Хорошо, любимая.
-
-Она поцеловала меня, как в первый раз. Так, как я люблю. Тот поцелуй, по которому я скучал. Прикусывая мои губы и держа меня нежно за лицо. Поцелуй, о котором можно только мечтать.
-
-– Пока, моя любовь. Я поехала.
-– Пока, моя любовь.
-
-Она уехала, а я сел в своё такси и начал читать бредни и угрозы её отца. Мне было параллельно, что он пишет, так как мне никто не нужен, кроме неё. А угрозы — это пустые слова от отца, который любит свою дочь и хочет для неё лучшего.
-
-– Какой же он идиот. Он опять простил ей измену. Я ещё при первой её измене сказал, что она это повторит. Люди неизменны. Зачитывай дальше, Алиса.
-
-На второй день Лиза позвонила мне с другого номера.
-
-– Привет, Максим.
-– Привет. Как непривычно, что ты мне звонишь с другого номера.
-– Главное, чтобы ты свой номер не менял. А то я найду тебя из-под земли.
-– С твоими способностями я знаком. Как ты? Как вчера? Как папа?
-– Я хорошо. Папа кричал, но я ему сказала, что поставила телефон на беззвучный и просто гуляла. И даже если бы заметила, что он звонит, то не ответила бы, так как хотела побыть одной.
-– Мы сегодня встретимся?
-– Два дня подряд я не смогу выходить и не отвечать ему. Тем более он будет за мной следить, это 100%.
-– Я скучаю по тебе.
-– Если бы ты знал, как я по тебе скучала и как я сейчас скучаю, ты бы не говорил такое.
-– А я тебя люблю.
-– И я тебя! Всё, я кладу трубку. Я завтра улетаю. Иван купил мне билет. Так что я перед вылетом наберу, и уже будем на Skype.
-– Хорошо, малыш. Люблю тебя и жду звонка.
-– И я тебя люблю.
-
-Ох, как же сложно всё это. Сложно думать о том, что она здесь, рядом, а ты не можешь её увидеть. И я начал вспоминать то, что она написала в письме — что хочет, чтобы я был настоящим мужчиной. А может, мне завтра не пускать её? Забрать её к себе и положить конец всем этим перелётам? Я точно не дам ей улететь! Она мне позвонит, и я не позволю ей уехать!
-
-Сразу же зашёл на сайт аэропорта и посмотрел вылеты в Москву. В день было четыре рейса, и разница между ними — всего час. Угадать, на каком она рейсе, было сложно, но возможно. Ещё труднее было то, что регистрация проходила за два часа до вылета, и я не знал, когда они приедут. Плюс, я не знал, будет ли с ней её папа или нет.
-
-За час до вылета мне позвонила Лиза.
-
-– Максим, привет! Что делаешь?
-– Я в аэропорту. Приехал тебя забрать. Не хочу отпускать тебя как в прошлый раз.
-– Милый, ты чего? Не надо этого делать. И где ты стоишь? Я тебя не вижу.
-– Ты что, уже здесь?
-– Да, я уже прошла паспортный контроль. Дальше только дорога в Москву.
-– Ну как так, Лиза? Скажи, что тебе плохо. Скажи, что дома что-то случилось. Они не могут тебя там держать. Я точно не могу к тебе пройти в зону ожидания.
-– Меня не пустят обратно. Я прошла контроль. Я, конечно, очень ценю то, что ты хоть пытаешься что-то сделать, но сейчас уже ничего не изменить.
-
-Это было разочарование. Как я мог её не заметить? Как я мог опять её упустить? Мы проговорили всё время до самого вылета. Я дал ей свой новый Skype, который создал. Мы смеялись над фотографией, которую я поставил. Она сказала, что у неё давно не было подруг, а сейчас какая-то Мэри появилась, да ещё и некрасивая.
-
-И вот уже идут последние процедуры перед вылетом: проверка билета, посадка в автобус до самолета. Она уселась на своё место, и настал момент прощания.
-
-– Ну вот и всё. Я вылетаю. Мне надо позвонить ещё Ивану и сказать, что я вылетаю. Я наберу тебя, как смогу, хорошо? Целую и люблю тебя. Жди меня.
-– Хорошего полёта, малыш. Я тебя тоже очень люблю и жду дома.
-
-Так же, как в первый раз, я смотрел, как отъезжает автобус, так и сейчас я наблюдал, как взлетает самолёт. Это какое-то неприятное дежа вю. Но мне осталось только ждать. Я был уверен в ней и в её плане и знал, что это очень скоро закончится.
-
-– Два раза она ему изменила и два раза он её упустил. Эта пара достойна друг друга по умственному развитию. Любовь ли это или тупость?
-– Думаю, что это любовь!
+— De două ori l-a înșelat și de două ori a pierdut-o. Cuplul ăsta e pe măsura celuilalt la nivel intelectual. E iubire sau prostie?
+— Cred că e iubire.
         `
     },
     {
         id: 'ch9',
-        title: 'Игра в прятки',
+        title: 'Hai să ne ascundem',
         content: `
-Примерно в десять вечера того же дня мне поступил первый звонок в Skype от Лизы.
+Pe la zece seara, în aceeași zi, am primit primul apel pe Skype de la Liza.
+— Mary, salut. Am ajuns cu bine, totul e ok.
+— Salut, puiul meu. Mi-e teamă că o să mă obișnuiesc cu numele ăsta dacă nu vii mai repede.
+— Hahaha. Da, totul e bine. Ivan m-a întâmpinat și stă aici lângă mine. Ne ascultă.
+— Nu cumva îmi aude vocea? Că nu știu să imit vocile lui Mary.
+— Nu, desigur.
+— Vorbești cu căști?
+— Da. Apropo, mulțumesc pentru cadou. Mi-au fost foarte utile în avion.
+Atunci am realizat cât de obsedată de detalii este Liza, încât și-a dat seama încă din aeroport că, dacă vorbește cu mine, o poate face doar cu căști, ca Ivan să nu-mi audă vocea. Și și-a cumpărat căști din aeroport. Nu-i așa că e cea mai minunată femeie din lume?
+— Cum a fost zborul? Asta întreb eu, nu Mary.
+— Totul a fost bine. N-am putut dormi. Am zburat și m-am gândit că deja mi-e dor de tine.
+— De mine sau de Mary?
+— Mi-e dor, Mary, și tare. Vreau deja ori să mă întorc, ori să vii tu.
+— Mary poate să vină. Dar lui Ivan nu i-ar plăcea o asemenea prietenă.
+— Ar fi o situație amuzantă. Tu ce faci?
+— Și mie mi-e dor de tine. Cum te-au primit?
+— Bine. Stă aici și mă mângâie pe cur.
+— Pula mea, de ce îmi spui asta? Sunt nervos că respiră lângă tine, iar tu îmi spui că te mângâie.
+— Iartă-mă. N-am gândit.
+— O să am o seară minunată gândindu-mă că ești cu el în același pat. Liza, poți să nu te culci cu el până vii? Ar fi și un motiv să facă scandal.
+— O să încerc. Dar e stupid.
+— Te rog să încerci din răsputeri. Că nu-mi mai găsesc locul. Aș vrea să-ți dai jos căștile, să-mi audă vocea, să înceapă scandalul și să vii cât mai repede.
+— Nu așa. Știu ce fac și știu cum o să rezolv. Gata, fug. Noapte bună. Și un sărut de la mine, bebelușului.
+— Bebelușului? Nu-mi ajunge că sunt Mary, mai am și copil?
+— Da. E foarte dulce. Vă pup pe amândoi și pe mâine.
+— Pe mâine, iubita mea. Te iubesc tare și mi-e dor de tine.
+  După ce a închis, am început să fumez țigară după țigară. În cap, gânduri despre ce face acum. Îl sărută? Se fut deja? Îi face un blowjob? E un căcat total, simt că-mi explodează capul. Gândurile astea te pot duce la acțiuni imprevizibile. Așa că trebuie să mă calmez. Ce pot decide acum? Am pierdut-o singur de două ori și acum stau și mă gândesc ce fac ei acolo. Chiar dacă se fut, Liza poate să mintă și să spună că n-a fost nimic.
+  N-am dormit toată noaptea și îi scriam periodic, doar ca să verific ce face. Dacă nu răspundea mai mult de cinci minute, în capul meu erau imagini cu el futând-o în toate pozițiile. De ce am fost de acord să plece? Bou prost.
 
-– Мэри, привет. Я долетела и у меня всё хорошо.
-– Ну привет, малыш. Я боюсь, что я привыкну к этому имени, если ты быстро не приедешь.
-– Хахаха. Да, всё хорошо. Вот Иван встретил и сидит тут рядом. Слушает нас.
-– А он мой голос не слышит случайно? А то я не умею имитировать голоса Мэри.
-– Нет, конечно.
-– Ты через наушники говоришь?
-– Да. Кстати, спасибо за подарок. Очень пригодились в самолёте.
+  A doua zi Ivan a plecat la muncă și am putut vorbi normal. Fără Mary inventată și fără Ivan lângă ea. Prima mea întrebare a fost dacă au dormit împreună. A spus că nu. Dar Liza e o mincinoasă profesionistă și știe că e mai bine să mă mintă „pentru bine”, decât să mă asculte acum. În timpul conversației am realizat că o vreau și am decis să încercăm sexul la telefon pentru prima dată. Nu a fost o discuție banală — am pornit video și ne-am arătat, desigur, părțile intime. Cum se mângâia… Ce pizdă frumoasă are. Îngustă, ca un fir. Se mângâia pe clitoris și a introdus încet un deget. Totul delicat, fără grabă. Când a avut orgasm, am văzut tremurul  picioarelor ei. Mi-am amintit cum termina cu mine. Tremura atât de tare încât nu reușeam s-o liniștesc câteva minute. În momentele acelea voiam să fiu cu ea și în ea.
 
-Тут я понял, что Лиза настолько заморочена на мелочах, что даже поняла в аэропорту, что если и говорить со мной, то она сможет только через наушники, чтобы мой голос не был слышен Ивану. И она купила наушники в аэропорту. Не правда ли, она самая замечательная на свете?
+— Liza, când vrei să începi planul de a veni la Chișinău?
+— Cred că chiar de azi.
+— Ce vrei să faci?
+— O să inventez ceva. Nu știu încă. Dar te vreau mult.
+— Atunci îți cumpăr bilet pentru mâine.
+— Nu te grăbi. Poate o să suporte. Îți spun când situația va fi clară că plec.
+— Doar să nu ajungă să te lovească.
+— Dacă nu mă lovește, n-am motiv să plec. Toți se ceartă, nu e un motiv să zbor. Mai ales că mă ține.
+— De ce nu-i spui că mă iubești și vrei acasă?
+— Exact ăsta e planul. Gata, Mary, fug, a venit Ivan de la muncă. Te pup și îți doresc o seară bună.
+— Bebelușul nu-l pupi?
+— Și pe bebeluș îl pup.
+— Ar fi bine să-mi pupi bebelușul, că a uitat deja sărutările tale.
+— Nu-i nimic. Vin și-l pup de o să-l satur.
+— Seară bună. Te iubesc!
+— Și vouă seară bună.
 
-– Как полёт прошёл? Это уже я интересуюсь, а не Мэри.
-– Всё хорошо. Спать не могла. Летела и думала о том, что уже скучаю по тебе.
-– По мне или по Мэри?
-– Скучаю, Мэри, и сильно. Уже хочу или обратно, или чтобы ты прилетела.
-– Мэри прилететь может. Но вот Ивану не понравится такая подружка.
-– Смешная будет ситуация. А ты что делаешь?
-– Я тоже по тебе скучаю. И как тебя встретили?
-– Хорошо. Вот сидит и ждёт, пока договорю, и гладит меня по попе.
-– Блядь, зачем ты мне это говоришь? Я и так на нервах, что он вообще дышит в твою сторону. А ты мне говоришь о том, что он гладит тебя.
-– Прости. Не подумала.
-– Вот у меня сейчас будет хороший вечер, думая о том, что ты с ним в одной постели. Лиза, а ты можешь не ложиться с ним до того времени, пока не прилетишь? И как бы это и будет поводом, чтобы он устроил скандал.
-– Я постараюсь. Но это будет глупо.
-– Я уж попрошу тебя стараться сильно. А то я себе не нахожу места уже. Хочу, чтобы ты сейчас сняла наушники, и он услышал мой голос, и начался скандал, и чтобы ты прилетела.
-– Нельзя так. Я знаю, что я делаю, и знаю, как я это решу. Всё, я бегу. Тебе спокойной ночи. И поцелуй от меня, малыша.
-– Малыша? Мне и так как бы неприятно, что я Мэри, так у меня ещё и ребёнок есть?
-– Да. Он очень сладкий. Целую вас и до завтра.
-– До завтра, милая. Я тебя сильно люблю и скучаю.
+Planul Lizei urma să intre în acțiune. Săracul Ivan. Degeaba s-a băgat unde e prea multă iubire. Mai ales degeaba s-a pus cu Liza. Mă bucuram că azi se va decide soarta noastră. Dar nici nu-mi puteam imagina ce urma.
 
-Как только она положила трубку, я сразу принялся курить сигареты одну за одной. В голове мысли о том, что она сейчас делает. Целует ли она его? Начали ли они трахаться? Делает ли она ему сейчас минет? Это просто пиздец, и чувствую, у меня взорвётся голова. Эти мысли могут довести тебя до непредсказуемых действий. Поэтому лучше всего успокоиться. Вот что я сейчас решу? Сам её упустил два раза, а сейчас думаю о том, что они там делают. Даже если они сейчас трахаются, то Лиза может мне соврать и сказать, что ничего не было.
+I-am scris toată seara și toată noaptea. Nu răspundea. Am sunat-o — nimic. Am stat ca pe ace până dimineața. Am adormit doar de epuizare. Trei zile nu mi-a răspuns. În a patra zi a trimis o poză cu vânătăi pe mâini. Am sunat imediat.
 
-Не спал всю ночь и периодически писал Лизе. Хотел тем самым проверить, что она делает. И если она не отвечала больше 5 минут на сообщение, то в голове были картинки о том, как он сейчас её имеет в разных позах. Зачем я согласился на то, чтобы она уехала? Баран тупой.
-На следующий день Иван ушёл на работу, и мы могли поговорить нормально. Без выдуманной Мэри и Иваном, сидящего рядом. Конечно же, первым моим вопросом было, переспали ли они. Она ответила, что ничего не было. Но Лиза ещё та врунья и знает, что лучше мне соврать во благо, чем сейчас выслушивать от меня. В ходе разговора я понял, что хочу её, и мы решили впервые попробовать секс по телефону. Но это не был банальный разговор, а мы включили видеозвонок и, конечно же, показывали свои интимные места. Как же она себя ласкала. У неё такая красивая пися. Как ниточка узкая. Она ласкала себя по клитору и аккуратно ввела в себя один палец. Она делала это нежно и неторопливо. А когда она кончила, то я увидел привычную для меня дрожь в её ногах. Я вспомнил, как она кончала при нашем сексе. Её так трясло, что я не мог успокоить её пару минут. В те моменты я хотел быть с ней и в ней.
+— Iubire, ce-s vânătăile astea?
+— Ivan m-a bătut.
+— Pentru ce, futu-i?
+— I-am spus că te iubesc și vreau la tine. M-a apucat și a început să mă bată. A spus că o să scoată iubirea asta din mine.
+— Dă-mi numărul lui. Vin la Moscova și-l tai în pizda mă-sii.
+— Nu are rost. Nu pot pleca.
+— De ce?
+— Mi-a rupt pașaportul.
+— Du-te dracu’…
+— Da. A spus că nu mă lasă să plec. Chiar dacă vii, eu nu pot zbura. A sunat părinții mei, le-a spus că m-a bătut și și-a cerut scuze. Tata, când a aflat că m-a bătut din cauza ta, i-a spus că a procedat corect și că trebuia să mă bată mai tare, să nu-mi mai treacă prin cap de tine. Dar eu nu pot așa, Maxim. Te iubesc și vreau să fiu cu tine. Te iubesc atât de mult…
+  Liza spunea asta printre lacrimi. Plângea cum n-am mai auzit-o niciodată. Am plâns și eu și nu știam ce să fac.
+— Și eu te iubesc tare. O să aflu cum rezolvăm problema pașaportului.
+— Nu se poate, Maxim. Mi-l fac doar la ambasadă, dar el l-a tăiat bucăți. Ca să fac altul îmi trebuie originalele — certificatul de naștere sau buletinul. Toate sunt acasă, iar părinții nu le dau. La fel și cu pașaportul alb. Rămân aici. Nu știu cum să plec. Am vrut să chem poliția, dar mi-au spus că aici îi apără pe „ai lor”, iar pe mine nu mă ascultă nimeni. Sunt moldoveancă, cică am venit să mă îmbogățesc. Așa că stai și rabdă.
+— Ce țară e asta? Ce legi au? Liza, dacă o rogi pe bunica ta să ia actele?
+— Doar peste o lună, când pleacă părinții. Dar nu pot aștepta. Te vreau.
+— O să rezolv. Promit.
+— Cum? N-am pașaport, părinții sunt de partea lui, el mă bate, iar tata spune că e corect.
+— Rezolv. Te sun mai târziu.
 
-– Лиза, когда ты хочешь начать свой план по прилёту в Кишинёв?
-– Думаю, уже сегодня.
-– Что ты хочешь сделать?
-– Ну я придумаю что-то. Пока не решила. Но я очень хочу к тебе.
-– Тогда давай я тебе куплю билет на завтра.
-– Не торопись. Может, он стерпит. Я скажу тебе, когда будет обстановка такой, что я прям буду уверена, что уезжаю.
-– Только не доводи до того, чтобы он тебя ударил.
-– Так если он меня не ударит, то у меня и не будет повода уехать. Ты же понимаешь, что все ругаются и что это не повод улетать. Тем более он меня будет держать.
-– Почему бы тебе не сказать ему о том, что ты меня любишь и хочешь домой?
-– У меня именно этот план. Ну ладно, Мэри. Я бегу, а то вот и Иван приехал с работы уже. Я тебя целую и хорошего вечера желаю.
-– А малыша не целуешь?
-– И малыша целую.
-– Было бы хорошо, чтобы ты моего малыша поцеловала. А то уже забыл он твои поцелуи.
-– Ничего страшного. Приеду и зацелую его.
-– Хорошего вечера. Люблю!
-– И вам хорошего вечера.
-И так план Лизы скоро должен прийти в действие. Ох и бедный Иван. Зря он влез туда, где много любви. Особенно зря он полез против Лизы. Я был рад тому, что сегодня решится наша судьба. Но я даже представить не мог, что произойдёт дальше.
-Я писал ей весь вечер и всю ночь, чтобы узнать, что у неё там. Но она мне не отвечала. Я звонил ей, и она так же не отвечала. Я сидел как на иголках и не мог уснуть до утра. В конце концов, я просто уснул от переутомления. Три следующих дня Лиза не отвечала мне на сообщения. Ответ пришёл аж на четвёртый день в виде фотографии, где у неё синяки на руках. Я сразу же позвонил ей, чтобы узнать, что с ней.
+  Am sunat imediat cumnatul meu, care are autobuze pe ruta Chișinău–Moscova. Mi-a propus variante. Cea mai bună - duplicat de certificat de naștere din arhivă.
+Am rezolvat cu 50 de euro. Am luat duplicatul. I-am scris — nu răspundea. După două zile a sunat cu camera pornită, Ivan lângă ea.
 
-– Зайка, это за синяки такие?
-– Меня Иван избил.
-– За что, блядь?
-– Я ему сказала, что люблю тебя и хочу к тебе. Он меня схватил и начал бить. Сказал, что выбьет из меня эту любовь.
-– Блядь, дай мне его номер телефона. Дай, я с ним поговорю. Я прилечу сейчас в эту Москву и зарежу его к хуям.
-– Нет смысла этого делать, милый. Я не смогу улететь.
-– Почему?
-– Он порвал мой паспорт.
-– Да ну нахуй?
-– Да, он сказал, что меня он никуда не отпустит. Так что даже если ты прилетишь, я не смогу улететь. Он позвонил моим родителям, признался, что избил меня, и попросил прощения. Когда папа узнал, что он меня избил из-за тебя, он сказал ему, что тот правильно поступил, и что надо было меня избить так, чтобы у меня никогда не возникло мыслей о тебе. Но я не могу так, Максим. Я люблю тебя и хочу быть с тобой. Как же я тебя люблю, если бы ты только знал.
 
-Лиза произнесла эти слова сквозь слезы. Она ревела так сильно, что я никогда не слышал её в таком состоянии. Я тоже расплакался в тот момент и не знал, как решить всю эту проблему.
 
-– Я тоже тебя сильно люблю, малыш. Давай я выясню, как можно решить твою проблему с паспортом, чтобы ты смогла прилететь.
-– Никак не решить, Максим. Я уже узнавала. Мне нужно сдать свой паспорт и сделать новый в посольстве, но он порезал его на мелкие куски. Там ничего не осталось. Чтобы сделать новый, мне нужны оригиналы свидетельства о рождении или внутреннего паспорта, а эти документы у меня дома, и родители не хотят их отдавать. И такая же процедура если сделать белый паспорт. Я тут остаюсь, Максим. Я не знаю, как улететь. Я хотела вызвать полицию и написать заявление, сказав, что он порвал паспорт, надеясь, что мне сделают новый. Но мне сказали, что в России будут защищать „своих”, а меня никто не станет слушать. Я молдаванка, и мол, приехала здесь нажиться. Так что сиди и терпи.
-– Что за страна такая? Какие законы и принципы у них? Лиза, а если ты попросишь бабушку забрать твои документы, а я их у неё заберу и перешлю тебе в Москву?
-– Это можно будет сделать через месяц, когда родители уедут в Европу, и в квартире останется только бабушка. Но я не могу тут так долго сидеть. Я хочу к тебе.
-– Я тоже очень хочу, чтобы ты приехала быстрее. Я обещаю, что решу твой вопрос. Я узнаю, как сделать так, чтобы ты смогла прилететь.
-– Как это сделать, Максим? У меня нет паспорта. Родители на его стороне. Он меня бьет, а папа говорит, что так и надо. Как тебе решить этот вопрос?
-– Я решу. Обещаю. Наберу тебя позже и скажу, что мы будем делать, ок?
-– Ок.
-– Жди звонка. Люблю тебя.
-– И я тебя.
+  Planul „Liza și aluziile” a început.
+  Am înțeles că, dacă îi trimit pur și simplu duplicatul, Ivan îl va vedea. Așa că trebuia să fac un colet și să ascund documentul. Dar unde? Și atunci mi-a venit idea să pun duplicatul într-un plic cu inscripția „Pentru Liza, de la iubitul ei bebeluș”. Voi desena un desen copilăresc și îl voi pune în plic, împreună cu duplicatul.
+— Ivan poate să nu vină. Coletul va fi mic.
+— Ivan nu mă lasă niciun pas singură. Tot timpul crede că o să fug sau că o să mă văd cu Maxim.
+— Ce prost. Cu Maxim n-ai niciun viitor, și tu însăți ai spus că nu ai nimic pentru el.
+— Am spus, dar nu mă crede.
+— Bine, Liza. Atunci mâine îți trimit coletul și îți dau numărul șoferului. Va fi la Moscova a doua zi.
+— Bine, dragă. Aștept informațiile și îți mulțumesc dinainte.
+Doi spioni sub acoperire — exact despre noi e vorba. Așa să mă ascund n-am mai făcut-o niciodată. Iar dacă te gândești că mă ascund împreună cu iubita mea de noul ei iubit, e de-a dreptul o absurditate.
 
-Сразу же я позвонил шурину, который имел свои автобусы по маршруту Кишинев – Москва. Он знал больше, чем я, о том, как пересечь границу. Я рассказал ему всю историю, и он предложил пару вариантов. Первое – заплатить людям, чтобы они проникли в дом Лизы и украли документы, а он их привезёт в Москву. Второй вариант – забрать её с Москвы и на границе заплатить таможенникам, чтобы провезти её. Но сумма будет очень большой. Третий вариант – позвонить нашему знакомому из центрального архива и получить дубликат её свидетельства о рождении, на основе которого она сможет сделать паспорт. Этот вариант мне показался самым лучшим.
+— Cât de absurd sună. Un tip și iubita lui se ascund de noul ei tip?! Aici ori iubirea e prea mare, ori Maxim e un cerb cu coarne, care crede în toate. Deși ce-l judec, dacă și eu am iubit până la nebunie și am făcut totul pentru femeia iubită.
+— Ați spus ceva, Maxim?
+— Da! Parcă îmi amintesc ceva, dar neclar. Cred că chiar trebuie să merg la un specialist în memorie. Cum le zice, Alice?
+— Psihiatru, neurolog sau neuropsiholog. Dar în orice caz e nevoie de o consultație la terapeut sau geriatru.
+— Cine e geriatru?
+— Medicul geriatru este un specialist care se ocupă de tratamentul complex al persoanelor vârstnice și foarte vârstnice.
+— Alice, par eu bătrân?
+— Nu, Maxim, nu păreți.
+— Atunci de ce îmi spui asta?
+— Nu eu spun, ci internetul. Dumneavoastră ați pus întrebarea, iar eu citesc răspunsul din rețea.
+— Alege-ți cuvintele când vorbești cu mine.
+— Bine, Maxim. Pe viitor voi fi mai atentă.
+— Despre ce vorbeam înainte? Aha, mi-am amintit! Am iubit odată o fată până la nebunie. I-am iertat tot. Și atunci am înțeles un lucru - când există iubire, nu mai e loc de supărări. Dacă iubești, ierți orice. O singură dată îți vei arăta orgoliul și nu-ți vei mai găsi niciodată fericirea.
+— Vă amintiți ce i-ați iertat?
+— Nu exact, dar a fost și o infidelitate.
+— Și cum ați iertat-o? V-a fost greu?
+— Nu-mi amintesc! Jur că nu-mi amintesc și sigur îmi trebuie pediatru.
+— Geriatru.
+— Da, da. Cred că într-adevăr îmbătrânesc. Citește mai departe, Alice, că încep să mă enervez de la faptul că îmi amintesc ceva, dar neclar. Parcă informația vine și pleacă imediat.
 
-Я позвонил знакомому и пригласил его на встречу, так как все предполагали, что их прослушивают. В Молдове, если хочешь подчеркнуть свою важность, при встрече нужно начинать с фразы: прости, что не мог говорить по телефону, меня прослушивают. Хотя, по сути, никому ты не нужен, и слушать тебя никто не хочет.
+  I-am trimis coletul. L-a primit cu bine și mi-a scris imediat:
+— Dragă, am primit coletul, iar desenul copilului e un adevărat masterpiece. Hahaha.
+— Hahaha, dar ce credeai? Micul nostru Picasso.
+— A plecat, așa că mă poți suna.
+— Alo. Iubire, salut.
+— Salut, Maxime, Mary. Nici nu mai știu cum să-ți spun.
+— Ți-am zis că mă obișnuiesc cu numele. Așa că fă mai repede pașaportul și vino.
+— Nu pot repede. E mereu lângă mine. Merge cu mine  la magazin. La toaletă, dacă merg, las telefonul și tableta. Nu are deloc încredere în mine.
+— Căcat. Spune-i că ai nevoie uneori să fii singură. Fă scandal sau ceva.
+— Am făcut. M-a pocnit de câteva ori, așa că nu mai vreau și mi-e frică să-i mai spun ceva.
+— E terminat. De ce te bate? De ce nu-mi spui? De ce nu te-ai urcat în mașina cumnatului și nu ai plecat? Liza, îi permiți prea multe. Și mi se pare că deja îți place.
+— Maxim, ești prost? Cum să-mi placă să fiu bătută și urmărită? Pur și simplu nu știu ce să-i spun ca să înceapă să mă lase singură. Și sincer, azi, când am luat coletul, mă așteptam să te văd. Eram sigură 100% că vei veni cu coletul și mă vei lua. Dar iar m-am înșelat și m-am întristat. Și deja mi se pare că nu vrei să mă vezi.
+— Iar eu sunt vinovat? Iar vrei să mă acuzi de ceva? Eu vreau să-l fac pe el vinovat și tu să pleci frumos, cu argumente.
+— Maxim, dacă ai fi vrut să mă întorci, m-ai fi întors demult. Dar lași totul pe umerii mei. Eu trebuie să decid cum să vin și să inventez scheme. Iar tu puteai măcar o dată să arăți curaj și să vii să mă iei. Ți-aș fi trimis adresa.
+— Acum vrei să ne certăm sau ce se întâmplă?
+— Vreau să-ți spun că aici nu trăiesc o viață dulce. Și tu știi asta. Dacă mi-ar fi spus cineva că te bate cineva sau te umilește, aș fi plecat imediat. Nu mi-e frică de nimic când e vorba de tine. Iar tu stai la Chișinău și nu faci nimic. Îți spun că mă bate și tu îmi scrii să zbor. Nu așa se face, Maxim. Trebuie să vii și să mă iei. Îți sunt recunoscătoare pentru duplicat, dar mă așteptam să vii cu cumnatul și să mă luați. Dar n-a fost să fie. Se pare că nu-ți dorești chiar atât de mult.
 
-На встрече он сказал мне заполнить бланк с её данными и сказал ждать от него ответа. Через час он сообщил: пятьдесят евро, и приходи забирай дубликат. Странно, что говорить по телефону нельзя, а цену озвучивать можно. Но главное – он решил мой вопрос. Забрав дубликат, я сразу же начал писать Лизе о том, что я решил её проблему. Но она опять не отвечала на письма. Ответила только на второй день и то не могла говорить, так как Иван был рядом. Она звонила с включенной камерой и периодически показывала, как лежит рядом.
+— Iubire, ce acuzații sunt astea? Am rezolvat actele tale în câteva zile. În fiecare zi îmi fac griji pentru tine.
+— Așa nu procedează cei care iubesc. Ții minte când în club te priveau trei tipi cu ochi răi și arătau cu degetul la tine? Și cum m-am aruncat asupra lor și te-am apărat? Așa trebuie să lupți și tu pentru mine. Până acum sunt doar vorbe, Maxim. Gata, fug la duș și probabil mă culc. O să încerc să fac pașaportul și să vin. Dar momentan am un singur plan - să-i arăt iubirea mea și să intru în încrederea lui. Asta înseamnă să mă culc cu el de 3–4 ori pe zi și să-l sărut toată ziua. Iartă-mă că-ți spun asta, dar nu văd alte variante ca să rezolv mai repede. Știu că te doare să auzi, dar mă doare și pe mine când văd că nu faci nimic ca să mă iei. Seară bună.
+— Seară bună, Liza.
 
-У меня камера была всегда выключена, так как Мэри без макияжа не включала её. Я сказал ей о том, что сделал дубликат, и что она может пойти сделать себе паспорт. Я видел, как она хочет что-то сказать, но не может это сделать вслух. Тогда она снова включила свою артистку и, с улыбкой произнесла:
+— Curvă, cât de dreptate are. Demult ar fi venit și ar fi luat-o. Știe să-l pună la punct.
+— Măiestru, nu-i așa?
+— Nu e maestră, e magistru!
+— Acțiunile au atras întotdeauna femeile. Ce le șoptesc bărbații la ureche nu mai funcționează dacă nu există fapte.
+— Absolut de acord, Alice. Mai demult puteai păcăli o fată spunându-i că ești marinar și ai văzut lumea. Acum ele cer ca marinarul să le arate lumea, nu să o povestească. Nu mai trăim în vremurile alea. Eu, de exemplu, vorbesc cu tine — un mic dispozitiv informativ care îmi face viața mai ușoară. Acum 20 de ani nimeni nu și-ar fi imaginat asta. Timpul se schimbă prea repede, iar femeile cer altceva — acțiuni.
+— Sunt de acord, Maxim. Continui lectura.
 
-– Давай тогда я тебе буду писать, раз малыш спит, и ты не можешь говорить.
+  După ce a închis, m-a lăsat fără cuvinte. Doar ea știa să mă manipuleze așa, și totul argumentat. Eu chiar doar vorbeam și nu făceam nimic ca s-o aduc înapoi. Și de ce n-am plecat cu cumnatul la Moscova? E dus cu capul și poate bate pe oricine. Cum fac femeile asta? Ne lasă vinovați și fără drept de replică.
 
-И положила трубку. Звуковой сигнал на телефоне уведомил меня о получении нового сообщения.
-„Мэри, мне, конечно, очень приятно, что ты хочешь мне прислать сумку с гостинцами из Молдовы, но не надо себя утруждать. Поставь там пару упаковок конфет и вино, а остальное у нас тут есть. Я буду забирать посылку с Иваном и не хочу, чтобы он таскал тяжёлое.”
+  Nu am vrut să-i scriu și am vrut să o las câteva zile, să se liniștească. Și mie îmi trebuia timp să decid definitiv cum o voi aduce înapoi. Dar a fost încă o greșeală. Lăsând o femeie singură cu un bărbat care o tratează ca pe o regină, trebuie să înțelegi că va ceda și se va îndrăgosti.
 
-Операция „Лиза и намёки” началась. Я понял, что если вышлю ей просто дубликат, то Иван это увидит. Поэтому нужно было сделать посылку и спрятать документ. Но куда? И тут мне пришла в голову идея: поставить дубликат в конверт с надписью „Лизе от её любимого малыша”. Я нарисую рисунок детского характера и положу этот рисунок в конверт вместе с дубликатом.
+  După două zile, Liza mi-a scris o scrisoare în care mi-a cerut să nu fac nimic și doar să o aștept. Să nu-i scriu și să nu o sun. Mi-a mai scris o dată că nu fac nimic și că îmi va arăta ea cum se rezolvă lucrurile ca un adult. Ce să faci? Așteptăm.
 
-– А Иван может не приходить. Там будет маленькая посылка.
-– Иван меня не отпускает ни на шаг. Он всё время думает, что я убегу или увижусь с Максимом.
-– Вот дурачок. У тебя с Максимом нет будущего, и ты сама говорила, что у тебя нет к нему ничего.
-– Говорила, но он не верит.
-– Хорошо, Лиза. Я тогда завтра передам тебе посылку и скину номер телефона водителя. Он в Москве будет на следующий день.
-– Хорошо, дорогая. Тогда жду от тебя информации и спасибо тебе заранее.
+  Nu mai vorbeam cu ea de mai bine de o lună. M-a blocat pe Skype ca să nu o pot suna. Numărul meu de telefon l-a trecut pe lista neagră. De asemenea, nu răspundea nici la mesajele și apelurile prietenilor cărora le cerusem să o contacteze. Nu știam nimic despre ea și cum se simte. Nu mi-am schimbat numărul doar ca să poată, dacă vrea, să mă sune. Dar timpul trecea, iar ea nu suna și nu scria. Știam doar, prin Roman, că la ea totul e bine. Îi scria uneori și îi cerea să-mi transmită asta.
+  Am început din nou să beau alcool, dar nu atât de mult ca înainte. Totuși, nu mai vedeam sensul vieții și urcam des pe acoperiș, uitându-mă în jos. Să sar sau nu? Fără ea nu pot trăi. Dar ce rezolv prin săritură? Faptul că ea va ști că cineva s-a aruncat din cauza ei? La ce i-ar folosi asta? Vor trece câțiva ani și va uita. Ce mai fac prin asta? Ivan va fi bucuros că i-a dispărut concurentul. Iar Liza va înțelege că n-am avut curaj să vin să o iau, dar am avut curaj să sar. Dar părinții mei? Ce va fi cu ei? O vor blestema pe Liza în fiecare zi. Și, în final, nu rezolv nimic dacă sar. Doar demonstrez că sunt un idiot.
 
-Два шпиона под прикрытием – это прям про нас. Так шифроваться мне ещё не приходилось. А если подумать, что я шифруюсь со своей любимой девушкой от её нового парня, то это вообще бред.
-
-– Как же бредово это звучит. Парень со своей любимой девушкой шифруются от её нового парня?! Тут либо любовь сильная, либо Максим олень рогатый, который во всё верит. Хотя что я его сужу, если и сам любил до безумия и делал всё ради любимой.
-– Вы что-то вспомнили, Максим?
-– Да! Что-то вспоминаю, но не чётко. Я думаю, мне действительно надо обратиться к специалисту по памяти. Как их там называют, Алиса?
-– Психиатр, невролог или нейропсихолог. Но в любом случае нужна консультация терапевта либо гериатра.
-– Кто такой гериатр?
-– Врач гериатр – это медицинский специалист, занимающийся комплексным лечением людей пожилого и старческого возраста. Услуги гериатра заключаются в диагностике, лечении и профилактике заболеваний с учётом особенностей преклонного возраста.
-– Алиса, я похож на пожилого?
-– Нет, Максим, вы не похожи.
-– Тогда зачем ты мне это говоришь?
-– Это не я говорю, а интернет. Вы мне задали вопрос, и ответ на него я вам зачитываю из всемирной сети.
-– Выбирай, пожалуйста, выражения, когда со мной говоришь.
-– Хорошо, Максим. В дальнейшем буду более аккуратно искать для вас информацию.
-– О чём это мы говорили до этого? Вспомнил! Любил я однажды одну девушку до безумия. Прощал ей всё. И тогда я понял одну вещь! Когда есть любовь, то нет места обидам. Ты, если любишь, то простишь всё на свете. Однажды ты покажешь свою гордость и больше никогда не найдёшь своё счастье.
-– Помните ли вы, что вы ей простили?
-– Не помню точно, но измена там была.
-– И как вы её простили? Трудно ли вам было?
-– Не помню! Честное слово не помню, и мне точно нужен педиатр.
-– Гериатр.
-– Да-да. По-моему, я действительно старею. Зачитывай дальше, Алиса, а то я начинаю нервничать от того, что я что-то вспоминаю, но это совсем не чётко. Будто информация приходит и уходит сразу же.
-
-Я выслал ей посылку. Она её благополучно получила и сразу же отписалась мне:
-– Дорогая, я получила посылку, и рисунок малого вообще шедевр. Хахаха.
-– Хахаха, ну а ты как думала? Наш маленький Пикассо.
-– Он ушёл, так что можешь меня набрать.
-– Алло. Зай, привет.
-– Привет, Максимка, Мэри. Я уже не знаю, как тебя называть.
-– Я тебе говорил, что привыкну к этому имени. Так что давай быстрее делай паспорт и прилетай.
-– Я не могу быстро, Максим. Он всегда рядом. Он даже в магазин идёт со мной. А в туалет, если иду, то оставляю телефон и планшет. Он мне не доверяет вообще.
-– Пиздец. Ну скажи, что тебе надо иногда побыть одной. Устрой скандал или ещё что-то.
-– Устраивала. Он меня пару раз треснул, так что я больше не хочу и боюсь ему что-то говорить.
-– Вот конченый. Хули он тебя бьёт? Почему ты мне не говоришь это? Почему не села в машину к шурину и не поехала с ним? Лиза, ты позволяешь ему слишком многое. И мне кажется, что тебе это уже нравится.
-– Максим, ты дурак? Как мне может нравиться то, что меня бьют и следят за мной? Я просто не знаю, что ему сказать, чтобы он начал отпускать меня одну. И если честно, я сегодня, когда забирала посылку, ожидала увидеть тебя. Я была уверена на 100% в том, что ты приедешь с посылкой и заберёшь меня. Но я опять ошиблась и расстроилась. И уже мне кажется, что ты не хочешь меня видеть.
-– Опять я виноват? Ты опять меня хочешь обвинить в чём-то? Я хочу сделать так, чтобы он был виноватым, и чтобы ты красиво уехала оттуда и с аргументами.
-– Максим, если бы ты хотел меня вернуть, то ты бы меня вернул давно. А ты оставляешь всё на мои плечи. Я должна решать, как мне прилететь, и придумывать схемы. А ты мог бы уже один раз проявить мужество и приехать, и забрать меня. Адрес я бы тебе скинула.
-– Ты сейчас хочешь со мной поссориться или что это сейчас у нас?
-– Я хочу тебе сказать о том, что я тут не сладкую жизнь переживаю. И ты это прекрасно знаешь. Если бы мне сказали, что тебя кто-то избил или издевается над тобой, то я бы в ту же минуту выехала и разобралась с этим. Мне ничего не страшно, если дело касается тебя. А ты сидишь в Кишиневе и ничего не делаешь. Я говорю тебе, что меня бьют, а ты мне пишешь, чтобы я прилетела. Не так надо делать, Максим. Надо прилететь и забрать меня. Я, конечно, благодарна, что ты мне сделал дубликат документа и что я в любой удобный момент пойду и сделаю себе паспорт, но я думала, что ты приедешь с шурином и заберёте меня. Но, увы, я этого не дождалась. Видимо, не так уж сильно ты и хочешь этого.
-– Зайка, что за обвинения сейчас в мою сторону? Я решил за пару дней вопрос с документами твоими, чтобы ты выехала нормально. Я каждый день переживаю о тебе.
-– Не так поступают те, кто любят. Помнишь, когда на тебя в клубе смотрели три парня с злыми глазами и тыкали пальцем? И вспомни, как я на них кинулась и защитила тебя. Вот так и ты должен за меня бороться. А пока это только слова, Максим. Ладно, я бегу в душ и, наверное, сразу лягу спать. Я постараюсь сделать паспорт и прилететь. Но пока у меня один вариант в голове: показать ему свою любовь и войти в его доверие. А это значит, что мне надо с ним спать по 3–4 раза в день и целовать его весь день. Прости, что говорю тебе это, но я не вижу других вариантов, чтобы решить всё быстрее. Понимаю, что тебе больно сейчас это слышать, но и мне больно, когда я вижу, что ты не действуешь и ничего не делаешь, чтобы меня забрать. Хорошего вечера.
-– Хорошего вечера, Лиза.
-– Сука, как же она права. Он давно бы уже прилетел и забрал бы её. Ну как же она умеет его ставить на место.
-– Мастерский, не так ли?
-– Она не мастер, она магистр!
-– Действия всегда привлекали девушек. То, что мужчины рассказывают девушкам на ушко, уже совсем не работает, если мужчина не предпринимает действий.
-– Абсолютно согласен с тобой, Алиса. Раньше девушек можно было обмануть рассказом о том, что ты моряк и видел много стран. Сейчас же девушки требуют от моряка, чтобы он им этот мир показал, а не рассказывал задумчивым видом. Не в те времена живём, Алиса. Я вот, например, говорю с тобой. Маленькое информативное устройство, которое делает мне жизнь легче. А ещё двадцать лет назад никто такое и представить не мог. Время меняется слишком быстро, и девушки уже другое требуют — действия.
-– Согласна с вами, Максим. Зачитываю книгу дальше.
-Бросив трубку, она оставила меня без слов. Только она могла так мною манипулировать, и это всё аргументированно. Я же действительно только говорю и ничего не делаю для её возврата. И почему я не поехал с шурином в Москву? Он же у меня больной на голову и может любого избить. Вот как она это делает? Как вообще женщины это делают? Оставляют нас виноватыми и без права на реплику.
-Я не хотел ей ничего писать и хотел оставить её на пару дней, чтобы она отошла. Да и мне надо было время, чтобы я решил раз и навсегда, как я её верну. Но это была ещё одна моя ошибка. Оставляя наедине девушку с парнем, который к ней относится как к королеве, вы должны понимать, что она сдастся и влюбится в него.
-По истечению двух дней Лиза мне написала письмо, в котором она попросила меня ничего не делать и просто ждать её. Не писать ей и не звонить. Она ещё раз написала мне о том, что я ничего не делаю, и она мне покажет, как надо решать вопросы по-взрослому. Ну что поделать? Ждем!
-Я не говорил с ней уже больше месяца. Она заблокировала меня в Skype, чтобы я ей не звонил. Мой номер телефона она поставила в черный список. Она также не отвечала на письма и звонки друзей, которых я просил ей позвонить. Я не знал, что с ней и как она. И я не менял свой номер телефона только чтобы она смогла мне позвонить. Но шло время, а она не звонила и не писала. Я знал только, что у неё всё хорошо — от Романа. Она ему иногда писала и просила, чтобы он мне это передал.
-Я опять присел на алкоголь, но уже не так сильно, как раньше. Но я также не видел смысла жизни и частенько поднимался на крышу и смотрел вниз. Прыгать или нет? Я без неё жить не смогу. Но что я решу этим прыжком? То, что она будет знать о том, что из-за неё кто-то сбросился? Да зачем ей это надо? Ну пройдёт пару лет — и забудет. Что ещё я этим сделаю? Иван будет рад тому, что у него исчез конкурент. А ещё Лиза поймёт, что я не имею смелости приехать и отбить её, но зато на прыжок у меня смелости хватило. А родители? Что с ними будет? Они будут проклинать Лизу каждый день. И в итоге я ничего не решу, если прыгну. Только докажу, что я идиот.
-– Суицид – это удел одновременно слабого и сильного человека. Слабый он, потому что он кроме этого выхода другого ничего придумать не может. А сильный, потому что он на этот шаг решился. Но есть ещё и такое понятие, как нервный срыв, при котором ты просто не осознаёшь, что ты делаешь. Как во сне всё — ты понимаешь сон, но ты его не контролируешь. Прав был автор, когда он написал о том, что он прыжком ничего не решит радикально. Разве что облегчение самому себе. Но окружающим он принесёт большую боль. Нет таких ситуаций, которые нельзя решить. На всё нужно время. Алиса, ты согласна?
-– Абсолютно согласна с вами, Максим.
+— Sinuciderea este soarta unui om care este, în același timp, slab și puternic. Slab, pentru că nu poate găsi altă ieșire. Puternic, pentru că a decis să facă acest pas. Dar există și noțiunea de cădere nervoasă, când pur și simplu nu îți dai seama ce faci. Ca într-un vis - îl înțelegi, dar nu îl controlezi. Autorul avea dreptate când a scris că prin săritură nu rezolvă nimic radical. Poate doar își ușurează propria stare. Dar celor din jur le va aduce o durere mare. Nu există situații care să nu poată fi rezolvate. Totul ține de timp. Alice, ești de acord?
+— Absolut de acord cu dumneavoastră, Maxim.
         `
     },
     {
         id: 'ch10',
-        title: 'Заряжать бесполезно',
+        title: 'A încărca e inutil',
         content: `
-Спустя год мне на телефон поступает звонок.
-– Алло!
-– Алло! Ты свой номер так и не поменял?
-– Я его не меняю только потому, что знаю, что ты должна мне позвонить.
-– Но я тебе год не звонила.
-– Я жду твоего звонка всегда. Даже если я уже буду совсем старым и хрипучим дедом, то звонок от тебя для меня всегда будет как новой каплей воздуха.
-– Ты, как всегда, умеешь расположить меня к себе. Ну и как у тебя дела?
-– Без тебя плохо и ты это знаешь. Без тебя цветы завяли, а с тобой они цвели и без воды.
-– Может, тебе уже перестать думать про меня? Может тебе найти девушку? Любить ты умеешь, и это редкость в наши дни. Думаю, найдётся та, которая действительно тебя достойна.
-– Я тебя люблю и только с тобой хочу быть.
-– Максим, это не жизнь. Иван мне сделал предложение. Он готов поменять свою религию ради меня. Он меня держит на руках всегда, и я чувствую себя защищённой. Он точно горы свернёт, чтобы меня вернуть, если потеряет. А ты самую большую свою любовь ждёшь. Не надо ждать, Максим, надо действовать. Если бы я сейчас ждала от тебя что-то, то мы бы так же жили в Кишинёве с родителями, работали бы за копейки и кушали бы то, что нам родители приготовили. А я так не хочу, Максим. Я девочка взрослая и хочу взрослых отношений. Когда мужик в доме — мужик! А не просто человек, с которым сексом занимаешься. Я не хочу тебя обижать, Максим, но тебе надо ещё вырасти до того момента, когда ты будешь мужчиной. То, что у тебя в паспорте двадцать семь лет, ещё не значит, что ты мужчина. Есть люди, которые в восемнадцать намного мужественнее, чем сорокалетние мужчины. Любовь и семья — это ответственность, а не просто выходы в кофе, парк либо ложиться рядом перед сном. Прости, что грубо говорю, но если я тебе этого не скажу, то ты так и будешь стоять на месте и ждать, пока я приеду. Ты очень умный парень, которых я раньше не встречала. Как ты любишь и заботишься — это что-то нереальное. Но забудь меня, Макс, и иди дальше.
-– Каждый твой звонок — это напутствие на то, чтобы я тебя забыл. Лиза, ты думаешь, это легко? Думаешь, я не пробовал? Меня даже алкоголь уже не спасает. Это очень сложно, когда мне о тебе напоминает всё. Я хожу по улице, по которой мы ходили, захожу в рестораны и вспоминаю, как мы там сидели, я даже захожу в магазин и вспоминаю, как на кассе ты украла жвачку, так как ты знала, что у меня не было денег, а ты их хотела. Мне о тебе даже воздух напоминает. А ты говоришь, чтобы я тебя забыл! Это намного сложнее, чем ты можешь себе представить.
-– Я знаю, какого это, Максим! Я тебя тоже не могу забыть, иначе я бы не звонила тебе и не интересовалась тобой.
-– Ты мне звонишь с молдавского номера, ты что дома?
-– Да, я сегодня прилетела!
-– Может увидимся?
-– А ты сможешь себя удержать в руках и не бросаться на меня?
-– Думаю, нет.
-– Вот если сможешь и дашь мне слово, то встретимся.
-– Даю тебе слово.
-– Мне нужно в центр к швее. Я скину тебе адрес и жду тебя там через час.
-– Договорились.
+După un an de tăcere, pe telefonul meu intră un apel.
 
-– Вот зачем она так с ним, Алиса? Что за игра в «подойди – отойди»?
-– Не могу знать, Максим, почему девушки так себя ведут. Любовь — это постоянные качели, которые несут тебя то вверх, то вниз.
-– С таких качелей человек может сорваться в какой-то момент. А если на них долго кататься, то и стошнить может. Надеюсь, ты понимаешь, о чём я.
-– Я вас прекрасно понимаю. Но до сих пор люди не могут чётко объяснить, что такое любовь и как себя вести, когда любишь. Это всегда разные чувства и разные подходы к человеку. Это большая редкость — когда ты находишь человека, который подходит тебе на все 100%.
-– Помню, как я однажды нашёл такого человека. Мы подходили друг другу на все 100%. Она была просто изумительной.
-– Могу я продолжить чтение?
-– Ты мне даже вспомнить не даёшь те чувства. Каждый раз, когда я напоминаю себе про ту девочку, ты меня перебиваешь.
-– Простите, Максим. Была пауза, и я хотела уточнить, могу ли я продолжить.
-– Зачитывай. И так уже сбила все мысли.
+— Alo!
+— Alo! Nu ți-ai schimbat nici până acum numărul?
+— Nu l-am schimbat doar pentru că știam că trebuie să mă suni.
+— Dar eu nu te-am sunat un an întreg.
+— Eu aștept apelul tău mereu. Chiar dacă voi fi deja un moș complet bătrân și răgușit, apelul tău pentru mine va fi mereu ca o nouă gură de aer.
+— Ca de obicei, știi să mă faci să mă apropii de tine. Și cum îți merge?
+— Fără tine e rău și știi asta. Fără tine florile s-au ofilit, iar cu tine înfloreau și fără apă.
+— Poate ar trebui să nu mai gândești la mine? Poate să-ți găsești o fată? Știi să iubești, iar asta e o raritate în zilele noastre. Cred că se va găsi una care chiar te merită.
+— Te iubesc și doar cu tine vreau să fiu.
+— Maxim, asta nu e viață. Ivan mi-a făcut o cerere în căsătorie. E gata să-și schimbe religia pentru mine. Mă poartă mereu în brațe și mă simt protejată. El sigur va muta munții ca să mă recâștige dacă mă va pierde. Iar tu îți aștepți cea mai mare iubire. Nu trebuie să aștepți, Maxim, trebuie să acționezi. Dacă eu aș fi așteptat ceva de la tine, am fi trăit tot în Chișinău cu părinții, am fi lucrat pe bani de nimic și am fi mâncat ce ne-ar fi gătit părinții. Iar eu nu vreau asta, Maxim. Sunt o fată matură și vreau relații mature. Când bărbatul din casă e bărbat! Nu doar cineva cu care faci sex. Nu vreau să te rănesc, Maxim, dar mai trebuie să crești până în momentul în care vei fi bărbat. Faptul că ai douăzeci și șapte de ani în pașaport nu înseamnă că ești bărbat. Sunt oameni care la optsprezece ani sunt mult mai bărbați decât unii de patruzeci. Dragostea și familia sunt responsabilitate, nu doar ieșiri la cafea, parc sau a te întinzi lângă cineva seara. Iartă-mă că vorbesc dur, dar dacă nu-ți spun asta, vei sta pe loc și vei aștepta până când voi veni eu. Ești un băiat foarte deștept, cum n-am mai întâlnit. Felul în care iubești și ai grijă e ceva ireal. Dar uită-mă, Max, și mergi mai departe.
+— Fiecare apel al tău e ca un îndemn să te uit. Liza, tu crezi că e ușor? Crezi că n-am încercat? Nici alcoolul nu mă mai salvează. E foarte greu când totul îmi amintește de tine. Merg pe strada pe care mergeam împreună, intru în restaurante și-mi amintesc cum stăteam acolo, intru chiar și într-un magazin și-mi amintesc cum ai furat guma de mestecat la casă, pentru că știai că n-aveam bani și tu o voiai. Până și aerul îmi amintește de tine. Iar tu îmi spui să te uit! Asta e mult mai greu decât îți poți imagina.
+— Știu cum e, Maxim! Nici eu nu te pot uita, altfel nu te-aș fi sunat și nu m-aș fi interesat de tine.
+— Mă suni de pe un număr moldovenesc, ești acasă?
+— Da, am ajuns azi.
+— Ne vedem?
+— Și o să te poți controla și să nu te arunci asupra mea?
+— Cred că nu.
+— Dacă vei putea și îmi dai cuvântul, atunci ne vedem.
+— Îți dau cuvântul.
+— Trebuie să merg în centru, la croitoreasă. Îți trimit adresa și te aștept acolo peste o oră.
+— De acord.
 
-Как и все, кто переживает такие моменты после долгой разлуки, я размышлял: как поприветствовать её? Обнять ли? Поцеловать ли? Она же из тех девочек, которая может обидеться на любые мои действия, а я хочу, чтобы всё было идеально. Дойдя вовремя до места, куда она попросила прийти, я её не находил. Написав сообщение с вопросом, где она и когда будет, я получил ответ:
-«Максим! Ты за столько лет ещё не научился тому, что я всегда опаздываю? Я еду и скоро буду.»
+— De ce face asta cu el, Alice? Ce joc e ăsta „vino – pleacă”?
+— Nu pot ști, Maxim, de ce se comportă așa fetele. Dragostea sunt niște leagăne continue care te duc ba sus, ba jos.
+— De pe asemenea leagăne omul poate cădea la un moment dat. Iar dacă te dai mult, ți se poate face și greață. Sper că înțelegi despre ce vorbesc.
+— Vă înțeleg perfect. Dar oamenii încă nu pot explica clar ce este dragostea și cum să te comporți când iubești. Sunt mereu sentimente diferite și abordări diferite. E o mare raritate să găsești un om care să ți se potrivească sută la sută.
+— Îmi amintesc cum odată am găsit o astfel de persoană. Ne potriveam sută la sută. Era pur și simplu uimitoare.
+— Pot continua lectura?
+— Nici măcar nu mă lași să-mi amintesc acele sentimente. De fiecare dată când îmi amintesc de fata aceea, mă întrerupi și mă oprești.
+— Iertați-mă, Maxim! A fost o pauză și am vrut să întreb dacă pot continua lectura.
+— Citește. Oricum mi-ai încurcat toate gândurile.
 
-Как же меня это рассмешило. Даже через год после разлуки она не изменилась — всё так же опаздывает, как и раньше. Стоя и перечитывая это сообщение раз за разом, вдруг вдалеке я узнал знакомую походку. Это была Лиза. Ну до чего же она красива!
+  Ca toți cei care trec prin astfel de momente după o despărțire lungă, mă gândeam cum s-o salut. S-o îmbrățișez sau nu? S-o sărut sau nu? Ea e genul de fată care se poate supăra la orice gest al meu, iar eu vreau ca totul să fie perfect. Ajungând la timp la locul unde mi-a cerut să vin, n-am găsit-o. I-am scris mesaje întrebând unde este și când vine, iar răspunsul a fost: “Maxim! După atâția ani tot n-ai învățat că eu întârzii mereu? Sunt pe drum și ajung curând.”
+  M-a amuzat teribil. Chiar și după un an de când nu ne-am văzut, nu se schimbase deloc și întârzia la fel ca pe vremea când eram împreună. Stăteam și reciteam mesajul iar și iar, când, deodată, în depărtare am recunoscut mersul ei. Era Liza. Doamne, cât de frumoasă era!
 
-– Привет, Максим!
-– Привет, Лиза!
+— Salut, Maxim!
+— Salut, Liza! — ne-am salutat oficial, de parcă eram la o întâlnire de afaceri.
+— Maxim, pot să te întreb ceva?
+— Poți.
+— De cât timp nu m-ai văzut?
+— Cam de un an.
+— Ți se pare normal să nu mă vezi un an și să vii fără flori? Despre asta îți vorbeam, Maxim, că ești încă foarte tânăr. Un bărbat care spune că iubește și e gata să mute munții pentru tine vine cu flori la întâlnire. Așa, ca să ții minte.
+— Ai decis chiar din prag să-mi dai un pumn în nas? M-am grăbit spre tine și n-am vrut să întârzii.
+— Locuiești tot acolo?
+— Da.
+— Sub blocul tău e un magazin de flori. Îți lua un minut să alegi flori frumoase și un minut să plătești. Diferența dintre un băiat și un bărbat e că băiatul caută scuze, iar bărbatul acționează. Nu ți-o spun cu răutate, Maxim, ci ca să înțelegi mai bine despre ce vorbeam.
+— Nu așa mi-am imaginat întâlnirea noastră de azi.
+— Nici eu nu m-am gândit că Maximul meu a crescut și a început să mă înțeleagă. Că va acționa ca un bărbat, nu ca un copil. Iartă-mă că dau exemplu, dar dacă Ivan nu m-ar fi văzut un an, ar fi cumpărat cele mai scumpe flori și, la întâlnire, s-ar fi aruncat asupra mea cu sărutări. În astfel de momente înțeleg cât de importantă sunt pentru cineva.
+— Ne-am înțeles că mă voi controla!
+— Mă doare-n pulă ce ne-am înțeles. Tu, dracu’, îmi spui că nu poți trăi fără mine. Păi când oamenii nu pot trăi fără ceva, rup asta cu dinții. Iar tu stai frumos și aștepți să-ți aducă cineva totul și să facă altcineva pentru tine. Eu mă ascund și-l mint pe iubitul meu doar ca să te văd. Tata a vrut să vină cu mine și a trebuit să fiu rea cu el doar ca să te văd. Mi-am luat, dracu’, un alt număr în secret ca să te pot suna. Tu ce ai făcut?
+— E un căcat total. Nu-ți convine niciodată nimic.
+— Nu contează dacă sunt eu sau o altă fată, trebuie, dracu’, să dovedești că o iubești.
+— Dovezile tale de iubire sunt să cumperi flori?
+— Da, Maxim! Da! Și încă o dată da!
+— Iartă-mă, te rog, pentru greșeala asta făcută la întâlnirea noastră. Continuăm dialogul sau schimbăm subiectul?
+— Schimbăm, desigur. Trebuie să merg la croitoreasă, la etajul patru. Hai cu mine și așteaptă-mă pe coridor, te rog, și după putem sta acolo de vorbă.
+— Vom vorbi pe coridor? Nu putem merge undeva și să stăm ca niște oameni normali?
+— Nu vreau să mă vadă cineva cu tine. Vorbim pe coridor dacă vrei. Dacă nu, nu te țin.
+— Mergem la croitoreasa ta și te aștept.
 
-Официально мы поприветствовали друг друга, будто встречаемся на деловой встрече.
+Cum vi se pare o astfel de întâlnire a doi îndrăgostiți? Leagăne sau dreptate? A procedat corect că mi-a spus asta sau trebuia să închid ochii? Urcam scările în tăcere, de parcă mergeam cu mama acasă după o ședință cu părinții, unde i se spusese despre comportamentul meu. Ea a intrat la croitoreasă, iar eu m-am așezat pe pervaz pe coridor. Gândul că sunt un dobitoc nu mă părăsea. Am tot ce-mi trebuie ca să fac fata asta fericită și mama copiilor mei. Iar eu știu doar să trimit scrisori și plângeri despre cât de rău îmi e fără ea. După vreo trei minute, Liza a ieșit zâmbind, ca și cum nimic nu s-ar fi întâmplat.
 
-– Максим, можно вопрос?
-– Можно.
-– Сколько ты меня не видел?
-– Примерно год.
-– Ты думаешь, это нормально — когда ты меня год не видел и пришёл без цветов? Вот о чём я тебе и говорю, Максим: ты ещё совсем юный. Мужчина, который говорит, что любит и готов горы свернуть ради девушки, приходит на встречу с цветами. Это тебе так, на заметку.
-– Ты решила прямо с порога мне по носу дать? Я спешил к тебе и не хотел опоздать.
-– Ты живёшь там же?
-– Да.
-– Под твоим домом цветочный магазин. Тебе нужно было потратить одну минуту, чтобы выбрать красивые цветы, и одну минуту, чтобы рассчитаться. Разница между мальчиком и мужчиной в том, что мальчик ищет оправдания, а мужчина действует. Я говорю это не со зла, Максим, а чтобы ты лучше понял то, о чём мы говорили.
-– Не так я себе представлял нашу сегодняшнюю встречу.
-– Я тоже думала, что мой Максим повзрослел и начал меня понимать. Что он будет действовать как мужчина, а не как ребёнок. Прости, что приведу пример, но если бы Иван не видел меня год, он бы купил самые дорогие цветы и при встрече набросился бы на меня с поцелуями. Именно в такие моменты я понимаю, насколько я дорога человеку.
-– Так мы же договорились, что я буду держать себя в руках!
-– Похуй, о чём мы договаривались. Ты, блядь, говоришь, что жить без меня не можешь. Так вот: когда люди не могут жить без чего-то, они зубами это вырывают. А ты стоишь такой красивый и ждёшь, чтобы тебе всё принесли и сделали за тебя. Я скрываюсь и вру своему парню только чтобы увидеть тебя. Мой папа хотел поехать со мной, и мне пришлось нагрубить ему, чтобы вырваться. Я купила скрытно другой номер, чтобы тебе позвонить. А что сделал ты?
-– Это пиздец какой-то. Тебе вообще не угодить никогда.
-– Не важно, я это или другая девочка — ты должен, блядь, доказывать, что ты любишь.
-– Твои доказательства любви — это купить цветы при встрече?
-– Да, Максим. Да! И ещё раз да!
-– Простите меня, пожалуйста, за этот ёбаный промах при нашей встрече. Мы продолжаем в том же духе или меняем тему?
-– Меняем, конечно. Мне надо к швее на четвёртый этаж. Идём со мной, подождёшь меня в коридоре, и потом можем посидеть там и поговорить.
-– Мы будем говорить в коридоре? Мы что, не можем куда-то пойти и посидеть как нормальные люди?
-– Я не хочу, чтобы меня видели с тобой. Мы будем говорить в коридоре, если хочешь. Если нет — я тебя не держу.
-– Идём к твоей швее, и я подожду.
+— Ți-a fost dor?
+— N-am apucat. Mă gândeam la ce mi-ai spus.
+— Gânditul nu-i pentru tine, Maxim. Trebuie să acționezi.
+— Mulțumesc pentru vorbele bune și pentru sarcasm.
+— Nu lua asta prea aproape de inimă. Știi că îmi place să glumesc, dar în același timp sunt foarte directă.
+— Ție ți-ar prinde bine să înveți să netezești colțurile în conversații.
+— Ție ți-ar prinde bine să nu mai creezi colțuri.
+— M-am gândit la ceva în cele trei minute de așteptare. Spui că te ascunzi de iubitul tău și de părinți ca să mă vezi, da?
+— Da.
+— Și în același timp ai sărit pe mine cu reproșuri că n-am cumpărat flori, da?
+— Da.
+— Atunci explică-mi: dacă îți cumpăram flori, cum intrai cu ele în casa în care locuiești cu părinții tăi?
+— Maxim, nu sunt proastă, aș fi inventat ceva.
+— De exemplu?
+— De exemplu, nu mă enerva acum. Iar m-ai prins cu șmecheriile tale.
+— Când e vorba să mă acuzi, ești eroină, dar când trebuie să explici ce faci mai departe, începi imediat să te enervezi.
+— Ți-am spus că ești foarte deștept?
+— Ai spus.
+— Ei bine, asta e dovada. Ești atât de deștept încât asta m-a atras cel mai mult la tine. Dacă veneai cu flori, m-aș fi bucurat foarte tare. Iar dacă apărea întrebarea ce facem cu ele și cum intru în casă, cred că tu ai fi găsit o soluție.
+— Vrei să spui că la mine îți place doar mintea? Faptul că sunt frumos nu te-a atras de la început?
+— Doar mintea. Bărbații inteligenți au fost întotdeauna iubiți de femei. Un bărbat frumos e așa, pentru distracții și de bifat.
+— Eu cred că voi iubiți inteligența doar la bărbații frumoși. Îți dau un exemplu. Sunt în lume mulți matematicieni, fizicieni și filosofi extrem de inteligenți. Dar arată ca niște savanți tipici. I-ai alege?
+— Cred că nu.
+— Despre asta vorbesc. Dacă un bărbat e frumos și deștept, atunci există șansa ca o femeie să fie nebună după el. Nu spune că dacă un bărbat are doar una dintre aceste calități, veți visa să construiți o relație cu el. Cu unul frumos și prost — sigur nu. Cu unul deștept, dar urât, veți construi o relație doar dacă e fabulos de bogat.
+— Bine, Maxim, sunt de acord. M-ai cucerit prin faptul că ești simpatic și deștept. Altfel nici nu m-aș fi uitat la tine.
+— O să stăm aici așa?
+— Și ce ai vrea?
+— Să mergem și să stăm undeva ca niște oameni normali.
+— Știi ce vreau eu?
+— Ce?
+— Vreau să intrăm în toaleta aia, să stau în patru labe și tu să intri în mine, ca atunci când eram împreună. Când o făceam peste tot. Când mă uitam la tine și nu mă puteam abține.
+— Ți-am dat cuvântul că mă voi controla.
+— Dar eu nu ți-am dat un astfel de cuvânt.
+— Nu, Liza! Azi îmi voi ține cuvântul și nu vom intra în toaleta aia.
+— Ești prost?
+— Sunt deștept! Ce rezolvăm cu sexul ăsta? Te întorci la mine? Nu! Vei zbura la Moscova și mă vei lăsa aici cu inima frântă. Sexul ăsta îmi va da speranță, pe care o vei distruge imediat ce vei avea ocazia. Tu vei trăi cu faptul că l-ai înșelat pe cel care e gata să-și schimbe religia pentru tine. Ai nevoie de asta?
+— Asta se numește sex de adio!
+— Nu vreau să-l am doar ca să sufăr din nou. Ca să nu-mi găsesc iar locul și să urc pe acoperișul ăla futut de durere și să mă gândesc dacă să sar sau nu. Tu, dracu’, nu înțelegi ce se întâmplă cu mine în fiecare zi și cât de greu îmi este. Mă trezesc și adorm cu gândul la tine. Umblu cu încărcătorul de telefon după mine ca să nu se închidă niciodată și să mă poți apela. Sunt atât de paranoic încât atunci când gătesc fac două porții și îmi imaginez că mănânci cu mine.
+— Și crezi că mie îmi e ușor să revăd atâta timp fotografiile și videoclipurile noastre? Când fac sex, te imaginez pe tine. Îmi creez profiluri false pe rețelele sociale ca să văd cum trăiești și ce faci. Nu, Maxim, nu te face doar pe tine victima despărțirii. Mie îmi e mai greu când gândesc cu inima și mai ușor când gândesc cu capul la diferența dintre tine și iubitul meu. Cum mă cucerești tu și cum mă cucerește el.
+— Hai să încheiem aici întâlnirea noastră. Iartă-mă că iar nu ți-am îndeplinit așteptările.
+— Vei putea să mă uiți?
+— Încerc din ultimele puteri.
+— Vreau să știi că te iubesc. Încearcă pentru mine să mă uiți.
 
-Как вам такая встреча двух влюблённых? Качели или справедливость? Правильно ли, что она так сказала, или надо было закрыть на это глаза? Мы поднимались по лестнице в такой тишине, будто я шёл с мамой домой после родительского собрания, на котором рассказывали про моё поведение. Она зашла к своей швее, а я присел на подоконник в коридоре. Мысли о том, что я долбоёб, не покидали меня. У меня есть всё, чтобы сделать эту девочку счастливой и матерью своих детей, а я только письма да жалобы умею отправлять о том, что мне без неё плохо.
+Ne-am privit unul pe altul cu ochii înlăcrimați, iar ea a plecat în tăcere spre scări.
+Intrând în casă, distrus de această întâlnire, nu mai voiam nimic de la viață. M-am întins pe pat și priveam într-un singur punct. Pentru prima dată nu aveam nici măcar gânduri în cap și nu reflectam la nimic. În astfel de momente înțelegi că acesta este sfârșitul și că nu doar te-au zdrobit, ci te-au fărâmițat până la cei mai mici atomi. Nici nu știu câte ore am stat în starea asta, când, deodată, telefonul a început să vibreze. Uitându-mă la ecran, am înțeles că mă sună un număr străin, care nu era în lista mea.
 
-Минуты через три вышла Лиза, улыбаясь так, будто ничего и не было.
+— Alo.
+— Maxim, salut. Mă numesc Ivan și cred că înțelegi ce Ivan anume te sună?
+— Îmi dau seama.
+— Am vrut să vorbesc cu tine bărbătește și să punem totul la punct. Te-ai văzut azi cu Liza?
+— Nu! Ea e în Chișinău?
+— Nu te face că nu știi că e acasă și că nu v-ați văzut. A venit acasă după întâlnirea voastră și m-a sunat. Mi-a povestit că v-ați văzut și ce ați vorbit. Ce a făcut ea — discutăm separat, dar faptul că plânge și îmi spune că te iubește și că trebuie să ne despărțim asta e deja discuția mea personală cu tine. Eu nu o voi da pe Liza nimănui și sunt gata să suport că-mi vorbește despre tine în fiecare zi. Vrei să te adopt? Vei trăi la mine cu ea, dar în relație ca mamă cu copilul. Ești copil, după părerea mea, nu? Așa vei fi și în familia noastră. Noaptea vei auzi cum o fut în camera alăturată. Vrei? Vei fi în pielea mea, când ani de zile aud numele tău în fiecare zi.
+— Nu prea mi-ar plăcea să aud asta. Cred că propunerea ta e bună, dar trebuie o mică corectare. Noaptea vei auzi tu cum facem sex și atunci vei înțelege ce bou ești. Imaginează-ți doar scena: trăiești în casă cu cea care nu te iubește, cu iubitul ei, și în fiecare zi faci tot posibilul s-o cucerești. Cum ți se pare?
+— Și cum ți se pare că acum merg la aeroport să iau un avion spre Chișinău și să-ți rup toate oasele?
+— Mi se pare o idee excelentă. Chiar m-am trezit dimineață cu gândul că ar fi bine să vii.
+— Atunci așteaptă-mă, futu-ți gura, în patru ore sunt în orașul tău.
+— Unde să te aștept?
+— Te găsesc eu. Știu unde locuiești, unde lucrezi, unde mănânci și știu chiar și ce lungime are pula ta.
+— Te-ai interesat?
+— Liza mi-a spus că e mai mică decât a mea.
+— De asta Liza voia azi să se fută cu mine?
+— Ești mort când ajung.
+— Ai vrut să vorbești bărbătește, dar vorbești ca un mârlan de cartier. Știi doar să ameninți? Dialogul nu e pentru tine? Spune-mi ce vrei.
+— Vreau să te lași de ea și de fiecare dată când va vrea să te vadă, să-i ignori cererile.
+— Iar eu vreau ca sarea să fie dulce. Știi vorba aia: „Pe nenorocire nu construiești fericire”?
+— O știu.
+— Ei bine, când ai decis să mi-o iei și prin toate minciunile ai atras-o la Moscova, și când ai bătut-o, ai adus nenorocire mie și ei. Acum a venit timpul să plătești pentru asta.
+— Dacă ai fi fost bărbat adevărat, nu ar fi plecat de la tine.
+— Dacă ai fi fost bărbat adevărat, nu s-ar fi gândit la mine. Hai fără atacuri unul la altul. Știi ce ai făcut și că ai luat o fată dintr-o relație. Acum trăiește cu faptul că viața ta nu va fi liniștită.
+— Ești gata să te întâlnești cu mine când ajung?
+— Ca să ce? Să ne batem?
+— Să clarificăm totul și să nu se mai repete.
+— Ești atotvăzător? Cum să-ți promit ceva când ai acționat ca un șacal?
+— Vin și vreau să-mi spui la ureche că sunt șacal.
+— Pot să-ți scriu scrisori în fiecare zi, ca să nu uiți. Vrei?
+— Sigur ești terminat.
+— Asta a fost conversația. Zbor plăcut.
+— Pe curând.
 
-– Скучал?
-– Да не успел. Думал о твоих словах.
-– Думать — это не для тебя, Максим. Действовать надо.
-– Спасибо тебе за добрые слова и за сарказм.
-– Не принимай близко к сердцу. Ты же знаешь, что я люблю пошутить, но в то же время я очень прямая.
-– Тебе бы научиться сглаживать углы при разговоре.
-– Тебе бы научиться не создавать углы.
-– Вот что я подумал за эти три минуты. Ты говоришь, что скрываешься от своего парня и родителей, чтобы увидеться со мной, так?
-– Так.
-– И в тот же момент ты налетела с претензией, что я не купил цветы, так?
-– Так.
-– Тогда объясни: если бы я купил цветы, как бы ты с ними зашла в дом, где живёшь с родителями?
-– Максим, я же не тупая. Что-то бы придумала.
-– Например?
-– Например… не беси меня сейчас. Опять поймал меня на уловке своей.
-– Как обвинить — ты героиня, а как объяснить твои дальнейшие действия — ты сразу начинаешь нервничать.
-– Я тебе уже говорила, что ты очень умный?
-– Говорила.
-– Ну вот доказательство моих слов. Ты настолько умный, что это меня в тебе больше всего и привлекало. Если бы ты пришёл с цветами — я была бы счастлива. А если бы возник вопрос, что с ними делать и как зайти в дом, то думаю, ты бы нашёл решение.
-– То есть тебе во мне только ум нравится? А то, что я красивый, тебя изначально не привлекло?
-– Только ум. Умных мужчин всегда любили девушки. Красивый мужчина — это так, для развлечений и галочки.
-– Я думаю, вы любите ум только у красивых парней. Приведу пример: есть в мире куча математиков, физиков, философов, которые запредельно умны. Но выглядят они как типичные учёные. Ты бы выбрала такого?
-– Думаю, нет.
-– О чём я и хочу тебе сказать — если парень красивый и умный, тогда есть шанс, что девушка будет от него без ума. Не надо говорить, что если у парня есть только одна черта из этих двух, вы будете мечтать построить с ним отношения. С красивым и тупым вы точно не будете. С умным, но некрасивым — построите отношения только если он сказочно богат.
-– Ладно, Максим, я согласна. Ты, конечно, взял меня тем, что ты симпатичный и умный. Иначе я бы на тебя никогда не посмотрела.
-– Мы так и будем тут стоять?
-– А чего бы ты хотел?
-– Пойти и посидеть где-то, как нормальные люди.
-– А знаешь, чего хочу я?
-– Чего?
-– Я хочу зайти в тот туалет, встать раком, и чтобы ты вошёл в меня, как тогда, когда мы были вместе. Когда мы это делали везде. Когда я смотрела на тебя и не могла удержаться.
-– Я дал тебе слово, что буду держать себя в руках.
-– Но я же тебе такого слова не давала?
-– Нет, Лиза. Сегодня я сдержу своё слово, и мы не зайдём в этот туалет.
-– Ты дурак?
-– Я умный. Что мы решим этим сексом? Ты вернёшься ко мне? Нет. Ты улетишь в Москву и оставишь меня тут с разбитым сердцем. Этот секс даст мне надежду, которую ты разрушишь сразу же, как только у тебя появится возможность. Ты будешь жить с тем, что изменила человеку, который ради тебя готов даже религию сменить. Тебе это надо?
-– Это называется прощальный секс.
-– Я не хочу его иметь только затем, чтобы опять страдать. Чтобы опять не находить себе места и лезть на эту ёбаную крышу от боли — думать, прыгать или нет. Ты, блядь, не понимаешь, что со мной каждый день и как мне это тяжело даётся. Я просыпаюсь и ложусь с мыслями о тебе. Я хожу с зарядкой от телефона за собой, чтобы он не выключался никогда и чтобы ты могла мне дозвониться. Я параноик настолько, что, когда готовлю, делаю две порции и представляю, что ты сидишь рядом и ешь вместе со мной.
-– А ты думаешь, мне легко всё это время пересматривать наши фотографии и видео, когда мы были вместе? Когда я занимаюсь сексом, я представляю тебя в этот момент. Я создаю фальшивые профили в соцсетях, чтобы посмотреть, как ты живёшь и что делаешь. Нет, Максим, не строй из себя жертву этой разлуки. Мне тяжелее, чем тебе, когда я думаю сердцем, и легче, когда думаю головой — о том, какая разница между тобой и моим парнем. Как добиваешься меня ты, и как добивается меня он.
-– Давай на этом закончим нашу встречу. Прости, что я опять не оправдал твоих ожиданий.
-– Ты сможешь меня забыть?
-– Я стараюсь из последних сил.
-– Я хочу, чтобы ты знал, что я тебя люблю. Постарайся для меня забыть про меня.
-Мы посмотрели друг другу в заплаканные глаза, и она молча ушла в сторону лестниц.
+Și pe omul ăsta l-a ales Liza? Pe unul care nu e în stare să vorbească normal, ci doar prin forță. Ceva a scăzut serios nivelul Lizei la alegerea unui bărbat pentru viață. Și ea îmi mai vorbește mie despre fapte bărbătești? - mă gândeam stând pe balcon, cu o țigară în mână. Obosit de gânduri, am intrat în cameră și m-am întins pe pat. N-apucasem nici să mă așez bine, când am auzit soneria. Chiar a ajuns atât de repede? — mi-a trecut prin cap cu un zâmbet ironic. Am deschis ușa și am rămas șocat. În prag stătea Liza!
 
-– Насколько это сложно, Алиса. Когда говорят, что «отношения — это вечная работа», то именно после таких случаев я понимаю, что это и есть правда. Если бы они работали над теми моментами, которые их не устраивают друг в друге, они бы не дошли до таких ситуаций. И в то же время я понимаю: если ты любишь человека, ты любишь его с недостатками и закрываешь глаза на многое. Любовь — это вечный компромисс, баланс между хорошим и плохим. Поэтому до сих пор никто не может дать чёткое определение слову «любовь». Верно лишь то, что любовь — это чувство. А дальше — у всех по-разному.
-– Работать над отношениями надо всегда. Любовь — как пламя, которое нужно поддерживать, иначе оно потухнет.
-– Зачитывай дальше, Алиса.
+— Ce? Ce s-a întâmplat? Alice, dracu’!
+S-a auzit sunetul care anunță că bateria dispozitivului s-a descărcat. Alice s-a oprit.
+— La dracu’, nu! Nu, la dracu’! Alice! Pornește-te, curvo! — Maxim încerca disperat să bage Alice în priză. A apărut beculețul care indica faptul că se încarcă, dar Alice nu pornea.
+— Alice! Hai, pornește-te o dată! Știu despre cine e povestea asta. E povestea mea și a relațiilor mele din trecut. Nu înțeleg ce se întâmplă în fiecare zi. Îmi citești cartea asta și eu tot încerc să te duc de nas ca să înțeleg de ce e toată chestia asta? Spune-mi cine ești și de ce faci asta? În fiecare zi te oprești în același loc.
 
-Зайдя разбитым от этой встречи домой, я не хотел больше ничего в этой жизни. Я прилёг на кровать и просто смотрел в одну точку. Впервые у меня даже мыслей не было в голове, я ни о чём не рассуждал. В такие моменты понимаешь, что это конец и что тебя не просто разбили — тебя раздробили на атомы.
-
-Не знаю, сколько часов я лежал в таком состоянии, когда вдруг начал вибрировать телефон. Посмотрев на экран, я увидел иностранный номер, которого не было в записной книжке.
-
-– Алло.
-– Максим, привет. Меня зовут Иван, и, думаю, ты понимаешь, какой именно Иван тебе звонит?
-– Догадываюсь.
-– Хотел поговорить с тобой по-мужски и расставить всё по полочкам. Ты сегодня виделся с Лизой?
-– Нет. А она в Кишинёве?
-– Не придуривайся, что не знаешь, что она дома и что она с тобой виделась. Она пришла домой после вашей встречи и позвонила мне. Рассказала, что вы виделись и что говорили. То, что она натворила — это мы с ней отдельно обсудим. Но вот то, что она плачет и говорит, что любит тебя, и что мы должны расстаться — это уже мой разговор с тобой.
-
-Я Лизу никому не отдам. И я готов терпеть то, что она каждый день говорит о тебе. Хочешь, я тебя усыновлю? Будешь жить у меня с ней, но в роли ребёнка. Ты же ребёнок, по моему мнению, правильно? Вот им и будешь в нашей семье. А по ночам ты будешь слышать, как я её ебу в соседней комнате. Хочешь? Побудешь в моей шкуре — в той, в которой я годами слышу её слова про тебя.
-– Не хотелось бы, конечно, это слышать. Думаю, предложение твоё хорошее, но с маленькой поправкой надо это сделать. Ночами будешь слышать ты, как мы занимаемся сексом, и тогда ты будешь понимать, какой ты олень. Представь только себе эту картину: ты живёшь в доме с той, которая тебя не любит, и с её парнем, и каждый день делаешь всё возможное, чтобы её завоевать. Как тебе?
-– А как тебе то, что я сейчас еду в аэропорт, чтобы сесть на самолёт до Кишинёва и сломать тебе все твои кости?
-– Думаю, замечательная идея. Как раз утром проснулся с мыслью, что было бы хорошо, если бы ты прилетел.
-– Ну так жди меня, сука. Я через четыре часа буду в твоём городе.
-– А где тебя ждать?
-– Я тебя сам найду. Я знаю, где ты живёшь, где работаешь, где кушаешь, и даже знаю, какой длины у тебя член.
-– Ты им интересовался?
-– Мне Лиза говорила, что у тебя меньше, чем у меня.
-– Поэтому Лиза хотела сегодня потрахаться со мной?
-– Тебе пиздец, когда я приеду.
-– Ты хотел поговорить по-мужски, а говоришь как быдло дворовое. Ты только угрожать можешь? Диалог — это не для тебя? Скажи мне, что ты хочешь?
-– Я хочу, чтобы ты от неё отстал. И чтобы каждый раз, когда она захочет увидеть тебя, ты игнорировал её просьбы.
-– А я хочу, чтобы соль была сладкой. Знаешь такую поговорку: «На несчастье счастье не построишь»?
-– Знаю.
-– Так вот, когда ты решил её у меня увести и обманом затащил в Москву, и когда ты её избивал — ты приносил несчастье мне и ей. Теперь настал час, когда ты должен за это расплатиться.
-– Был бы ты нормальным мужиком, она бы не ушла от тебя.
-– Был бы ты нормальным мужиком, она бы не думала про меня. Давай без этих наездов друг на друга. Ты знаешь, что ты сделал, и что забрал девушку из отношений. Вот теперь живи с тем, что у тебя жизнь неспокойная.
-– Ты готов встретиться со мной, когда я прилечу?
-– Чтобы что? Подраться?
-– Выяснить все моменты, и чтобы они больше не повторялись.
-– Ты что, всевидящий? Как я могу тебе что-то обещать, когда ты поступил как шакал?
-– Я прилечу и хочу, чтобы ты мне на ушко сказал, что я шакал.
-– Могу писать тебе письма каждый день, чтобы ты не забывал это. Хочешь?
-– Тебе точно пиздец.
-– Вот и поговорили. Хорошего полёта.
-– До встречи.
-
-И вот этого человека выбрала Лиза? Того, который не может нормально говорить, а только через силу? Что-то у Лизы упал уровень по выбору мужчины для жизни. И она ещё говорит мне о «мужских поступках»? — рассуждал я на балконе, держа сигарету в руках.
-
-Устав от размышлений, я зашёл в комнату и лёг на кровать. Не успев удобно расположиться, я услышал звонок в дверь.
-
-Неужели он так быстро прилетел? — подумал я с ухмылкой.
-
-Открыв дверь, я был шокирован. Там стояла Лиза!
-
-– Что? Что случилось?.. Алиса, блядь!
-
-Прозвучал звук разрядившегося устройства. Алиса выключилась.
-
-– Блядь, нет! Нет, блядь! Алиса! Включись, сука, скорее! — Максим судорожно пытается включить Алису в розетку.
-
-Появился огонёк зарядки, но устройство не включалось.
-
-– Алиса! Да включись ты один раз! Я знаю, про кого эта история. Это история про меня и про мои бывшие отношения. Я не понимаю, что происходит каждый ёбаный день. Ты читаешь мне эту книгу, и я всё пытаюсь вести тебя за нос, чтобы понять, зачем это всё? Скажи мне, кто ты и зачем ты это делаешь? В каждый день ты выключаешься в одном и том же месте!
-
-Рыдая, Максим стоит перед устройством, пытаясь его включить. Но попытки не приносят результата.
-
-Держа устройство в руках, Максим падает на пол и засыпает в слезах.
+Plângând, Maxim stătea în fața dispozitivului și încerca să-l pornească. Dar încercările nu duceau la nimic. Ținând dispozitivul în mâini, Maxim cade pe podea și adoarme în lacrimi.
         `
     },
     {
         id: 'ch11',
-        title: 'Синдром Адель Гюго',
+        title: 'Sindrom Adele Hugo',
         content: `
-Всё дело в том, что у Максима выявили синдром Адель Гюго. Это синдром длительной любовной одержимости — психическое расстройство, схожее с наркотической зависимостью. Он назван в честь дочери французского писателя Виктора Гюго, которая до самой смерти страдала от неразделённой любви к английскому офицеру Альберту Пинсону.
+Totul consta în faptul că la Maxim a fost diagnosticat sindromul Adèle Hugo. Este un sindrom al obsesiei amoroase de lungă durată, o tulburare psihică asemănătoare dependenței de droguri. Acest sindrom a fost numit după fiica scriitorului francez Victor Hugo, care până la moarte a suferit de o iubire neîmpărtășită pentru ofițerul englez Albert Pinson. Boala lui Maxim a evoluat foarte rapid și dureros. În fiecare zi se gândea la Liza și delira că sunt împreună. În fiecare zi gătea pentru doi, iar când se trezea, saluta perna, imaginându-și că Liza este lângă el. De fiecare dată când mergea la cafenea, rezerva o masă pentru doi. Iar când era invitat la o zi de naștere, cerea să i se pună un scaun alături, ca să se așeze Liza. Prietenii și rudele au văzut toate acestea timp de mulți ani. Atunci au aflat că există un om de știință care vrea să facă un experiment pe oameni ce suferă de acest sindrom. Rudele i-au scris imediat și au aflat detaliile experimentului. Pentru început, trebuia să i se ofere toate detaliile și fotografiile despre cum arată casa lui. O casă identică, până la cele mai mici detalii, a fost construită pe teritoriul unui spital de psihiatrie. După aceea au umplut frigiderul cu alimente și alcoolul pe care îl consuma zilnic. Cel mai important lucru era să-i bage în cap ideea că acasă are un gadget — Alice — care îi este asistent pentru orice. Rudele au cumpărat acest dispozitiv și luni întregi au vorbit cu el. Astfel, Maxim a început să folosească Alice din ce în ce mai des. Iar cel mai important a fost să o convingă pe Liza să comunice cu el prin acest dispozitiv. Da, în tot acest timp Maxim nu vorbea cu un simplu aparat — de cealaltă parte a lui Alice se afla Liza, care stătea într-o cameră alăturată, lângă oamenii de știință. Experimentul consta în faptul că pe Maxim îl adormeau de fiecare dată, iar în acest timp, prin difuzoare, îi „curățau creierul”. Îi spuneau că este bogat și de succes. Că are o firmă și că este foarte căutat de femei. Și niciun cuvânt despre relațiile lui din trecut sau despre Liza. Iar când se trezea, i se spunea legenda că a venit de la o petrecere în care a băut prea mult. Pentru că atunci când era adormit, la trezire avea aceeași stare de mahmureală ca după o beție. Și pentru ca totul să pară adevărat, cât timp Maxim dormea, îi picurau alcool pe buze, ca să existe mirosul. În fiecare zi, Liza venea la spitalul de psihiatrie la aceeași oră pentru a vorbi cu el prin Alice. Sarcina ei era să citească o carte astfel încât să-i transmită cât mai multe momente negative și să-i insufle ura față de relații. Tot acest timp, lângă ea stătea omul de știință, care dirija și controla ce trebuia Liza să-i spună.
 
-Болезнь Максима развивалась стремительно и болезненно. Он каждый день думал о Лизе и бредил, что они вместе. Каждый день готовил на двоих; просыпаясь, здоровался с подушкой, представляя, что рядом лежит Лиза. Когда ходил в кафе — заказывал столик на двоих. Когда его приглашали на день рождения — просил поставить ему дополнительный стул, чтобы «присела Лиза».
-
-Друзья и родственники наблюдали это годами. Тогда они и узнали, что существует учёный, который проводит эксперимент над людьми, страдающими от такого синдрома. Родные сразу связались с ним и узнали детали.
-
-Для начала нужно было передать учёным все детали и фотографии его дома. На территории психиатрической больницы построили точную копию дома Максима, в мельчайших деталях. Холодильник заполнили продуктами и алкоголем, который он обычно пил.
-
-Самое важное — внушить ему, что дома у него есть гаджет «Алиса», его личный помощник. Родные купили устройство и месяцами разговаривали с ним при Максиме, чтобы он привык. Потом и он сам начал пользоваться «Алисой» всё чаще и чаще.
-
-Но главное было другое: уговорить Лизу, чтобы она общалась с ним через это устройство.
-
-Да. Всё это время Максим не разговаривал с простым ассистентом. Всё это время по ту сторону «Алисы» находилась Лиза — она сидела в соседней комнате вместе с учёными.
-
-Эксперимент заключался в том, что Максима каждый раз усыпляли, а в это время через динамики ему «чистили мозги»: рассказывали, что он богатый и успешный, что у него есть фирма, что он нравится многим женщинам. Ни единого слова о его бывших отношениях и о Лизе.
-
-Когда он просыпался, ему давали легенду: будто он вернулся с вечеринки, где сильно перебрал. После усыпления его состояние действительно напоминало похмелье, поэтому ему капали спирт на губы — чтобы запах совпадал.
-
-Каждый день Лиза приезжала в больницу в одно и то же время, чтобы говорить с ним через «Алису». Её задача — читать книгу, наполняя её как можно большим количеством негативных моментов, внушать ему отвращение к отношениям.
-
-Всё это время рядом стоял учёный, который направлял и контролировал, что именно Лиза должна говорить.
-– Господин Виктор, уже третий год я хожу сюда и говорю с ним, и это не даёт результата. Скажите мне, если это излечимо?
-
-– Мы и хотим найти ответ на этот вопрос, Лиза. Дело в том, что одержимость — это чувство, которое не подвластно науке. А любовная одержимость — это неизученная глава в мировой науке. У Максима к вам сильная любовь, которой мир не видел. Он даже сквозь препараты и сон проговаривает ваше имя. Наука с таким ещё не сталкивалась.
-
-– Но он выглядит уже плохо. От этих терапий и от того, что при рассказе книги он выпивает по три бутылки вина, он постарел.
-
-– Лучше пусть стареет, чем будет жить с одержимостью.
-
-– Вы учёный, господин Виктор, и вы должны мне дать чёткий ответ, можно ли его вылечить. У меня семья, которая не знает о том, что я три года прихожу сюда каждый день. У меня ребёнок от Ивана, которого я безумно люблю. Я не могу так больше ходить и скрывать это.
-
-– Так может вам это нравится? Может быть, одержимость у вас двоих? В большой любви болеют оба!
+— Domnule Victor. Deja al treilea an vin aici și vorbesc cu el, iar asta nu dă niciun rezultat. Spuneți-mi, vă rog, este vindecabil?
+— Tocmai asta vrem să aflăm, Liza. Problema este că obsesia este un sentiment care nu se supune științei. Iar obsesia amoroasă este un capitol neexplorat în știința mondială. Maxim are pentru dumneavoastră o iubire cum lumea nu a mai văzut. Chiar și prin medicamente și somn, el vă rostește numele. Știința nu s-a mai confruntat cu așa ceva.
+— Dar el arată deja rău. Din cauza acestor terapii și pentru că, în timpul citirii cărții, bea câte trei sticle de vin, a îmbătrânit.
+— Mai bine să îmbătrânească decât să trăiască cu obsesia.
+— Sunteți om de știință, domnule Victor, și trebuie să-mi dați un răspuns clar dacă poate fi vindecat. Am o familie care nu știe că de trei ani vin aici în fiecare zi. Am un copil, de la Ivan, pe care îl iubesc nebunește. Nu mai pot continua așa și să ascund asta.
+— Atunci poate că vă place? Poate obsesia este la amândoi? În marea iubire — se îmbolnăvesc amândoi!
         `
     },
 ];
