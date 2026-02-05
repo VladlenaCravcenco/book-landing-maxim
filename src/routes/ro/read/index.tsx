@@ -2043,7 +2043,7 @@ export default component$(() => {
                     type="button"
                     class="reader-menu-trigger"
                     onClick$={() => (isMenuOpen.value = !isMenuOpen.value)}
-                    aria-label="Настройки чтения"
+                    aria-label="Setări de citire"
                 >
                     <span />
                     <span />
