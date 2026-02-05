@@ -10,7 +10,7 @@ type Chapter = {
 const chapters: Chapter[] = [
     {
         id: 'info',
-        title: 'О книге',
+        title: 'Despre carte',
         content: `
 Autor: Maxim Leanca\n
 Redactor: Andrei Dorgan\n
@@ -1972,9 +1972,9 @@ export default component$(() => {
                 <div class="reader-header__left">
                     <div class="reader-book-meta">
                         <div class="reader-book-title">
-                            Позвони мне, я свой номер не менял
+                            Sună-mă, numărul meu nu s-a schimbat
                         </div>
-                        <div class="reader-book-author">Максим Лянка</div>
+                        <div class="reader-book-author">Maxim Leanca</div>
                     </div>
                 </div>
 
