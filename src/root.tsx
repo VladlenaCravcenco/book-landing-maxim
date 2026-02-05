@@ -22,7 +22,6 @@ export default component$(() => {
           <link
             rel="manifest"
             href={`${import.meta.env.BASE_URL}manifest.json`}
-
           />
         )}
         <RouterHead />
