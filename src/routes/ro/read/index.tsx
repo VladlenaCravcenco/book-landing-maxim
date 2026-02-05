@@ -2043,7 +2043,7 @@ export default component$(() => {
                     type="button"
                     class="reader-menu-trigger"
                     onClick$={() => (isMenuOpen.value = !isMenuOpen.value)}
-                    aria-label="Setări de citire"
+                    aria-label="Setări de citire" 
                 >
                     <span />
                     <span />
@@ -2052,6 +2052,7 @@ export default component$(() => {
 
                 {/* Выпадающее меню на мобильном */}
                 {isMenuOpen.value && (
+                  
                     <div class="reader-menu">
                         <div class="reader-menu__row">
                             <button
