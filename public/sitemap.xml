@@ -14,6 +14,18 @@
     <priority>1.0</priority>
   </url>
   <url>
+    <loc>https://www.11book.online/fragment/</loc>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.11book.online/fragment/"/>
+    <xhtml:link rel="alternate" hreflang="ro" href="https://www.11book.online/ro/fragment/"/>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.11book.online/ro/fragment/</loc>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.11book.online/fragment/"/>
+    <xhtml:link rel="alternate" hreflang="ro" href="https://www.11book.online/ro/fragment/"/>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://www.11book.online/policies/</loc>
     <xhtml:link rel="alternate" hreflang="ru" href="https://www.11book.online/policies/"/>
     <xhtml:link rel="alternate" hreflang="ro" href="https://www.11book.online/ro/policies/"/>

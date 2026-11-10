@@ -87,6 +87,10 @@ export default component$(() => {
             <BuyEbookButtonRo />
           </div>
 
+          <a class="fragment-link" href="/ro/fragment/">
+            Citește primul capitol gratuit →
+          </a>
+
           <p class="btn-caption">
             Plată sigură prin MAIB.<br />
             Acces la lectură imediat după cumpărare.

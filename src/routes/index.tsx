@@ -111,6 +111,10 @@ export default component$(() => {
             </button>
           </div>
 
+          <a class="fragment-link" href="/fragment/">
+            Читать первую главу бесплатно →
+          </a>
+
           <p class="btn-caption">
             Безопасная онлайн-оплата через maib.<br />
             Доступ к чтению — сразу после покупки.

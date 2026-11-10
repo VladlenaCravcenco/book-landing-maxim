@@ -352,6 +352,7 @@ body {
 }
 
 select {
+  font-family: inherit; /* иначе браузерный шрифт может не иметь ă/ș/ț */
   font-size: 14px;
   line-height: 2;
   width: 130px;
@@ -1770,5 +1771,97 @@ select {
   .pay-modal__card--with-book .pay-modal__title,
   .pay-modal__card--with-book .pay-modal__desc {
     text-align: center;
+  }
+}
+/* ---------------------------------------------------------- */
+/* Бесплатная первая глава */
+/* ---------------------------------------------------------- */
+
+/* ссылка на главной под кнопками покупки */
+.fragment-link {
+  display: inline-block;
+  margin-top: 26px;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.35);
+  padding-bottom: 3px;
+  transition:
+    color 0.15s ease-out,
+    border-color 0.15s ease-out;
+}
+
+.fragment-link:hover {
+  color: var(--accent-red-soft);
+  border-color: var(--accent-red-soft);
+}
+
+/* название книги в шапке читалки как ссылка «назад» */
+.reader-book-home {
+  color: inherit;
+  text-decoration: none;
+}
+
+.reader-book-home:hover {
+  opacity: 0.8;
+}
+
+/* блок «читать дальше» в конце главы */
+.fragment-cta {
+  margin: 24px 0 48px;
+  padding: 40px 24px 32px;
+  border-top: 1px solid rgba(185, 53, 60, 0.6);
+  text-align: center;
+  font-size: 16px; /* не зависит от размера шрифта читалки */
+  user-select: text;
+}
+
+.fragment-cta__title {
+  margin: 0 0 12px;
+  font-size: 26px;
+  line-height: 1.25;
+  color: #fff;
+}
+
+.reader-root--light .fragment-cta__title {
+  color: #111;
+}
+
+.fragment-cta__text {
+  margin: 0 auto 32px;
+  max-width: 460px;
+  line-height: 1.6;
+  opacity: 0.85;
+}
+
+.fragment-cta__actions {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.fragment-cta__back {
+  display: inline-block;
+  margin-top: 8px;
+  font-size: 13px;
+  color: inherit;
+  opacity: 0.7;
+  text-decoration: none;
+}
+
+.fragment-cta__back:hover {
+  opacity: 1;
+}
+
+@media (max-width: 768px) {
+  .fragment-cta {
+    padding: 32px 4px 24px;
+  }
+
+  .fragment-cta__title {
+    font-size: 22px;
   }
 }

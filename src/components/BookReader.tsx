@@ -14,9 +14,16 @@ const META = {
  * Сам текст приходит через <Slot/> из страницы — так он рендерится один раз на сервере
  * и не сериализуется повторно в состояние для браузера.
  */
-export const BookReader = component$<{ lang: Lang; toc: TocItem[] }>(({ lang, toc }) => {
+export const BookReader = component$<{
+    lang: Lang;
+    toc: TocItem[];
+    /** отдельный ключ прогресса (например, для бесплатного фрагмента) */
+    storageKey?: string;
+    /** если задан — название книги в шапке ведёт на эту страницу */
+    homeHref?: string;
+}>(({ lang, toc, storageKey, homeHref }) => {
     const meta = META[lang];
-    const STORAGE_KEY = `maxim-book-progress-${lang}`;
+    const STORAGE_KEY = storageKey ?? `maxim-book-progress-${lang}`;
 
     const theme = useSignal<'dark' | 'light'>('dark');
     const fontScale = useSignal(1); // 1 = базовый размер
@@ -113,7 +120,15 @@ export const BookReader = component$<{ lang: Lang; toc: TocItem[] }>(({ lang, to
             <header class="reader-header">
                 <div class="reader-header__left">
                     <div class="reader-book-meta">
-                        <div class="reader-book-title">{meta.title}</div>
+                        <div class="reader-book-title">
+                            {homeHref ? (
+                                <a href={homeHref} class="reader-book-home">
+                                    ← {meta.title}
+                                </a>
+                            ) : (
+                                meta.title
+                            )}
+                        </div>
                         <div class="reader-book-author">{meta.author}</div>
                     </div>
                 </div>
