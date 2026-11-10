@@ -11,6 +11,7 @@ export default extendConfig(baseConfig, () => {
       },
       outDir: ".vercel/output/functions/_qwik-city.func",
     },
-    plugins: [vercelEdgeAdapter()],
+    // Свой sitemap лежит в public/sitemap.xml — не даём Qwik перезаписать его пустым.
+    plugins: [vercelEdgeAdapter({ ssg: { sitemapOutFile: null } })],
   };
 });
