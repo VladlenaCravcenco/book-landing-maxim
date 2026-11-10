@@ -86,7 +86,7 @@ export default component$(() => {
       {/* 1. Первый экран */}
       <section class="hero-full">
         <div class="hero-full__bg">
-          <img src="/images/unnamed.webp" alt="Максим Лянка" />
+          <img src="/images/author.webp" alt="Максим Лянка" />
         </div>
 
         <div class="hero-full__content">
@@ -142,7 +142,7 @@ export default component$(() => {
                   href="https://www.bestseller.md/kniga-pozvoni-mne-maxim-leanca.html"
                   class="btn btn--ghost"
                 >
-                  <img src="/images/bestseller-logo.png" alt="Bestseller" />
+                  <img src="/images/bestseller-logo.webp" alt="Bestseller" />
                 </a>
 
                 <a href="https://bookstore.md/ru/catalog/1057/801505/" class="btn btn--ghost">
@@ -155,7 +155,7 @@ export default component$(() => {
                     class="btn btn--ghost amazon-trigger"
                     onClick$={() => (amazonOpen.value = !amazonOpen.value)}
                   >
-                    <img src="/images/amazon-logo.png" alt="Amazon" />
+                    <img src="/images/amazon-logo.webp" alt="Amazon" />
                     <span class={amazonOpen.value ? 'amazon-chev amazon-chev--open' : 'amazon-chev'}>▾</span>
                   </button>
 
@@ -208,7 +208,7 @@ export default component$(() => {
           </div>
 
           <div class="hero-book">
-            <img src="/images/Book-cover.png" alt="Печатная версия книги" />
+            <img src="/images/book-cover.webp" alt="Печатная версия книги" />
           </div>
         </div>
       </section>

@@ -1,9 +1,11 @@
 import type { RequestHandler } from "@builder.io/qwik-city";
+import { grantAccess } from "~/lib/access";
 import { getPayInfo, langFromOrderId, sendBookEmail, toLang } from "~/lib/maib";
 
 /**
  * Вызывается со страницы успеха. Письмо уходит только если MAIB подтверждает,
  * что платёж с этим payId реально оплачен (status === "OK").
+ * Заодно ставит cookie доступа к книге.
  * Ответ: { status: "sent" | "pending" | "failed", ... }
  */
 export const onPost: RequestHandler = async (ctx) => {
@@ -30,6 +32,9 @@ export const onPost: RequestHandler = async (ctx) => {
       json(200, { status: "failed", payStatus: info.status });
       return;
     }
+
+    // Оплата подтверждена — открываем книгу в этом браузере сразу (cookie).
+    await grantAccess(ctx, info.payId);
 
     // Email, указанный при оплате (из MAIB), надёжнее того, что лежит в браузере.
     const email = info.email || browserEmail;

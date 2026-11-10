@@ -134,7 +134,7 @@ export const BuyEbookButtonRo = component$(() => {
               <div class="pay-modal__right" aria-hidden="true">
                 <div class="pay-modal__book">
                   <img
-                    src="/images/Book-cover.png"
+                    src="/images/book-cover.webp"
                     alt="Coperta cărții"
                     loading="eager"
                   />

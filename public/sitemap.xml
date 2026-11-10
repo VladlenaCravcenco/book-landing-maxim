@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://www.11book.online/</loc>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.11book.online/"/>
+    <xhtml:link rel="alternate" hreflang="ro" href="https://www.11book.online/ro/"/>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://www.11book.online/ro/</loc>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.11book.online/"/>
+    <xhtml:link rel="alternate" hreflang="ro" href="https://www.11book.online/ro/"/>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://www.11book.online/policies/</loc>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.11book.online/policies/"/>
+    <xhtml:link rel="alternate" hreflang="ro" href="https://www.11book.online/ro/policies/"/>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://www.11book.online/ro/policies/</loc>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.11book.online/policies/"/>
+    <xhtml:link rel="alternate" hreflang="ro" href="https://www.11book.online/ro/policies/"/>
+    <priority>0.3</priority>
+  </url>
+</urlset>

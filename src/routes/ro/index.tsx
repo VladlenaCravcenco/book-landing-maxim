@@ -70,7 +70,7 @@ export default component$(() => {
       {/* 1 экран (в RO станет обычным блоком 100vh через CSS override) */}
       <section class="hero-full">
         <div class="hero-full__bg">
-          <img src="/images/unnamed.webp" alt="Максим Лянка" />
+          <img src="/images/author.webp" alt="Максим Лянка" />
         </div>
 
         <div class="hero-full__content">

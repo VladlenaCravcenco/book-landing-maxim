@@ -1,4 +1,5 @@
 import { Resend } from "resend";
+import { createAccessToken } from "./access";
 
 const DEFAULT_MAIB_API = "https://api.maibmerchants.md/v1";
 
@@ -188,7 +189,9 @@ export async function sendBookEmail(
   const resend = new Resend(mustEnv(ctx, "RESEND_API_KEY"));
   const from = mustEnv(ctx, "MAIL_FROM");
   const base = siteUrl(ctx);
-  const bookUrl = opts.lang === "ro" ? `${base}/ro/read/` : `${base}/read/`;
+  // Персональная ссылка: открывает книгу на любом устройстве покупателя.
+  const token = await createAccessToken(ctx, opts.payId);
+  const bookUrl = `${base}${opts.lang === "ro" ? "/ro" : ""}/read/?t=${encodeURIComponent(token)}`;
   const { subject, html } = bookEmail(opts.lang, bookUrl, opts.orderId, opts.payId);
 
   const result = await resend.emails.send(

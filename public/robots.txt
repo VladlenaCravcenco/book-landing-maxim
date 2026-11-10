@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /read/
+Disallow: /ro/read/
+Disallow: /payment/
+Disallow: /ro/payment/
+
+Sitemap: https://www.11book.online/sitemap.xml
