@@ -27,9 +27,6 @@ export const BuyEbookButtonRu = component$(() => {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          amount: 10,
-          currency: 'MDL',
-          description: '11book — электронная книга',
           customerEmail: e,
           language: 'ru',
         }),
@@ -39,13 +36,17 @@ export const BuyEbookButtonRu = component$(() => {
 
       if (!res.ok || !data?.payUrl) {
         console.error('MAIB create-payment error:', data);
-        error.value = data?.error || 'Не удалось инициировать оплату. Попробуйте позже.';
+        error.value = 'Не удалось инициировать оплату. Попробуйте позже.';
         loading.value = false;
         return;
       }
 
-      if (data?.payId) localStorage.setItem('lastPayId', String(data.payId));
-      localStorage.setItem('lastEmail', e);
+      try {
+        if (data?.payId) localStorage.setItem('lastPayId', String(data.payId));
+        localStorage.setItem('lastEmail', e);
+      } catch {
+        /* localStorage недоступен — не критично */
+      }
 
       window.location.href = data.payUrl;
     } catch (err) {

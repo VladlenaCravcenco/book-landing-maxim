@@ -1,32 +1,13 @@
 import type { RequestHandler } from "@builder.io/qwik-city";
+import { getPayInfo, langFromOrderId, sendBookEmail } from "~/lib/maib";
 
-const DEFAULT_MAIB_API = "https://api.maibmerchants.md/v1";
-
-function getEnvValue(ctx: any, name: string): string | undefined {
-  const fromAdapter = ctx?.env?.get?.(name);
-  if (fromAdapter) return fromAdapter;
-
-  return (globalThis as any)?.process?.env?.[name] ?? process.env?.[name];
-}
-
-function mustEnv(ctx: any, name: string) {
-  const v = getEnvValue(ctx, name);
-  if (!v) throw new Error(`${name} is missing`);
-  return v;
-}
-
-async function fetchJson(url: string, init: RequestInit) {
-  const res = await fetch(url, init);
-  const data = await res.json().catch(() => ({}));
-  return { res, data };
-}
-
+/**
+ * MAIB присылает сюда уведомление после оплаты (JSON: { result: {...}, signature }).
+ * Телу не доверяем: берём из него только payId и спрашиваем реальный статус через pay-info.
+ * Оплата через /pay списывается сразу — никакого confirm/complete здесь не нужно.
+ */
 async function handleCallback(ctx: any) {
   const { request, json, url } = ctx;
-
-  // 1) Снимаем максимум инфы для логов
-  const method = request.method;
-  const contentType = request.headers.get("content-type") || "";
 
   let raw = "";
   try {
@@ -35,117 +16,54 @@ async function handleCallback(ctx: any) {
     console.warn("[maib callback] request.text() failed", err);
   }
 
-  // payId/orderId часто приходят либо query, либо в body
-  const qpPayId = String(url.searchParams.get("payId") || "");
-  const qpOrderId = String(url.searchParams.get("orderId") || "");
-
-  let bodyPayId = "";
-  let bodyOrderId = "";
-
-  if (raw) {
-    // JSON
+  let payId = String(url.searchParams.get("payId") || "");
+  if (!payId && raw) {
     try {
       const parsed: any = JSON.parse(raw);
-      bodyPayId =
-        (parsed?.payId && String(parsed.payId)) ||
-        (parsed?.result?.payId && String(parsed.result.payId)) ||
-        "";
-      bodyOrderId =
-        (parsed?.orderId && String(parsed.orderId)) ||
-        (parsed?.result?.orderId && String(parsed.result.orderId)) ||
-        "";
-    } catch (err) {
-      // не JSON — попробуем как form-urlencoded
-      try {
-        const params = new URLSearchParams(raw);
-        bodyPayId = params.get("payId") || "";
-        bodyOrderId = params.get("orderId") || "";
-      } catch (err2) {
-        console.warn("[maib callback] cannot parse body", {
-          err,
-          err2,
-          raw: raw.slice(0, 200),
-        });
-      }
+      payId = String(parsed?.result?.payId ?? parsed?.payId ?? "");
+    } catch {
+      payId = new URLSearchParams(raw).get("payId") || "";
     }
   }
 
-  const payId = qpPayId || bodyPayId;
-  const orderId = qpOrderId || bodyOrderId;
-
   console.log("[maib callback] hit", {
-    method,
-    contentType,
+    method: request.method,
     payId,
-    orderId,
-    raw: raw ? raw.slice(0, 500) : "",
+    raw: raw.slice(0, 500),
   });
 
-  // 2) Если нет payId/orderId — всё равно отвечаем 200 (чтобы MAIB не ретраил бесконечно),
-  // но по логам будет понятно, что реально пришло.
-  if (!payId || !orderId) {
-    json(200, { ok: true, note: "no payId/orderId in callback" });
+  // Всегда 200, чтобы MAIB не ретраил бесконечно; причины видны в логах.
+  if (!payId) {
+    json(200, { ok: true, note: "no payId" });
     return;
   }
 
-  // 3) Делаем confirm
   try {
-    const projectId = mustEnv(ctx, "MAIB_PROJECT_ID");
-    const projectSecret = mustEnv(ctx, "MAIB_PROJECT_SECRET");
-    const MAIB_API = getEnvValue(ctx, "MAIB_API_URL") || DEFAULT_MAIB_API;
+    const info = await getPayInfo(ctx, payId);
+    console.log("[maib callback] pay-info", info);
 
-    // token
-    const { res: tokenRes, data: tokenData } = await fetchJson(
-      `${MAIB_API}/generate-token`,
-      {
-        method: "POST",
-        headers: { "content-type": "application/json" },
-        body: JSON.stringify({ projectId, projectSecret }),
-      },
-    );
-
-    const accessToken = tokenData?.result?.accessToken;
-    if (!tokenRes.ok || !tokenData?.ok || !accessToken) {
-      console.error("[maib callback] token error", tokenRes.status, tokenData);
-      json(200, { ok: true, step: "token_error" }); // 200 чтобы MAIB не душил ретраями
+    if (info.status !== "OK") {
+      json(200, { ok: true, status: info.status });
       return;
     }
 
-    // confirm (form-urlencoded)
-    const body = new URLSearchParams({ payId, orderId });
-
-    const confRes = await fetch(`${MAIB_API}/confirm`, {
-      method: "POST",
-      headers: {
-        "content-type": "application/x-www-form-urlencoded",
-        accept: "application/json",
-        Authorization: `Bearer ${accessToken}`,
-      },
-      body,
-    });
-
-    // ВАЖНО: прочитать текстом, потому что MAIB может вернуть НЕ JSON
-    const confText = await confRes.text();
-    let confData: any = {};
-    try {
-      confData = JSON.parse(confText);
-    } catch (err) {
-      console.warn("[maib callback] parse failed", err);
+    if (!info.email) {
+      console.warn("[maib callback] paid, but no email in pay-info", info);
+      json(200, { ok: true, status: info.status, note: "no email" });
+      return;
     }
-    console.log("[maib callback] confirm result", {
-      status: confRes.status,
-      ok: confRes.ok,
-      confText: confText.slice(0, 500),
-      confData,
+
+    await sendBookEmail(ctx, {
+      email: info.email,
+      lang: langFromOrderId(info.orderId) ?? "ru",
+      payId: info.payId,
+      orderId: info.orderId,
     });
 
-    // ВАЖНО: даже если confirm не ок — мы всё равно отвечаем 200, но в логах видна причина.
-    json(200, { ok: true, confirmed: confRes.ok });
-    return;
+    json(200, { ok: true, status: info.status, emailed: true });
   } catch (e: any) {
-    console.error("[maib callback] server error", e);
-    json(200, { ok: true, step: "exception", message: e?.message || "error" });
-    return;
+    console.error("[maib callback] error", e);
+    json(200, { ok: true, step: "exception" });
   }
 }
 

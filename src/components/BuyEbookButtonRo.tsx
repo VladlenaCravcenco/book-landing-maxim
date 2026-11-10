@@ -27,9 +27,6 @@ export const BuyEbookButtonRo = component$(() => {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          amount: 10,
-          currency: 'MDL',
-          description: '11book — carte electronică',
           customerEmail: e,
           language: 'ro',
         }),
@@ -39,13 +36,17 @@ export const BuyEbookButtonRo = component$(() => {
 
       if (!res.ok || !data?.payUrl) {
         console.error('MAIB create-payment error:', data);
-        error.value = data?.error || 'Nu am putut iniția plata. Încercați mai târziu.';
+        error.value = 'Nu am putut iniția plata. Încercați mai târziu.';
         loading.value = false;
         return;
       }
 
-      if (data?.payId) localStorage.setItem('lastPayId', String(data.payId));
-      localStorage.setItem('lastEmail', e);
+      try {
+        if (data?.payId) localStorage.setItem('lastPayId', String(data.payId));
+        localStorage.setItem('lastEmail', e);
+      } catch {
+        /* localStorage недоступен — не критично */
+      }
 
       window.location.href = data.payUrl;
     } catch (err) {

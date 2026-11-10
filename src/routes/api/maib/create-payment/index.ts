@@ -1,36 +1,15 @@
 import type { RequestHandler } from "@builder.io/qwik-city";
+import {
+  fetchJson,
+  getAccessToken,
+  maibApi,
+  siteUrl,
+  toLang,
+} from "~/lib/maib";
 
-const DEFAULT_MAIB_API = "https://api.maibmerchants.md/v1";
-
-function getEnvValue(ctx: any, name: string): string | undefined {
-  // Qwik adapters могут давать env.get()
-  const fromAdapter = ctx?.env?.get?.(name);
-  if (fromAdapter) return fromAdapter;
-
-  // Node/Vercel serverless
-  const fromProcess =
-    (globalThis as any)?.process?.env?.[name] ?? process.env?.[name];
-  return fromProcess;
-}
-
-function mustEnv(ctx: any, name: string) {
-  const v = getEnvValue(ctx, name);
-  if (!v) throw new Error(`${name} is missing`);
-  return v;
-}
-
-async function fetchJson(url: string, init: RequestInit, timeoutMs = 15000) {
-  const controller = new AbortController();
-  const t = setTimeout(() => controller.abort(), timeoutMs);
-
-  try {
-    const res = await fetch(url, { ...init, signal: controller.signal });
-    const data = await res.json().catch(() => ({}));
-    return { res, data };
-  } finally {
-    clearTimeout(t);
-  }
-}
+// Цена фиксируется на сервере — то, что прислал браузер, игнорируем.
+const AMOUNT = 199;
+const CURRENCY = "MDL";
 
 export const onGet: RequestHandler = async ({ json }) => {
   json(200, { ok: true, route: "maib/create-payment" });
@@ -40,64 +19,38 @@ export const onPost: RequestHandler = async (ctx) => {
   const { request, json } = ctx;
 
   try {
-    console.log("[create-payment] hit");
-
-    const projectId = mustEnv(ctx, "MAIB_PROJECT_ID");
-    const projectSecret = mustEnv(ctx, "MAIB_PROJECT_SECRET");
-
-    const MAIB_API = getEnvValue(ctx, "MAIB_API_URL") || DEFAULT_MAIB_API;
-
     const body: any = await request.json().catch(() => ({}));
 
-    const amount = 199;
-    const currency = String(body.currency ?? "MDL");
-    const language = String(body.language ?? "ru");
-
-    const email = body.customerEmail
-      ? String(body.customerEmail)
-      : body.email
-        ? String(body.email)
-        : undefined;
+    const lang = toLang(body.language);
+    const rawEmail = String(body.customerEmail ?? body.email ?? "").trim();
+    const email = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(rawEmail)
+      ? rawEmail
+      : undefined;
 
     const xf = request.headers.get("x-forwarded-for") || "";
     const clientIp = (xf.split(",")[0] || "").trim() || "127.0.0.1";
 
-    const BASE = "https://11book.online";
+    const base = siteUrl(ctx);
+    const prefix = lang === "ro" ? "/ro" : "";
+    // Слеш в конце обязателен: без него Qwik отвечает 301 (лишний редирект).
+    const okUrl = `${base}${prefix}/payment/success/`;
+    const failUrl = `${base}${prefix}/payment/fail/`;
+    const callbackUrl = `${base}/api/maib/callback`;
 
-    const okUrl = `${BASE}/payment/success`;
-    const failUrl = `${BASE}/payment/fail`;
-    const callbackUrl = `${BASE}/api/maib/callback`;
+    // Язык храним префиксом в orderId, чтобы callback знал, на каком языке слать письмо.
+    // Всегда генерируем на сервере (ro-/ru- + 32 hex = 35 символов).
+    const uid = (globalThis.crypto?.randomUUID?.() ?? `${Date.now()}${Math.random()}`)
+      .replace(/[^a-zA-Z0-9]/g, "")
+      .slice(0, 32);
+    const orderId = `${lang}-${uid}`;
 
-    const orderId = String(
-      body.orderId ?? globalThis.crypto?.randomUUID?.() ?? `${Date.now()}`,
-    );
+    const description =
+      lang === "ro" ? "11book — carte electronică" : "11book — электронная книга";
 
-    // 1) generate-token
-    const { res: tokenRes, data: tokenData } = await fetchJson(
-      `${MAIB_API}/generate-token`,
-      {
-        method: "POST",
-        headers: { "content-type": "application/json" },
-        body: JSON.stringify({ projectId, projectSecret }),
-      },
-      15000,
-    );
+    const accessToken = await getAccessToken(ctx);
 
-    const accessToken = tokenData?.result?.accessToken;
-
-    if (!tokenRes.ok || !tokenData?.ok || !accessToken) {
-      console.error("MAIB token error:", tokenRes.status, tokenData);
-      json(500, {
-        error: "MAIB token error",
-        status: tokenRes.status,
-        details: tokenData,
-      });
-      return;
-    }
-
-    // 2) pay
     const { res: payRes, data: payData } = await fetchJson(
-      `${MAIB_API}/pay`,
+      `${maibApi(ctx)}/pay`,
       {
         method: "POST",
         headers: {
@@ -106,38 +59,32 @@ export const onPost: RequestHandler = async (ctx) => {
         },
         body: JSON.stringify({
           clientIp,
-          amount,
-          currency,
-          description: body.description
-            ? String(body.description)
-            : "11book.online",
-          language,
+          amount: AMOUNT,
+          currency: CURRENCY,
+          description,
+          language: lang,
           orderId,
-          email,
+          ...(email ? { email } : {}),
           callbackUrl,
           okUrl,
           failUrl,
         }),
       },
-      15000,
     );
 
     const payUrl = payData?.result?.payUrl;
     const payId = payData?.result?.payId;
 
     if (!payRes.ok || !payData?.ok || !payUrl) {
-      console.error("MAIB pay error:", payRes.status, payData);
-      json(500, {
-        error: "MAIB pay error",
-        status: payRes.status,
-        details: payData,
-      });
+      console.error("[create-payment] MAIB pay error", payRes.status, payData);
+      json(502, { error: "MAIB pay error", status: payRes.status });
       return;
     }
 
+    console.log("[create-payment] created", { payId, orderId, lang });
     json(200, { ok: true, payId, orderId, payUrl });
   } catch (e: any) {
-    console.error("[create-payment] ERROR:", e);
-    json(500, { error: e?.message || "Server error" });
+    console.error("[create-payment] ERROR", e);
+    json(500, { error: "Server error" });
   }
 };
